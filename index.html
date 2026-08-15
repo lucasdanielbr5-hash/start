@@ -3,1109 +3,2400 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Star Recreação | A diversão que transforma festas</title>
-  <meta name="description" content="Star Recreação — recreação infantil com criatividade e alegria para festas e eventos em Londrina e região.">
-  <!-- Fontes -->
+
+  <title>Star Recreação | Experiências que ficam na memória</title>
+
+  <meta
+    name="description"
+    content="Star Recreação: recreação infantil para festas e eventos em Londrina e região. Brincadeiras, gincanas, oficinas e experiências personalizadas."
+  >
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <!-- Ícones -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
   <style>
-    /* ===== RESET E BASE ===== */
-    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: "Nunito", sans-serif;
-      background: #ffffff;
-      color: #14233b;
+      font-family: "DM Sans", sans-serif;
+      background: #f7f8fa;
+      color: #101a2c;
       overflow-x: hidden;
     }
-    img { max-width: 100%; display: block; }
-    a { text-decoration: none; color: inherit; }
-    .container {
-      width: min(1200px, 92%);
-      margin: 0 auto;
+
+    img {
+      display: block;
+      max-width: 100%;
     }
 
-    /* ===== CORES ===== */
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
     :root {
-      --navy: #071b3a;
-      --navy-2: #0b2854;
-      --blue: #1265c9;
-      --blue-light: #3c91f2;
-      --sky: #eaf5ff;
-      --white: #ffffff;
-      --text: #14233b;
-      --muted: #66758a;
+      --navy: #07172f;
+      --navy-2: #0b2346;
+      --blue: #1769d5;
+      --blue-2: #368cf0;
       --yellow: #ffd447;
-      --orange: #ff9d35;
-      --green: #20b66f;
-      --pink: #ff6b9d;
-      --border: #e4edf7;
-      --shadow: 0 20px 55px rgba(7, 27, 58, 0.12);
-      --radius: 28px;
+      --yellow-soft: #fff4c7;
+      --pink: #f46b9a;
+      --green: #18a96a;
+      --white: #ffffff;
+      --bg: #f7f8fa;
+      --soft: #eef4fa;
+      --text: #101a2c;
+      --muted: #69778b;
+      --line: #e2e8ef;
+
+      --radius-xl: 42px;
+      --radius-lg: 28px;
+      --radius-md: 20px;
+
+      --shadow:
+        0 30px 80px rgba(7, 23, 47, .12);
     }
 
-    /* ===== HEADER ===== */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(7, 27, 58, 0.05);
-      transition: 0.3s;
+
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
+
+    .container {
+      width: min(1240px, calc(100% - 48px));
+      margin-inline: auto;
     }
-    .nav {
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-      display: flex;
+
+    .eyebrow {
+      display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-family: "Baloo 2", sans-serif;
-      font-size: 28px;
+      color: var(--blue);
+      font-size: 11px;
       font-weight: 800;
-      color: var(--navy);
-    }
-    .logo-star {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      background: var(--navy);
-      color: var(--yellow);
-      display: grid;
-      place-items: center;
-      font-size: 22px;
-      box-shadow: 0 8px 18px rgba(7, 27, 58, 0.15);
-    }
-    .logo span { color: var(--blue); }
-    .menu {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
-    }
-    .menu a {
-      font-size: 15px;
-      font-weight: 800;
-      color: var(--navy);
-      transition: 0.3s;
-    }
-    .menu a:hover { color: var(--blue); }
-    .nav-button {
-      background: var(--navy);
-      color: white !important;
-      padding: 12px 24px;
-      border-radius: 50px;
-      transition: 0.3s;
-    }
-    .nav-button:hover {
-      background: var(--blue);
-      transform: translateY(-2px);
-    }
-    .mobile-btn {
-      display: none;
-      border: 0;
-      background: var(--navy);
-      color: white;
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
-      font-size: 20px;
-      cursor: pointer;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
 
-    /* ===== BOTÕES ===== */
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: var(--yellow);
+    }
+
+    .section-title {
+      font-family: "Outfit", sans-serif;
+      font-size: clamp(38px, 5vw, 68px);
+      line-height: .98;
+      letter-spacing: -2.8px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .section-title span {
+      color: var(--blue);
+    }
+
+    .section-description {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+      max-width: 620px;
+    }
+
     .btn {
+      min-height: 54px;
+      padding: 0 25px;
+      border-radius: 100px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      padding: 16px 28px;
-      border-radius: 50px;
-      font-weight: 900;
-      font-size: 15px;
-      transition: 0.3s;
-      cursor: pointer;
+      gap: 11px;
       border: 0;
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 14px;
+      transition: .3s ease;
     }
+
     .btn-primary {
-      background: var(--navy);
       color: white;
-      box-shadow: 0 12px 25px rgba(7, 27, 58, 0.2);
+      background: var(--navy);
+      box-shadow: 0 14px 30px rgba(7, 23, 47, .18);
     }
+
     .btn-primary:hover {
       background: var(--blue);
       transform: translateY(-3px);
     }
-    .btn-outline {
-      border: 2px solid var(--navy);
-      color: var(--navy);
-      background: transparent;
-    }
-    .btn-outline:hover {
-      background: var(--navy);
-      color: white;
-    }
+
     .btn-yellow {
       background: var(--yellow);
       color: var(--navy);
     }
+
     .btn-yellow:hover {
-      transform: translateY(-3px) scale(1.02);
       background: white;
-    }
-    .btn-pink {
-      background: var(--pink);
-      color: white;
-    }
-    .btn-pink:hover {
       transform: translateY(-3px);
-      background: #e0558a;
     }
 
-    /* ===== HERO ===== */
-    .hero {
-      min-height: 760px;
-      padding-top: 130px;
+    .btn-light {
+      background: white;
+      color: var(--navy);
+      border: 1px solid var(--line);
+    }
+
+    .btn-light:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    header {
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding-top: 14px;
+      transition: .3s ease;
+    }
+
+    header.scrolled .header-inner {
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 12px 40px rgba(7,23,47,.08);
+    }
+
+    .header-inner {
+      height: 72px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      padding: 0 10px 0 20px;
+      border: 1px solid rgba(255,255,255,.35);
+      background: rgba(255,255,255,.82);
+      backdrop-filter: blur(18px);
+      border-radius: 20px;
+      transition: .3s ease;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-family: "Outfit", sans-serif;
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: var(--yellow);
+      background: var(--navy);
+      font-size: 18px;
+    }
+
+    .logo strong {
+      color: var(--blue);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      font-size: 13px;
+      font-weight: 700;
+      color: #33435a;
+      transition: .25s;
+    }
+
+    .nav-menu a:hover {
+      color: var(--blue);
+    }
+
+    .nav-menu .nav-cta {
+      padding: 12px 19px;
+      color: white;
+      background: var(--navy);
+      border-radius: 100px;
+    }
+
+    .nav-menu .nav-cta:hover {
+      color: white;
+      background: var(--blue);
+    }
+
+    .mobile-toggle {
+      width: 45px;
+      height: 45px;
+      display: none;
+      border: 0;
+      border-radius: 13px;
+      background: var(--navy);
+      color: white;
+      cursor: pointer;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: 850px;
+      padding: 150px 0 90px;
       position: relative;
       overflow: hidden;
-      background: radial-gradient(circle at 80% 30%, rgba(60, 145, 242, 0.12), transparent 40%),
-                  linear-gradient(135deg, #f7fbff 0%, #ffffff 60%);
+      background:
+        radial-gradient(circle at 85% 15%, rgba(54,140,240,.18), transparent 28%),
+        radial-gradient(circle at 10% 80%, rgba(255,212,71,.14), transparent 24%),
+        #f8fafc;
     }
-    .hero::before {
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border: 1px solid rgba(23,105,213,.08);
+      border-radius: 50%;
+      right: -260px;
+      top: 180px;
+      box-shadow:
+        0 0 0 80px rgba(23,105,213,.025),
+        0 0 0 160px rgba(23,105,213,.015);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .hero-copy {
+      max-width: 620px;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 13px;
+      margin-bottom: 25px;
+      border-radius: 100px;
+      color: var(--blue);
+      background: #eaf3ff;
+      border: 1px solid #d9eaff;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .hero h1 {
+      font-family: "Outfit", sans-serif;
+      color: var(--navy);
+      font-size: clamp(55px, 7vw, 92px);
+      line-height: .91;
+      letter-spacing: -5px;
+      font-weight: 800;
+      margin-bottom: 27px;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero-description {
+      max-width: 570px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 25px;
+      color: #7a8797;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .hero-note i {
+      color: var(--green);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 590px;
+    }
+
+    .hero-image-main {
+      position: absolute;
+      width: 480px;
+      height: 560px;
+      right: 35px;
+      top: 0;
+      z-index: 3;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 42% 42% 30px 30px;
+      background:
+        linear-gradient(145deg, #e7f2ff, #fff);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-image-main::before {
+      content: "";
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      background: var(--yellow);
+      top: 70px;
+      opacity: .8;
+    }
+
+    .hero-image-main img {
+      position: relative;
+      z-index: 2;
+      width: 92%;
+      max-height: 520px;
+      object-fit: contain;
+      object-position: bottom;
+    }
+
+    .hero-image-secondary {
+      position: absolute;
+      z-index: 5;
+      left: 0;
+      bottom: 30px;
+      width: 190px;
+      height: 235px;
+      padding: 12px;
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0 25px 60px rgba(7,23,47,.17);
+      transform: rotate(-5deg);
+    }
+
+    .hero-image-secondary img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 17px;
+    }
+
+    .hero-badge {
+      position: absolute;
+      right: -5px;
+      bottom: 70px;
+      z-index: 6;
+      width: 155px;
+      height: 155px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--navy);
+      background: var(--yellow);
+      text-align: center;
+      font-family: "Outfit", sans-serif;
+      font-size: 17px;
+      line-height: 1.05;
+      font-weight: 800;
+      transform: rotate(8deg);
+      box-shadow: 0 20px 40px rgba(7,23,47,.14);
+    }
+
+    .hero-badge::before {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 1px dashed rgba(7,23,47,.25);
+      border-radius: 50%;
+    }
+
+
+    /* =========================================================
+       TRUST BAR
+    ========================================================= */
+
+    .trust {
+      position: relative;
+      z-index: 10;
+      margin-top: -1px;
+      background: var(--navy);
+      color: white;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+    }
+
+    .trust-item {
+      min-height: 110px;
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      border-right: 1px solid rgba(255,255,255,.09);
+    }
+
+    .trust-item:last-child {
+      border-right: 0;
+    }
+
+    .trust-icon {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      color: var(--yellow);
+      background: rgba(255,255,255,.08);
+    }
+
+    .trust-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    .trust-item span {
+      color: #9cadc2;
+      font-size: 11px;
+    }
+
+
+    /* =========================================================
+       INTRO
+    ========================================================= */
+
+    .intro {
+      padding: 140px 0;
+      background: white;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 80px;
+      align-items: end;
+    }
+
+    .intro-number {
+      font-family: "Outfit", sans-serif;
+      color: #e9eef4;
+      font-size: 150px;
+      font-weight: 800;
+      line-height: .7;
+      letter-spacing: -10px;
+    }
+
+    .intro-copy h2 {
+      margin-bottom: 25px;
+    }
+
+    .intro-copy p {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.8;
+    }
+
+
+    /* =========================================================
+       SERVICES
+    ========================================================= */
+
+    .services {
+      padding: 120px 0;
+      background: #f3f6f9;
+    }
+
+    .section-top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 55px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+
+    .service {
+      min-height: 320px;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #e4e9ef;
+      border-radius: 28px;
+      background: white;
+      transition: .35s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+      border-color: transparent;
+    }
+
+    .service-number {
+      position: absolute;
+      right: 24px;
+      top: 20px;
+      color: #e8edf3;
+      font-family: "Outfit", sans-serif;
+      font-size: 48px;
+      font-weight: 800;
+    }
+
+    .service-icon {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 65px;
+      border-radius: 18px;
+      background: var(--navy);
+      color: var(--yellow);
+      font-size: 20px;
+    }
+
+    .service h3 {
+      margin-bottom: 10px;
+      color: var(--navy);
+      font-family: "Outfit", sans-serif;
+      font-size: 25px;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+
+    /* =========================================================
+       ABOUT / IMAGE
+    ========================================================= */
+
+    .about {
+      padding: 140px 0;
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 90px;
+    }
+
+    .about-visual {
+      position: relative;
+      min-height: 600px;
+    }
+
+    .about-image {
+      position: absolute;
+      width: 410px;
+      height: 530px;
+      left: 35px;
+      top: 20px;
+      padding: 25px 20px 0;
+      overflow: hidden;
+      border-radius: 35px;
+      background: linear-gradient(145deg,#fff2f6,#f8fbff);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: bottom;
+    }
+
+    .about-image-small {
+      position: absolute;
+      width: 210px;
+      height: 250px;
+      right: 0;
+      bottom: 10px;
+      padding: 12px;
+      background: white;
+      border-radius: 25px;
+      box-shadow: var(--shadow);
+      transform: rotate(5deg);
+      z-index: 4;
+    }
+
+    .about-image-small img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 17px;
+    }
+
+    .about-tag {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 5;
+      padding: 15px 20px;
+      color: var(--navy);
+      background: var(--yellow);
+      border-radius: 15px;
+      font-family: "Outfit", sans-serif;
+      font-weight: 800;
+      font-size: 13px;
+      box-shadow: 0 15px 30px rgba(7,23,47,.12);
+    }
+
+    .about-copy .section-title {
+      margin-bottom: 25px;
+    }
+
+    .about-copy > p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .about-list {
+      display: grid;
+      gap: 15px;
+      margin-bottom: 35px;
+    }
+
+    .about-list-item {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .about-list-item i {
+      width: 27px;
+      height: 27px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--green);
+      background: #e8f8f1;
+      font-size: 11px;
+    }
+
+
+    /* =========================================================
+       ACTIVITIES
+    ========================================================= */
+
+    .activities {
+      padding: 130px 0;
+      color: white;
+      background: var(--navy);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .activities::before {
+      content: "";
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      border: 100px solid rgba(255,255,255,.025);
+      border-radius: 50%;
+      right: -300px;
+      top: -250px;
+    }
+
+    .activities .section-title {
+      color: white;
+    }
+
+    .activities .section-title span {
+      color: var(--yellow);
+    }
+
+    .activities .section-description {
+      color: #9daec4;
+    }
+
+    .activity-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 12px;
+    }
+
+    .activity {
+      min-height: 210px;
+      padding: 28px 22px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 22px;
+      background: rgba(255,255,255,.035);
+      transition: .3s;
+    }
+
+    .activity:hover {
+      background: rgba(255,255,255,.08);
+      transform: translateY(-5px);
+    }
+
+    .activity-icon {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 42px;
+      border-radius: 13px;
+      color: var(--navy);
+      background: var(--yellow);
+    }
+
+    .activity h3 {
+      font-family: "Outfit", sans-serif;
+      font-size: 20px;
+      margin-bottom: 7px;
+    }
+
+    .activity p {
+      color: #9daec4;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+
+    /* =========================================================
+       DIFFERENTIALS
+    ========================================================= */
+
+    .differentials {
+      padding: 140px 0;
+      background: #f5f7fa;
+    }
+
+    .diff-layout {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .diff-list {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .diff-item {
+      padding: 24px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      transition: .3s;
+    }
+
+    .diff-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(7,23,47,.07);
+    }
+
+    .diff-number {
+      color: var(--blue);
+      font-family: "Outfit", sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 25px;
+    }
+
+    .diff-item h3 {
+      color: var(--navy);
+      font-family: "Outfit", sans-serif;
+      font-size: 18px;
+      margin-bottom: 7px;
+    }
+
+    .diff-item p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .diff-visual {
+      position: relative;
+      min-height: 530px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .diff-visual::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: #e7f1fd;
+    }
+
+    .diff-visual img {
+      position: relative;
+      z-index: 2;
+      width: 410px;
+      max-height: 500px;
+      object-fit: contain;
+    }
+
+
+    /* =========================================================
+       NUMBERS
+    ========================================================= */
+
+    .numbers {
+      padding: 90px 0;
+      background: white;
+    }
+
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .number-item {
+      padding: 35px 25px;
+      border-right: 1px solid var(--line);
+    }
+
+    .number-item:last-child {
+      border-right: 0;
+    }
+
+    .number-item strong {
+      display: block;
+      color: var(--navy);
+      font-family: "Outfit", sans-serif;
+      font-size: 44px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .number-item span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+
+    /* =========================================================
+       CTA
+    ========================================================= */
+
+    .cta {
+      padding: 110px 0;
+      background: white;
+    }
+
+    .cta-box {
+      min-height: 390px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+      padding: 65px 70px;
+      border-radius: 42px;
+      background:
+        radial-gradient(circle at 80% 30%, rgba(54,140,240,.3), transparent 30%),
+        linear-gradient(120deg,#07172f,#0c2b58);
+    }
+
+    .cta-box::before {
       content: "";
       position: absolute;
       width: 500px;
       height: 500px;
-      border: 45px solid rgba(255, 212, 71, 0.08);
+      right: -180px;
+      bottom: -300px;
+      border: 70px solid rgba(255,255,255,.025);
       border-radius: 50%;
-      right: -150px;
-      bottom: -150px;
     }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 50px;
+
+    .cta-copy {
       position: relative;
       z-index: 2;
+      max-width: 680px;
     }
-    .hero-content { animation: fadeUp 0.8s ease; }
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: #eaf4ff;
-      color: var(--blue);
-      border: 1px solid #d7eaff;
-      padding: 10px 18px;
-      border-radius: 50px;
-      font-size: 13px;
-      font-weight: 900;
-      margin-bottom: 22px;
+
+    .cta-copy .eyebrow {
+      color: var(--yellow);
     }
-    h1 {
-      font-family: "Baloo 2", sans-serif;
-      font-size: clamp(48px, 6.5vw, 82px);
-      line-height: 0.95;
-      color: var(--navy);
-      font-weight: 800;
-      margin-bottom: 22px;
+
+    .cta-title {
+      color: white;
+      font-family: "Outfit", sans-serif;
+      font-size: clamp(40px,5vw,64px);
+      line-height: .98;
       letter-spacing: -2px;
-    }
-    h1 span { color: var(--blue); }
-    .hero-text {
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.7;
-      max-width: 560px;
-      margin-bottom: 32px;
-    }
-    .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
-    .hero-mascot {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      animation: floating 5s ease-in-out infinite;
-    }
-    .mascot-card {
-      width: 480px;
-      max-width: 100%;
-      border-radius: 40px 40px 40px 40px;
-      background: linear-gradient(145deg, #ffffff, #eef6ff);
-      box-shadow: var(--shadow);
-      padding: 20px 20px 0 20px;
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      position: relative;
-    }
-    .mascot-card::before {
-      content: "✨";
-      position: absolute;
-      font-size: 40px;
-      top: -15px;
-      left: -15px;
-      animation: sparkle 3s infinite;
-    }
-    .mascot-card::after {
-      content: "🎈";
-      position: absolute;
-      font-size: 35px;
-      bottom: -10px;
-      right: -10px;
-      animation: sparkle 4s infinite 1s;
-    }
-    .mascot-card img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      max-height: 420px;
-      display: block;
-      margin: 0 auto;
+      margin-bottom: 18px;
     }
 
-    /* ===== INFO STRIP ===== */
-    .info-strip {
-      background: var(--navy);
-      color: white;
+    .cta-copy p {
+      color: #a9b9ce;
+      line-height: 1.7;
+      max-width: 570px;
+    }
+
+    .cta-action {
       position: relative;
-      z-index: 10;
-    }
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .info-item {
-      padding: 28px 20px;
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      border-right: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .info-item:last-child { border: 0; }
-    .info-icon {
-      width: 52px;
-      height: 52px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      display: grid;
-      place-items: center;
-      color: var(--yellow);
-      font-size: 22px;
+      z-index: 3;
       flex-shrink: 0;
     }
-    .info-item strong {
-      display: block;
-      font-size: 16px;
-      margin-bottom: 4px;
-    }
-    .info-item small {
-      color: #b8c9df;
-      font-size: 12px;
+
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
+
+    .contact {
+      padding: 120px 0;
+      background: #f4f6f9;
     }
 
-    /* ===== SEÇÕES ===== */
-    section { padding: 100px 0; }
-    .section-head {
-      max-width: 700px;
-      margin: 0 auto 55px;
-      text-align: center;
-    }
-    .section-label {
-      color: var(--blue);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-weight: 900;
-      font-size: 12px;
-      margin-bottom: 12px;
-    }
-    .section-head h2 {
-      font-family: "Baloo 2", sans-serif;
-      color: var(--navy);
-      font-size: clamp(35px, 5vw, 54px);
-      line-height: 1;
-      margin-bottom: 16px;
-    }
-    .section-head p {
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 16px;
-    }
-
-    /* ===== SERVIÇOS ===== */
-    .services { background: #f8fbff; }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-    .service-card {
-      background: white;
-      padding: 32px 28px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      transition: 0.35s;
-      position: relative;
-      overflow: hidden;
-    }
-    .service-card::after {
-      content: "";
-      position: absolute;
-      width: 120px;
-      height: 120px;
-      background: #eaf5ff;
-      border-radius: 50%;
-      right: -50px;
-      bottom: -50px;
-      transition: 0.4s;
-    }
-    .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow);
-      border-color: transparent;
-    }
-    .service-card:hover::after { transform: scale(1.6); }
-    .service-icon {
-      width: 68px;
-      height: 68px;
-      border-radius: 20px;
-      background: var(--navy);
-      color: var(--yellow);
-      display: grid;
-      place-items: center;
-      font-size: 26px;
-      margin-bottom: 24px;
-      position: relative;
-      z-index: 2;
-    }
-    .service-card h3 {
-      font-family: "Baloo 2", sans-serif;
-      font-size: 26px;
-      color: var(--navy);
-      margin-bottom: 10px;
-      position: relative;
-      z-index: 2;
-    }
-    .service-card p {
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 14px;
-      position: relative;
-      z-index: 2;
-    }
-
-    /* ===== SOBRE COM MASCOTE 2 ===== */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .about-image {
-      background: linear-gradient(145deg, #fff5f5, #ffffff);
-      border-radius: 40px;
-      padding: 30px 30px 10px 30px;
-      position: relative;
-      border: 1px solid #ffe8e8;
-      text-align: center;
-    }
-    .about-image img {
-      max-height: 440px;
-      width: auto;
-      margin: 0 auto;
-    }
-    .about-image .emoji-deco {
-      font-size: 48px;
-      position: absolute;
-    }
-    .about-image .emoji-deco:first-child { top: -20px; left: -10px; animation: sparkle 3s infinite; }
-    .about-image .emoji-deco:last-child { bottom: -10px; right: -10px; animation: sparkle 4s infinite 1.5s; }
-    .about-content .section-label { text-align: left; }
-    .about-content h2 {
-      font-family: "Baloo 2", sans-serif;
-      font-size: clamp(36px, 5vw, 52px);
-      line-height: 1;
-      color: var(--navy);
-      margin-bottom: 20px;
-    }
-    .about-content h2 span { color: var(--blue); }
-    .about-content > p {
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 28px;
-    }
-    .check-list {
-      display: grid;
-      gap: 14px;
-      margin-bottom: 32px;
-    }
-    .check {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-weight: 800;
-      color: var(--navy);
-      font-size: 14px;
-    }
-    .check i {
-      width: 28px;
-      height: 28px;
-      background: #e8f8f1;
-      color: var(--green);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-size: 12px;
-    }
-
-    /* ===== ATIVIDADES ===== */
-    .activities {
-      background: var(--navy);
-      color: white;
-      overflow: hidden;
-      position: relative;
-    }
-    .activities::before {
-      content: "";
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      border: 100px solid rgba(255, 255, 255, 0.02);
-      border-radius: 50%;
-      left: -250px;
-      top: -250px;
-    }
-    .activities .section-head h2 { color: white; }
-    .activities .section-head p { color: #b9c8dc; }
-    .activity-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      position: relative;
-      z-index: 2;
-    }
-    .activity {
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(255, 255, 255, 0.04);
-      border-radius: 24px;
-      padding: 28px 18px;
-      text-align: center;
-      transition: 0.3s;
-      backdrop-filter: blur(4px);
-    }
-    .activity:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateY(-6px);
-    }
-    .activity i {
-      font-size: 30px;
-      color: var(--yellow);
-      margin-bottom: 16px;
-    }
-    .activity h3 {
-      font-family: "Baloo 2", sans-serif;
-      font-size: 22px;
-      margin-bottom: 6px;
-    }
-    .activity p {
-      color: #aebed3;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    /* ===== DIFERENCIAIS COM MASCOTE 3 ===== */
-    .differentials { background: #f8fbff; }
-    .diff-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 0.8fr;
-      gap: 50px;
-      align-items: center;
-    }
-    .diff-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    .diff-card {
-      background: white;
-      border: 1px solid var(--border);
-      padding: 28px;
-      border-radius: 24px;
-      display: flex;
-      gap: 18px;
-      transition: 0.3s;
-    }
-    .diff-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-    }
-    .diff-number {
-      width: 50px;
-      height: 50px;
-      border-radius: 16px;
-      background: var(--sky);
-      color: var(--blue);
-      display: grid;
-      place-items: center;
-      font-family: "Baloo 2", sans-serif;
-      font-weight: 800;
-      font-size: 22px;
-      flex-shrink: 0;
-    }
-    .diff-card h3 {
-      color: var(--navy);
-      font-size: 17px;
-      margin-bottom: 6px;
-    }
-    .diff-card p {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-    .diff-mascot {
-      background: linear-gradient(145deg, #f5faff, #ffffff);
-      border-radius: 40px;
-      padding: 20px 20px 0 20px;
-      border: 1px solid #e4edf7;
-      text-align: center;
-    }
-    .diff-mascot img {
-      max-height: 380px;
-      width: auto;
-      margin: 0 auto;
-    }
-
-    /* ===== CTA ===== */
-    .cta { padding: 80px 0; }
-    .cta-box {
-      background: linear-gradient(125deg, var(--navy), var(--navy-2));
-      border-radius: 40px;
-      padding: 65px 55px;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      position: relative;
-      overflow: hidden;
-    }
-    .cta-box::after {
-      content: "🎉";
-      position: absolute;
-      font-size: 120px;
-      right: 30px;
-      bottom: -20px;
-      opacity: 0.1;
-    }
-    .cta-content { position: relative; z-index: 2; }
-    .cta-content small {
-      color: var(--yellow);
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    .cta-content h2 {
-      font-family: "Baloo 2", sans-serif;
-      font-size: clamp(32px, 4vw, 48px);
-      line-height: 1;
-      margin: 12px 0 10px;
-    }
-    .cta-content p {
-      color: #b8c9df;
-      max-width: 550px;
-      line-height: 1.6;
-    }
-    .btn-yellow { background: var(--yellow); color: var(--navy); }
-    .btn-yellow:hover { background: white; transform: translateY(-3px); }
-
-    /* ===== CONTATO ===== */
-    .contact { background: #f8fbff; }
     .contact-grid {
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 35px;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 20px;
     }
+
     .contact-info {
-      background: var(--navy);
-      color: white;
+      padding: 45px;
       border-radius: 30px;
-      padding: 40px;
+      color: white;
+      background: var(--navy);
     }
-    .contact-info h2 {
-      font-family: "Baloo 2", sans-serif;
-      font-size: 36px;
-      margin-bottom: 14px;
-    }
-    .contact-info > p {
-      color: #b8c9df;
-      line-height: 1.6;
-      margin-bottom: 30px;
-    }
-    .contact-item {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-    .contact-item i {
-      width: 44px;
-      height: 44px;
-      background: rgba(255, 255, 255, 0.08);
+
+    .contact-info .eyebrow {
       color: var(--yellow);
+    }
+
+    .contact-info h2 {
+      font-family: "Outfit", sans-serif;
+      font-size: 42px;
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .contact-info > p {
+      color: #9eafc5;
+      line-height: 1.7;
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 23px;
+    }
+
+    .contact-detail {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .contact-detail-icon {
+      width: 43px;
+      height: 43px;
       display: grid;
       place-items: center;
-      border-radius: 14px;
       flex-shrink: 0;
+      border-radius: 13px;
+      color: var(--yellow);
+      background: rgba(255,255,255,.08);
     }
-    .contact-item strong {
+
+    .contact-detail strong {
       display: block;
-      font-size: 14px;
+      font-size: 13px;
       margin-bottom: 3px;
     }
-    .contact-item span { color: #b8c9df; font-size: 13px; }
-    .contact-form {
-      background: white;
-      border: 1px solid var(--border);
+
+    .contact-detail span {
+      color: #9eafc5;
+      font-size: 12px;
+    }
+
+    .form-box {
+      padding: 45px;
+      border: 1px solid var(--line);
       border-radius: 30px;
-      padding: 40px;
+      background: white;
     }
-    .contact-form h3 {
-      font-family: "Baloo 2", sans-serif;
-      font-size: 32px;
+
+    .form-box h2 {
       color: var(--navy);
-      margin-bottom: 22px;
+      font-family: "Outfit", sans-serif;
+      font-size: 34px;
+      margin-bottom: 7px;
     }
+
+    .form-box > p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 28px;
+    }
+
     .form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 15px;
     }
+
     .field {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 7px;
     }
-    .field.full { grid-column: 1 / -1; }
+
+    .field.full {
+      grid-column: 1/-1;
+    }
+
     .field label {
-      font-size: 12px;
-      font-weight: 900;
       color: var(--navy);
+      font-size: 11px;
+      font-weight: 800;
     }
+
     .field input,
     .field textarea,
     .field select {
       width: 100%;
-      border: 1px solid var(--border);
-      background: #f9fbfe;
-      border-radius: 14px;
-      padding: 14px 16px;
-      font-family: inherit;
       outline: none;
-      transition: 0.3s;
+      border: 1px solid #dfe5eb;
+      border-radius: 13px;
+      background: #f8fafc;
       color: var(--text);
+      padding: 14px 15px;
+      transition: .25s;
     }
+
     .field input:focus,
     .field textarea:focus,
     .field select:focus {
       border-color: var(--blue);
       background: white;
-      box-shadow: 0 0 0 4px rgba(18, 101, 201, 0.06);
+      box-shadow: 0 0 0 4px rgba(23,105,213,.07);
     }
+
     .field textarea {
-      height: 120px;
+      min-height: 120px;
       resize: vertical;
     }
-    .form-submit { margin-top: 20px; width: 100%; }
 
-    /* ===== FOOTER ===== */
+    .form-submit {
+      width: 100%;
+      margin-top: 18px;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
     footer {
-      background: #04142d;
+      padding: 70px 0 25px;
+      background: #041127;
       color: white;
-      padding: 50px 0 30px;
     }
-    .footer-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 40px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 80px;
+      padding-bottom: 55px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
-    .footer-brand { max-width: 420px; }
-    .footer-brand .logo { color: white; margin-bottom: 14px; }
+
     .footer-brand p {
-      color: #94a8c1;
+      max-width: 390px;
+      margin-top: 17px;
+      color: #8497af;
       font-size: 13px;
       line-height: 1.7;
     }
-    .footer-links {
-      display: flex;
-      gap: 50px;
-    }
-    .footer-links h4 {
-      font-size: 13px;
-      margin-bottom: 16px;
+
+    .footer-column h4 {
       color: var(--yellow);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
     }
-    .footer-links a {
+
+    .footer-column a {
       display: block;
-      color: #a7b8ce;
-      font-size: 13px;
-      margin-bottom: 10px;
-      transition: 0.3s;
+      color: #94a6bc;
+      font-size: 12px;
+      margin-bottom: 12px;
+      transition: .25s;
     }
-    .footer-links a:hover { color: white; }
+
+    .footer-column a:hover {
+      color: white;
+    }
+
     .footer-bottom {
-      padding-top: 25px;
       display: flex;
       justify-content: space-between;
       gap: 20px;
-      color: #71869f;
-      font-size: 11px;
+      padding-top: 25px;
+      color: #62758e;
+      font-size: 10px;
     }
 
-    /* ===== WHATSAPP E TOPO ===== */
+
+    /* =========================================================
+       FLOATING WHATSAPP
+    ========================================================= */
+
     .whatsapp {
       position: fixed;
-      right: 22px;
-      bottom: 22px;
-      width: 62px;
-      height: 62px;
-      border-radius: 50%;
-      background: #20b66f;
-      color: white;
-      display: grid;
-      place-items: center;
-      font-size: 30px;
       z-index: 999;
-      box-shadow: 0 10px 30px rgba(32, 182, 111, 0.35);
-      transition: 0.3s;
-    }
-    .whatsapp:hover { transform: scale(1.08); }
-    .whatsapp::before {
-      content: "";
-      position: absolute;
-      inset: -6px;
-      border-radius: 50%;
-      border: 2px solid rgba(32, 182, 111, 0.25);
-      animation: pulse 2s infinite;
-    }
-    .top {
-      position: fixed;
-      right: 25px;
-      bottom: 96px;
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      background: white;
-      color: var(--navy);
-      border: 1px solid var(--border);
+      right: 24px;
+      bottom: 24px;
+      width: 60px;
+      height: 60px;
       display: grid;
       place-items: center;
+      border-radius: 20px;
+      color: white;
+      background: var(--green);
+      font-size: 26px;
+      box-shadow: 0 15px 35px rgba(24,169,106,.3);
+      transition: .3s;
+    }
+
+    .whatsapp:hover {
+      transform: translateY(-4px);
+    }
+
+    .back-top {
+      position: fixed;
       z-index: 998;
-      box-shadow: 0 8px 25px rgba(7, 27, 58, 0.1);
+      right: 28px;
+      bottom: 98px;
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      border: 1px solid var(--line);
+      color: var(--navy);
+      background: white;
+      box-shadow: 0 10px 30px rgba(7,23,47,.1);
       opacity: 0;
-      pointer-events: none;
-      transition: 0.3s;
-    }
-    .top.show { opacity: 1; pointer-events: auto; }
-
-    /* ===== ANIMAÇÕES ===== */
-    @keyframes floating {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-14px); }
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes pulse {
-      0% { transform: scale(0.9); opacity: 1; }
-      70% { transform: scale(1.4); opacity: 0; }
-      100% { transform: scale(1.4); opacity: 0; }
-    }
-    @keyframes sparkle {
-      0%, 100% { transform: scale(1) rotate(0deg); }
-      50% { transform: scale(1.2) rotate(15deg); }
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: .3s;
     }
 
-    /* ===== RESPONSIVO ===== */
-    @media (max-width: 1050px) {
-      .hero-grid { grid-template-columns: 1fr; text-align: center; }
-      .hero-text { margin-left: auto; margin-right: auto; }
-      .hero-buttons { justify-content: center; }
-      .hero-mascot { order: -1; }
-      .mascot-card { width: 380px; }
-      .about-grid { grid-template-columns: 1fr; }
-      .about-content .section-label { text-align: center; }
-      .check-list { text-align: left; max-width: 400px; margin: 0 auto 30px; }
-      .diff-wrapper { grid-template-columns: 1fr; }
-      .diff-mascot { order: -1; max-width: 400px; margin: 0 auto; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .cta-box { flex-direction: column; text-align: center; padding: 45px 30px; }
+    .back-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
     }
-    @media (max-width: 850px) {
-      .menu {
+
+
+    /* =========================================================
+       ANIMATIONS
+    ========================================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media(max-width: 1050px) {
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        max-width: 800px;
+        text-align: center;
+        margin-inline: auto;
+      }
+
+      .hero-description {
+        margin-inline: auto;
+      }
+
+      .hero-actions,
+      .hero-note {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        width: min(600px,100%);
+        margin-inline: auto;
+      }
+
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .intro-number {
+        font-size: 90px;
+      }
+
+      .about-grid,
+      .diff-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .about-copy {
+        order: -1;
+      }
+
+      .about-visual {
+        width: min(600px,100%);
+        margin-inline: auto;
+      }
+
+      .diff-visual {
+        order: -1;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+
+    @media(max-width: 850px) {
+
+      .nav-menu {
         position: absolute;
         top: 80px;
         left: 0;
-        width: 100%;
-        background: white;
-        flex-direction: column;
-        padding: 30px;
-        gap: 22px;
-        border-bottom: 1px solid var(--border);
+        right: 0;
         display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: white;
+        box-shadow: var(--shadow);
       }
-      .menu.active { display: flex; }
-      .mobile-btn { display: block; }
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .activity-grid { grid-template-columns: repeat(2, 1fr); }
-      .diff-grid { grid-template-columns: 1fr; }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu a {
+        display: block;
+        padding: 13px;
+      }
+
+      .nav-menu .nav-cta {
+        text-align: center;
+      }
+
+      .mobile-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .activity-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .numbers-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .number-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .number-item {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-brand {
+        grid-column: 1/-1;
+      }
+
     }
-    @media (max-width: 600px) {
-      .nav { height: 70px; }
-      .logo { font-size: 22px; }
-      .logo-star { width: 38px; height: 38px; font-size: 18px; }
-      .hero { padding-top: 110px; min-height: auto; padding-bottom: 60px; }
-      h1 { font-size: 44px; }
-      .mascot-card { width: 300px; padding: 15px 15px 0 15px; }
-      .mascot-card img { max-height: 280px; }
-      .info-grid { grid-template-columns: 1fr; }
-      .info-item { border-right: 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
-      section { padding: 70px 0; }
-      .services-grid, .activity-grid { grid-template-columns: 1fr; }
-      .about-image img { max-height: 300px; }
-      .diff-mascot img { max-height: 280px; }
-      .form-grid { grid-template-columns: 1fr; }
-      .field.full { grid-column: auto; }
-      .contact-info, .contact-form { padding: 25px; }
-      .footer-top, .footer-bottom { flex-direction: column; }
-      .footer-links { gap: 30px; }
-      .whatsapp { width: 54px; height: 54px; right: 16px; bottom: 16px; font-size: 26px; }
-      .top { right: 18px; bottom: 82px; }
+
+
+    @media(max-width: 600px) {
+
+      .container {
+        width: min(100% - 30px,1240px);
+      }
+
+      .header-inner {
+        height: 64px;
+      }
+
+      header {
+        padding-top: 8px;
+      }
+
+      .hero {
+        padding-top: 110px;
+        padding-bottom: 70px;
+        min-height: auto;
+      }
+
+      .hero h1 {
+        font-size: 53px;
+        letter-spacing: -3px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .hero-visual {
+        min-height: 460px;
+      }
+
+      .hero-image-main {
+        width: 290px;
+        height: 380px;
+        right: 50%;
+        transform: translateX(50%);
+      }
+
+      .hero-image-main::before {
+        width: 250px;
+        height: 250px;
+      }
+
+      .hero-image-secondary {
+        width: 125px;
+        height: 155px;
+        left: 5px;
+        bottom: 5px;
+      }
+
+      .hero-badge {
+        width: 105px;
+        height: 105px;
+        right: 0;
+        bottom: 25px;
+        font-size: 12px;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-item {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,.09);
+      }
+
+      .section-top {
+        display: block;
+      }
+
+      .section-description {
+        margin-top: 20px;
+      }
+
+      .services-grid,
+      .activity-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service {
+        min-height: 280px;
+      }
+
+      .about-visual {
+        min-height: 460px;
+      }
+
+      .about-image {
+        width: 280px;
+        height: 390px;
+        left: 0;
+      }
+
+      .about-image-small {
+        width: 145px;
+        height: 175px;
+        right: 0;
+      }
+
+      .diff-list {
+        grid-template-columns: 1fr;
+      }
+
+      .diff-visual {
+        min-height: 400px;
+      }
+
+      .diff-visual::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      .diff-visual img {
+        width: 300px;
+      }
+
+      .numbers-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .number-item {
+        padding: 28px 15px;
+      }
+
+      .number-item strong {
+        font-size: 35px;
+      }
+
+      .cta-box {
+        padding: 40px 25px;
+        min-height: 420px;
+        display: block;
+      }
+
+      .cta-action {
+        margin-top: 30px;
+      }
+
+      .contact-info,
+      .form-box {
+        padding: 28px 22px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 25px;
+      }
+
+      .footer-brand {
+        grid-column: 1/-1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .whatsapp {
+        width: 55px;
+        height: 55px;
+        right: 16px;
+        bottom: 16px;
+      }
+
+      .back-top {
+        right: 21px;
+        bottom: 84px;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header>
-    <div class="container nav">
-      <a href="#inicio" class="logo">
-        <div class="logo-star"><i class="fa-solid fa-star"></i></div>
-        Star <span>Recreação</span>
-      </a>
-      <nav>
-        <ul class="menu" id="menu">
-          <li><a href="#inicio">Início</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#atividades">Atividades</a></li>
-          <li><a href="#diferenciais">Diferenciais</a></li>
-          <li><a href="#contato" class="nav-button">Solicitar orçamento</a></li>
-        </ul>
-      </nav>
-      <button class="mobile-btn" id="mobileBtn" aria-label="Abrir menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+  <!-- =======================================================
+       HEADER
+  ======================================================== -->
+
+  <header id="header">
+    <div class="container">
+      <div class="header-inner">
+
+        <a href="#inicio" class="logo">
+          <span class="logo-mark">
+            <i class="fa-solid fa-star"></i>
+          </span>
+          Star <strong>Recreação</strong>
+        </a>
+
+        <nav>
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#atividades">Atividades</a></li>
+            <li><a href="#diferenciais">Diferenciais</a></li>
+            <li>
+              <a href="#contato" class="nav-cta">
+                Solicitar orçamento
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <button
+          class="mobile-toggle"
+          id="mobileToggle"
+          aria-label="Abrir menu"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+      </div>
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
+
   <main>
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
     <section class="hero" id="inicio">
+
       <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="tag"><i class="fa-solid fa-sparkles"></i> Recreação que encanta</div>
-          <h1>A festa fica mais <span>divertida</span> com a Star.</h1>
-          <p class="hero-text">Transformamos qualquer evento em uma experiência inesquecível com brincadeiras criativas, muita interação e um toque especial de alegria para as crianças.</p>
-          <div class="hero-buttons">
-            <a href="#contato" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Quero contratar</a>
-            <a href="#servicos" class="btn btn-outline">Conhecer serviços</a>
+
+        <div class="hero-copy reveal">
+
+          <div class="hero-kicker">
+            <i class="fa-solid fa-star"></i>
+            Recreação infantil em Londrina
           </div>
-        </div>
-        <div class="hero-mascot">
-          <div class="mascot-card">
-            <img src="https://i.imgur.com/DSljpaB.png" alt="Mascote Star Recreação">
+
+          <h1>
+            A festa passa.<br>
+            A <span>memória</span><br>
+            fica.
+          </h1>
+
+          <p class="hero-description">
+            A Star transforma festas e eventos em experiências de
+            verdade. Brincadeiras, desafios, criatividade e interação
+            planejados para que as crianças aproveitem cada momento.
+          </p>
+
+          <div class="hero-actions">
+
+            <a href="#contato" class="btn btn-primary">
+              Quero fazer um orçamento
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="#servicos" class="btn btn-light">
+              Conhecer a Star
+            </a>
+
           </div>
+
+          <div class="hero-note">
+            <i class="fa-solid fa-circle-check"></i>
+            Atendimento em Londrina e região
+          </div>
+
         </div>
+
+
+        <div class="hero-visual reveal">
+
+          <div class="hero-image-main">
+            <img
+              src="https://i.imgur.com/DSljpaB.png"
+              alt="Mascote da Star Recreação"
+            >
+          </div>
+
+          <div class="hero-image-secondary">
+            <img
+              src="https://i.imgur.com/Lzjm5cj.png"
+              alt="Mascote Star Recreação"
+            >
+          </div>
+
+          <div class="hero-badge">
+            EXPERIÊNCIAS<br>
+            QUE FICAM
+          </div>
+
+        </div>
+
       </div>
+
     </section>
 
-    <!-- ===== INFO STRIP ===== -->
-    <div class="info-strip">
-      <div class="container info-grid">
-        <div class="info-item">
-          <div class="info-icon"><i class="fa-solid fa-children"></i></div>
-          <div><strong>Recreação infantil</strong><small>Atividades para cada idade</small></div>
-        </div>
-        <div class="info-item">
-          <div class="info-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-          <div><strong>Momentos especiais</strong><small>Criatividade em cada brincadeira</small></div>
-        </div>
-        <div class="info-item">
-          <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
-          <div><strong>Londrina e região</strong><small>Atendimento para festas e eventos</small></div>
-        </div>
-      </div>
-    </div>
 
-    <!-- ===== SERVIÇOS ===== -->
+    <!-- =====================================================
+         TRUST
+    ====================================================== -->
+
+    <section class="trust">
+
+      <div class="container trust-grid">
+
+        <div class="trust-item">
+          <div class="trust-icon">
+            <i class="fa-solid fa-children"></i>
+          </div>
+          <div>
+            <strong>Recreação infantil</strong>
+            <span>Atividades pensadas para diferentes idades</span>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <div>
+            <strong>Experiências personalizadas</strong>
+            <span>Programação adaptada para cada evento</span>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div>
+            <strong>Londrina e região</strong>
+            <span>Festas, eventos e comemorações</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INTRO
+    ====================================================== -->
+
+    <section class="intro">
+
+      <div class="container intro-grid">
+
+        <div class="intro-number reveal">
+          01
+        </div>
+
+        <div class="intro-copy reveal">
+
+          <div class="eyebrow">
+            A ideia por trás da Star
+          </div>
+
+          <h2 class="section-title">
+            Não é só ocupar as crianças.
+            <span>É criar uma experiência.</span>
+          </h2>
+
+          <p>
+            Enquanto a festa acontece, a Star cuida de uma parte
+            importante dela: fazer as crianças participarem, interagirem,
+            se movimentarem e criarem lembranças que vão muito além
+            daquele dia.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SERVIÇOS
+    ====================================================== -->
+
     <section class="services" id="servicos">
+
       <div class="container">
-        <div class="section-head">
-          <div class="section-label">Nossos serviços</div>
-          <h2>Diversão planejada para sua festa</h2>
-          <p>A Star Recreação leva atividades que estimulam a participação, a criatividade e a interação entre as crianças.</p>
+
+        <div class="section-top">
+
+          <div>
+            <div class="eyebrow">
+              O que fazemos
+            </div>
+
+            <h2 class="section-title">
+              Diversão com<br>
+              <span>propósito.</span>
+            </h2>
+          </div>
+
+          <p class="section-description">
+            Criamos uma programação que combina movimento,
+            criatividade e interação para deixar a festa muito mais
+            interessante para as crianças.
+          </p>
+
         </div>
+
+
         <div class="services-grid">
-          <article class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-people-group"></i></div>
+
+          <article class="service reveal">
+            <span class="service-number">01</span>
+
+            <div class="service-icon">
+              <i class="fa-solid fa-people-group"></i>
+            </div>
+
             <h3>Recreação infantil</h3>
-            <p>Brincadeiras organizadas e dinâmicas para manter as crianças envolvidas e felizes durante toda a festa.</p>
+
+            <p>
+              Brincadeiras conduzidas por recreadores para envolver
+              as crianças durante o evento.
+            </p>
           </article>
-          <article class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
+
+
+          <article class="service reveal">
+            <span class="service-number">02</span>
+
+            <div class="service-icon">
+              <i class="fa-solid fa-palette"></i>
+            </div>
+
             <h3>Atividades criativas</h3>
-            <p>Oficinas e propostas lúdicas que incentivam a imaginação e tornam a experiência ainda mais especial.</p>
+
+            <p>
+              Oficinas e propostas que estimulam imaginação,
+              criatividade e expressão.
+            </p>
           </article>
-          <article class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-gamepad"></i></div>
+
+
+          <article class="service reveal">
+            <span class="service-number">03</span>
+
+            <div class="service-icon">
+              <i class="fa-solid fa-gamepad"></i>
+            </div>
+
             <h3>Gincanas e jogos</h3>
-            <p>Dinâmicas divertidas para promover interação, movimento e participação em grupo.</p>
+
+            <p>
+              Desafios e jogos em grupo para estimular participação,
+              movimento e interação.
+            </p>
           </article>
-          <article class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-cake-candles"></i></div>
+
+
+          <article class="service reveal">
+            <span class="service-number">04</span>
+
+            <div class="service-icon">
+              <i class="fa-solid fa-cake-candles"></i>
+            </div>
+
             <h3>Festas infantis</h3>
-            <p>Recreação completa para aniversários, confraternizações e comemorações especiais.</p>
+
+            <p>
+              Recreação pensada para aniversários e comemorações
+              infantis de diferentes formatos.
+            </p>
           </article>
-          <article class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-building"></i></div>
+
+
+          <article class="service reveal">
+            <span class="service-number">05</span>
+
+            <div class="service-icon">
+              <i class="fa-solid fa-building"></i>
+            </div>
+
             <h3>Eventos</h3>
-            <p>Soluções recreativas para eventos corporativos, escolares, familiares e outras ocasiões.</p>
+
+            <p>
+              Soluções recreativas para eventos escolares,
+              familiares, corporativos e confraternizações.
+            </p>
           </article>
-          <article class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-star"></i></div>
+
+
+          <article class="service reveal">
+            <span class="service-number">06</span>
+
+            <div class="service-icon">
+              <i class="fa-solid fa-sliders"></i>
+            </div>
+
             <h3>Experiência personalizada</h3>
-            <p>Adaptamos as atividades de acordo com o perfil da festa, faixa etária e espaço disponível.</p>
+
+            <p>
+              Adaptamos as atividades para a idade, quantidade de
+              crianças, espaço e perfil do evento.
+            </p>
           </article>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- ===== SOBRE ===== -->
-    <section id="sobre">
+
+    <!-- =====================================================
+         SOBRE
+    ====================================================== -->
+
+    <section class="about" id="sobre">
+
       <div class="container about-grid">
-        <div class="about-image">
-          <span class="emoji-deco">🌟</span>
-          <img src="https://i.imgur.com/Lzjm5cj.png" alt="Mascote Star Recreação">
-          <span class="emoji-deco">🎉</span>
-        </div>
-        <div class="about-content">
-          <div class="section-label">Sobre a Star</div>
-          <h2>Mais do que brincar, <br><span>criar memórias.</span></h2>
-          <p>A Star Recreação nasceu para tornar os momentos de diversão ainda mais especiais. Nosso objetivo é proporcionar às crianças uma experiência alegre, segura e cheia de criatividade enquanto os adultos aproveitam a comemoração.</p>
-          <div class="check-list">
-            <div class="check"><i class="fa-solid fa-check"></i> Recreação planejada</div>
-            <div class="check"><i class="fa-solid fa-check"></i> Atividades para diferentes idades</div>
-            <div class="check"><i class="fa-solid fa-check"></i> Organização e responsabilidade</div>
-            <div class="check"><i class="fa-solid fa-check"></i> Experiência acolhedora e divertida</div>
+
+        <div class="about-visual reveal">
+
+          <div class="about-tag">
+            Star Recreação
           </div>
-          <a href="#contato" class="btn btn-primary">Fale com a Star <i class="fa-solid fa-arrow-right"></i></a>
+
+          <div class="about-image">
+            <img
+              src="https://i.imgur.com/Lzjm5cj.png"
+              alt="Mascote Star Recreação"
+            >
+          </div>
+
+          <div class="about-image-small">
+            <img
+              src="https://i.imgur.com/khrNyGU.png"
+              alt="Personagem Star Recreação"
+            >
+          </div>
+
         </div>
+
+
+        <div class="about-copy reveal">
+
+          <div class="eyebrow">
+            Sobre a Star
+          </div>
+
+          <h2 class="section-title">
+            Mais do que brincar.
+            <span>Criar memórias.</span>
+          </h2>
+
+          <p>
+            A Star Recreação nasceu com uma ideia simples: transformar
+            a recreação em uma das partes mais marcantes da festa.
+            Para isso, combinamos planejamento, criatividade e muita
+            interação.
+          </p>
+
+          <div class="about-list">
+
+            <div class="about-list-item">
+              <i class="fa-solid fa-check"></i>
+              Recreação planejada para o evento
+            </div>
+
+            <div class="about-list-item">
+              <i class="fa-solid fa-check"></i>
+              Atividades para diferentes faixas etárias
+            </div>
+
+            <div class="about-list-item">
+              <i class="fa-solid fa-check"></i>
+              Organização durante toda a programação
+            </div>
+
+            <div class="about-list-item">
+              <i class="fa-solid fa-check"></i>
+              Experiência personalizada
+            </div>
+
+          </div>
+
+          <a href="#contato" class="btn btn-primary">
+            Falar com a Star
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+        </div>
+
       </div>
+
     </section>
 
-    <!-- ===== ATIVIDADES ===== -->
+
+    <!-- =====================================================
+         ATIVIDADES
+    ====================================================== -->
+
     <section class="activities" id="atividades">
+
       <div class="container">
-        <div class="section-head">
-          <div class="section-label">Nossas atividades</div>
-          <h2>Cada festa tem seu jeito de brincar</h2>
-          <p>Montamos uma programação divertida para que as crianças tenham experiências diferentes durante o evento.</p>
+
+        <div class="section-top">
+
+          <div>
+            <div class="eyebrow">
+              Nosso repertório
+            </div>
+
+            <h2 class="section-title">
+              Cada festa pede<br>
+              uma forma de <span>brincar.</span>
+            </h2>
+          </div>
+
+          <p class="section-description">
+            A programação pode ser montada de acordo com o perfil
+            das crianças, duração do evento e espaço disponível.
+          </p>
+
         </div>
+
+
         <div class="activity-grid">
-          <div class="activity"><i class="fa-solid fa-flag-checkered"></i><h3>Gincanas</h3><p>Desafios divertidos em grupo.</p></div>
-          <div class="activity"><i class="fa-solid fa-puzzle-piece"></i><h3>Jogos</h3><p>Jogos recreativos para todas as idades.</p></div>
-          <div class="activity"><i class="fa-solid fa-paintbrush"></i><h3>Oficinas</h3><p>Atividades criativas e de criação.</p></div>
-          <div class="activity"><i class="fa-solid fa-person-running"></i><h3>Brincadeiras</h3><p>Movimento, interação e diversão.</p></div>
-          <div class="activity"><i class="fa-solid fa-masks-theater"></i><h3>Dinâmicas</h3><p>Atividades para integrar a turma.</p></div>
-          <div class="activity"><i class="fa-solid fa-music"></i><h3>Musicalização</h3><p>Atividades com ritmo e movimento.</p></div>
-          <div class="activity"><i class="fa-solid fa-wand-magic-sparkles"></i><h3>Momentos especiais</h3><p>Experiências personalizadas.</p></div>
-          <div class="activity"><i class="fa-solid fa-medal"></i><h3>Desafios</h3><p>Propostas para estimular a participação.</p></div>
+
+          <article class="activity reveal">
+            <div class="activity-icon">
+              <i class="fa-solid fa-flag-checkered"></i>
+            </div>
+            <h3>Gincanas</h3>
+            <p>Desafios em grupo que colocam todo mundo para participar.</p>
+          </article>
+
+          <article class="activity reveal">
+            <div class="activity-icon">
+              <i class="fa-solid fa-puzzle-piece"></i>
+            </div>
+            <h3>Jogos</h3>
+            <p>Jogos recreativos adaptados para diferentes idades.</p>
+          </article>
+
+          <article class="activity reveal">
+            <div class="activity-icon">
+              <i class="fa-solid fa-paintbrush"></i>
+            </div>
+            <h3>Oficinas</h3>
+            <p>Atividades criativas para explorar imaginação e criação.</p>
+          </article>
+
+          <article class="activity reveal">
+            <div class="activity-icon">
+              <i class="fa-solid fa-person-running"></i>
+            </div>
+            <h3>Brincadeiras</h3>
+            <p>Movimento, energia e diversão durante a festa.</p>
+          </article>
+
+          <article class="activity reveal">
+            <div class="activity-icon">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <h3>Dinâmicas</h3>
+            <p>Atividades para aproximar e integrar as crianças.</p>
+          </article>
+
+          <article class="activity reveal">
+            <div class="activity-icon">
+              <i class="fa-solid fa-music"></i>
+            </div>
+            <h3>Musicalização</h3>
+            <p>Ritmo, movimento e interação em atividades musicais.</p>
+          </article>
+
+          <article class="activity reveal">
+            <div class="activity-icon">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <h3>Momentos especiais</h3>
+            <p>Propostas desenvolvidas especialmente para sua festa.</p>
+          </article>
+
+          <article class="activity reveal">
+            <div class="activity-icon">
+              <i class="fa-solid fa-medal"></i>
+            </div>
+            <h3>Desafios</h3>
+            <p>Atividades que estimulam participação e espírito de equipe.</p>
+          </article>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- ===== DIFERENCIAIS ===== -->
+
+    <!-- =====================================================
+         DIFERENCIAIS
+    ====================================================== -->
+
     <section class="differentials" id="diferenciais">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-label">Nosso diferencial</div>
-          <h2>Por que escolher a Star?</h2>
-          <p>Cuidamos dos detalhes para que a recreação seja um dos pontos altos da sua comemoração.</p>
-        </div>
-        <div class="diff-wrapper">
-          <div class="diff-grid">
-            <div class="diff-card"><div class="diff-number">01</div><div><h3>Planejamento</h3><p>Cada atividade é pensada para o perfil do evento e das crianças.</p></div></div>
-            <div class="diff-card"><div class="diff-number">02</div><div><h3>Criatividade</h3><p>Transformamos atividades simples em experiências marcantes.</p></div></div>
-            <div class="diff-card"><div class="diff-number">03</div><div><h3>Organização</h3><p>A recreação é conduzida de forma organizada para aproveitar o tempo da festa.</p></div></div>
-            <div class="diff-card"><div class="diff-number">04</div><div><h3>Personalização</h3><p>Adaptamos as propostas para o evento e a faixa etária.</p></div></div>
+
+      <div class="container diff-layout">
+
+        <div class="reveal">
+
+          <div class="eyebrow">
+            Nosso diferencial
           </div>
-          <div class="diff-mascot">
-            <img src="https://i.imgur.com/khrNyGU.png" alt="Mascote Star Recreação">
+
+          <h2 class="section-title">
+            Por que a Star
+            <span>faz diferente?</span>
+          </h2>
+
+          <div class="diff-list">
+
+            <article class="diff-item">
+              <div class="diff-number">01 / PLANEJAMENTO</div>
+              <h3>Recreação pensada antes da festa</h3>
+              <p>
+                As atividades são escolhidas considerando idade,
+                quantidade de crianças e perfil do evento.
+              </p>
+            </article>
+
+            <article class="diff-item">
+              <div class="diff-number">02 / CRIATIVIDADE</div>
+              <h3>Uma programação que foge do óbvio</h3>
+              <p>
+                Buscamos propostas capazes de surpreender e manter
+                as crianças envolvidas.
+              </p>
+            </article>
+
+            <article class="diff-item">
+              <div class="diff-number">03 / ORGANIZAÇÃO</div>
+              <h3>Mais tranquilidade para quem organiza</h3>
+              <p>
+                A recreação acontece de forma estruturada para que
+                os adultos também possam aproveitar a festa.
+              </p>
+            </article>
+
+            <article class="diff-item">
+              <div class="diff-number">04 / PERSONALIZAÇÃO</div>
+              <h3>Cada evento tem seu próprio ritmo</h3>
+              <p>
+                Adaptamos a experiência ao espaço e às necessidades
+                da comemoração.
+              </p>
+            </article>
+
           </div>
+
         </div>
+
+
+        <div class="diff-visual reveal">
+
+          <img
+            src="https://i.imgur.com/khrNyGU.png"
+            alt="Mascote Star Recreação"
+          >
+
+        </div>
+
       </div>
+
     </section>
 
-    <!-- ===== CTA ===== -->
+
+    <!-- =====================================================
+         NÚMEROS
+    ====================================================== -->
+
+    <section class="numbers">
+
+      <div class="container numbers-grid">
+
+        <div class="number-item">
+          <strong>01</strong>
+          <span>experiência personalizada</span>
+        </div>
+
+        <div class="number-item">
+          <strong>03+</strong>
+          <span>frentes de recreação</span>
+        </div>
+
+        <div class="number-item">
+          <strong>08+</strong>
+          <span>formatos de atividades</span>
+        </div>
+
+        <div class="number-item">
+          <strong>100%</strong>
+          <span>foco na experiência das crianças</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+
     <section class="cta">
+
       <div class="container">
+
         <div class="cta-box">
-          <div class="cta-content">
-            <small>Vamos fazer sua festa acontecer?</small>
-            <h2>A diversão começa aqui.</h2>
-            <p>Conte para a gente como será sua festa e vamos pensar juntos na melhor experiência de recreação.</p>
+
+          <div class="cta-copy reveal">
+
+            <div class="eyebrow">
+              Vamos planejar?
+            </div>
+
+            <h2 class="cta-title">
+              Sua festa merece uma experiência à altura.
+            </h2>
+
+            <p>
+              Conte para a Star como será seu evento. A partir das
+              informações da festa, podemos pensar juntos na melhor
+              proposta de recreação.
+            </p>
+
           </div>
-          <a href="#contato" class="btn btn-yellow">Solicitar orçamento <i class="fa-solid fa-arrow-right"></i></a>
+
+          <div class="cta-action reveal">
+
+            <a href="#contato" class="btn btn-yellow">
+              Solicitar orçamento
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- ===== CONTATO ===== -->
+
+    <!-- =====================================================
+         CONTATO
+    ====================================================== -->
+
     <section class="contact" id="contato">
+
       <div class="container contact-grid">
-        <div class="contact-info">
-          <h2>Vamos conversar?</h2>
-          <p>Envie os detalhes da sua festa. Entraremos em contato para entender o que você precisa e preparar uma proposta.</p>
-          <div class="contact-item"><i class="fa-brands fa-whatsapp"></i><div><strong>WhatsApp</strong><span>(43) 9200-36581</span></div></div>
-          <div class="contact-item"><i class="fa-solid fa-location-dot"></i><div><strong>Atendimento</strong><span>Londrina e região</span></div></div>
-          <div class="contact-item"><i class="fa-solid fa-calendar-days"></i><div><strong>Eventos</strong><span>Festas e comemorações</span></div></div>
+
+        <div class="contact-info reveal">
+
+          <div class="eyebrow">
+            Entre em contato
+          </div>
+
+          <h2>
+            Vamos criar essa festa juntos?
+          </h2>
+
+          <p>
+            Envie as informações do evento e fale diretamente com
+            a Star pelo WhatsApp.
+          </p>
+
+          <div class="contact-details">
+
+            <div class="contact-detail">
+
+              <div class="contact-detail-icon">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+
+              <div>
+                <strong>WhatsApp</strong>
+                <span>(43) 9200-36581</span>
+              </div>
+
+            </div>
+
+            <div class="contact-detail">
+
+              <div class="contact-detail-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+
+              <div>
+                <strong>Atendimento</strong>
+                <span>Londrina e região</span>
+              </div>
+
+            </div>
+
+            <div class="contact-detail">
+
+              <div class="contact-detail-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+              </div>
+
+              <div>
+                <strong>Eventos</strong>
+                <span>Festas e comemorações</span>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
-        <div class="contact-form">
-          <h3>Solicite seu orçamento</h3>
+
+
+        <div class="form-box reveal">
+
+          <h2>Solicite seu orçamento</h2>
+
+          <p>
+            Preencha os dados abaixo e enviaremos as informações
+            diretamente para o WhatsApp.
+          </p>
+
           <form id="budgetForm">
+
             <div class="form-grid">
+
               <div class="field">
                 <label for="nome">Nome</label>
-                <input type="text" id="nome" placeholder="Seu nome" required>
+                <input
+                  type="text"
+                  id="nome"
+                  placeholder="Seu nome"
+                  required
+                >
               </div>
+
               <div class="field">
                 <label for="telefone">WhatsApp</label>
-                <input type="tel" id="telefone" placeholder="(43) 99999-9999" required>
+                <input
+                  type="tel"
+                  id="telefone"
+                  placeholder="(43) 99999-9999"
+                  required
+                >
               </div>
+
               <div class="field">
                 <label for="tipo">Tipo de evento</label>
+
                 <select id="tipo" required>
                   <option value="">Selecione</option>
                   <option>Aniversário infantil</option>
@@ -1114,113 +2405,332 @@
                   <option>Evento corporativo</option>
                   <option>Outro evento</option>
                 </select>
+
               </div>
+
               <div class="field">
-                <label for="convidados">Quantidade de crianças</label>
-                <input type="number" id="convidados" min="1" placeholder="Ex.: 20" required>
+                <label for="convidados">
+                  Quantidade de crianças
+                </label>
+
+                <input
+                  type="number"
+                  id="convidados"
+                  min="1"
+                  placeholder="Ex.: 20"
+                  required
+                >
               </div>
+
               <div class="field full">
-                <label for="mensagem">Conte um pouco sobre a festa</label>
-                <textarea id="mensagem" placeholder="Data, local, idade das crianças e outras informações..."></textarea>
+
+                <label for="mensagem">
+                  Conte um pouco sobre a festa
+                </label>
+
+                <textarea
+                  id="mensagem"
+                  placeholder="Data, local, idade das crianças e outras informações..."
+                ></textarea>
+
               </div>
+
             </div>
-            <button type="submit" class="btn btn-primary form-submit"><i class="fa-brands fa-whatsapp"></i> Enviar pelo WhatsApp</button>
+
+            <button
+              type="submit"
+              class="btn btn-primary form-submit"
+            >
+              Enviar pelo WhatsApp
+              <i class="fa-brands fa-whatsapp"></i>
+            </button>
+
           </form>
+
         </div>
+
       </div>
+
     </section>
+
   </main>
 
-  <!-- ===== FOOTER ===== -->
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
   <footer>
+
     <div class="container">
-      <div class="footer-top">
+
+      <div class="footer-grid">
+
         <div class="footer-brand">
-          <a href="#inicio" class="logo"><div class="logo-star"><i class="fa-solid fa-star"></i></div>Star <span>Recreação</span></a>
-          <p>Recreação infantil para transformar festas e eventos em momentos especiais, divertidos e cheios de boas lembranças.</p>
+
+          <a href="#inicio" class="logo">
+            <span class="logo-mark">
+              <i class="fa-solid fa-star"></i>
+            </span>
+            Star <strong>Recreação</strong>
+          </a>
+
+          <p>
+            Recreação infantil para transformar festas e eventos
+            em experiências divertidas, organizadas e cheias de
+            boas lembranças.
+          </p>
+
         </div>
-        <div class="footer-links">
-          <div><h4>Navegação</h4><a href="#inicio">Início</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#atividades">Atividades</a><a href="#diferenciais">Diferenciais</a></div>
-          <div><h4>Contato</h4><a href="#contato">Orçamento</a><a href="https://wa.me/5543920036581" target="_blank">WhatsApp</a></div>
+
+
+        <div class="footer-column">
+
+          <h4>Navegação</h4>
+
+          <a href="#inicio">Início</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#atividades">Atividades</a>
+          <a href="#diferenciais">Diferenciais</a>
+
         </div>
+
+
+        <div class="footer-column">
+
+          <h4>Contato</h4>
+
+          <a href="#contato">Solicitar orçamento</a>
+
+          <a
+            href="https://wa.me/5543920036581"
+            target="_blank"
+            rel="noopener"
+          >
+            WhatsApp
+          </a>
+
+          <a href="#contato">
+            Londrina e região
+          </a>
+
+        </div>
+
       </div>
+
+
       <div class="footer-bottom">
-        <span>© 2026 Star Recreação. Todos os direitos reservados.</span>
-        <span>Diversão que deixa memórias.</span>
+
+        <span>
+          © 2026 Star Recreação. Todos os direitos reservados.
+        </span>
+
+        <span>
+          Diversão que deixa memórias.
+        </span>
+
       </div>
+
     </div>
+
   </footer>
 
-  <!-- ===== WHATSAPP ===== -->
-  <a class="whatsapp" href="https://wa.me/5543920036581" target="_blank" aria-label="Falar com a Star Recreação pelo WhatsApp">
+
+  <!-- =======================================================
+       WHATSAPP
+  ======================================================== -->
+
+  <a
+    class="whatsapp"
+    href="https://wa.me/5543920036581"
+    target="_blank"
+    rel="noopener"
+    aria-label="Falar com a Star Recreação pelo WhatsApp"
+  >
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- ===== BACK TO TOP ===== -->
-  <a href="#inicio" class="top" id="topBtn" aria-label="Voltar ao topo">
+
+  <!-- =======================================================
+       BACK TO TOP
+  ======================================================== -->
+
+  <a
+    href="#inicio"
+    class="back-top"
+    id="backTop"
+    aria-label="Voltar ao topo"
+  >
     <i class="fa-solid fa-arrow-up"></i>
   </a>
 
-  <!-- ===== SCRIPTS ===== -->
+
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
+
   <script>
-    // Menu mobile
-    const mobileBtn = document.getElementById("mobileBtn");
-    const menu = document.getElementById("menu");
-    mobileBtn.addEventListener("click", () => {
-      menu.classList.toggle("active");
-      const icon = mobileBtn.querySelector("i");
-      if (menu.classList.contains("active")) {
+
+    /* ---------------------------------------------------------
+       MENU MOBILE
+    --------------------------------------------------------- */
+
+    const mobileToggle = document.getElementById("mobileToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    mobileToggle.addEventListener("click", () => {
+
+      navMenu.classList.toggle("active");
+
+      const icon = mobileToggle.querySelector("i");
+
+      if (navMenu.classList.contains("active")) {
+
         icon.classList.remove("fa-bars");
         icon.classList.add("fa-xmark");
+
       } else {
+
         icon.classList.remove("fa-xmark");
         icon.classList.add("fa-bars");
+
       }
+
     });
-    document.querySelectorAll(".menu a").forEach(link => {
+
+
+    document.querySelectorAll(".nav-menu a").forEach(link => {
+
       link.addEventListener("click", () => {
-        menu.classList.remove("active");
-        const icon = mobileBtn.querySelector("i");
+
+        navMenu.classList.remove("active");
+
+        const icon = mobileToggle.querySelector("i");
+
         icon.classList.remove("fa-xmark");
         icon.classList.add("fa-bars");
+
       });
+
     });
 
-    // Back to top
-    const topBtn = document.getElementById("topBtn");
+
+    /* ---------------------------------------------------------
+       HEADER AO ROLAR
+    --------------------------------------------------------- */
+
+    const header = document.getElementById("header");
+
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 500) topBtn.classList.add("show");
-      else topBtn.classList.remove("show");
+
+      if (window.scrollY > 30) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+
     });
 
-    // Formulário WhatsApp
-    document.getElementById("budgetForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-      const nome = document.getElementById("nome").value;
-      const telefone = document.getElementById("telefone").value;
-      const tipo = document.getElementById("tipo").value;
-      const convidados = document.getElementById("convidados").value;
-      const mensagem = document.getElementById("mensagem").value;
-      const texto = "Olá, Star Recreação!%0A%0A*Gostaria de solicitar um orçamento.*%0A%0A*Nome:* " + nome + "%0A*WhatsApp:* " + telefone + "%0A*Tipo de evento:* " + tipo + "%0A*Quantidade de crianças:* " + convidados + "%0A*Detalhes:* " + mensagem;
-      window.open("https://wa.me/5543920036581?text=" + texto, "_blank");
+
+    /* ---------------------------------------------------------
+       BACK TO TOP
+    --------------------------------------------------------- */
+
+    const backTop = document.getElementById("backTop");
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 600) {
+        backTop.classList.add("show");
+      } else {
+        backTop.classList.remove("show");
+      }
+
     });
 
-    // Animação cards
-    const cards = document.querySelectorAll(".service-card, .activity, .diff-card");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = "1";
-          entry.target.style.transform = "translateY(0)";
-        }
+
+    /* ---------------------------------------------------------
+       REVEAL
+    --------------------------------------------------------- */
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+
+    revealElements.forEach(element => {
+      observer.observe(element);
+    });
+
+
+    /* ---------------------------------------------------------
+       FORMULÁRIO WHATSAPP
+    --------------------------------------------------------- */
+
+    document
+      .getElementById("budgetForm")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const nome =
+          document.getElementById("nome").value.trim();
+
+        const telefone =
+          document.getElementById("telefone").value.trim();
+
+        const tipo =
+          document.getElementById("tipo").value;
+
+        const convidados =
+          document.getElementById("convidados").value;
+
+        const mensagem =
+          document.getElementById("mensagem").value.trim();
+
+
+        const texto = [
+          "Olá, Star Recreação!",
+          "",
+          "Gostaria de solicitar um orçamento.",
+          "",
+          "Nome: " + nome,
+          "WhatsApp: " + telefone,
+          "Tipo de evento: " + tipo,
+          "Quantidade de crianças: " + convidados,
+          "Detalhes: " + mensagem
+        ].join("\n");
+
+
+        const url =
+          "https://wa.me/5543920036581?text=" +
+          encodeURIComponent(texto);
+
+
+        window.open(url, "_blank");
+
       });
-    }, { threshold: 0.12 });
-    cards.forEach(card => {
-      card.style.opacity = "0";
-      card.style.transform = "translateY(20px)";
-      card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-      observer.observe(card);
-    });
+
   </script>
 
 </body>
