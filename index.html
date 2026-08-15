@@ -3,45 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Star Recreação | Diversão que transforma momentos</title>
-  <meta name="description" content="Star Recreação — recreação infantil para festas e eventos em Londrina e região. Diversão, criatividade e experiências inesquecíveis.">
-  <!-- Fonte -->
+  <title>Star Recreação | A diversão que transforma festas</title>
+  <meta name="description" content="Star Recreação — recreação infantil com criatividade e alegria para festas e eventos em Londrina e região.">
+  <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <!-- Ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
+    /* ===== RESET E BASE ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
     body {
       font-family: "Nunito", sans-serif;
       background: #ffffff;
       color: #14233b;
       overflow-x: hidden;
     }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
     .container {
-      width: min(1180px, 92%);
+      width: min(1200px, 92%);
       margin: 0 auto;
     }
 
-    /* Cores e variáveis */
+    /* ===== CORES ===== */
     :root {
       --navy: #071b3a;
       --navy-2: #0b2854;
@@ -54,186 +40,94 @@
       --yellow: #ffd447;
       --orange: #ff9d35;
       --green: #20b66f;
+      --pink: #ff6b9d;
       --border: #e4edf7;
       --shadow: 0 20px 55px rgba(7, 27, 58, 0.12);
-      --radius: 24px;
+      --radius: 28px;
     }
 
-    /* HEADER */
+    /* ===== HEADER ===== */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(15px);
-      border-bottom: 1px solid rgba(7, 27, 58, 0.06);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(7, 27, 58, 0.05);
+      transition: 0.3s;
     }
-
     .nav {
-      height: 78px;
+      height: 80px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-
     .logo {
       display: flex;
       align-items: center;
       gap: 10px;
       font-family: "Baloo 2", sans-serif;
-      font-size: 27px;
+      font-size: 28px;
       font-weight: 800;
       color: var(--navy);
     }
-
     .logo-star {
-      width: 43px;
-      height: 43px;
-      border-radius: 13px;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
       background: var(--navy);
       color: var(--yellow);
       display: grid;
       place-items: center;
-      font-size: 20px;
-      box-shadow: 0 8px 18px rgba(7, 27, 58, 0.18);
+      font-size: 22px;
+      box-shadow: 0 8px 18px rgba(7, 27, 58, 0.15);
     }
-
-    .logo span {
-      color: var(--blue);
-    }
-
+    .logo span { color: var(--blue); }
     .menu {
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 32px;
       list-style: none;
     }
-
     .menu a {
       font-size: 15px;
       font-weight: 800;
       color: var(--navy);
       transition: 0.3s;
     }
-
-    .menu a:hover {
-      color: var(--blue);
-    }
-
+    .menu a:hover { color: var(--blue); }
     .nav-button {
       background: var(--navy);
       color: white !important;
-      padding: 12px 20px;
+      padding: 12px 24px;
       border-radius: 50px;
       transition: 0.3s;
     }
-
     .nav-button:hover {
       background: var(--blue);
       transform: translateY(-2px);
     }
-
     .mobile-btn {
       display: none;
       border: 0;
       background: var(--navy);
       color: white;
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      font-size: 18px;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      font-size: 20px;
       cursor: pointer;
     }
 
-    /* HERO */
-    .hero {
-      min-height: 720px;
-      padding-top: 120px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      background: radial-gradient(circle at 85% 20%, rgba(60, 145, 242, 0.15), transparent 30%), linear-gradient(135deg, #f7fbff 0%, #ffffff 60%);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 360px;
-      height: 360px;
-      border: 35px solid rgba(255, 212, 71, 0.12);
-      border-radius: 50%;
-      right: -100px;
-      bottom: -100px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      align-items: center;
-      gap: 50px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-content {
-      animation: fadeUp 0.8s ease;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      background: #eaf4ff;
-      color: var(--blue);
-      border: 1px solid #d7eaff;
-      padding: 9px 15px;
-      border-radius: 50px;
-      font-size: 13px;
-      font-weight: 900;
-      margin-bottom: 20px;
-    }
-
-    .tag i {
-      font-size: 12px;
-    }
-
-    h1 {
-      font-family: "Baloo 2", sans-serif;
-      font-size: clamp(48px, 6vw, 78px);
-      line-height: 0.96;
-      color: var(--navy);
-      font-weight: 800;
-      margin-bottom: 24px;
-      letter-spacing: -2px;
-    }
-
-    h1 span {
-      color: var(--blue);
-    }
-
-    .hero-text {
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.7;
-      max-width: 590px;
-      margin-bottom: 30px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
+    /* ===== BOTÕES ===== */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 15px 23px;
+      gap: 12px;
+      padding: 16px 28px;
       border-radius: 50px;
       font-weight: 900;
       font-size: 15px;
@@ -241,232 +135,266 @@
       cursor: pointer;
       border: 0;
     }
-
     .btn-primary {
       background: var(--navy);
       color: white;
       box-shadow: 0 12px 25px rgba(7, 27, 58, 0.2);
     }
-
     .btn-primary:hover {
       background: var(--blue);
       transform: translateY(-3px);
     }
-
     .btn-outline {
       border: 2px solid var(--navy);
       color: var(--navy);
-      background: white;
+      background: transparent;
     }
-
     .btn-outline:hover {
       background: var(--navy);
       color: white;
     }
+    .btn-yellow {
+      background: var(--yellow);
+      color: var(--navy);
+    }
+    .btn-yellow:hover {
+      transform: translateY(-3px) scale(1.02);
+      background: white;
+    }
+    .btn-pink {
+      background: var(--pink);
+      color: white;
+    }
+    .btn-pink:hover {
+      transform: translateY(-3px);
+      background: #e0558a;
+    }
 
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 760px;
+      padding-top: 130px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 80% 30%, rgba(60, 145, 242, 0.12), transparent 40%),
+                  linear-gradient(135deg, #f7fbff 0%, #ffffff 60%);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border: 45px solid rgba(255, 212, 71, 0.08);
+      border-radius: 50%;
+      right: -150px;
+      bottom: -150px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 50px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-content { animation: fadeUp 0.8s ease; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #eaf4ff;
+      color: var(--blue);
+      border: 1px solid #d7eaff;
+      padding: 10px 18px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 22px;
+    }
+    h1 {
+      font-family: "Baloo 2", sans-serif;
+      font-size: clamp(48px, 6.5vw, 82px);
+      line-height: 0.95;
+      color: var(--navy);
+      font-weight: 800;
+      margin-bottom: 22px;
+      letter-spacing: -2px;
+    }
+    h1 span { color: var(--blue); }
+    .hero-text {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 560px;
+      margin-bottom: 32px;
+    }
+    .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
     .hero-mascot {
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
-      animation: floating 4s ease-in-out infinite;
+      animation: floating 5s ease-in-out infinite;
     }
-
-    .mascot-circle {
+    .mascot-card {
       width: 480px;
-      height: 480px;
       max-width: 100%;
-      border-radius: 50%;
-      background: linear-gradient(145deg, #e9f5ff, #ffffff);
+      border-radius: 40px 40px 40px 40px;
+      background: linear-gradient(145deg, #ffffff, #eef6ff);
       box-shadow: var(--shadow);
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      border: 10px solid white;
+      padding: 20px 20px 0 20px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
       position: relative;
     }
-
-    .mascot-circle::before {
-      content: "";
+    .mascot-card::before {
+      content: "✨";
       position: absolute;
-      width: 90px;
-      height: 90px;
-      background: var(--yellow);
-      border-radius: 50%;
-      top: 30px;
-      right: 40px;
-      opacity: 0.8;
+      font-size: 40px;
+      top: -15px;
+      left: -15px;
+      animation: sparkle 3s infinite;
     }
-
-    .mascot-circle::after {
-      content: "";
+    .mascot-card::after {
+      content: "🎈";
       position: absolute;
-      width: 45px;
-      height: 45px;
-      background: var(--blue-light);
-      border-radius: 50%;
-      bottom: 70px;
-      left: 25px;
-      opacity: 0.7;
+      font-size: 35px;
+      bottom: -10px;
+      right: -10px;
+      animation: sparkle 4s infinite 1s;
     }
-
-    .mascot {
-      position: relative;
-      z-index: 2;
-      width: 88%;
-      max-height: 450px;
+    .mascot-card img {
+      width: 100%;
+      height: auto;
       object-fit: contain;
-      object-position: bottom;
+      max-height: 420px;
+      display: block;
+      margin: 0 auto;
     }
 
-    /* INFO STRIP */
+    /* ===== INFO STRIP ===== */
     .info-strip {
       background: var(--navy);
       color: white;
       position: relative;
       z-index: 10;
     }
-
     .info-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
     }
-
     .info-item {
-      padding: 25px;
+      padding: 28px 20px;
       display: flex;
       align-items: center;
-      gap: 15px;
-      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      gap: 18px;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
     }
-
-    .info-item:last-child {
-      border: 0;
-    }
-
+    .info-item:last-child { border: 0; }
     .info-icon {
-      width: 48px;
-      height: 48px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 14px;
+      width: 52px;
+      height: 52px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
       display: grid;
       place-items: center;
       color: var(--yellow);
-      font-size: 19px;
+      font-size: 22px;
       flex-shrink: 0;
     }
-
     .info-item strong {
       display: block;
-      font-size: 15px;
-      margin-bottom: 3px;
+      font-size: 16px;
+      margin-bottom: 4px;
     }
-
     .info-item small {
       color: #b8c9df;
       font-size: 12px;
     }
 
-    /* SECTIONS */
-    section {
-      padding: 100px 0;
-    }
-
+    /* ===== SEÇÕES ===== */
+    section { padding: 100px 0; }
     .section-head {
-      max-width: 680px;
+      max-width: 700px;
       margin: 0 auto 55px;
       text-align: center;
     }
-
     .section-label {
       color: var(--blue);
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       font-weight: 900;
       font-size: 12px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
-
     .section-head h2 {
       font-family: "Baloo 2", sans-serif;
       color: var(--navy);
-      font-size: clamp(35px, 5vw, 52px);
+      font-size: clamp(35px, 5vw, 54px);
       line-height: 1;
-      margin-bottom: 15px;
+      margin-bottom: 16px;
     }
-
     .section-head p {
       color: var(--muted);
       line-height: 1.7;
       font-size: 16px;
     }
 
-    /* SERVIÇOS */
-    .services {
-      background: #f8fbff;
-    }
-
+    /* ===== SERVIÇOS ===== */
+    .services { background: #f8fbff; }
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 25px;
     }
-
     .service-card {
       background: white;
-      padding: 30px;
-      border: 1px solid var(--border);
+      padding: 32px 28px;
       border-radius: var(--radius);
+      border: 1px solid var(--border);
       transition: 0.35s;
       position: relative;
       overflow: hidden;
     }
-
     .service-card::after {
       content: "";
       position: absolute;
-      width: 90px;
-      height: 90px;
+      width: 120px;
+      height: 120px;
       background: #eaf5ff;
       border-radius: 50%;
-      right: -30px;
-      bottom: -30px;
-      transition: 0.35s;
+      right: -50px;
+      bottom: -50px;
+      transition: 0.4s;
     }
-
     .service-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-10px);
       box-shadow: var(--shadow);
       border-color: transparent;
     }
-
-    .service-card:hover::after {
-      transform: scale(1.5);
-    }
-
+    .service-card:hover::after { transform: scale(1.6); }
     .service-icon {
-      width: 62px;
-      height: 62px;
-      border-radius: 18px;
+      width: 68px;
+      height: 68px;
+      border-radius: 20px;
       background: var(--navy);
       color: var(--yellow);
       display: grid;
       place-items: center;
-      font-size: 23px;
-      margin-bottom: 22px;
+      font-size: 26px;
+      margin-bottom: 24px;
       position: relative;
       z-index: 2;
     }
-
     .service-card h3 {
       font-family: "Baloo 2", sans-serif;
-      font-size: 25px;
+      font-size: 26px;
       color: var(--navy);
       margin-bottom: 10px;
       position: relative;
       z-index: 2;
     }
-
     .service-card p {
       color: var(--muted);
       line-height: 1.65;
@@ -475,47 +403,33 @@
       z-index: 2;
     }
 
-    /* SOBRE */
+    /* ===== SOBRE COM MASCOTE 2 ===== */
     .about-grid {
       display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 70px;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 60px;
       align-items: center;
     }
-
     .about-image {
-      background: linear-gradient(145deg, #eaf5ff, #ffffff);
-      border-radius: 35px;
-      padding: 25px;
+      background: linear-gradient(145deg, #fff5f5, #ffffff);
+      border-radius: 40px;
+      padding: 30px 30px 10px 30px;
       position: relative;
-      min-height: 480px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+      border: 1px solid #ffe8e8;
+      text-align: center;
     }
-
     .about-image img {
-      height: 440px;
-      object-fit: contain;
-      position: relative;
-      z-index: 2;
+      max-height: 440px;
+      width: auto;
+      margin: 0 auto;
     }
-
-    .about-decoration {
+    .about-image .emoji-deco {
+      font-size: 48px;
       position: absolute;
-      width: 180px;
-      height: 180px;
-      border: 25px solid rgba(255, 212, 71, 0.25);
-      border-radius: 50%;
-      top: -70px;
-      left: -60px;
     }
-
-    .about-content .section-label {
-      text-align: left;
-    }
-
+    .about-image .emoji-deco:first-child { top: -20px; left: -10px; animation: sparkle 3s infinite; }
+    .about-image .emoji-deco:last-child { bottom: -10px; right: -10px; animation: sparkle 4s infinite 1.5s; }
+    .about-content .section-label { text-align: left; }
     .about-content h2 {
       font-family: "Baloo 2", sans-serif;
       font-size: clamp(36px, 5vw, 52px);
@@ -523,171 +437,159 @@
       color: var(--navy);
       margin-bottom: 20px;
     }
-
-    .about-content h2 span {
-      color: var(--blue);
-    }
-
+    .about-content h2 span { color: var(--blue); }
     .about-content > p {
       color: var(--muted);
       line-height: 1.8;
-      margin-bottom: 25px;
+      margin-bottom: 28px;
     }
-
     .check-list {
       display: grid;
-      gap: 13px;
-      margin-bottom: 30px;
+      gap: 14px;
+      margin-bottom: 32px;
     }
-
     .check {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       font-weight: 800;
       color: var(--navy);
       font-size: 14px;
     }
-
     .check i {
-      width: 27px;
-      height: 27px;
+      width: 28px;
+      height: 28px;
       background: #e8f8f1;
       color: var(--green);
       border-radius: 50%;
       display: grid;
       place-items: center;
-      font-size: 11px;
+      font-size: 12px;
     }
 
-    /* ATIVIDADES */
+    /* ===== ATIVIDADES ===== */
     .activities {
       background: var(--navy);
       color: white;
       overflow: hidden;
       position: relative;
     }
-
     .activities::before {
       content: "";
       position: absolute;
-      width: 500px;
-      height: 500px;
-      border: 80px solid rgba(255, 255, 255, 0.025);
+      width: 600px;
+      height: 600px;
+      border: 100px solid rgba(255, 255, 255, 0.02);
       border-radius: 50%;
-      left: -200px;
-      top: -200px;
+      left: -250px;
+      top: -250px;
     }
-
-    .activities .section-head h2 {
-      color: white;
-    }
-
-    .activities .section-head p {
-      color: #b9c8dc;
-    }
-
+    .activities .section-head h2 { color: white; }
+    .activities .section-head p { color: #b9c8dc; }
     .activity-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+      gap: 20px;
       position: relative;
       z-index: 2;
     }
-
     .activity {
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 22px;
-      padding: 25px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 24px;
+      padding: 28px 18px;
       text-align: center;
       transition: 0.3s;
+      backdrop-filter: blur(4px);
     }
-
     .activity:hover {
       background: rgba(255, 255, 255, 0.1);
-      transform: translateY(-5px);
+      transform: translateY(-6px);
     }
-
     .activity i {
-      font-size: 26px;
+      font-size: 30px;
       color: var(--yellow);
-      margin-bottom: 15px;
+      margin-bottom: 16px;
     }
-
     .activity h3 {
       font-family: "Baloo 2", sans-serif;
-      font-size: 21px;
-      margin-bottom: 5px;
+      font-size: 22px;
+      margin-bottom: 6px;
     }
-
     .activity p {
       color: #aebed3;
       font-size: 13px;
       line-height: 1.5;
     }
 
-    /* DIFERENCIAIS */
-    .differentials {
-      background: #f8fbff;
+    /* ===== DIFERENCIAIS COM MASCOTE 3 ===== */
+    .differentials { background: #f8fbff; }
+    .diff-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 0.8fr;
+      gap: 50px;
+      align-items: center;
     }
-
     .diff-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 20px;
     }
-
     .diff-card {
       background: white;
       border: 1px solid var(--border);
-      padding: 27px;
-      border-radius: 22px;
+      padding: 28px;
+      border-radius: 24px;
       display: flex;
       gap: 18px;
       transition: 0.3s;
     }
-
     .diff-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow);
     }
-
     .diff-number {
-      width: 48px;
-      height: 48px;
-      border-radius: 15px;
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
       background: var(--sky);
       color: var(--blue);
       display: grid;
       place-items: center;
       font-family: "Baloo 2", sans-serif;
       font-weight: 800;
-      font-size: 20px;
+      font-size: 22px;
       flex-shrink: 0;
     }
-
     .diff-card h3 {
       color: var(--navy);
       font-size: 17px;
       margin-bottom: 6px;
     }
-
     .diff-card p {
       color: var(--muted);
       font-size: 13px;
       line-height: 1.6;
     }
-
-    /* CTA */
-    .cta {
-      padding: 80px 0;
+    .diff-mascot {
+      background: linear-gradient(145deg, #f5faff, #ffffff);
+      border-radius: 40px;
+      padding: 20px 20px 0 20px;
+      border: 1px solid #e4edf7;
+      text-align: center;
+    }
+    .diff-mascot img {
+      max-height: 380px;
+      width: auto;
+      margin: 0 auto;
     }
 
+    /* ===== CTA ===== */
+    .cta { padding: 80px 0; }
     .cta-box {
       background: linear-gradient(125deg, var(--navy), var(--navy-2));
-      border-radius: 35px;
-      padding: 60px;
+      border-radius: 40px;
+      padding: 65px 55px;
       color: white;
       display: flex;
       align-items: center;
@@ -696,223 +598,162 @@
       position: relative;
       overflow: hidden;
     }
-
     .cta-box::after {
-      content: "";
+      content: "🎉";
       position: absolute;
-      width: 260px;
-      height: 260px;
-      border: 45px solid rgba(255, 255, 255, 0.04);
-      border-radius: 50%;
-      right: -70px;
-      top: -100px;
+      font-size: 120px;
+      right: 30px;
+      bottom: -20px;
+      opacity: 0.1;
     }
-
-    .cta-content {
-      position: relative;
-      z-index: 2;
-    }
-
+    .cta-content { position: relative; z-index: 2; }
     .cta-content small {
       color: var(--yellow);
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 2px;
     }
-
     .cta-content h2 {
       font-family: "Baloo 2", sans-serif;
       font-size: clamp(32px, 4vw, 48px);
       line-height: 1;
-      margin: 10px 0;
+      margin: 12px 0 10px;
     }
-
     .cta-content p {
       color: #b8c9df;
-      max-width: 600px;
+      max-width: 550px;
       line-height: 1.6;
     }
+    .btn-yellow { background: var(--yellow); color: var(--navy); }
+    .btn-yellow:hover { background: white; transform: translateY(-3px); }
 
-    .btn-yellow {
-      background: var(--yellow);
-      color: var(--navy);
-      position: relative;
-      z-index: 2;
-      white-space: nowrap;
-    }
-
-    .btn-yellow:hover {
-      transform: translateY(-3px) scale(1.02);
-      background: white;
-    }
-
-    /* CONTATO */
-    .contact {
-      background: #f8fbff;
-    }
-
+    /* ===== CONTATO ===== */
+    .contact { background: #f8fbff; }
     .contact-grid {
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
       gap: 35px;
     }
-
     .contact-info {
       background: var(--navy);
       color: white;
-      border-radius: 28px;
-      padding: 35px;
+      border-radius: 30px;
+      padding: 40px;
     }
-
     .contact-info h2 {
       font-family: "Baloo 2", sans-serif;
-      font-size: 35px;
-      margin-bottom: 12px;
+      font-size: 36px;
+      margin-bottom: 14px;
     }
-
     .contact-info > p {
       color: #b8c9df;
       line-height: 1.6;
       margin-bottom: 30px;
     }
-
     .contact-item {
       display: flex;
-      gap: 15px;
-      margin-bottom: 22px;
+      gap: 16px;
+      margin-bottom: 24px;
     }
-
     .contact-item i {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       background: rgba(255, 255, 255, 0.08);
       color: var(--yellow);
       display: grid;
       place-items: center;
-      border-radius: 12px;
+      border-radius: 14px;
       flex-shrink: 0;
     }
-
     .contact-item strong {
       display: block;
       font-size: 14px;
       margin-bottom: 3px;
     }
-
-    .contact-item span {
-      color: #b8c9df;
-      font-size: 13px;
-    }
-
+    .contact-item span { color: #b8c9df; font-size: 13px; }
     .contact-form {
       background: white;
       border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 35px;
+      border-radius: 30px;
+      padding: 40px;
     }
-
     .contact-form h3 {
       font-family: "Baloo 2", sans-serif;
-      font-size: 30px;
+      font-size: 32px;
       color: var(--navy);
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
-
     .form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 15px;
+      gap: 16px;
     }
-
     .field {
       display: flex;
       flex-direction: column;
-      gap: 7px;
+      gap: 6px;
     }
-
-    .field.full {
-      grid-column: 1 / -1;
-    }
-
+    .field.full { grid-column: 1 / -1; }
     .field label {
       font-size: 12px;
       font-weight: 900;
       color: var(--navy);
     }
-
     .field input,
     .field textarea,
     .field select {
       width: 100%;
       border: 1px solid var(--border);
       background: #f9fbfe;
-      border-radius: 12px;
-      padding: 13px 14px;
+      border-radius: 14px;
+      padding: 14px 16px;
       font-family: inherit;
       outline: none;
       transition: 0.3s;
       color: var(--text);
     }
-
     .field input:focus,
     .field textarea:focus,
     .field select:focus {
       border-color: var(--blue);
       background: white;
-      box-shadow: 0 0 0 3px rgba(18, 101, 201, 0.08);
+      box-shadow: 0 0 0 4px rgba(18, 101, 201, 0.06);
     }
-
     .field textarea {
       height: 120px;
       resize: vertical;
     }
+    .form-submit { margin-top: 20px; width: 100%; }
 
-    .form-submit {
-      margin-top: 18px;
-      width: 100%;
-    }
-
-    /* FOOTER */
+    /* ===== FOOTER ===== */
     footer {
       background: #04142d;
       color: white;
-      padding: 45px 0 25px;
+      padding: 50px 0 30px;
     }
-
     .footer-top {
       display: flex;
       justify-content: space-between;
       gap: 40px;
-      padding-bottom: 35px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
-
-    .footer-brand {
-      max-width: 400px;
-    }
-
-    .footer-brand .logo {
-      color: white;
-      margin-bottom: 12px;
-    }
-
+    .footer-brand { max-width: 420px; }
+    .footer-brand .logo { color: white; margin-bottom: 14px; }
     .footer-brand p {
       color: #94a8c1;
       font-size: 13px;
       line-height: 1.7;
     }
-
     .footer-links {
       display: flex;
-      gap: 45px;
+      gap: 50px;
     }
-
     .footer-links h4 {
       font-size: 13px;
-      margin-bottom: 15px;
+      margin-bottom: 16px;
       color: var(--yellow);
     }
-
     .footer-links a {
       display: block;
       color: #a7b8ce;
@@ -920,13 +761,9 @@
       margin-bottom: 10px;
       transition: 0.3s;
     }
-
-    .footer-links a:hover {
-      color: white;
-    }
-
+    .footer-links a:hover { color: white; }
     .footer-bottom {
-      padding-top: 22px;
+      padding-top: 25px;
       display: flex;
       justify-content: space-between;
       gap: 20px;
@@ -934,287 +771,133 @@
       font-size: 11px;
     }
 
-    /* WHATSAPP */
+    /* ===== WHATSAPP E TOPO ===== */
     .whatsapp {
       position: fixed;
       right: 22px;
       bottom: 22px;
-      width: 60px;
-      height: 60px;
+      width: 62px;
+      height: 62px;
       border-radius: 50%;
       background: #20b66f;
       color: white;
       display: grid;
       place-items: center;
-      font-size: 27px;
+      font-size: 30px;
       z-index: 999;
-      box-shadow: 0 10px 30px rgba(32, 182, 111, 0.3);
+      box-shadow: 0 10px 30px rgba(32, 182, 111, 0.35);
       transition: 0.3s;
     }
-
-    .whatsapp:hover {
-      transform: scale(1.08);
-    }
-
+    .whatsapp:hover { transform: scale(1.08); }
     .whatsapp::before {
       content: "";
       position: absolute;
-      inset: -5px;
+      inset: -6px;
       border-radius: 50%;
       border: 2px solid rgba(32, 182, 111, 0.25);
       animation: pulse 2s infinite;
     }
-
-    /* BACK TO TOP */
     .top {
       position: fixed;
       right: 25px;
-      bottom: 94px;
-      width: 43px;
-      height: 43px;
-      border-radius: 13px;
+      bottom: 96px;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
       background: white;
       color: var(--navy);
       border: 1px solid var(--border);
       display: grid;
       place-items: center;
       z-index: 998;
-      box-shadow: 0 8px 25px rgba(7, 27, 58, 0.12);
+      box-shadow: 0 8px 25px rgba(7, 27, 58, 0.1);
       opacity: 0;
       pointer-events: none;
       transition: 0.3s;
     }
+    .top.show { opacity: 1; pointer-events: auto; }
 
-    .top.show {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    /* ANIMAÇÕES */
+    /* ===== ANIMAÇÕES ===== */
     @keyframes floating {
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-12px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
     }
-
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(25px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-
     @keyframes pulse {
-      0% {
-        transform: scale(0.9);
-        opacity: 1;
-      }
-      70% {
-        transform: scale(1.3);
-        opacity: 0;
-      }
-      100% {
-        transform: scale(1.3);
-        opacity: 0;
-      }
+      0% { transform: scale(0.9); opacity: 1; }
+      70% { transform: scale(1.4); opacity: 0; }
+      100% { transform: scale(1.4); opacity: 0; }
+    }
+    @keyframes sparkle {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.2) rotate(15deg); }
     }
 
-    /* RESPONSIVO */
-    @media (max-width: 950px) {
+    /* ===== RESPONSIVO ===== */
+    @media (max-width: 1050px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-text { margin-left: auto; margin-right: auto; }
+      .hero-buttons { justify-content: center; }
+      .hero-mascot { order: -1; }
+      .mascot-card { width: 380px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-content .section-label { text-align: center; }
+      .check-list { text-align: left; max-width: 400px; margin: 0 auto 30px; }
+      .diff-wrapper { grid-template-columns: 1fr; }
+      .diff-mascot { order: -1; max-width: 400px; margin: 0 auto; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .cta-box { flex-direction: column; text-align: center; padding: 45px 30px; }
+    }
+    @media (max-width: 850px) {
       .menu {
         position: absolute;
-        top: 78px;
+        top: 80px;
         left: 0;
         width: 100%;
         background: white;
         flex-direction: column;
-        padding: 25px;
-        gap: 20px;
+        padding: 30px;
+        gap: 22px;
         border-bottom: 1px solid var(--border);
         display: none;
       }
-
-      .menu.active {
-        display: flex;
-      }
-
-      .mobile-btn {
-        display: block;
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 140px 0 80px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .hero-text {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-buttons {
-        justify-content: center;
-      }
-
-      .hero-mascot {
-        order: -1;
-      }
-
-      .mascot-circle {
-        width: 380px;
-        height: 380px;
-      }
-
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .activity-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-image {
-        max-width: 500px;
-        margin: auto;
-      }
-
-      .about-content {
-        text-align: center;
-      }
-
-      .about-content .section-label {
-        text-align: center;
-      }
-
-      .check-list {
-        text-align: left;
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .cta-box {
-        flex-direction: column;
-        text-align: center;
-        padding: 45px 30px;
-      }
+      .menu.active { display: flex; }
+      .mobile-btn { display: block; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .activity-grid { grid-template-columns: repeat(2, 1fr); }
+      .diff-grid { grid-template-columns: 1fr; }
     }
-
-    @media (max-width: 650px) {
-      .nav {
-        height: 70px;
-      }
-
-      .logo {
-        font-size: 23px;
-      }
-
-      .logo-star {
-        width: 38px;
-        height: 38px;
-      }
-
-      .hero {
-        padding-top: 110px;
-      }
-
-      h1 {
-        font-size: 52px;
-      }
-
-      .hero-text {
-        font-size: 16px;
-      }
-
-      .mascot-circle {
-        width: 300px;
-        height: 300px;
-      }
-
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .info-item {
-        border-right: 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      section {
-        padding: 75px 0;
-      }
-
-      .services-grid,
-      .activity-grid,
-      .diff-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-image {
-        min-height: 350px;
-      }
-
-      .about-image img {
-        height: 320px;
-      }
-
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .field.full {
-        grid-column: auto;
-      }
-
-      .contact-info,
-      .contact-form {
-        padding: 25px;
-      }
-
-      .footer-top,
-      .footer-bottom {
-        flex-direction: column;
-      }
-
-      .footer-links {
-        gap: 30px;
-      }
-
-      .whatsapp {
-        width: 55px;
-        height: 55px;
-        right: 17px;
-        bottom: 17px;
-      }
-
-      .top {
-        right: 19px;
-        bottom: 83px;
-      }
+    @media (max-width: 600px) {
+      .nav { height: 70px; }
+      .logo { font-size: 22px; }
+      .logo-star { width: 38px; height: 38px; font-size: 18px; }
+      .hero { padding-top: 110px; min-height: auto; padding-bottom: 60px; }
+      h1 { font-size: 44px; }
+      .mascot-card { width: 300px; padding: 15px 15px 0 15px; }
+      .mascot-card img { max-height: 280px; }
+      .info-grid { grid-template-columns: 1fr; }
+      .info-item { border-right: 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      section { padding: 70px 0; }
+      .services-grid, .activity-grid { grid-template-columns: 1fr; }
+      .about-image img { max-height: 300px; }
+      .diff-mascot img { max-height: 280px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .contact-info, .contact-form { padding: 25px; }
+      .footer-top, .footer-bottom { flex-direction: column; }
+      .footer-links { gap: 30px; }
+      .whatsapp { width: 54px; height: 54px; right: 16px; bottom: 16px; font-size: 26px; }
+      .top { right: 18px; bottom: 82px; }
     }
   </style>
 </head>
 
 <body>
-  <!-- HEADER -->
+
+  <!-- ===== HEADER ===== -->
   <header>
     <div class="container nav">
       <a href="#inicio" class="logo">
@@ -1227,6 +910,7 @@
           <li><a href="#servicos">Serviços</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#atividades">Atividades</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
           <li><a href="#contato" class="nav-button">Solicitar orçamento</a></li>
         </ul>
       </nav>
@@ -1236,37 +920,37 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- ===== HERO ===== -->
   <main>
     <section class="hero" id="inicio">
       <div class="container hero-grid">
         <div class="hero-content">
-          <div class="tag"><i class="fa-solid fa-sparkles"></i> Recreação para momentos especiais</div>
+          <div class="tag"><i class="fa-solid fa-sparkles"></i> Recreação que encanta</div>
           <h1>A festa fica mais <span>divertida</span> com a Star.</h1>
-          <p class="hero-text">Transformamos festas e eventos em experiências inesquecíveis, com recreação planejada, brincadeiras envolventes e muita criatividade para as crianças aproveitarem cada momento.</p>
+          <p class="hero-text">Transformamos qualquer evento em uma experiência inesquecível com brincadeiras criativas, muita interação e um toque especial de alegria para as crianças.</p>
           <div class="hero-buttons">
             <a href="#contato" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Quero contratar</a>
             <a href="#servicos" class="btn btn-outline">Conhecer serviços</a>
           </div>
         </div>
         <div class="hero-mascot">
-          <div class="mascot-circle">
-            <img src="https://i.imgur.com/DUKDmgn.png" alt="Mascote Star Recreação" class="mascot">
+          <div class="mascot-card">
+            <img src="https://i.imgur.com/DSljpaB.png" alt="Mascote Star Recreação">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- INFO STRIP -->
+    <!-- ===== INFO STRIP ===== -->
     <div class="info-strip">
       <div class="container info-grid">
         <div class="info-item">
           <div class="info-icon"><i class="fa-solid fa-children"></i></div>
-          <div><strong>Recreação infantil</strong><small>Atividades pensadas para cada idade</small></div>
+          <div><strong>Recreação infantil</strong><small>Atividades para cada idade</small></div>
         </div>
         <div class="info-item">
           <div class="info-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-          <div><strong>Experiências especiais</strong><small>Criatividade em cada brincadeira</small></div>
+          <div><strong>Momentos especiais</strong><small>Criatividade em cada brincadeira</small></div>
         </div>
         <div class="info-item">
           <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
@@ -1275,11 +959,11 @@
       </div>
     </div>
 
-    <!-- SERVIÇOS -->
+    <!-- ===== SERVIÇOS ===== -->
     <section class="services" id="servicos">
       <div class="container">
         <div class="section-head">
-          <div class="section-label">O que fazemos</div>
+          <div class="section-label">Nossos serviços</div>
           <h2>Diversão planejada para sua festa</h2>
           <p>A Star Recreação leva atividades que estimulam a participação, a criatividade e a interação entre as crianças.</p>
         </div>
@@ -1287,22 +971,22 @@
           <article class="service-card">
             <div class="service-icon"><i class="fa-solid fa-people-group"></i></div>
             <h3>Recreação infantil</h3>
-            <p>Brincadeiras organizadas e dinâmicas para deixar as crianças envolvidas e aproveitando a festa.</p>
+            <p>Brincadeiras organizadas e dinâmicas para manter as crianças envolvidas e felizes durante toda a festa.</p>
           </article>
           <article class="service-card">
             <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
             <h3>Atividades criativas</h3>
-            <p>Propostas lúdicas que incentivam a criatividade e tornam a experiência ainda mais especial.</p>
+            <p>Oficinas e propostas lúdicas que incentivam a imaginação e tornam a experiência ainda mais especial.</p>
           </article>
           <article class="service-card">
             <div class="service-icon"><i class="fa-solid fa-gamepad"></i></div>
             <h3>Gincanas e jogos</h3>
-            <p>Dinâmicas divertidas para promover interação, movimento e participação durante o evento.</p>
+            <p>Dinâmicas divertidas para promover interação, movimento e participação em grupo.</p>
           </article>
           <article class="service-card">
             <div class="service-icon"><i class="fa-solid fa-cake-candles"></i></div>
             <h3>Festas infantis</h3>
-            <p>Recreação para aniversários, confraternizações e comemorações especiais.</p>
+            <p>Recreação completa para aniversários, confraternizações e comemorações especiais.</p>
           </article>
           <article class="service-card">
             <div class="service-icon"><i class="fa-solid fa-building"></i></div>
@@ -1312,35 +996,36 @@
           <article class="service-card">
             <div class="service-icon"><i class="fa-solid fa-star"></i></div>
             <h3>Experiência personalizada</h3>
-            <p>Podemos adaptar as atividades de acordo com o perfil da festa, faixa etária e espaço disponível.</p>
+            <p>Adaptamos as atividades de acordo com o perfil da festa, faixa etária e espaço disponível.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- SOBRE -->
+    <!-- ===== SOBRE ===== -->
     <section id="sobre">
       <div class="container about-grid">
         <div class="about-image">
-          <div class="about-decoration"></div>
-          <img src="https://i.imgur.com/DUKDmgn.png" alt="Mascote da Star Recreação">
+          <span class="emoji-deco">🌟</span>
+          <img src="https://i.imgur.com/Lzjm5cj.png" alt="Mascote Star Recreação">
+          <span class="emoji-deco">🎉</span>
         </div>
         <div class="about-content">
           <div class="section-label">Sobre a Star</div>
-          <h2>Mais do que brincar,<br><span>criar memórias.</span></h2>
+          <h2>Mais do que brincar, <br><span>criar memórias.</span></h2>
           <p>A Star Recreação nasceu para tornar os momentos de diversão ainda mais especiais. Nosso objetivo é proporcionar às crianças uma experiência alegre, segura e cheia de criatividade enquanto os adultos aproveitam a comemoração.</p>
           <div class="check-list">
             <div class="check"><i class="fa-solid fa-check"></i> Recreação planejada</div>
-            <div class="check"><i class="fa-solid fa-check"></i> Atividades adequadas para diferentes idades</div>
+            <div class="check"><i class="fa-solid fa-check"></i> Atividades para diferentes idades</div>
             <div class="check"><i class="fa-solid fa-check"></i> Organização e responsabilidade</div>
-            <div class="check"><i class="fa-solid fa-check"></i> Experiência divertida e acolhedora</div>
+            <div class="check"><i class="fa-solid fa-check"></i> Experiência acolhedora e divertida</div>
           </div>
           <a href="#contato" class="btn btn-primary">Fale com a Star <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </section>
 
-    <!-- ATIVIDADES -->
+    <!-- ===== ATIVIDADES ===== -->
     <section class="activities" id="atividades">
       <div class="container">
         <div class="section-head">
@@ -1349,36 +1034,41 @@
           <p>Montamos uma programação divertida para que as crianças tenham experiências diferentes durante o evento.</p>
         </div>
         <div class="activity-grid">
-          <div class="activity"><i class="fa-solid fa-flag-checkered"></i><h3>Gincanas</h3><p>Desafios divertidos e atividades em grupo.</p></div>
-          <div class="activity"><i class="fa-solid fa-puzzle-piece"></i><h3>Jogos</h3><p>Jogos recreativos para diferentes idades.</p></div>
-          <div class="activity"><i class="fa-solid fa-paintbrush"></i><h3>Oficinas</h3><p>Atividades criativas e momentos de criação.</p></div>
-          <div class="activity"><i class="fa-solid fa-person-running"></i><h3>Brincadeiras</h3><p>Movimento, interação e muita diversão.</p></div>
-          <div class="activity"><i class="fa-solid fa-masks-theater"></i><h3>Dinâmicas</h3><p>Atividades pensadas para integrar a turma.</p></div>
-          <div class="activity"><i class="fa-solid fa-music"></i><h3>Musicalização</h3><p>Atividades envolvendo ritmo e movimento.</p></div>
-          <div class="activity"><i class="fa-solid fa-wand-magic-sparkles"></i><h3>Momentos especiais</h3><p>Experiências personalizadas para a ocasião.</p></div>
-          <div class="activity"><i class="fa-solid fa-medal"></i><h3>Desafios</h3><p>Propostas para estimular participação e diversão.</p></div>
+          <div class="activity"><i class="fa-solid fa-flag-checkered"></i><h3>Gincanas</h3><p>Desafios divertidos em grupo.</p></div>
+          <div class="activity"><i class="fa-solid fa-puzzle-piece"></i><h3>Jogos</h3><p>Jogos recreativos para todas as idades.</p></div>
+          <div class="activity"><i class="fa-solid fa-paintbrush"></i><h3>Oficinas</h3><p>Atividades criativas e de criação.</p></div>
+          <div class="activity"><i class="fa-solid fa-person-running"></i><h3>Brincadeiras</h3><p>Movimento, interação e diversão.</p></div>
+          <div class="activity"><i class="fa-solid fa-masks-theater"></i><h3>Dinâmicas</h3><p>Atividades para integrar a turma.</p></div>
+          <div class="activity"><i class="fa-solid fa-music"></i><h3>Musicalização</h3><p>Atividades com ritmo e movimento.</p></div>
+          <div class="activity"><i class="fa-solid fa-wand-magic-sparkles"></i><h3>Momentos especiais</h3><p>Experiências personalizadas.</p></div>
+          <div class="activity"><i class="fa-solid fa-medal"></i><h3>Desafios</h3><p>Propostas para estimular a participação.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- DIFERENCIAIS -->
-    <section class="differentials">
+    <!-- ===== DIFERENCIAIS ===== -->
+    <section class="differentials" id="diferenciais">
       <div class="container">
         <div class="section-head">
           <div class="section-label">Nosso diferencial</div>
           <h2>Por que escolher a Star?</h2>
           <p>Cuidamos dos detalhes para que a recreação seja um dos pontos altos da sua comemoração.</p>
         </div>
-        <div class="diff-grid">
-          <div class="diff-card"><div class="diff-number">01</div><div><h3>Planejamento</h3><p>Cada atividade é pensada considerando o perfil do evento e das crianças.</p></div></div>
-          <div class="diff-card"><div class="diff-number">02</div><div><h3>Criatividade</h3><p>Buscamos transformar atividades simples em experiências marcantes.</p></div></div>
-          <div class="diff-card"><div class="diff-number">03</div><div><h3>Organização</h3><p>A recreação é conduzida de forma organizada para aproveitar melhor o tempo da festa.</p></div></div>
-          <div class="diff-card"><div class="diff-number">04</div><div><h3>Personalização</h3><p>Adaptamos as propostas de acordo com o evento e a faixa etária dos participantes.</p></div></div>
+        <div class="diff-wrapper">
+          <div class="diff-grid">
+            <div class="diff-card"><div class="diff-number">01</div><div><h3>Planejamento</h3><p>Cada atividade é pensada para o perfil do evento e das crianças.</p></div></div>
+            <div class="diff-card"><div class="diff-number">02</div><div><h3>Criatividade</h3><p>Transformamos atividades simples em experiências marcantes.</p></div></div>
+            <div class="diff-card"><div class="diff-number">03</div><div><h3>Organização</h3><p>A recreação é conduzida de forma organizada para aproveitar o tempo da festa.</p></div></div>
+            <div class="diff-card"><div class="diff-number">04</div><div><h3>Personalização</h3><p>Adaptamos as propostas para o evento e a faixa etária.</p></div></div>
+          </div>
+          <div class="diff-mascot">
+            <img src="https://i.imgur.com/khrNyGU.png" alt="Mascote Star Recreação">
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
+    <!-- ===== CTA ===== -->
     <section class="cta">
       <div class="container">
         <div class="cta-box">
@@ -1392,7 +1082,7 @@
       </div>
     </section>
 
-    <!-- CONTATO -->
+    <!-- ===== CONTATO ===== -->
     <section class="contact" id="contato">
       <div class="container contact-grid">
         <div class="contact-info">
@@ -1441,7 +1131,7 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- ===== FOOTER ===== -->
   <footer>
     <div class="container">
       <div class="footer-top">
@@ -1450,7 +1140,7 @@
           <p>Recreação infantil para transformar festas e eventos em momentos especiais, divertidos e cheios de boas lembranças.</p>
         </div>
         <div class="footer-links">
-          <div><h4>Navegação</h4><a href="#inicio">Início</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#atividades">Atividades</a></div>
+          <div><h4>Navegação</h4><a href="#inicio">Início</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#atividades">Atividades</a><a href="#diferenciais">Diferenciais</a></div>
           <div><h4>Contato</h4><a href="#contato">Orçamento</a><a href="https://wa.me/5543920036581" target="_blank">WhatsApp</a></div>
         </div>
       </div>
@@ -1461,16 +1151,17 @@
     </div>
   </footer>
 
-  <!-- WHATSAPP -->
+  <!-- ===== WHATSAPP ===== -->
   <a class="whatsapp" href="https://wa.me/5543920036581" target="_blank" aria-label="Falar com a Star Recreação pelo WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- BACK TO TOP -->
+  <!-- ===== BACK TO TOP ===== -->
   <a href="#inicio" class="top" id="topBtn" aria-label="Voltar ao topo">
     <i class="fa-solid fa-arrow-up"></i>
   </a>
 
+  <!-- ===== SCRIPTS ===== -->
   <script>
     // Menu mobile
     const mobileBtn = document.getElementById("mobileBtn");
@@ -1531,5 +1222,6 @@
       observer.observe(card);
     });
   </script>
+
 </body>
 </html>
