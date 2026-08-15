@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Star Recreação | Diversão que vira memória</title>
+  <title>Star Recreação | Recreação infantil em Londrina</title>
 
   <meta
     name="description"
-    content="Star Recreação: recreação infantil para festas, aniversários e eventos em Londrina e região."
+    content="Star Recreação: experiências de recreação infantil para aniversários, festas e eventos em Londrina e região."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
@@ -25,6 +25,42 @@
   >
 
   <style>
+
+    /* =========================================================
+       STAR RECREAÇÃO
+       NOVO LAYOUT
+    ========================================================= */
+
+    :root {
+      --blue: #1769d1;
+      --blue-dark: #092c62;
+      --blue-deep: #061d43;
+
+      --yellow: #ffd348;
+      --yellow-soft: #fff4c9;
+
+      --orange: #f58c38;
+      --pink: #ed668f;
+
+      --cream: #fffdf8;
+      --soft: #f5f8fc;
+      --soft-blue: #edf5ff;
+
+      --text: #18263a;
+      --muted: #69778a;
+      --line: #e5ebf2;
+
+      --white: #ffffff;
+
+      --radius-lg: 32px;
+      --radius-md: 22px;
+
+      --shadow:
+        0 24px 70px rgba(10, 40, 82, .10);
+
+      --container: 1180px;
+    }
+
 
     /* =========================================================
        RESET
@@ -42,8 +78,8 @@
 
     body {
       font-family: "DM Sans", sans-serif;
-      background: #fff;
-      color: #10213c;
+      color: var(--text);
+      background: var(--cream);
       overflow-x: hidden;
     }
 
@@ -53,8 +89,8 @@
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
     button,
@@ -64,37 +100,21 @@
       font: inherit;
     }
 
-    :root {
-      --blue-dark: #071d3a;
-      --blue: #1769d2;
-      --blue-light: #eaf4ff;
-
-      --yellow: #ffd447;
-      --yellow-soft: #fff6d6;
-
-      --pink: #f05b91;
-      --pink-soft: #fff0f5;
-
-      --green: #20b879;
-
-      --white: #ffffff;
-      --off-white: #f7faff;
-
-      --text: #10213c;
-      --muted: #68778c;
-
-      --line: #e4ebf3;
-
-      --radius-lg: 34px;
-      --radius-md: 22px;
-
-      --shadow:
-        0 25px 70px rgba(7, 29, 58, .10);
+    .container {
+      width: min(var(--container), calc(100% - 48px));
+      margin: 0 auto;
     }
 
-    .container {
-      width: min(1180px, calc(100% - 40px));
-      margin: auto;
+
+    /* =========================================================
+       TIPOGRAFIA
+    ========================================================= */
+
+    h1,
+    h2,
+    h3,
+    .logo {
+      font-family: "Plus Jakarta Sans", sans-serif;
     }
 
 
@@ -104,15 +124,13 @@
 
     .header {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
+      inset: 0 0 auto;
       z-index: 1000;
 
-      background: rgba(255,255,255,.88);
+      background: rgba(255, 253, 248, .88);
       backdrop-filter: blur(18px);
 
-      border-bottom: 1px solid rgba(7,29,58,.06);
+      border-bottom: 1px solid rgba(9, 44, 98, .06);
     }
 
     .nav {
@@ -123,20 +141,20 @@
       justify-content: space-between;
     }
 
-    .brand {
-      display: flex;
+    .logo {
+      display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 11px;
 
-      font-family: "Manrope", sans-serif;
-      font-weight: 800;
       font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -.7px;
       color: var(--blue-dark);
     }
 
-    .brand-mark {
-      width: 42px;
-      height: 42px;
+    .logo-mark {
+      width: 39px;
+      height: 39px;
 
       display: grid;
       place-items: center;
@@ -144,204 +162,68 @@
       background: var(--blue-dark);
       color: var(--yellow);
 
-      border-radius: 13px;
+      border-radius: 12px;
 
-      font-size: 18px;
+      font-size: 16px;
     }
 
-    .brand span {
+    .logo span {
       color: var(--blue);
     }
 
-    .menu {
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 31px;
 
       list-style: none;
     }
 
-    .menu a {
-      font-size: 14px;
+    .nav-links a {
+      color: #43536a;
+      font-size: 13px;
       font-weight: 700;
-      color: #3d4d63;
 
-      transition: .25s;
+      transition: .25s ease;
     }
 
-    .menu a:hover {
+    .nav-links a:hover {
       color: var(--blue);
     }
 
-    .menu .menu-cta {
-      color: #fff;
-      background: var(--blue-dark);
+    .nav-cta {
+      padding: 12px 20px;
 
-      padding: 13px 20px;
+      background: var(--blue-dark);
+      color: white !important;
+
       border-radius: 100px;
     }
 
-    .menu .menu-cta:hover {
-      color: #fff;
+    .nav-cta:hover {
       background: var(--blue);
-      transform: translateY(-2px);
+      transform: translateY(-1px);
     }
 
-    .mobile-toggle {
+    .menu-button {
       display: none;
 
-      width: 44px;
-      height: 44px;
+      width: 43px;
+      height: 43px;
 
       border: 0;
       border-radius: 12px;
 
       background: var(--blue-dark);
-      color: #fff;
+      color: white;
 
       cursor: pointer;
     }
 
 
     /* =========================================================
-       HERO
+       BOTÕES
     ========================================================= */
-
-    .hero {
-      position: relative;
-      min-height: 850px;
-
-      padding-top: 130px;
-      padding-bottom: 80px;
-
-      display: flex;
-      align-items: center;
-
-      overflow: hidden;
-
-      background:
-        radial-gradient(
-          circle at 85% 25%,
-          rgba(23,105,210,.10),
-          transparent 32%
-        ),
-        linear-gradient(
-          135deg,
-          #f8fbff 0%,
-          #ffffff 55%,
-          #f5f9ff 100%
-        );
-    }
-
-    .hero::before {
-      content: "";
-
-      position: absolute;
-
-      width: 520px;
-      height: 520px;
-
-      border-radius: 50%;
-
-      border: 1px solid rgba(23,105,210,.10);
-
-      right: -220px;
-      top: 80px;
-    }
-
-    .hero::after {
-      content: "";
-
-      position: absolute;
-
-      width: 260px;
-      height: 260px;
-
-      border-radius: 50%;
-
-      background: rgba(255,212,71,.13);
-
-      left: -140px;
-      bottom: -100px;
-    }
-
-    .hero-grid {
-      position: relative;
-      z-index: 2;
-
-      display: grid;
-      grid-template-columns: .92fr 1.08fr;
-
-      gap: 70px;
-      align-items: center;
-    }
-
-    .hero-content {
-      max-width: 620px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-
-      margin-bottom: 22px;
-
-      color: var(--blue);
-
-      font-size: 12px;
-      font-weight: 800;
-
-      text-transform: uppercase;
-      letter-spacing: 2.4px;
-    }
-
-    .eyebrow::before {
-      content: "";
-
-      width: 32px;
-      height: 3px;
-
-      background: var(--yellow);
-      border-radius: 20px;
-    }
-
-    .hero h1 {
-      font-family: "Manrope", sans-serif;
-
-      font-size: clamp(48px, 6vw, 76px);
-      line-height: .98;
-
-      letter-spacing: -3px;
-
-      color: var(--blue-dark);
-
-      margin-bottom: 26px;
-    }
-
-    .hero h1 strong {
-      color: var(--blue);
-      font-weight: 800;
-    }
-
-    .hero-description {
-      max-width: 550px;
-
-      color: var(--muted);
-
-      font-size: 18px;
-      line-height: 1.75;
-
-      margin-bottom: 34px;
-    }
-
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-
-      flex-wrap: wrap;
-    }
 
     .btn {
       min-height: 52px;
@@ -351,280 +233,368 @@
       justify-content: center;
       gap: 10px;
 
-      padding: 0 24px;
+      padding: 0 23px;
 
       border-radius: 100px;
-
-      border: 0;
 
       font-size: 14px;
       font-weight: 800;
 
+      border: 0;
       cursor: pointer;
 
-      transition: .25s;
+      transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
     }
 
     .btn-primary {
       background: var(--blue-dark);
-      color: #fff;
+      color: white;
 
-      box-shadow: 0 14px 30px rgba(7,29,58,.16);
+      box-shadow: 0 12px 25px rgba(9, 44, 98, .17);
     }
 
     .btn-primary:hover {
       background: var(--blue);
       transform: translateY(-3px);
+      box-shadow: 0 16px 30px rgba(23, 105, 209, .22);
     }
 
-    .btn-secondary {
+    .btn-light {
+      background: white;
+      color: var(--blue-dark);
       border: 1px solid var(--line);
-      background: #fff;
+    }
+
+    .btn-light:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      transform: translateY(-2px);
+    }
+
+    .btn-yellow {
+      background: var(--yellow);
       color: var(--blue-dark);
     }
 
-    .btn-secondary:hover {
-      border-color: var(--blue);
-      color: var(--blue);
+    .btn-yellow:hover {
+      background: white;
       transform: translateY(-3px);
     }
 
-    .hero-trust {
-      display: flex;
-      align-items: center;
-      gap: 15px;
 
-      margin-top: 35px;
+    /* =========================================================
+       HERO
+    ========================================================= */
 
-      color: #7b899b;
-      font-size: 12px;
+    .hero {
+      min-height: 760px;
+      padding: 150px 0 85px;
+
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 84% 15%,
+          rgba(23, 105, 209, .12),
+          transparent 29%
+        ),
+        linear-gradient(
+          135deg,
+          #fffdf8 0%,
+          #fff 55%,
+          #f4f9ff 100%
+        );
     }
 
-    .trust-line {
-      width: 45px;
-      height: 1px;
-      background: #cad4df;
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: 520px;
+      height: 520px;
+
+      right: -300px;
+      bottom: -300px;
+
+      border: 90px solid rgba(255, 211, 72, .08);
+      border-radius: 50%;
+    }
+
+    .hero-grid {
+      min-height: 570px;
+
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+
+      align-items: center;
+
+      gap: 55px;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-copy {
+      max-width: 590px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      margin-bottom: 22px;
+
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 800;
+
+      text-transform: uppercase;
+      letter-spacing: 2.3px;
+    }
+
+    .eyebrow::before {
+      content: "";
+
+      width: 27px;
+      height: 2px;
+
+      background: var(--yellow);
+    }
+
+    .hero h1 {
+      color: var(--blue-dark);
+
+      font-size: clamp(45px, 5.7vw, 76px);
+      line-height: .99;
+      letter-spacing: -4px;
+
+      margin-bottom: 25px;
+    }
+
+    .hero h1 strong {
+      color: var(--blue);
+      font-weight: 800;
+    }
+
+    .hero-description {
+      max-width: 535px;
+
+      color: var(--muted);
+
+      font-size: 17px;
+      line-height: 1.75;
+
+      margin-bottom: 31px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      margin-top: 28px;
+
+      color: #7c8999;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .hero-note span {
+      width: 30px;
+      height: 30px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: var(--yellow-soft);
+      color: var(--orange);
     }
 
 
     /* =========================================================
        HERO IMAGE
+       A imagem é tratada como composição editorial.
     ========================================================= */
 
     .hero-visual {
       position: relative;
 
       display: flex;
-      justify-content: center;
-      align-items: center;
+      justify-content: flex-end;
     }
 
     .hero-image-wrap {
+      width: min(620px, 100%);
+
       position: relative;
 
-      width: min(560px, 100%);
+      border-radius: 38px;
 
-      padding: 25px;
+      overflow: hidden;
 
-      border-radius: 45px;
+      box-shadow:
+        0 30px 80px rgba(9, 44, 98, .17);
 
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,.95),
-          rgba(235,245,255,.9)
-        );
-
-      border: 1px solid rgba(255,255,255,.8);
-
-      box-shadow: var(--shadow);
-    }
-
-    .hero-image-wrap::before {
-      content: "";
-
-      position: absolute;
-
-      width: 110px;
-      height: 110px;
-
-      border-radius: 30px;
-
-      background: var(--yellow);
-
-      top: -24px;
-      right: -22px;
-
-      opacity: .95;
-
-      z-index: -1;
+      background: #eaf3ff;
     }
 
     .hero-image-wrap::after {
       content: "";
 
       position: absolute;
+      inset: 0;
 
-      width: 90px;
-      height: 90px;
+      border: 1px solid rgba(255,255,255,.5);
 
-      border-radius: 50%;
+      border-radius: inherit;
 
-      background: var(--pink);
-
-      bottom: -25px;
-      left: -25px;
-
-      z-index: -1;
+      pointer-events: none;
     }
 
     .hero-image {
       width: 100%;
-      max-height: 560px;
+      aspect-ratio: 1.08 / 1;
 
-      object-fit: contain;
-
-      border-radius: 28px;
+      object-fit: cover;
     }
 
-    .hero-badge {
+    .hero-floating-card {
       position: absolute;
 
-      left: -35px;
-      bottom: 40px;
+      left: -25px;
+      bottom: 30px;
 
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      width: 190px;
 
-      padding: 14px 18px;
+      padding: 17px;
 
-      background: #fff;
+      background: white;
 
-      border: 1px solid var(--line);
+      border: 1px solid rgba(9, 44, 98, .07);
 
       border-radius: 18px;
 
-      box-shadow: 0 15px 40px rgba(7,29,58,.12);
+      box-shadow: 0 18px 45px rgba(9, 44, 98, .14);
     }
 
-    .hero-badge-icon {
-      width: 38px;
-      height: 38px;
+    .hero-floating-card strong {
+      display: block;
+
+      color: var(--blue-dark);
+
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 20px;
+
+      margin-bottom: 3px;
+    }
+
+    .hero-floating-card span {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
+
+    /* =========================================================
+       MINI BAR
+    ========================================================= */
+
+    .trust-bar {
+      background: var(--blue-dark);
+      color: white;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .trust-item {
+      min-height: 105px;
+
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      padding: 22px 25px;
+
+      border-right: 1px solid rgba(255,255,255,.08);
+    }
+
+    .trust-item:last-child {
+      border-right: 0;
+    }
+
+    .trust-icon {
+      width: 43px;
+      height: 43px;
+
+      flex-shrink: 0;
 
       display: grid;
       place-items: center;
 
-      background: var(--yellow-soft);
-      color: #c59400;
+      border-radius: 13px;
 
-      border-radius: 11px;
+      background: rgba(255,255,255,.08);
+      color: var(--yellow);
+
+      font-size: 16px;
     }
 
-    .hero-badge strong {
+    .trust-item strong {
       display: block;
 
-      color: var(--blue-dark);
+      font-family: "Plus Jakarta Sans", sans-serif;
       font-size: 13px;
+
+      margin-bottom: 3px;
     }
 
-    .hero-badge span {
-      display: block;
-
-      margin-top: 2px;
-
-      color: var(--muted);
+    .trust-item span {
+      color: #aebed2;
       font-size: 11px;
     }
 
 
     /* =========================================================
-       NUMBERS BAR
-    ========================================================= */
-
-    .numbers {
-      position: relative;
-      z-index: 10;
-
-      margin-top: -1px;
-
-      background: var(--blue-dark);
-      color: #fff;
-    }
-
-    .numbers-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .number-item {
-      min-height: 125px;
-
-      display: flex;
-      align-items: center;
-
-      gap: 18px;
-
-      padding: 25px;
-
-      border-right: 1px solid rgba(255,255,255,.08);
-    }
-
-    .number-item:last-child {
-      border: 0;
-    }
-
-    .number-icon {
-      width: 48px;
-      height: 48px;
-
-      flex: 0 0 auto;
-
-      display: grid;
-      place-items: center;
-
-      border-radius: 15px;
-
-      background: rgba(255,255,255,.07);
-
-      color: var(--yellow);
-    }
-
-    .number-item strong {
-      display: block;
-
-      font-family: "Manrope", sans-serif;
-
-      font-size: 16px;
-    }
-
-    .number-item span {
-      display: block;
-
-      margin-top: 4px;
-
-      color: #aebdd0;
-      font-size: 12px;
-    }
-
-
-    /* =========================================================
-       GLOBAL SECTIONS
+       SEÇÕES
     ========================================================= */
 
     section {
-      padding: 110px 0;
+      padding: 105px 0;
     }
 
-    .section-intro {
-      max-width: 700px;
+    .section-header {
+      max-width: 670px;
+      margin-bottom: 48px;
+    }
 
-      margin: 0 auto 60px;
-
+    .section-header.center {
+      margin-left: auto;
+      margin-right: auto;
       text-align: center;
     }
 
     .section-kicker {
+      display: block;
+
+      margin-bottom: 13px;
+
       color: var(--blue);
 
       font-size: 11px;
@@ -632,137 +602,97 @@
 
       text-transform: uppercase;
       letter-spacing: 2.5px;
-
-      margin-bottom: 14px;
     }
 
-    .section-title {
-      font-family: "Manrope", sans-serif;
-
+    .section-header h2 {
       color: var(--blue-dark);
 
-      font-size: clamp(35px, 5vw, 54px);
+      font-size: clamp(32px, 4vw, 50px);
+      line-height: 1.06;
+      letter-spacing: -2.2px;
 
-      line-height: 1.03;
-
-      letter-spacing: -2px;
-
-      margin-bottom: 17px;
+      margin-bottom: 16px;
     }
 
-    .section-text {
+    .section-header p {
       color: var(--muted);
 
-      font-size: 16px;
+      font-size: 15px;
       line-height: 1.75;
     }
 
 
     /* =========================================================
-       SERVICES
+       SERVIÇOS
     ========================================================= */
 
     .services {
-      background: #fff;
+      background: white;
     }
 
     .services-grid {
       display: grid;
-
       grid-template-columns: repeat(3, 1fr);
-
       gap: 18px;
     }
 
-    .service-card {
-      position: relative;
-
-      min-height: 260px;
-
+    .service {
       padding: 30px;
 
       background: #fff;
 
       border: 1px solid var(--line);
-
       border-radius: var(--radius-md);
 
-      overflow: hidden;
-
-      transition: .3s;
+      transition: .3s ease;
     }
 
-    .service-card::after {
-      content: "";
+    .service:hover {
+      transform: translateY(-5px);
 
-      position: absolute;
+      border-color: #d3e3f6;
 
-      width: 170px;
-      height: 170px;
-
-      border-radius: 50%;
-
-      background: var(--blue-light);
-
-      right: -90px;
-      bottom: -90px;
-
-      transition: .35s;
+      box-shadow: 0 18px 45px rgba(9, 44, 98, .08);
     }
 
-    .service-card:hover {
-      transform: translateY(-7px);
+    .service-number {
+      color: #9aabba;
 
-      border-color: transparent;
+      font-family: "Plus Jakarta Sans", sans-serif;
 
-      box-shadow: var(--shadow);
-    }
+      font-size: 11px;
+      font-weight: 800;
 
-    .service-card:hover::after {
-      transform: scale(1.3);
-    }
-
-    .service-icon {
-      position: relative;
-      z-index: 2;
-
-      width: 55px;
-      height: 55px;
-
-      display: grid;
-      place-items: center;
-
-      border-radius: 16px;
-
-      background: var(--blue-dark);
-      color: var(--yellow);
+      letter-spacing: 1px;
 
       margin-bottom: 25px;
     }
 
-    .service-card h3 {
-      position: relative;
-      z-index: 2;
-
-      font-family: "Manrope", sans-serif;
-
-      font-size: 20px;
-
-      margin-bottom: 9px;
-
+    .service h3 {
       color: var(--blue-dark);
+
+      font-size: 19px;
+      letter-spacing: -.5px;
+
+      margin-bottom: 10px;
     }
 
-    .service-card p {
-      position: relative;
-      z-index: 2;
-
-      max-width: 300px;
-
+    .service p {
       color: var(--muted);
 
       font-size: 13px;
       line-height: 1.7;
+    }
+
+    .service-line {
+      width: 34px;
+      height: 3px;
+
+      margin-top: 25px;
+
+      border-radius: 10px;
+
+      background: var(--yellow);
     }
 
 
@@ -771,338 +701,388 @@
     ========================================================= */
 
     .about {
-      background: var(--off-white);
+      background: var(--soft);
     }
 
     .about-grid {
       display: grid;
-
-      grid-template-columns: .9fr 1.1fr;
+      grid-template-columns: 1fr 1fr;
 
       gap: 80px;
 
       align-items: center;
     }
 
-    .about-visual {
+    .about-image {
       position: relative;
 
-      padding: 25px;
+      border-radius: 35px;
 
-      border-radius: 40px;
+      overflow: hidden;
 
-      background: linear-gradient(
-        145deg,
-        #fff4f8,
-        #ffffff
-      );
+      background: #dcecff;
 
-      border: 1px solid #f4dfe7;
+      box-shadow: var(--shadow);
     }
 
-    .about-visual img {
+    .about-image img {
       width: 100%;
 
-      max-height: 500px;
+      aspect-ratio: .93 / 1;
 
-      object-fit: contain;
+      object-fit: cover;
     }
 
-    .about-label {
+    .about-image-label {
       position: absolute;
 
-      right: -20px;
-      bottom: 35px;
+      left: 20px;
+      bottom: 20px;
 
-      background: var(--blue-dark);
-      color: #fff;
+      max-width: 220px;
 
-      padding: 17px 20px;
+      padding: 15px 17px;
 
-      border-radius: 18px;
+      border-radius: 17px;
 
-      box-shadow: 0 20px 45px rgba(7,29,58,.18);
+      background: rgba(6, 29, 67, .90);
+
+      color: white;
+
+      backdrop-filter: blur(10px);
     }
 
-    .about-label strong {
+    .about-image-label strong {
       display: block;
 
-      color: var(--yellow);
+      font-family: "Plus Jakarta Sans", sans-serif;
 
-      font-family: "Manrope", sans-serif;
-      font-size: 18px;
+      font-size: 13px;
+
+      margin-bottom: 3px;
     }
 
-    .about-label span {
-      font-size: 11px;
-      color: #aebdd0;
+    .about-image-label span {
+      color: #c1d0e3;
+      font-size: 10px;
     }
 
-    .about-content .section-kicker {
-      text-align: left;
-    }
+    .about-copy h2 {
+      color: var(--blue-dark);
 
-    .about-content h2 {
-      font-family: "Manrope", sans-serif;
-
-      font-size: clamp(36px, 5vw, 55px);
-
-      line-height: 1;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.08;
 
       letter-spacing: -2px;
 
-      color: var(--blue-dark);
-
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
-    .about-content h2 span {
+    .about-copy h2 span {
       color: var(--blue);
     }
 
-    .about-content > p {
+    .about-copy > p {
       color: var(--muted);
 
-      font-size: 16px;
+      font-size: 15px;
       line-height: 1.8;
 
-      margin-bottom: 30px;
+      margin-bottom: 27px;
     }
 
-    .check-list {
+    .about-list {
       display: grid;
       gap: 13px;
 
       margin-bottom: 30px;
     }
 
-    .check {
+    .about-list div {
       display: flex;
       align-items: center;
-
-      gap: 12px;
+      gap: 11px;
 
       color: var(--blue-dark);
 
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
     }
 
-    .check i {
-      width: 25px;
-      height: 25px;
+    .about-list i {
+      width: 24px;
+      height: 24px;
 
       display: grid;
       place-items: center;
 
       border-radius: 50%;
 
-      background: #e9f8f2;
-
-      color: var(--green);
+      background: #e1f5ea;
+      color: #1c9b60;
 
       font-size: 10px;
     }
 
 
     /* =========================================================
-       ACTIVITIES
+       ATIVIDADES — COMPACTA
     ========================================================= */
 
     .activities {
       background: var(--blue-dark);
-      color: #fff;
-
-      position: relative;
-
-      overflow: hidden;
+      color: white;
+      padding: 78px 0;
     }
 
-    .activities::before {
-      content: "";
-
-      position: absolute;
-
-      width: 700px;
-      height: 700px;
-
-      border: 1px solid rgba(255,255,255,.07);
-
-      border-radius: 50%;
-
-      top: -400px;
-      right: -250px;
-    }
-
-    .activities .section-kicker {
-      color: var(--yellow);
-    }
-
-    .activities .section-title {
-      color: #fff;
-    }
-
-    .activities .section-text {
-      color: #aebdd0;
-    }
-
-    .activities-grid {
-      position: relative;
-      z-index: 2;
-
+    .activities-layout {
       display: grid;
-
-      grid-template-columns: repeat(4, 1fr);
-
-      gap: 14px;
-    }
-
-    .activity-card {
-      padding: 28px 20px;
-
-      min-height: 180px;
-
-      border: 1px solid rgba(255,255,255,.09);
-
-      background: rgba(255,255,255,.045);
-
-      border-radius: 22px;
-
-      transition: .3s;
-    }
-
-    .activity-card:hover {
-      background: rgba(255,255,255,.09);
-
-      transform: translateY(-6px);
-    }
-
-    .activity-card i {
-      color: var(--yellow);
-
-      font-size: 23px;
-
-      margin-bottom: 22px;
-    }
-
-    .activity-card h3 {
-      font-family: "Manrope", sans-serif;
-
-      font-size: 18px;
-
-      margin-bottom: 7px;
-    }
-
-    .activity-card p {
-      color: #9fb0c6;
-
-      font-size: 12px;
-      line-height: 1.6;
-    }
-
-
-    /* =========================================================
-       DIFERENCIAIS
-    ========================================================= */
-
-    .differentials {
-      background: #fff;
-    }
-
-    .difference-grid {
-      display: grid;
-
-      grid-template-columns: 1fr .8fr;
+      grid-template-columns: .75fr 1.25fr;
 
       gap: 65px;
 
       align-items: center;
     }
 
-    .difference-list {
+    .activities .section-kicker {
+      color: var(--yellow);
+    }
+
+    .activities h2 {
+      color: white;
+      font-size: clamp(30px, 4vw, 45px);
+    }
+
+    .activities .section-header {
+      margin-bottom: 0;
+    }
+
+    .activities .section-header p {
+      color: #b9c8da;
+    }
+
+    .activity-list {
       display: grid;
+      grid-template-columns: repeat(2, 1fr);
 
-      grid-template-columns: 1fr 1fr;
+      gap: 0;
 
-      gap: 16px;
+      border-top: 1px solid rgba(255,255,255,.1);
     }
 
-    .difference-card {
-      padding: 25px;
+    .activity-item {
+      padding: 20px 18px;
 
-      border: 1px solid var(--line);
+      border-bottom: 1px solid rgba(255,255,255,.1);
 
-      border-radius: 22px;
-
-      background: #fff;
-
-      transition: .3s;
+      display: flex;
+      align-items: center;
+      gap: 13px;
     }
 
-    .difference-card:hover {
-      box-shadow: var(--shadow);
-
-      transform: translateY(-5px);
+    .activity-item:nth-child(odd) {
+      border-right: 1px solid rgba(255,255,255,.1);
     }
 
-    .difference-number {
-      width: 43px;
-      height: 43px;
-
-      display: grid;
-      place-items: center;
-
-      background: var(--blue-light);
-
-      color: var(--blue);
-
-      border-radius: 12px;
-
-      font-family: "Manrope", sans-serif;
+    .activity-item i {
+      color: var(--yellow);
       font-size: 14px;
-      font-weight: 800;
+    }
+
+    .activity-item span {
+      color: #d7e0eb;
+
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+
+    /* =========================================================
+       IMAGEM 3 / DIFERENCIAL
+    ========================================================= */
+
+    .experience {
+      background: white;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .experience-copy h2 {
+      color: var(--blue-dark);
+
+      font-size: clamp(32px, 4vw, 49px);
+      line-height: 1.08;
+
+      letter-spacing: -2px;
 
       margin-bottom: 20px;
     }
 
-    .difference-card h3 {
-      font-family: "Manrope", sans-serif;
-
-      font-size: 17px;
-
-      margin-bottom: 7px;
-
-      color: var(--blue-dark);
+    .experience-copy h2 span {
+      color: var(--blue);
     }
 
-    .difference-card p {
+    .experience-copy > p {
       color: var(--muted);
 
-      font-size: 12px;
-      line-height: 1.65;
+      font-size: 15px;
+      line-height: 1.8;
+
+      margin-bottom: 30px;
     }
 
-    .difference-visual {
-      position: relative;
+    .numbers {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
 
+      gap: 13px;
+    }
+
+    .number-box {
       padding: 20px;
 
-      border-radius: 40px;
-
-      background: linear-gradient(
-        145deg,
-        #edf6ff,
-        #ffffff
-      );
-
-      border: 1px solid #e2edf8;
+      border: 1px solid var(--line);
+      border-radius: 18px;
     }
 
-    .difference-visual img {
-      width: 100%;
-      max-height: 450px;
+    .number-box strong {
+      display: block;
 
-      object-fit: contain;
+      color: var(--blue-dark);
+
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 15px;
+
+      margin-bottom: 5px;
+    }
+
+    .number-box span {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .experience-image {
+      position: relative;
+
+      border-radius: 35px;
+
+      overflow: hidden;
+
+      background: #f1f6fc;
+
+      box-shadow: var(--shadow);
+    }
+
+    .experience-image img {
+      width: 100%;
+
+      aspect-ratio: .88 / 1;
+
+      object-fit: cover;
+    }
+
+
+    /* =========================================================
+       DEPOIMENTOS
+    ========================================================= */
+
+    .testimonials {
+      background: #f7f9fc;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    .testimonial {
+      padding: 29px;
+
+      background: white;
+
+      border: 1px solid var(--line);
+      border-radius: 24px;
+
+      position: relative;
+    }
+
+    .testimonial::before {
+      content: "“";
+
+      position: absolute;
+
+      right: 25px;
+      top: 13px;
+
+      color: #e7eef8;
+
+      font-family: Georgia, serif;
+      font-size: 70px;
+      line-height: 1;
+    }
+
+    .testimonial-stars {
+      color: var(--yellow);
+      font-size: 11px;
+
+      margin-bottom: 18px;
+    }
+
+    .testimonial p {
+      color: #536277;
+
+      font-size: 13px;
+      line-height: 1.75;
+
+      margin-bottom: 22px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .author-avatar {
+      width: 36px;
+      height: 36px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: var(--soft-blue);
+
+      color: var(--blue);
+
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .testimonial-author strong {
+      display: block;
+
+      color: var(--blue-dark);
+
+      font-size: 12px;
+
+      margin-bottom: 2px;
+    }
+
+    .testimonial-author span {
+      color: #8a96a6;
+      font-size: 10px;
     }
 
 
@@ -1110,14 +1090,13 @@
        CTA
     ========================================================= */
 
-    .cta {
-      padding: 30px 0 110px;
+    .cta-section {
+      padding: 90px 0;
+      background: white;
     }
 
     .cta-box {
-      position: relative;
-
-      overflow: hidden;
+      min-height: 300px;
 
       display: flex;
       align-items: center;
@@ -1125,18 +1104,24 @@
 
       gap: 40px;
 
-      padding: 65px;
+      padding: 60px;
 
-      border-radius: 40px;
+      border-radius: 35px;
 
       background:
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(255,211,72,.15),
+          transparent 28%
+        ),
         linear-gradient(
-          120deg,
-          #071d3a,
-          #103f76
+          125deg,
+          var(--blue-dark),
+          #0b428c
         );
 
-      color: #fff;
+      overflow: hidden;
+      position: relative;
     }
 
     .cta-box::after {
@@ -1144,15 +1129,15 @@
 
       position: absolute;
 
-      width: 350px;
-      height: 350px;
+      width: 280px;
+      height: 280px;
+
+      right: -110px;
+      bottom: -150px;
+
+      border: 60px solid rgba(255,255,255,.04);
 
       border-radius: 50%;
-
-      border: 70px solid rgba(255,255,255,.035);
-
-      right: -140px;
-      top: -180px;
     }
 
     .cta-content {
@@ -1160,52 +1145,41 @@
       z-index: 2;
     }
 
-    .cta-kicker {
+    .cta-content small {
       color: var(--yellow);
 
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 800;
 
       text-transform: uppercase;
       letter-spacing: 2px;
     }
 
-    .cta h2 {
-      font-family: "Manrope", sans-serif;
+    .cta-content h2 {
+      color: white;
 
-      font-size: clamp(34px, 5vw, 50px);
-
-      line-height: 1;
+      font-size: clamp(31px, 4vw, 47px);
+      line-height: 1.05;
 
       letter-spacing: -2px;
 
-      margin: 12px 0;
+      margin: 10px 0 12px;
     }
 
-    .cta p {
-      max-width: 560px;
+    .cta-content p {
+      max-width: 550px;
 
-      color: #b7c8db;
-
-      line-height: 1.7;
+      color: #bfd0e4;
 
       font-size: 14px;
+      line-height: 1.7;
     }
 
-    .cta .btn {
+    .cta-box .btn {
       position: relative;
       z-index: 3;
 
-      background: var(--yellow);
-      color: var(--blue-dark);
-
       flex-shrink: 0;
-    }
-
-    .cta .btn:hover {
-      background: #fff;
-
-      transform: translateY(-3px);
     }
 
 
@@ -1214,111 +1188,102 @@
     ========================================================= */
 
     .contact {
-      background: var(--off-white);
+      background: var(--soft);
     }
 
     .contact-grid {
       display: grid;
-
       grid-template-columns: .8fr 1.2fr;
 
       gap: 20px;
     }
 
     .contact-info {
-      padding: 45px;
+      padding: 42px;
 
-      border-radius: 32px;
+      border-radius: 30px;
 
       background: var(--blue-dark);
-
-      color: #fff;
-    }
-
-    .contact-info .section-kicker {
-      color: var(--yellow);
+      color: white;
     }
 
     .contact-info h2 {
-      font-family: "Manrope", sans-serif;
+      font-size: 32px;
+      letter-spacing: -1.4px;
 
-      font-size: 36px;
-
-      line-height: 1;
-
-      margin-bottom: 16px;
+      margin-bottom: 13px;
     }
 
     .contact-info > p {
-      color: #aebdd0;
+      color: #b6c7db;
 
-      font-size: 14px;
+      font-size: 13px;
       line-height: 1.7;
 
       margin-bottom: 35px;
     }
 
-    .contact-item {
-      display: flex;
-
-      gap: 14px;
-
-      margin-bottom: 23px;
+    .contact-details {
+      display: grid;
+      gap: 22px;
     }
 
-    .contact-item-icon {
-      width: 43px;
-      height: 43px;
+    .contact-detail {
+      display: flex;
+      gap: 13px;
+    }
+
+    .contact-detail-icon {
+      width: 39px;
+      height: 39px;
+
+      flex-shrink: 0;
 
       display: grid;
       place-items: center;
 
-      border-radius: 13px;
+      border-radius: 11px;
 
-      background: rgba(255,255,255,.07);
+      background: rgba(255,255,255,.08);
 
       color: var(--yellow);
 
-      flex: 0 0 auto;
+      font-size: 13px;
     }
 
-    .contact-item strong {
+    .contact-detail strong {
       display: block;
 
-      font-size: 13px;
+      font-size: 12px;
 
       margin-bottom: 3px;
     }
 
-    .contact-item span {
-      color: #9fb0c6;
-
-      font-size: 12px;
+    .contact-detail span {
+      color: #9eb1c8;
+      font-size: 11px;
     }
 
     .contact-form {
-      padding: 45px;
+      padding: 42px;
 
-      border-radius: 32px;
-
-      background: #fff;
+      background: white;
 
       border: 1px solid var(--line);
+      border-radius: 30px;
     }
 
     .contact-form h3 {
-      font-family: "Manrope", sans-serif;
-
       color: var(--blue-dark);
 
-      font-size: 28px;
+      font-size: 26px;
+      letter-spacing: -1px;
 
       margin-bottom: 25px;
     }
 
     .form-grid {
       display: grid;
-
       grid-template-columns: 1fr 1fr;
 
       gap: 15px;
@@ -1327,7 +1292,6 @@
     .field {
       display: flex;
       flex-direction: column;
-
       gap: 7px;
     }
 
@@ -1336,26 +1300,28 @@
     }
 
     .field label {
-      color: var(--blue-dark);
+      color: #40516a;
 
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 800;
+
+      text-transform: uppercase;
+      letter-spacing: .6px;
     }
 
     .field input,
-    .field textarea,
-    .field select {
+    .field select,
+    .field textarea {
       width: 100%;
 
-      border: 1px solid var(--line);
-
-      background: #f9fbfd;
+      padding: 13px 14px;
 
       color: var(--text);
 
-      border-radius: 13px;
+      background: #f9fbfd;
 
-      padding: 14px 15px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
 
       outline: none;
 
@@ -1363,25 +1329,23 @@
     }
 
     .field input:focus,
-    .field textarea:focus,
-    .field select:focus {
+    .field select:focus,
+    .field textarea:focus {
+      background: white;
+
       border-color: var(--blue);
 
-      background: #fff;
-
-      box-shadow: 0 0 0 4px rgba(23,105,210,.06);
+      box-shadow: 0 0 0 4px rgba(23,105,209,.06);
     }
 
     .field textarea {
-      min-height: 125px;
-
+      min-height: 110px;
       resize: vertical;
     }
 
     .form-submit {
       width: 100%;
-
-      margin-top: 20px;
+      margin-top: 18px;
     }
 
 
@@ -1390,85 +1354,78 @@
     ========================================================= */
 
     footer {
-      padding: 60px 0 25px;
+      padding: 55px 0 25px;
 
-      background: #04152d;
-
-      color: #fff;
+      background: #041631;
+      color: white;
     }
 
     .footer-grid {
       display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
 
-      grid-template-columns: 1.3fr .7fr .7fr;
+      gap: 50px;
 
-      gap: 70px;
+      padding-bottom: 42px;
 
-      padding-bottom: 45px;
-
-      border-bottom: 1px solid rgba(255,255,255,.07);
-    }
-
-    .footer-brand {
-      max-width: 390px;
-    }
-
-    .footer-brand .brand {
-      color: #fff;
-
-      margin-bottom: 18px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
 
     .footer-brand p {
-      color: #8498b2;
+      max-width: 390px;
 
-      font-size: 13px;
+      color: #91a5bf;
+
+      font-size: 12px;
       line-height: 1.7;
+
+      margin-top: 15px;
     }
 
-    .footer-column h4 {
+    .footer-title {
       color: var(--yellow);
 
-      font-size: 12px;
+      font-size: 10px;
+      font-weight: 800;
 
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
 
-      margin-bottom: 17px;
+      margin-bottom: 15px;
     }
 
-    .footer-column a {
-      display: block;
+    .footer-links {
+      display: grid;
+      gap: 10px;
+    }
 
-      color: #91a3ba;
+    .footer-links a {
+      color: #9cafc6;
 
       font-size: 12px;
-
-      margin-bottom: 10px;
 
       transition: .2s;
     }
 
-    .footer-column a:hover {
-      color: #fff;
+    .footer-links a:hover {
+      color: white;
     }
 
     .footer-bottom {
       display: flex;
       justify-content: space-between;
-
       gap: 20px;
 
-      padding-top: 25px;
+      padding-top: 23px;
 
-      color: #637992;
+      color: #667b96;
 
       font-size: 10px;
     }
 
 
     /* =========================================================
-       FLOATING WHATSAPP
+       WHATSAPP
     ========================================================= */
 
     .whatsapp {
@@ -1477,84 +1434,87 @@
       right: 22px;
       bottom: 22px;
 
-      z-index: 999;
-
-      width: 58px;
-      height: 58px;
+      width: 57px;
+      height: 57px;
 
       display: grid;
       place-items: center;
 
+      z-index: 900;
+
+      background: #20b66f;
+      color: white;
+
       border-radius: 50%;
 
-      background: #20b879;
-      color: #fff;
+      font-size: 24px;
 
-      font-size: 25px;
-
-      box-shadow:
-        0 12px 30px rgba(32,184,121,.35);
+      box-shadow: 0 12px 35px rgba(32,182,111,.30);
 
       transition: .25s;
     }
 
     .whatsapp:hover {
-      transform: scale(1.08);
+      transform: translateY(-4px) scale(1.04);
     }
 
-    .top-button {
+
+    /* =========================================================
+       BACK TO TOP
+    ========================================================= */
+
+    .top {
       position: fixed;
 
-      right: 27px;
+      right: 28px;
       bottom: 91px;
 
-      z-index: 998;
-
-      width: 42px;
-      height: 42px;
+      width: 39px;
+      height: 39px;
 
       display: grid;
       place-items: center;
 
-      border-radius: 12px;
-
-      background: #fff;
-
-      border: 1px solid var(--line);
+      background: white;
 
       color: var(--blue-dark);
 
-      box-shadow: 0 10px 25px rgba(7,29,58,.10);
+      border: 1px solid var(--line);
+      border-radius: 11px;
+
+      box-shadow: 0 10px 25px rgba(9,44,98,.09);
 
       opacity: 0;
       pointer-events: none;
 
       transition: .25s;
+
+      z-index: 899;
+
+      font-size: 12px;
     }
 
-    .top-button.show {
+    .top.show {
       opacity: 1;
       pointer-events: auto;
     }
 
 
     /* =========================================================
-       ANIMAÇÕES
+       REVEAL
     ========================================================= */
 
     .reveal {
       opacity: 0;
-
-      transform: translateY(25px);
+      transform: translateY(22px);
 
       transition:
-        opacity .7s ease,
-        transform .7s ease;
+        opacity .65s ease,
+        transform .65s ease;
     }
 
     .reveal.visible {
       opacity: 1;
-
       transform: translateY(0);
     }
 
@@ -1567,13 +1527,11 @@
 
       .hero-grid {
         grid-template-columns: 1fr;
-
-        text-align: center;
-
-        gap: 50px;
       }
 
-      .hero-content {
+      .hero-copy {
+        max-width: 700px;
+        text-align: center;
         margin: auto;
       }
 
@@ -1582,83 +1540,81 @@
         margin-right: auto;
       }
 
-      .hero-actions {
-        justify-content: center;
-      }
-
-      .hero-trust {
+      .hero-buttons,
+      .hero-note {
         justify-content: center;
       }
 
       .hero-visual {
+        justify-content: center;
+      }
+
+      .hero-image-wrap {
+        max-width: 650px;
+      }
+
+      .about-grid,
+      .experience-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+      }
+
+      .about-image,
+      .experience-image {
         max-width: 600px;
         margin: auto;
       }
 
-      .about-grid,
-      .difference-grid {
+      .activities-layout {
         grid-template-columns: 1fr;
+        gap: 40px;
       }
 
-      .about-visual,
-      .difference-visual {
-        max-width: 550px;
-        margin: auto;
-      }
-
-      .difference-visual {
-        order: -1;
+      .activities .section-header {
+        max-width: 650px;
       }
 
       .contact-grid {
         grid-template-columns: 1fr;
       }
-
-      .cta-box {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
     }
 
 
     @media (max-width: 850px) {
 
-      .menu {
+      .nav-links {
         position: absolute;
 
-        left: 0;
         top: 82px;
-
-        width: 100%;
+        left: 0;
+        right: 0;
 
         display: none;
         flex-direction: column;
 
-        padding: 25px;
+        padding: 28px;
 
-        background: #fff;
+        background: rgba(255,255,255,.98);
 
         border-bottom: 1px solid var(--line);
-
-        box-shadow: 0 20px 35px rgba(7,29,58,.08);
       }
 
-      .menu.active {
+      .nav-links.active {
         display: flex;
       }
 
-      .mobile-toggle {
+      .menu-button {
         display: grid;
         place-items: center;
       }
 
       .services-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr;
       }
 
-      .activities-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .testimonials-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
       .footer-grid {
@@ -1668,104 +1624,142 @@
       .footer-brand {
         grid-column: 1 / -1;
       }
-
     }
 
 
-    @media (max-width: 600px) {
+    @media (max-width: 620px) {
 
       .container {
-        width: min(100% - 28px, 1180px);
+        width: min(100% - 32px, var(--container));
       }
 
       .nav {
         height: 72px;
       }
 
-      .menu {
+      .nav-links {
         top: 72px;
       }
 
-      .hero {
-        min-height: auto;
+      .logo {
+        font-size: 18px;
+      }
 
-        padding-top: 115px;
-        padding-bottom: 70px;
+      .logo-mark {
+        width: 35px;
+        height: 35px;
+      }
+
+      .hero {
+        padding-top: 112px;
+        padding-bottom: 60px;
       }
 
       .hero h1 {
-        font-size: 44px;
-
-        letter-spacing: -2px;
+        font-size: 43px;
+        letter-spacing: -2.5px;
       }
 
       .hero-description {
-        font-size: 16px;
+        font-size: 15px;
       }
 
-      .hero-image-wrap {
-        padding: 13px;
-
-        border-radius: 28px;
+      .hero-buttons {
+        flex-direction: column;
       }
 
-      .hero-badge {
-        left: 5px;
-        bottom: 15px;
+      .hero-buttons .btn {
+        width: 100%;
       }
 
-      .numbers-grid {
+      .hero-floating-card {
+        left: 12px;
+        bottom: 12px;
+
+        width: 160px;
+      }
+
+      .trust-grid {
         grid-template-columns: 1fr;
       }
 
-      .number-item {
-        min-height: 95px;
+      .trust-item {
+        min-height: 78px;
 
         border-right: 0;
-
         border-bottom: 1px solid rgba(255,255,255,.08);
+      }
+
+      .trust-item:last-child {
+        border-bottom: 0;
       }
 
       section {
         padding: 75px 0;
       }
 
-      .section-title {
-        font-size: 38px;
+      .section-header {
+        margin-bottom: 35px;
       }
 
-      .services-grid,
-      .activities-grid {
+      .section-header h2 {
+        letter-spacing: -1.5px;
+      }
+
+      .services-grid {
         grid-template-columns: 1fr;
       }
 
-      .about-content h2 {
-        font-size: 38px;
+      .service {
+        padding: 25px;
       }
 
-      .about-label {
-        right: 10px;
+      .about-grid,
+      .experience-grid {
+        gap: 35px;
       }
 
-      .difference-list {
+      .about-image img,
+      .experience-image img {
+        aspect-ratio: .9 / 1;
+      }
+
+      .activity-list {
         grid-template-columns: 1fr;
       }
 
-      .cta {
-        padding: 10px 0 75px;
+      .activity-item:nth-child(odd) {
+        border-right: 0;
+      }
+
+      .numbers {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-section {
+        padding: 65px 0;
       }
 
       .cta-box {
-        padding: 40px 28px;
+        padding: 38px 25px;
 
-        border-radius: 28px;
+        align-items: flex-start;
+        flex-direction: column;
+
+        border-radius: 27px;
+      }
+
+      .cta-box .btn {
+        width: 100%;
       }
 
       .contact-info,
       .contact-form {
         padding: 28px 22px;
-
-        border-radius: 25px;
       }
 
       .form-grid {
@@ -1778,7 +1772,7 @@
 
       .footer-grid {
         grid-template-columns: 1fr;
-        gap: 35px;
+        gap: 30px;
       }
 
       .footer-brand {
@@ -1790,18 +1784,17 @@
       }
 
       .whatsapp {
-        width: 54px;
-        height: 54px;
-
         right: 16px;
         bottom: 16px;
+
+        width: 53px;
+        height: 53px;
       }
 
-      .top-button {
-        right: 20px;
-        bottom: 82px;
+      .top {
+        right: 18px;
+        bottom: 78px;
       }
-
     }
 
   </style>
@@ -1819,20 +1812,18 @@
 
     <div class="container nav">
 
-      <a href="#inicio" class="brand">
-
-        <div class="brand-mark">
+      <a href="#inicio" class="logo">
+        <span class="logo-mark">
           <i class="fa-solid fa-star"></i>
-        </div>
+        </span>
 
         Star <span>Recreação</span>
-
       </a>
 
 
       <nav>
 
-        <ul class="menu" id="menu">
+        <ul class="nav-links" id="navLinks">
 
           <li>
             <a href="#inicio">Início</a>
@@ -1851,11 +1842,11 @@
           </li>
 
           <li>
-            <a href="#diferenciais">Diferenciais</a>
+            <a href="#depoimentos">Famílias</a>
           </li>
 
           <li>
-            <a href="#contato" class="menu-cta">
+            <a href="#contato" class="nav-cta">
               Solicitar orçamento
             </a>
           </li>
@@ -1866,8 +1857,8 @@
 
 
       <button
-        class="mobile-toggle"
-        id="mobileToggle"
+        class="menu-button"
+        id="menuButton"
         aria-label="Abrir menu"
       >
         <i class="fa-solid fa-bars"></i>
@@ -1876,6 +1867,7 @@
     </div>
 
   </header>
+
 
 
   <main>
@@ -1890,7 +1882,7 @@
       <div class="container hero-grid">
 
 
-        <div class="hero-content reveal">
+        <div class="hero-copy reveal">
 
           <div class="eyebrow">
             Recreação infantil em Londrina
@@ -1898,44 +1890,45 @@
 
 
           <h1>
-            A diversão que
-            <strong>fica na memória.</strong>
+            A infância merece
+            <strong>momentos incríveis.</strong>
           </h1>
 
 
           <p class="hero-description">
-            A Star Recreação transforma festas e eventos em
-            experiências cheias de movimento, criatividade e
-            interação para as crianças.
+            A Star Recreação transforma aniversários, festas e eventos
+            em experiências leves, criativas e cheias de participação.
+            Enquanto as crianças aproveitam, os adultos também conseguem
+            curtir a comemoração.
           </p>
 
 
-          <div class="hero-actions">
+          <div class="hero-buttons">
 
             <a href="#contato" class="btn btn-primary">
-              Quero fazer um orçamento
+              Quero um orçamento
               <i class="fa-solid fa-arrow-right"></i>
             </a>
 
-            <a href="#servicos" class="btn btn-secondary">
+            <a href="#servicos" class="btn btn-light">
               Conhecer a Star
             </a>
 
           </div>
 
 
-          <div class="hero-trust">
+          <div class="hero-note">
 
-            <span class="trust-line"></span>
+            <span>
+              <i class="fa-solid fa-check"></i>
+            </span>
 
-            Atendimento para festas,
-            eventos e comemorações
-
-            <span class="trust-line"></span>
+            Atendimento em Londrina e região
 
           </div>
 
         </div>
+
 
 
         <div class="hero-visual reveal">
@@ -1948,18 +1941,17 @@
               alt="Star Recreação"
             >
 
-            <div class="hero-badge">
+          </div>
 
-              <div class="hero-badge-icon">
-                <i class="fa-solid fa-child-reaching"></i>
-              </div>
 
-              <div>
-                <strong>Brincar faz parte</strong>
-                <span>da melhor festa</span>
-              </div>
+          <div class="hero-floating-card">
 
-            </div>
+            <strong>Uma festa mais leve</strong>
+
+            <span>
+              Recreação pensada para envolver as crianças
+              e valorizar cada momento.
+            </span>
 
           </div>
 
@@ -1970,60 +1962,60 @@
     </section>
 
 
+
     <!-- =====================================================
-         NUMBERS
+         TRUST BAR
     ====================================================== -->
 
-    <div class="numbers">
+    <div class="trust-bar">
 
-      <div class="container numbers-grid">
+      <div class="container trust-grid">
 
+        <div class="trust-item">
 
-        <div class="number-item">
-
-          <div class="number-icon">
+          <div class="trust-icon">
             <i class="fa-solid fa-children"></i>
           </div>
 
           <div>
-            <strong>Recreação infantil</strong>
-            <span>Atividades pensadas para cada idade</span>
+            <strong>Experiência infantil</strong>
+            <span>Atividades pensadas para diferentes idades</span>
           </div>
 
         </div>
 
 
-        <div class="number-item">
+        <div class="trust-item">
 
-          <div class="number-icon">
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <div class="trust-icon">
+            <i class="fa-solid fa-calendar-check"></i>
           </div>
 
           <div>
-            <strong>Experiência personalizada</strong>
-            <span>A programação acompanha sua festa</span>
+            <strong>Festas e eventos</strong>
+            <span>Aniversários, escolas, empresas e comemorações</span>
           </div>
 
         </div>
 
 
-        <div class="number-item">
+        <div class="trust-item">
 
-          <div class="number-icon">
+          <div class="trust-icon">
             <i class="fa-solid fa-location-dot"></i>
           </div>
 
           <div>
             <strong>Londrina e região</strong>
-            <span>Festas, eventos e comemorações</span>
+            <span>Levamos a recreação até o seu evento</span>
           </div>
 
         </div>
 
-
       </div>
 
     </div>
+
 
 
     <!-- =====================================================
@@ -2035,19 +2027,20 @@
       <div class="container">
 
 
-        <div class="section-intro reveal">
+        <div class="section-header reveal">
 
-          <div class="section-kicker">
+          <span class="section-kicker">
             O que fazemos
-          </div>
+          </span>
 
-          <h2 class="section-title">
-            Diversão planejada para cada momento
+          <h2>
+            Recreação que combina com a sua festa.
           </h2>
 
-          <p class="section-text">
-            Criamos experiências recreativas que combinam
-            organização, criatividade e muita participação.
+          <p>
+            Nada de programação engessada. Organizamos as atividades
+            de acordo com a idade das crianças, o espaço e o perfil
+            da comemoração.
           </p>
 
         </div>
@@ -2056,98 +2049,98 @@
         <div class="services-grid">
 
 
-          <article class="service-card reveal">
+          <article class="service reveal">
 
-            <div class="service-icon">
-              <i class="fa-solid fa-people-group"></i>
-            </div>
+            <div class="service-number">01</div>
 
             <h3>Recreação infantil</h3>
 
             <p>
-              Brincadeiras conduzidas por recreadores para
-              manter as crianças envolvidas e participativas.
+              Brincadeiras conduzidas por recreadores para manter
+              as crianças envolvidas, ativas e participativas.
             </p>
+
+            <div class="service-line"></div>
 
           </article>
 
 
-          <article class="service-card reveal">
+          <article class="service reveal">
 
-            <div class="service-icon">
-              <i class="fa-solid fa-palette"></i>
-            </div>
+            <div class="service-number">02</div>
 
-            <h3>Atividades criativas</h3>
+            <h3>Gincanas e jogos</h3>
 
             <p>
-              Oficinas e propostas lúdicas que estimulam
-              imaginação, criação e interação.
+              Desafios, jogos coletivos e dinâmicas que estimulam
+              interação e diversão entre a turma.
             </p>
+
+            <div class="service-line"></div>
 
           </article>
 
 
-          <article class="service-card reveal">
+          <article class="service reveal">
 
-            <div class="service-icon">
-              <i class="fa-solid fa-gamepad"></i>
-            </div>
+            <div class="service-number">03</div>
 
-            <h3>Jogos e gincanas</h3>
+            <h3>Oficinas criativas</h3>
 
             <p>
-              Dinâmicas em grupo para colocar a criançada
-              em movimento e tornar a festa mais divertida.
+              Propostas manuais e criativas para momentos mais
+              tranquilos, além das brincadeiras de movimento.
             </p>
+
+            <div class="service-line"></div>
 
           </article>
 
 
-          <article class="service-card reveal">
+          <article class="service reveal">
 
-            <div class="service-icon">
-              <i class="fa-solid fa-cake-candles"></i>
-            </div>
+            <div class="service-number">04</div>
 
             <h3>Aniversários</h3>
 
             <p>
-              Recreação para aniversários infantis,
-              comemorações familiares e festas especiais.
+              Recreação planejada para aniversários infantis,
+              respeitando o ritmo e a faixa etária dos convidados.
             </p>
+
+            <div class="service-line"></div>
 
           </article>
 
 
-          <article class="service-card reveal">
+          <article class="service reveal">
 
-            <div class="service-icon">
-              <i class="fa-solid fa-building"></i>
-            </div>
+            <div class="service-number">05</div>
 
-            <h3>Eventos</h3>
+            <h3>Eventos escolares</h3>
 
             <p>
-              Soluções recreativas para eventos escolares,
-              corporativos, familiares e institucionais.
+              Atividades recreativas para integração, movimento
+              e participação em eventos escolares.
             </p>
+
+            <div class="service-line"></div>
 
           </article>
 
 
-          <article class="service-card reveal">
+          <article class="service reveal">
 
-            <div class="service-icon">
-              <i class="fa-solid fa-star"></i>
-            </div>
+            <div class="service-number">06</div>
 
-            <h3>Programação personalizada</h3>
+            <h3>Eventos personalizados</h3>
 
             <p>
-              Adaptamos as atividades ao espaço,
-              quantidade de crianças e perfil do evento.
+              Uma programação adaptada ao espaço, quantidade de
+              crianças e proposta do seu evento.
             </p>
+
+            <div class="service-line"></div>
 
           </article>
 
@@ -2157,6 +2150,7 @@
       </div>
 
     </section>
+
 
 
     <!-- =====================================================
@@ -2168,299 +2162,379 @@
       <div class="container about-grid">
 
 
-        <div class="about-visual reveal">
+        <div class="about-image reveal">
 
           <img
             src="https://i.imgur.com/g0zW0LO.png"
-            alt="Personagem da Star Recreação"
+            alt="Atividades da Star Recreação"
           >
 
-          <div class="about-label">
 
-            <strong>Brincar.</strong>
+          <div class="about-image-label">
 
-            <span>Criar. Participar.</span>
+            <strong>
+              Brincar também é criar.
+            </strong>
+
+            <span>
+              Experiências pensadas para cada fase da infância.
+            </span>
 
           </div>
 
         </div>
 
 
-        <div class="about-content reveal">
 
-          <div class="section-kicker">
+        <div class="about-copy reveal">
+
+          <span class="section-kicker">
             Sobre a Star
-          </div>
+          </span>
+
 
           <h2>
-            Não é só recreação.
-            <span>É experiência.</span>
+            A gente cuida da diversão
+            <span>para você aproveitar a festa.</span>
           </h2>
 
+
           <p>
-            A Star Recreação nasceu para transformar a parte
-            infantil das festas em um momento realmente especial.
-            Enquanto as crianças brincam, participam e descobrem
-            novas atividades, os adultos conseguem aproveitar
-            melhor a comemoração.
+            A Star Recreação nasceu com uma ideia simples:
+            fazer com que as crianças tenham uma experiência realmente
+            divertida enquanto os adultos conseguem aproveitar a
+            comemoração com tranquilidade.
           </p>
 
 
-          <div class="check-list">
+          <div class="about-list">
 
-            <div class="check">
+            <div>
               <i class="fa-solid fa-check"></i>
-              Recreação planejada
+              Recreação organizada e planejada
             </div>
 
-            <div class="check">
+            <div>
               <i class="fa-solid fa-check"></i>
-              Atividades para diferentes idades
+              Atividades adaptadas por faixa etária
             </div>
 
-            <div class="check">
+            <div>
               <i class="fa-solid fa-check"></i>
-              Organização durante toda a programação
+              Propostas para diferentes tipos de eventos
             </div>
 
-            <div class="check">
+            <div>
               <i class="fa-solid fa-check"></i>
-              Experiência acolhedora e divertida
+              Atendimento próximo e personalizado
             </div>
 
           </div>
 
 
           <a href="#contato" class="btn btn-primary">
-            Falar com a Star
+            Conversar com a Star
             <i class="fa-solid fa-arrow-right"></i>
           </a>
 
         </div>
 
-
       </div>
 
     </section>
 
 
+
     <!-- =====================================================
-         ATIVIDADES
+         ATIVIDADES — MENOR
     ====================================================== -->
 
     <section class="activities" id="atividades">
 
-      <div class="container">
+      <div class="container activities-layout">
 
 
-        <div class="section-intro reveal">
+        <div class="section-header reveal">
 
-          <div class="section-kicker">
+          <span class="section-kicker">
             Atividades
-          </div>
+          </span>
 
-          <h2 class="section-title">
-            Uma festa nunca precisa ser igual à outra
+          <h2>
+            Um repertório que acompanha a festa.
           </h2>
 
-          <p class="section-text">
-            Escolhemos e adaptamos as atividades de acordo
-            com a proposta da festa e o perfil das crianças.
+          <p>
+            Alternamos movimento, criatividade e interação para
+            deixar a programação dinâmica sem exageros.
           </p>
 
         </div>
 
 
-        <div class="activities-grid">
 
+        <div class="activity-list reveal">
 
-          <div class="activity-card reveal">
+          <div class="activity-item">
             <i class="fa-solid fa-flag-checkered"></i>
-            <h3>Gincanas</h3>
-            <p>
-              Desafios em grupo com movimento e participação.
-            </p>
+            <span>Gincanas</span>
           </div>
 
-
-          <div class="activity-card reveal">
+          <div class="activity-item">
             <i class="fa-solid fa-puzzle-piece"></i>
-            <h3>Jogos</h3>
-            <p>
-              Jogos recreativos para diferentes faixas etárias.
-            </p>
+            <span>Jogos recreativos</span>
           </div>
 
-
-          <div class="activity-card reveal">
+          <div class="activity-item">
             <i class="fa-solid fa-paintbrush"></i>
-            <h3>Oficinas</h3>
-            <p>
-              Atividades criativas para colocar a imaginação em ação.
-            </p>
+            <span>Oficinas criativas</span>
           </div>
 
-
-          <div class="activity-card reveal">
+          <div class="activity-item">
             <i class="fa-solid fa-person-running"></i>
-            <h3>Brincadeiras</h3>
-            <p>
-              Movimento, diversão e interação entre as crianças.
-            </p>
+            <span>Brincadeiras de movimento</span>
           </div>
 
-
-          <div class="activity-card reveal">
+          <div class="activity-item">
             <i class="fa-solid fa-masks-theater"></i>
-            <h3>Dinâmicas</h3>
-            <p>
-              Atividades para integrar e envolver toda a turma.
-            </p>
+            <span>Dinâmicas em grupo</span>
           </div>
 
-
-          <div class="activity-card reveal">
+          <div class="activity-item">
             <i class="fa-solid fa-music"></i>
-            <h3>Musicalização</h3>
-            <p>
-              Ritmo, música e movimento de forma divertida.
-            </p>
+            <span>Musicalização</span>
           </div>
-
-
-          <div class="activity-card reveal">
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-            <h3>Experiências</h3>
-            <p>
-              Propostas personalizadas para momentos especiais.
-            </p>
-          </div>
-
-
-          <div class="activity-card reveal">
-            <i class="fa-solid fa-medal"></i>
-            <h3>Desafios</h3>
-            <p>
-              Atividades que estimulam participação e cooperação.
-            </p>
-          </div>
-
 
         </div>
 
       </div>
 
     </section>
+
 
 
     <!-- =====================================================
-         DIFERENCIAIS
+         EXPERIÊNCIA / TERCEIRA IMAGEM
     ====================================================== -->
 
-    <section class="differentials" id="diferenciais">
+    <section class="experience">
+
+      <div class="container experience-grid">
+
+
+        <div class="experience-copy reveal">
+
+          <span class="section-kicker">
+            Nosso jeito de trabalhar
+          </span>
+
+
+          <h2>
+            Mais organização.
+            <span>Mais liberdade para brincar.</span>
+          </h2>
+
+
+          <p>
+            Antes de começar a festa, entendemos quem estará presente,
+            qual é o espaço disponível e qual experiência você quer
+            proporcionar. Assim conseguimos escolher as atividades
+            certas para aquele momento.
+          </p>
+
+
+          <div class="numbers">
+
+            <div class="number-box">
+
+              <strong>Planejamento</strong>
+
+              <span>
+                A programação é pensada antes do evento.
+              </span>
+
+            </div>
+
+
+            <div class="number-box">
+
+              <strong>Personalização</strong>
+
+              <span>
+                Cada festa tem suas características.
+              </span>
+
+            </div>
+
+
+            <div class="number-box">
+
+              <strong>Interação</strong>
+
+              <span>
+                Atividades que incentivam as crianças a participarem.
+              </span>
+
+            </div>
+
+
+            <div class="number-box">
+
+              <strong>Cuidado</strong>
+
+              <span>
+                Organização para que tudo aconteça com leveza.
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="experience-image reveal">
+
+          <img
+            src="https://i.imgur.com/nNPyRy7.png"
+            alt="Experiência Star Recreação"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DEPOIMENTOS
+    ====================================================== -->
+
+    <section class="testimonials" id="depoimentos">
 
       <div class="container">
 
 
-        <div class="section-intro reveal">
+        <div class="section-header center reveal">
 
-          <div class="section-kicker">
-            Por que a Star
-          </div>
+          <span class="section-kicker">
+            Famílias
+          </span>
 
-          <h2 class="section-title">
-            Pequenos detalhes fazem uma grande diferença
+          <h2>
+            Quem viveu a experiência conta.
           </h2>
 
-          <p class="section-text">
-            Nosso trabalho começa antes da festa: entendemos
-            o evento e planejamos uma experiência adequada para ele.
+          <p>
+            O melhor sinal de que o trabalho deu certo é quando
+            a diversão continua na memória depois da festa.
           </p>
 
         </div>
 
 
-        <div class="difference-grid">
+        <div class="testimonials-grid">
 
 
-          <div class="difference-list">
+          <article class="testimonial reveal">
 
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
 
-            <div class="difference-card reveal">
+            <p>
+              “Foi uma das melhores escolhas para o aniversário.
+              As crianças ficaram superenvolvidas e nós conseguimos
+              aproveitar a festa também.”
+            </p>
 
-              <div class="difference-number">
-                01
+            <div class="testimonial-author">
+
+              <div class="author-avatar">
+                M
               </div>
 
-              <h3>Planejamento</h3>
-
-              <p>
-                As atividades são pensadas considerando
-                espaço, idade e quantidade de crianças.
-              </p>
+              <div>
+                <strong>Mariana</strong>
+                <span>Mãe de aniversariante</span>
+              </div>
 
             </div>
 
+          </article>
 
-            <div class="difference-card reveal">
 
-              <div class="difference-number">
-                02
+
+          <article class="testimonial reveal">
+
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+
+            <p>
+              “A equipe foi muito atenciosa. As atividades foram
+              muito bem conduzidas e conseguiram envolver crianças
+              de idades diferentes.”
+            </p>
+
+            <div class="testimonial-author">
+
+              <div class="author-avatar">
+                R
               </div>
 
-              <h3>Criatividade</h3>
-
-              <p>
-                Transformamos atividades simples em
-                momentos que realmente envolvem a criançada.
-              </p>
+              <div>
+                <strong>Renata</strong>
+                <span>Mãe de aniversariante</span>
+              </div>
 
             </div>
 
+          </article>
 
-            <div class="difference-card reveal">
 
-              <div class="difference-number">
-                03
+
+          <article class="testimonial reveal">
+
+            <div class="testimonial-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+
+            <p>
+              “Desde o primeiro contato fomos muito bem atendidos.
+              A recreação deixou a festa muito mais organizada e
+              divertida para as crianças.”
+            </p>
+
+            <div class="testimonial-author">
+
+              <div class="author-avatar">
+                C
               </div>
 
-              <h3>Organização</h3>
-
-              <p>
-                A recreação acontece de maneira estruturada
-                para aproveitar bem cada momento da festa.
-              </p>
+              <div>
+                <strong>Carolina</strong>
+                <span>Mãe de aniversariante</span>
+              </div>
 
             </div>
 
-
-            <div class="difference-card reveal">
-
-              <div class="difference-number">
-                04
-              </div>
-
-              <h3>Personalização</h3>
-
-              <p>
-                Cada evento recebe uma programação adequada
-                à sua proposta.
-              </p>
-
-            </div>
-
-
-          </div>
-
-
-          <div class="difference-visual reveal">
-
-            <img
-              src="https://i.imgur.com/nNPyRy7.png"
-              alt="Star Recreação"
-            >
-
-          </div>
+          </article>
 
 
         </div>
@@ -2468,47 +2542,51 @@
       </div>
 
     </section>
+
 
 
     <!-- =====================================================
          CTA
     ====================================================== -->
 
-    <section class="cta">
+    <section class="cta-section">
 
       <div class="container">
 
         <div class="cta-box reveal">
 
+
           <div class="cta-content">
 
-            <div class="cta-kicker">
-              Sua festa pode ser ainda melhor
-            </div>
+            <small>
+              Vamos planejar juntos?
+            </small>
 
             <h2>
-              Vamos planejar essa diversão?
+              Sua festa pode ser ainda mais especial.
             </h2>
 
             <p>
-              Conte para a gente como será sua festa.
-              A Star monta uma proposta de recreação de acordo
-              com o seu evento.
+              Conte um pouco sobre o evento, a quantidade de crianças
+              e a data. A Star monta uma proposta de recreação
+              adequada para sua comemoração.
             </p>
 
           </div>
 
 
-          <a href="#contato" class="btn">
+          <a href="#contato" class="btn btn-yellow">
             Solicitar orçamento
             <i class="fa-solid fa-arrow-right"></i>
           </a>
+
 
         </div>
 
       </div>
 
     </section>
+
 
 
     <!-- =====================================================
@@ -2522,62 +2600,80 @@
 
         <div class="contact-info reveal">
 
-          <div class="section-kicker">
-            Vamos conversar
-          </div>
-
           <h2>
-            Conte sobre sua festa.
+            Vamos conversar?
           </h2>
 
           <p>
-            Envie algumas informações sobre o evento e
-            entraremos em contato para entender o que você precisa.
+            Envie as informações da sua festa e vamos entender
+            qual formato de recreação combina melhor com o seu evento.
           </p>
 
 
-          <div class="contact-item">
+          <div class="contact-details">
 
-            <div class="contact-item-icon">
-              <i class="fa-brands fa-whatsapp"></i>
+
+            <div class="contact-detail">
+
+              <div class="contact-detail-icon">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+
+              <div>
+
+                <strong>WhatsApp</strong>
+
+                <span>
+                  (43) 9200-36581
+                </span>
+
+              </div>
+
             </div>
 
-            <div>
-              <strong>WhatsApp</strong>
-              <span>(43) 9200-36581</span>
+
+            <div class="contact-detail">
+
+              <div class="contact-detail-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+
+              <div>
+
+                <strong>Atendimento</strong>
+
+                <span>
+                  Londrina e região
+                </span>
+
+              </div>
+
             </div>
 
-          </div>
 
+            <div class="contact-detail">
 
-          <div class="contact-item">
+              <div class="contact-detail-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+              </div>
 
-            <div class="contact-item-icon">
-              <i class="fa-solid fa-location-dot"></i>
+              <div>
+
+                <strong>Eventos</strong>
+
+                <span>
+                  Aniversários, festas e eventos
+                </span>
+
+              </div>
+
             </div>
 
-            <div>
-              <strong>Atendimento</strong>
-              <span>Londrina e região</span>
-            </div>
-
-          </div>
-
-
-          <div class="contact-item">
-
-            <div class="contact-item-icon">
-              <i class="fa-solid fa-calendar-days"></i>
-            </div>
-
-            <div>
-              <strong>Eventos</strong>
-              <span>Festas e comemorações</span>
-            </div>
 
           </div>
 
         </div>
+
 
 
         <div class="contact-form reveal">
@@ -2600,8 +2696,8 @@
                 </label>
 
                 <input
-                  id="nome"
                   type="text"
+                  id="nome"
                   placeholder="Seu nome"
                   required
                 >
@@ -2616,8 +2712,8 @@
                 </label>
 
                 <input
-                  id="telefone"
                   type="tel"
+                  id="telefone"
                   placeholder="(43) 99999-9999"
                   required
                 >
@@ -2665,12 +2761,12 @@
               <div class="field">
 
                 <label for="convidados">
-                  Quantidade de crianças
+                  Crianças
                 </label>
 
                 <input
-                  id="convidados"
                   type="number"
+                  id="convidados"
                   min="1"
                   placeholder="Ex.: 20"
                   required
@@ -2682,7 +2778,7 @@
               <div class="field full">
 
                 <label for="mensagem">
-                  Conte um pouco sobre a festa
+                  Sobre a festa
                 </label>
 
                 <textarea
@@ -2720,6 +2816,7 @@
   </main>
 
 
+
   <!-- =======================================================
        FOOTER
   ======================================================== -->
@@ -2734,11 +2831,11 @@
 
         <div class="footer-brand">
 
-          <a href="#inicio" class="brand">
+          <a href="#inicio" class="logo">
 
-            <div class="brand-mark">
+            <span class="logo-mark">
               <i class="fa-solid fa-star"></i>
-            </div>
+            </span>
 
             Star <span>Recreação</span>
 
@@ -2746,51 +2843,62 @@
 
 
           <p>
-            Recreação infantil para transformar festas,
-            aniversários e eventos em experiências que
-            as crianças vão lembrar.
+            Recreação infantil para festas e eventos em Londrina
+            e região. Criatividade, organização e diversão para
+            transformar cada comemoração em uma boa lembrança.
           </p>
 
         </div>
 
 
-        <div class="footer-column">
 
-          <h4>Navegação</h4>
+        <div>
 
-          <a href="#inicio">Início</a>
-          <a href="#servicos">Serviços</a>
-          <a href="#sobre">Sobre</a>
-          <a href="#atividades">Atividades</a>
-          <a href="#diferenciais">Diferenciais</a>
+          <div class="footer-title">
+            Navegação
+          </div>
+
+          <div class="footer-links">
+
+            <a href="#inicio">Início</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#atividades">Atividades</a>
+            <a href="#depoimentos">Famílias</a>
+
+          </div>
 
         </div>
 
 
-        <div class="footer-column">
 
-          <h4>Contato</h4>
+        <div>
 
-          <a href="#contato">
-            Solicitar orçamento
-          </a>
+          <div class="footer-title">
+            Atendimento
+          </div>
 
-          <a
-            href="https://wa.me/5543920036581"
-            target="_blank"
-            rel="noopener"
-          >
-            WhatsApp
-          </a>
+          <div class="footer-links">
 
-          <a href="#contato">
-            Londrina e região
-          </a>
+            <a href="#contato">
+              Solicitar orçamento
+            </a>
+
+            <a
+              href="https://wa.me/5543920036581"
+              target="_blank"
+              rel="noopener"
+            >
+              WhatsApp
+            </a>
+
+          </div>
 
         </div>
 
 
       </div>
+
 
 
       <div class="footer-bottom">
@@ -2800,7 +2908,7 @@
         </span>
 
         <span>
-          Diversão que vira memória.
+          Londrina e região
         </span>
 
       </div>
@@ -2809,6 +2917,7 @@
     </div>
 
   </footer>
+
 
 
   <!-- =======================================================
@@ -2826,18 +2935,20 @@
   </a>
 
 
+
   <!-- =======================================================
        TOP
   ======================================================== -->
 
   <a
     href="#inicio"
-    class="top-button"
-    id="topButton"
+    class="top"
+    id="topBtn"
     aria-label="Voltar ao topo"
   >
     <i class="fa-solid fa-arrow-up"></i>
   </a>
+
 
 
   <!-- =======================================================
@@ -2846,24 +2957,20 @@
 
   <script>
 
-    /* =====================================================
+    /* -------------------------------------------------------
        MENU MOBILE
-    ===================================================== */
+    ------------------------------------------------------- */
 
-    const mobileToggle =
-      document.getElementById("mobileToggle");
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
 
-    const menu =
-      document.getElementById("menu");
+    menuButton.addEventListener("click", () => {
 
-    mobileToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
 
-      menu.classList.toggle("active");
+      const icon = menuButton.querySelector("i");
 
-      const icon =
-        mobileToggle.querySelector("i");
-
-      if (menu.classList.contains("active")) {
+      if (navLinks.classList.contains("active")) {
 
         icon.classList.remove("fa-bars");
         icon.classList.add("fa-xmark");
@@ -2878,14 +2985,13 @@
     });
 
 
-    document.querySelectorAll(".menu a").forEach(link => {
+    document.querySelectorAll(".nav-links a").forEach(link => {
 
       link.addEventListener("click", () => {
 
-        menu.classList.remove("active");
+        navLinks.classList.remove("active");
 
-        const icon =
-          mobileToggle.querySelector("i");
+        const icon = menuButton.querySelector("i");
 
         icon.classList.remove("fa-xmark");
         icon.classList.add("fa-bars");
@@ -2895,73 +3001,66 @@
     });
 
 
-    /* =====================================================
+    /* -------------------------------------------------------
        BACK TO TOP
-    ===================================================== */
+    ------------------------------------------------------- */
 
-    const topButton =
-      document.getElementById("topButton");
+    const topBtn = document.getElementById("topBtn");
 
     window.addEventListener("scroll", () => {
 
-      if (window.scrollY > 500) {
+      if (window.scrollY > 550) {
 
-        topButton.classList.add("show");
+        topBtn.classList.add("show");
 
       } else {
 
-        topButton.classList.remove("show");
+        topBtn.classList.remove("show");
 
       }
 
     });
 
 
-    /* =====================================================
-       REVEAL ANIMATION
-    ===================================================== */
+    /* -------------------------------------------------------
+       REVEAL
+    ------------------------------------------------------- */
 
     const revealElements =
       document.querySelectorAll(".reveal");
 
-    const revealObserver =
-      new IntersectionObserver(
+    const observer = new IntersectionObserver(
+      entries => {
 
-        entries => {
+        entries.forEach(entry => {
 
-          entries.forEach(entry => {
+          if (entry.isIntersecting) {
 
-            if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
 
-              entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
 
-              revealObserver.unobserve(
-                entry.target
-              );
+          }
 
-            }
+        });
 
-          });
-
-        },
-
-        {
-          threshold: .12
-        }
-
-      );
+      },
+      {
+        threshold: .12
+      }
+    );
 
 
     revealElements.forEach(element => {
 
-      revealObserver.observe(element);
+      observer.observe(element);
 
     });
 
 
-    /* =====================================================
-       WHATSAPP FORM
-    ===================================================== */
+    /* -------------------------------------------------------
+       FORMULÁRIO -> WHATSAPP
+    ------------------------------------------------------- */
 
     document
       .getElementById("budgetForm")
@@ -2992,11 +3091,8 @@ Olá, Star Recreação!
 Gostaria de solicitar um orçamento.
 
 Nome: ${nome}
-
 WhatsApp: ${telefone}
-
 Tipo de evento: ${tipo}
-
 Quantidade de crianças: ${convidados}
 
 Detalhes da festa:
@@ -3009,15 +3105,12 @@ ${mensagem}
           encodeURIComponent(texto);
 
 
-        window.open(
-          url,
-          "_blank",
-          "noopener"
-        );
+        window.open(url, "_blank");
 
       });
 
   </script>
+
 
 </body>
 </html>
