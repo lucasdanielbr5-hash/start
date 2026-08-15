@@ -8,14 +8,14 @@
 
   <meta
     name="description"
-    content="Start Recreação — recreação infantil para festas e eventos em Londrina e região."
+    content="Start Recreação — recreação infantil para festas e eventos em Londrina e região. Brincadeiras, experiências e momentos especiais para as crianças."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
@@ -28,53 +28,55 @@
 
     /* =========================================================
        START RECREAÇÃO
-       DESIGN SYSTEM
+       DESIGN PREMIUM / EDITORIAL
     ========================================================= */
 
     :root {
-      --purple: #6d3fc5;
-      --purple-dark: #402176;
-      --purple-deep: #281442;
-      --purple-soft: #eee7fb;
-      --purple-light: #f7f3fc;
+      --purple: #7138a5;
+      --purple-dark: #4b236f;
+      --purple-deep: #29152f;
+      --purple-soft: #efe4f6;
+      --purple-pale: #f7f1fa;
 
-      --cream: #fbfaf7;
+      --ink: #241d29;
+      --muted: #756c79;
+
+      --cream: #fbf8f4;
       --white: #ffffff;
 
-      --text: #26202e;
-      --muted: #756d7f;
-      --line: #e9e3ee;
+      --green: #25b874;
 
-      --green: #20b879;
-
-      --radius-lg: 34px;
-      --radius-md: 22px;
+      --border: rgba(36, 29, 41, .09);
 
       --shadow:
-        0 30px 80px rgba(50, 30, 80, .10);
+        0 25px 70px rgba(52, 26, 67, .13);
 
-      --max: 1240px;
+      --radius-lg: 34px;
+      --radius-md: 24px;
+
+      --container: 1180px;
     }
-
-    /* =========================================================
-       RESET
-    ========================================================= */
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-
-    html {
       scroll-behavior: smooth;
     }
 
     body {
       font-family: "DM Sans", sans-serif;
+      color: var(--ink);
       background: var(--cream);
-      color: var(--text);
       overflow-x: hidden;
+    }
+
+    body,
+    button,
+    input,
+    textarea,
+    select {
+      -webkit-font-smoothing: antialiased;
     }
 
     img {
@@ -83,103 +85,143 @@
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
     button,
     input,
     textarea,
     select {
-      font-family: inherit;
+      font: inherit;
     }
 
     .container {
-      width: min(var(--max), calc(100% - 64px));
-      margin: auto;
+      width: min(var(--container), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* =========================================================
+       TIPOGRAFIA
+    ========================================================= */
+
+    h1,
+    h2,
+    h3,
+    .brand-name {
+      font-family: "Plus Jakarta Sans", sans-serif;
+    }
+
+    h1 {
+      font-size: clamp(48px, 7vw, 88px);
+      line-height: .96;
+      letter-spacing: -4px;
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: clamp(36px, 5vw, 60px);
+      line-height: 1;
+      letter-spacing: -2.8px;
+      font-weight: 800;
+    }
+
+    h3 {
+      font-weight: 700;
     }
 
     /* =========================================================
        HEADER
     ========================================================= */
 
-    header {
+    .header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 1000;
 
-      transition: .3s ease;
-    }
-
-    header.scrolled {
-      background: rgba(251,250,247,.88);
+      background: rgba(251, 248, 244, .82);
       backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(50,30,70,.07);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid rgba(36, 29, 41, .05);
     }
 
     .nav {
-      height: 94px;
+      height: 88px;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 40px;
     }
 
-    .brand {
-      width: 150px;
+    .brand-logo {
+      width: 170px;
+      flex-shrink: 0;
+      transition: .25s ease;
     }
 
-    .brand img {
+    .brand-logo:hover {
+      transform: translateY(-2px);
+    }
+
+    .brand-logo img {
       width: 100%;
       height: auto;
     }
 
-    .menu {
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 34px;
-
+      gap: 30px;
       list-style: none;
     }
 
-    .menu a {
-      font-size: 14px;
-      font-weight: 600;
-      color: #3d3446;
-
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 700;
+      color: #514957;
       transition: .25s ease;
     }
 
-    .menu a:hover {
+    .nav-links a:hover {
       color: var(--purple);
     }
 
-    .menu .contact-link {
-      color: white;
-      background: var(--purple);
-      padding: 13px 22px;
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 13px 21px;
+
       border-radius: 100px;
+
+      background: var(--purple);
+      color: white !important;
+
+      box-shadow: 0 9px 25px rgba(113, 56, 165, .22);
     }
 
-    .menu .contact-link:hover {
-      background: var(--purple-dark);
-      color: white;
+    .nav-cta:hover {
+      background: var(--purple-dark) !important;
+      color: white !important;
       transform: translateY(-2px);
     }
 
-    .mobile-toggle {
+    .mobile-menu {
       display: none;
-
-      border: 0;
-      background: var(--purple);
-      color: white;
 
       width: 45px;
       height: 45px;
 
-      border-radius: 50%;
+      border: 0;
+      border-radius: 14px;
+
+      background: var(--purple);
+      color: white;
 
       cursor: pointer;
     }
@@ -189,182 +231,155 @@
     ========================================================= */
 
     .hero {
-      min-height: 900px;
-
-      padding-top: 150px;
-      padding-bottom: 100px;
+      min-height: 820px;
+      padding: 150px 0 90px;
 
       position: relative;
       overflow: hidden;
 
       background:
         radial-gradient(
-          circle at 75% 20%,
-          rgba(145,101,220,.18),
-          transparent 30%
+          circle at 80% 30%,
+          rgba(142, 83, 181, .14),
+          transparent 32%
         ),
         var(--cream);
     }
 
-    .hero::before {
+    .hero::after {
       content: "";
 
       position: absolute;
 
-      width: 520px;
-      height: 520px;
+      width: 540px;
+      height: 540px;
 
       border-radius: 50%;
 
-      background: #eee5fb;
-
       right: -250px;
-      top: 170px;
+      top: 150px;
 
-      z-index: 0;
+      border: 1px solid rgba(113, 56, 165, .13);
     }
 
     .hero-grid {
-      position: relative;
-      z-index: 2;
+      min-height: 650px;
 
       display: grid;
-
-      grid-template-columns:
-        minmax(0, .88fr)
-        minmax(0, 1.12fr);
+      grid-template-columns: .92fr 1.08fr;
 
       align-items: center;
 
       gap: 70px;
+
+      position: relative;
+      z-index: 2;
     }
 
     .hero-copy {
-      padding-top: 35px;
+      max-width: 590px;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
+      gap: 10px;
 
       color: var(--purple);
 
       font-size: 11px;
       font-weight: 800;
 
+      letter-spacing: 2.5px;
       text-transform: uppercase;
 
-      letter-spacing: 2.8px;
-
-      margin-bottom: 25px;
+      margin-bottom: 24px;
     }
 
     .eyebrow::before {
       content: "";
-
-      width: 26px;
+      width: 28px;
       height: 1px;
-
       background: var(--purple);
-
-      margin-right: 12px;
     }
 
     .hero h1 {
-      font-family: "Manrope", sans-serif;
-
-      font-size: clamp(54px, 6.5vw, 88px);
-
-      line-height: .98;
-
-      letter-spacing: -4px;
-
-      font-weight: 800;
-
       color: var(--purple-deep);
-
-      max-width: 720px;
-
-      margin-bottom: 28px;
+      margin-bottom: 27px;
     }
 
-    .hero h1 em {
+    .hero h1 strong {
       color: var(--purple);
-      font-style: normal;
+      font-weight: inherit;
     }
 
     .hero-description {
-      max-width: 560px;
+      max-width: 520px;
 
       color: var(--muted);
 
       font-size: 17px;
       line-height: 1.8;
 
-      margin-bottom: 35px;
+      margin-bottom: 34px;
     }
 
     .hero-actions {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
-    .btn {
+    .button {
+      min-height: 54px;
+
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      gap: 10px;
 
-      min-height: 54px;
-
-      padding: 0 26px;
+      padding: 0 24px;
 
       border-radius: 100px;
 
-      font-size: 14px;
-      font-weight: 700;
+      font-size: 13px;
+      font-weight: 800;
 
       transition: .3s ease;
     }
 
-    .btn-primary {
+    .button-primary {
       color: white;
       background: var(--purple);
 
       box-shadow:
-        0 14px 30px rgba(109,63,197,.22);
+        0 15px 35px rgba(113, 56, 165, .23);
     }
 
-    .btn-primary:hover {
+    .button-primary:hover {
       background: var(--purple-dark);
       transform: translateY(-3px);
     }
 
-    .btn-text {
-      color: var(--purple-dark);
-
-      border-bottom: 1px solid var(--purple-dark);
-
-      border-radius: 0;
-
-      min-height: auto;
-
-      padding: 0 0 4px;
+    .button-light {
+      color: var(--ink);
+      background: transparent;
+      border: 1px solid rgba(36, 29, 41, .15);
     }
 
-    .btn-text:hover {
-      color: var(--purple);
+    .button-light:hover {
       border-color: var(--purple);
+      color: var(--purple);
+      transform: translateY(-3px);
     }
 
-    /* =========================================================
-       HERO IMAGE
-    ========================================================= */
+    /* HERO IMAGEM */
 
     .hero-visual {
       position: relative;
 
-      min-height: 650px;
+      min-height: 600px;
 
       display: flex;
       align-items: center;
@@ -376,12 +391,17 @@
 
       position: absolute;
 
-      width: 510px;
-      height: 510px;
+      width: 470px;
+      height: 470px;
 
       border-radius: 50%;
 
-      background: var(--purple-soft);
+      background:
+        linear-gradient(
+          145deg,
+          #ead9f2,
+          #f8edf9
+        );
 
       z-index: 0;
     }
@@ -390,877 +410,899 @@
       position: relative;
       z-index: 2;
 
-      width: min(620px, 100%);
+      width: min(590px, 100%);
 
       object-fit: contain;
 
-      filter:
-        drop-shadow(0 30px 30px rgba(47,25,80,.13));
-
-      transform: translateY(15px);
+      /*
+        Sem card.
+        Sem moldura.
+        Sem fundo branco criado pelo site.
+      */
+      filter: drop-shadow(
+        0 30px 35px rgba(61, 28, 79, .16)
+      );
 
       animation: heroFloat 6s ease-in-out infinite;
     }
 
     .hero-note {
       position: absolute;
-
-      right: 0;
-      bottom: 80px;
-
       z-index: 4;
 
-      background: white;
+      right: 10px;
+      bottom: 70px;
 
-      border: 1px solid rgba(50,30,80,.08);
+      width: 190px;
+
+      padding: 19px;
+
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+
+      border: 1px solid rgba(255,255,255,.8);
+
+      border-radius: 22px;
 
       box-shadow: var(--shadow);
+    }
 
-      padding: 18px 21px;
+    .hero-note span {
+      display: block;
 
-      border-radius: 18px;
+      color: var(--purple);
 
-      max-width: 210px;
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+
+      margin-bottom: 7px;
     }
 
     .hero-note strong {
       display: block;
 
-      font-family: Manrope, sans-serif;
+      font-family: "Plus Jakarta Sans", sans-serif;
 
-      font-size: 14px;
+      font-size: 15px;
+      line-height: 1.35;
 
-      color: var(--purple-deep);
-
-      margin-bottom: 5px;
-    }
-
-    .hero-note span {
-      color: var(--muted);
-
-      font-size: 12px;
-
-      line-height: 1.5;
+      color: var(--ink);
     }
 
     @keyframes heroFloat {
-      0%,100% {
-        transform: translateY(15px);
+      0%, 100% {
+        transform: translateY(0);
       }
 
       50% {
-        transform: translateY(0);
+        transform: translateY(-10px);
       }
     }
 
     /* =========================================================
-       INTRO STRIP
+       MINI INTRO
     ========================================================= */
 
-    .intro-strip {
+    .intro {
+      padding: 0 0 100px;
+    }
+
+    .intro-line {
+      height: 1px;
+      background: rgba(36,29,41,.1);
+      margin-bottom: 55px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .intro-label {
+      color: var(--purple);
+
+      font-size: 11px;
+      font-weight: 800;
+
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .intro-text {
+      max-width: 790px;
+
+      font-family: "Plus Jakarta Sans", sans-serif;
+
+      font-size: clamp(25px, 3vw, 38px);
+      line-height: 1.35;
+
+      letter-spacing: -1.4px;
+
+      color: var(--purple-deep);
+    }
+
+    .intro-text span {
+      color: #988e9c;
+    }
+
+    /* =========================================================
+       EXPERIÊNCIA / SOBRE
+    ========================================================= */
+
+    .about {
+      padding: 120px 0;
+
       background: var(--purple-deep);
       color: white;
 
-      padding: 34px 0;
+      overflow: hidden;
     }
 
-    .intro-inner {
-      display: flex;
-
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 30px;
-    }
-
-    .intro-inner p {
-      font-family: Manrope, sans-serif;
-
-      font-size: 20px;
-      font-weight: 600;
-
-      max-width: 650px;
-
-      line-height: 1.4;
-    }
-
-    .intro-meta {
-      display: flex;
-      gap: 40px;
-    }
-
-    .intro-meta div {
-      border-left: 1px solid rgba(255,255,255,.16);
-
-      padding-left: 22px;
-    }
-
-    .intro-meta strong {
-      display: block;
-
-      font-size: 15px;
-
-      margin-bottom: 3px;
-    }
-
-    .intro-meta span {
-      color: #bdb2cc;
-
-      font-size: 12px;
-    }
-
-    /* =========================================================
-       GENERIC SECTION
-    ========================================================= */
-
-    section {
-      padding: 130px 0;
-    }
-
-    .section-header {
-      max-width: 720px;
-
-      margin-bottom: 65px;
-    }
-
-    .section-header.center {
-      margin-left: auto;
-      margin-right: auto;
-
-      text-align: center;
-    }
-
-    .section-kicker {
-      color: var(--purple);
-
-      text-transform: uppercase;
-
-      letter-spacing: 2.8px;
-
-      font-size: 11px;
-
-      font-weight: 800;
-
-      margin-bottom: 18px;
-    }
-
-    .section-title {
-      font-family: Manrope, sans-serif;
-
-      font-size: clamp(38px, 5vw, 62px);
-
-      line-height: 1.03;
-
-      letter-spacing: -2.8px;
-
-      color: var(--purple-deep);
-
-      font-weight: 800;
-    }
-
-    .section-description {
-      margin-top: 20px;
-
-      color: var(--muted);
-
-      font-size: 16px;
-
-      line-height: 1.8;
-
-      max-width: 650px;
-    }
-
-    /* =========================================================
-       EXPERIENCE
-    ========================================================= */
-
-    .experience {
-      background: white;
-    }
-
-    .experience-grid {
+    .about-grid {
       display: grid;
-
-      grid-template-columns:
-        minmax(0, .8fr)
-        minmax(0, 1.2fr);
-
-      gap: 100px;
-
+      grid-template-columns: .92fr 1.08fr;
+      gap: 90px;
       align-items: center;
     }
 
-    .experience-image {
+    .about-visual {
       position: relative;
-
-      min-height: 560px;
+      min-height: 550px;
 
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
     }
 
-    .experience-image::before {
+    .about-visual::before {
       content: "";
 
       position: absolute;
 
-      width: 420px;
-      height: 420px;
-
-      background: #f0eafa;
+      width: 430px;
+      height: 430px;
 
       border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(157, 98, 190, .55),
+          rgba(94, 42, 119, .2) 65%,
+          transparent 70%
+        );
     }
 
-    .experience-image img {
+    .about-image {
       position: relative;
       z-index: 2;
 
-      max-height: 590px;
+      width: 92%;
 
-      width: auto;
+      object-fit: contain;
 
       filter:
-        drop-shadow(0 25px 35px rgba(45,25,70,.12));
+        drop-shadow(
+          0 30px 40px rgba(0,0,0,.22)
+        );
     }
 
-    .experience-copy .section-title {
-      max-width: 600px;
+    .about-copy .eyebrow {
+      color: #c9a6dc;
     }
 
-    .experience-copy > p {
-      color: var(--muted);
+    .about-copy .eyebrow::before {
+      background: #c9a6dc;
+    }
+
+    .about-copy h2 {
+      color: white;
+      margin-bottom: 24px;
+    }
+
+    .about-copy h2 span {
+      color: #c79bdf;
+    }
+
+    .about-copy > p {
+      max-width: 570px;
+
+      color: #c6bacb;
 
       font-size: 16px;
-
       line-height: 1.85;
 
-      margin: 25px 0 35px;
-
-      max-width: 570px;
+      margin-bottom: 32px;
     }
 
-    .features {
+    .about-points {
       display: grid;
-
-      grid-template-columns: repeat(2, 1fr);
-
-      gap: 24px 35px;
-
-      max-width: 600px;
+      gap: 16px;
     }
 
-    .feature {
-      padding-top: 17px;
-
-      border-top: 1px solid var(--line);
-    }
-
-    .feature strong {
-      display: block;
-
-      font-family: Manrope, sans-serif;
-
-      font-size: 15px;
-
-      color: var(--purple-deep);
-
-      margin-bottom: 6px;
-    }
-
-    .feature span {
-      display: block;
-
-      color: var(--muted);
-
-      font-size: 13px;
-
-      line-height: 1.55;
-    }
-
-    /* =========================================================
-       SERVICES
-    ========================================================= */
-
-    .services {
-      background: var(--purple-light);
-    }
-
-    .services-layout {
-      display: grid;
-
-      grid-template-columns: .7fr 1.3fr;
-
-      gap: 80px;
-    }
-
-    .services-intro {
-      position: sticky;
-
-      top: 130px;
-
-      align-self: start;
-    }
-
-    .services-intro .section-description {
-      margin-bottom: 30px;
-    }
-
-    .services-list {
-      border-top: 1px solid #ddd3e9;
-    }
-
-    .service-row {
-      display: grid;
-
-      grid-template-columns: 65px 1fr auto;
-
+    .about-point {
+      display: flex;
       align-items: center;
+      gap: 14px;
 
-      gap: 25px;
+      color: #f5edf8;
 
-      padding: 27px 0;
-
-      border-bottom: 1px solid #ddd3e9;
-
-      transition: .3s ease;
+      font-size: 14px;
+      font-weight: 600;
     }
 
-    .service-row:hover {
-      padding-left: 12px;
-    }
-
-    .service-number {
-      color: #a695bc;
-
-      font-family: Manrope, sans-serif;
-
-      font-size: 13px;
-
-      font-weight: 700;
-    }
-
-    .service-row h3 {
-      font-family: Manrope, sans-serif;
-
-      font-size: 22px;
-
-      color: var(--purple-deep);
-
-      margin-bottom: 5px;
-    }
-
-    .service-row p {
-      color: var(--muted);
-
-      font-size: 13px;
-
-      line-height: 1.6;
-    }
-
-    .service-arrow {
-      width: 40px;
-      height: 40px;
-
-      border: 1px solid #d8cee4;
-
-      border-radius: 50%;
+    .about-point i {
+      width: 27px;
+      height: 27px;
 
       display: grid;
       place-items: center;
 
+      border-radius: 50%;
+
+      background: rgba(199,155,223,.15);
+      color: #d6b2e7;
+
+      font-size: 11px;
+    }
+
+    /* =========================================================
+       SERVIÇOS
+    ========================================================= */
+
+    .services {
+      padding: 125px 0;
+      background: var(--cream);
+    }
+
+    .section-top {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+
+      gap: 80px;
+
+      align-items: end;
+
+      margin-bottom: 65px;
+    }
+
+    .section-label {
       color: var(--purple);
+
+      font-size: 11px;
+      font-weight: 800;
+
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .section-top h2 {
+      color: var(--purple-deep);
+    }
+
+    .section-description {
+      max-width: 520px;
+
+      color: var(--muted);
+
+      line-height: 1.8;
+      font-size: 15px;
+
+      padding-bottom: 4px;
+    }
+
+    .services-list {
+      border-top: 1px solid rgba(36,29,41,.1);
+    }
+
+    .service {
+      display: grid;
+
+      grid-template-columns: 90px 1fr 1.15fr 40px;
+
+      align-items: center;
+
+      gap: 35px;
+
+      padding: 28px 0;
+
+      border-bottom: 1px solid rgba(36,29,41,.1);
+
+      transition: .3s ease;
+    }
+
+    .service:hover {
+      padding-left: 12px;
+      padding-right: 12px;
+
+      background: rgba(255,255,255,.4);
+    }
+
+    .service-number {
+      color: #b4a9ba;
+
+      font-family: "Plus Jakarta Sans", sans-serif;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .service h3 {
+      color: var(--purple-deep);
+
+      font-family: "Plus Jakarta Sans", sans-serif;
+
+      font-size: 19px;
+    }
+
+    .service p {
+      color: var(--muted);
+
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .service-arrow {
+      color: var(--purple);
+
+      font-size: 15px;
 
       transition: .3s;
     }
 
-    .service-row:hover .service-arrow {
-      background: var(--purple);
-      color: white;
-      border-color: var(--purple);
+    .service:hover .service-arrow {
+      transform: translateX(5px);
     }
 
     /* =========================================================
-       GALLERY / MOMENTS
+       ATIVIDADES COMPACTAS
     ========================================================= */
 
-    .moments {
-      background: var(--cream);
+    .activities {
+      padding: 100px 0;
 
-      overflow: hidden;
+      background: #f0e7f4;
     }
 
-    .moments-header {
+    .activities-head {
       display: flex;
+      justify-content: space-between;
+      align-items: end;
 
+      gap: 40px;
+
+      margin-bottom: 45px;
+    }
+
+    .activities-head h2 {
+      color: var(--purple-deep);
+
+      max-width: 620px;
+    }
+
+    .activities-head p {
+      max-width: 360px;
+
+      color: var(--muted);
+
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .activity-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .activity-pill {
+      padding: 14px 19px;
+
+      border-radius: 100px;
+
+      color: var(--purple-deep);
+
+      background: rgba(255,255,255,.62);
+
+      border: 1px solid rgba(113,56,165,.1);
+
+      font-size: 13px;
+      font-weight: 700;
+
+      transition: .25s;
+    }
+
+    .activity-pill:hover {
+      color: white;
+      background: var(--purple);
+      transform: translateY(-2px);
+    }
+
+    /* =========================================================
+       GALERIA / IMAGENS
+    ========================================================= */
+
+    .gallery {
+      padding: 125px 0;
+
+      background: white;
+    }
+
+    .gallery-head {
+      display: flex;
       align-items: end;
       justify-content: space-between;
 
-      gap: 40px;
+      gap: 50px;
 
       margin-bottom: 55px;
     }
 
-    .moments-header .section-header {
-      margin-bottom: 0;
+    .gallery-head h2 {
+      color: var(--purple-deep);
+      max-width: 620px;
     }
 
-    .moments-caption {
-      max-width: 310px;
-
+    .gallery-head p {
       color: var(--muted);
-
-      font-size: 13px;
-
+      max-width: 350px;
       line-height: 1.7;
+      font-size: 14px;
     }
 
-    .gallery {
+    .gallery-grid {
       display: grid;
 
-      grid-template-columns:
-        1.05fr
-        .95fr;
+      grid-template-columns: 1.1fr .9fr;
 
-      grid-template-rows:
-        300px
-        300px;
+      gap: 22px;
+
+      align-items: stretch;
+    }
+
+    .gallery-main {
+      min-height: 570px;
+
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      border-radius: var(--radius-lg);
+
+      background:
+        radial-gradient(
+          circle at 50% 40%,
+          #f1e3f7,
+          #e9d6f0
+        );
+    }
+
+    .gallery-main img {
+      width: 92%;
+      height: 92%;
+
+      object-fit: contain;
+
+      filter:
+        drop-shadow(
+          0 30px 30px rgba(60,30,75,.15)
+        );
+
+      transition: transform .6s ease;
+    }
+
+    .gallery-main:hover img {
+      transform: scale(1.025);
+    }
+
+    .gallery-side {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .gallery-small {
+      min-height: 274px;
+
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      border-radius: var(--radius-lg);
+
+      background: var(--purple-pale);
+    }
+
+    .gallery-small:nth-child(2) {
+      background: #eee5f3;
+    }
+
+    .gallery-small img {
+      width: 88%;
+      height: 88%;
+
+      object-fit: contain;
+
+      filter:
+        drop-shadow(
+          0 20px 25px rgba(60,30,75,.12)
+        );
+
+      transition: transform .5s ease;
+    }
+
+    .gallery-small:hover img {
+      transform: scale(1.035);
+    }
+
+    /* =========================================================
+       DEPOIMENTOS
+    ========================================================= */
+
+    .testimonials {
+      padding: 125px 0;
+
+      background: var(--purple-deep);
+      color: white;
+    }
+
+    .testimonials-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+
+      gap: 50px;
+
+      margin-bottom: 60px;
+    }
+
+    .testimonials-header h2 {
+      color: white;
+      max-width: 680px;
+    }
+
+    .testimonials-header p {
+      color: #bdb0c4;
+
+      max-width: 330px;
+
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
 
       gap: 18px;
     }
 
-    .gallery-item {
-      position: relative;
-
-      overflow: hidden;
-
-      background: transparent;
-
-      border-radius: 26px;
-    }
-
-    .gallery-item:first-child {
-      grid-row: 1 / 3;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-
-      object-fit: contain;
-
-      transition: transform .7s cubic-bezier(.2,.7,.2,1);
-    }
-
-    .gallery-item:first-child img {
-      object-fit: contain;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.035);
-    }
-
-    .gallery-label {
-      position: absolute;
-
-      left: 20px;
-      bottom: 20px;
-
-      background: rgba(255,255,255,.92);
-
-      backdrop-filter: blur(10px);
-
-      padding: 10px 15px;
-
-      border-radius: 100px;
-
-      font-size: 11px;
-
-      font-weight: 700;
-
-      color: var(--purple-deep);
-
-      box-shadow: 0 8px 20px rgba(40,20,60,.08);
-    }
-
-    /* =========================================================
-       TESTIMONIALS
-    ========================================================= */
-
-    .testimonials {
-      background: white;
-    }
-
-    .testimonial-layout {
-      display: grid;
-
-      grid-template-columns: .72fr 1.28fr;
-
-      gap: 80px;
-
-      align-items: start;
-    }
-
-    .testimonial-intro {
-      position: sticky;
-      top: 130px;
-    }
-
-    .testimonial-intro .section-title {
-      font-size: clamp(40px, 4.5vw, 58px);
-    }
-
-    .testimonial-intro p {
-      color: var(--muted);
-
-      font-size: 15px;
-
-      line-height: 1.8;
-
-      margin-top: 20px;
-    }
-
-    .testimonial-list {
-      display: grid;
-
-      grid-template-columns: repeat(2, 1fr);
-
-      gap: 20px;
-    }
-
     .testimonial {
-      padding: 32px;
+      padding: 31px;
 
-      border: 1px solid var(--line);
+      min-height: 285px;
 
-      border-radius: 24px;
+      display: flex;
+      flex-direction: column;
 
-      background: #fff;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.09),
+          rgba(255,255,255,.035)
+        );
 
-      transition: .3s ease;
+      border: 1px solid rgba(255,255,255,.09);
+
+      border-radius: 27px;
+
+      transition: .3s;
     }
 
     .testimonial:hover {
       transform: translateY(-5px);
 
-      border-color: #d9cbea;
-
-      box-shadow: var(--shadow);
+      border-color: rgba(203,162,225,.3);
     }
 
-    .testimonial.featured {
-      grid-column: span 2;
-
-      background: var(--purple-deep);
-
-      border-color: var(--purple-deep);
-
-      color: white;
-    }
-
-    .quote-mark {
-      color: var(--purple);
+    .testimonial-mark {
+      color: #c69bdb;
 
       font-family: Georgia, serif;
 
-      font-size: 50px;
+      font-size: 42px;
+      line-height: .7;
 
-      line-height: .6;
-
-      margin-bottom: 20px;
-    }
-
-    .testimonial.featured .quote-mark {
-      color: #b99de7;
+      margin-bottom: 23px;
     }
 
     .testimonial p {
-      color: #61586b;
+      color: #eee7f1;
 
-      font-size: 14px;
+      font-size: 15px;
+      line-height: 1.75;
 
-      line-height: 1.8;
-
-      margin-bottom: 25px;
+      flex: 1;
     }
 
-    .testimonial.featured p {
-      color: #ddd5e8;
-
-      font-size: 16px;
-
-      max-width: 720px;
-    }
-
-    .person {
+    .testimonial-author {
       display: flex;
-
       align-items: center;
 
       gap: 12px;
+
+      padding-top: 22px;
+      margin-top: 22px;
+
+      border-top: 1px solid rgba(255,255,255,.08);
     }
 
-    .person-avatar {
+    .author-avatar {
       width: 38px;
       height: 38px;
+
+      border-radius: 50%;
 
       display: grid;
       place-items: center;
 
-      border-radius: 50%;
+      background: #75419a;
 
-      background: var(--purple-soft);
+      color: white;
 
-      color: var(--purple);
-
-      font-size: 13px;
-
+      font-size: 12px;
       font-weight: 800;
     }
 
-    .testimonial.featured .person-avatar {
-      background: rgba(255,255,255,.12);
-      color: white;
-    }
-
-    .person strong {
+    .testimonial-author strong {
       display: block;
 
-      color: var(--purple-deep);
-
-      font-size: 12px;
-
-      margin-bottom: 2px;
-    }
-
-    .testimonial.featured .person strong {
+      font-size: 13px;
       color: white;
     }
 
-    .person span {
-      color: #978e9f;
+    .testimonial-author span {
+      display: block;
+
+      color: #9f91a8;
 
       font-size: 11px;
+
+      margin-top: 2px;
     }
 
     /* =========================================================
        CTA
     ========================================================= */
 
-    .final-cta {
+    .cta {
       padding: 100px 0;
 
-      background:
-        linear-gradient(
-          135deg,
-          #301850 0%,
-          #5d3499 60%,
-          #7044b4 100%
-        );
-
-      color: white;
-
-      overflow: hidden;
-
-      position: relative;
+      background: white;
     }
 
-    .final-cta::before {
+    .cta-box {
+      min-height: 360px;
+
+      position: relative;
+      overflow: hidden;
+
+      border-radius: 38px;
+
+      padding: 65px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 50px;
+
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(195,145,221,.4),
+          transparent 32%
+        ),
+        linear-gradient(
+          135deg,
+          #43205e,
+          #6d3493
+        );
+    }
+
+    .cta-box::before {
       content: "";
 
       position: absolute;
 
-      width: 600px;
-      height: 600px;
-
-      border: 1px solid rgba(255,255,255,.08);
+      width: 300px;
+      height: 300px;
 
       border-radius: 50%;
 
-      right: -230px;
-      top: -230px;
+      border: 1px solid rgba(255,255,255,.1);
+
+      right: -100px;
+      bottom: -160px;
     }
 
-    .final-cta-inner {
+    .cta-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-label {
+      color: #d9b9e9;
+
+      font-size: 11px;
+      font-weight: 800;
+
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .cta h2 {
+      color: white;
+
+      max-width: 670px;
+
+      margin: 13px 0 15px;
+    }
+
+    .cta p {
+      color: #d3c4da;
+
+      max-width: 540px;
+
+      line-height: 1.7;
+
+      font-size: 14px;
+    }
+
+    .cta .button {
       position: relative;
       z-index: 2;
 
-      display: grid;
+      flex-shrink: 0;
 
-      grid-template-columns: 1fr auto;
-
-      align-items: center;
-
-      gap: 60px;
-    }
-
-    .final-cta small {
-      display: block;
-
-      color: #d5c3ed;
-
-      text-transform: uppercase;
-
-      letter-spacing: 2.5px;
-
-      font-size: 10px;
-
-      font-weight: 800;
-
-      margin-bottom: 16px;
-    }
-
-    .final-cta h2 {
-      font-family: Manrope, sans-serif;
-
-      font-size: clamp(38px, 5vw, 64px);
-
-      line-height: 1;
-
-      letter-spacing: -3px;
-
-      max-width: 720px;
-
-      margin-bottom: 20px;
-    }
-
-    .final-cta p {
-      color: #d4c9df;
-
-      max-width: 580px;
-
-      font-size: 15px;
-
-      line-height: 1.7;
-    }
-
-    .cta-button {
       background: white;
+      color: var(--purple);
 
-      color: var(--purple-dark);
-
-      padding: 17px 28px;
-
-      border-radius: 100px;
-
-      font-size: 14px;
-
-      font-weight: 800;
-
-      white-space: nowrap;
-
-      transition: .3s;
+      box-shadow: 0 18px 40px rgba(0,0,0,.15);
     }
 
-    .cta-button:hover {
+    .cta .button:hover {
       transform: translateY(-3px);
-
-      background: #f2eafa;
+      background: #f8effb;
     }
 
     /* =========================================================
-       CONTACT
+       CONTATO
     ========================================================= */
 
     .contact {
+      padding: 120px 0;
+
       background: var(--cream);
     }
 
     .contact-grid {
       display: grid;
 
-      grid-template-columns: .7fr 1.3fr;
+      grid-template-columns: .75fr 1.25fr;
 
-      gap: 90px;
+      gap: 70px;
 
       align-items: start;
     }
 
-    .contact-copy .section-title {
-      font-size: clamp(40px, 4.5vw, 58px);
+    .contact-copy h2 {
+      color: var(--purple-deep);
+
+      margin: 14px 0 20px;
     }
 
     .contact-copy > p {
-      color: var(--muted);
+      max-width: 420px;
 
-      font-size: 15px;
+      color: var(--muted);
 
       line-height: 1.8;
 
-      margin: 22px 0 35px;
+      font-size: 15px;
 
-      max-width: 420px;
+      margin-bottom: 35px;
     }
 
     .contact-details {
       display: grid;
-      gap: 17px;
+      gap: 20px;
     }
 
     .contact-detail {
       display: flex;
-
+      gap: 13px;
       align-items: center;
-
-      gap: 14px;
-
-      color: var(--purple-deep);
-
-      font-size: 13px;
-
-      font-weight: 600;
     }
 
     .contact-detail-icon {
-      width: 40px;
-      height: 40px;
-
-      border-radius: 50%;
+      width: 43px;
+      height: 43px;
 
       display: grid;
       place-items: center;
 
-      background: var(--purple-soft);
+      border-radius: 14px;
 
+      background: var(--purple-soft);
       color: var(--purple);
 
+      flex-shrink: 0;
+    }
+
+    .contact-detail strong {
+      display: block;
+
       font-size: 13px;
-    }
-
-    .form {
-      background: white;
-
-      border: 1px solid var(--line);
-
-      border-radius: 30px;
-
-      padding: 42px;
-
-      box-shadow: 0 20px 70px rgba(40,20,60,.05);
-    }
-
-    .form-title {
-      font-family: Manrope, sans-serif;
 
       color: var(--purple-deep);
 
-      font-size: 26px;
+      margin-bottom: 2px;
+    }
 
-      margin-bottom: 27px;
+    .contact-detail span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .form {
+      padding: 38px;
+
+      background: white;
+
+      border: 1px solid var(--border);
+
+      border-radius: 30px;
+
+      box-shadow:
+        0 20px 60px rgba(50,30,60,.06);
+    }
+
+    .form-title {
+      font-family: "Plus Jakarta Sans", sans-serif;
+
+      color: var(--purple-deep);
+
+      font-size: 24px;
+      font-weight: 800;
+
+      margin-bottom: 25px;
     }
 
     .form-grid {
       display: grid;
 
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
 
-      gap: 18px;
+      gap: 17px;
     }
 
     .field {
       display: flex;
-
       flex-direction: column;
 
       gap: 7px;
@@ -1271,11 +1313,10 @@
     }
 
     .field label {
-      color: #514858;
+      color: var(--purple-deep);
 
       font-size: 11px;
-
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .field input,
@@ -1283,37 +1324,43 @@
     .field textarea {
       width: 100%;
 
-      border: 1px solid #e4dfe8;
-
-      background: #fcfbfd;
+      border: 1px solid #e7dfe9;
 
       border-radius: 13px;
 
-      padding: 14px 15px;
+      background: #fcfafc;
+
+      color: var(--ink);
 
       outline: none;
 
-      color: var(--text);
+      padding: 13px 14px;
 
       font-size: 13px;
 
       transition: .25s;
     }
 
-    .field input:focus,
-    .field select:focus,
-    .field textarea:focus {
-      border-color: var(--purple);
-
-      background: white;
-
-      box-shadow: 0 0 0 4px rgba(109,63,197,.07);
+    .field input,
+    .field select {
+      height: 48px;
     }
 
     .field textarea {
-      min-height: 125px;
+      min-height: 120px;
 
       resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      background: white;
+
+      border-color: var(--purple);
+
+      box-shadow:
+        0 0 0 4px rgba(113,56,165,.07);
     }
 
     .form-submit {
@@ -1321,9 +1368,9 @@
 
       border: 0;
 
-      margin-top: 22px;
-
       cursor: pointer;
+
+      margin-top: 20px;
     }
 
     /* =========================================================
@@ -1331,11 +1378,10 @@
     ========================================================= */
 
     footer {
-      background: #21132f;
+      padding: 60px 0 30px;
 
+      background: #1e1025;
       color: white;
-
-      padding: 55px 0 25px;
     }
 
     .footer-top {
@@ -1343,47 +1389,49 @@
 
       justify-content: space-between;
 
-      gap: 60px;
+      gap: 70px;
 
       padding-bottom: 45px;
 
-      border-bottom: 1px solid rgba(255,255,255,.09);
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
 
     .footer-brand {
-      max-width: 400px;
+      max-width: 390px;
     }
 
     .footer-logo {
-      width: 140px;
+      width: 155px;
 
-      margin-bottom: 18px;
+      display: block;
 
-      filter: brightness(0) invert(1);
+      margin-bottom: 20px;
+
+      filter:
+        brightness(0)
+        invert(1);
     }
 
     .footer-brand p {
-      color: #a99cb4;
+      color: #9f91a8;
 
-      font-size: 12px;
+      font-size: 13px;
 
-      line-height: 1.8;
+      line-height: 1.75;
     }
 
     .footer-links {
       display: flex;
-
       gap: 70px;
     }
 
     .footer-column h4 {
+      color: #d3aee3;
+
       font-size: 11px;
 
-      color: #d5b9f5;
-
       text-transform: uppercase;
-
-      letter-spacing: 1.8px;
+      letter-spacing: 1.7px;
 
       margin-bottom: 17px;
     }
@@ -1391,11 +1439,11 @@
     .footer-column a {
       display: block;
 
-      color: #b5a9bf;
+      color: #a99cac;
 
       font-size: 12px;
 
-      margin-bottom: 11px;
+      margin-bottom: 10px;
 
       transition: .2s;
     }
@@ -1405,15 +1453,14 @@
     }
 
     .footer-bottom {
-      padding-top: 23px;
+      padding-top: 25px;
 
       display: flex;
-
       justify-content: space-between;
 
       gap: 20px;
 
-      color: #7f718b;
+      color: #76677e;
 
       font-size: 10px;
     }
@@ -1425,8 +1472,8 @@
     .whatsapp {
       position: fixed;
 
-      right: 25px;
-      bottom: 25px;
+      right: 23px;
+      bottom: 23px;
 
       width: 58px;
       height: 58px;
@@ -1434,24 +1481,23 @@
       display: grid;
       place-items: center;
 
-      background: var(--green);
-
-      color: white;
-
       border-radius: 50%;
+
+      background: var(--green);
+      color: white;
 
       font-size: 25px;
 
       z-index: 999;
 
       box-shadow:
-        0 15px 35px rgba(32,184,121,.28);
+        0 15px 35px rgba(37,184,116,.3);
 
-      transition: .3s;
+      transition: .25s;
     }
 
     .whatsapp:hover {
-      transform: translateY(-4px) scale(1.04);
+      transform: scale(1.07);
     }
 
     /* =========================================================
@@ -1461,35 +1507,36 @@
     .back-top {
       position: fixed;
 
-      right: 31px;
-      bottom: 95px;
+      right: 27px;
+      bottom: 94px;
 
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
 
       display: grid;
       place-items: center;
 
       background: white;
 
-      border: 1px solid var(--line);
-
       color: var(--purple);
 
-      border-radius: 50%;
+      border: 1px solid var(--border);
 
-      z-index: 998;
+      border-radius: 13px;
+
+      box-shadow: 0 10px 30px rgba(30,16,37,.1);
 
       opacity: 0;
-
-      pointer-events: none;
+      visibility: hidden;
 
       transition: .3s;
+
+      z-index: 998;
     }
 
     .back-top.show {
       opacity: 1;
-      pointer-events: auto;
+      visibility: visible;
     }
 
     /* =========================================================
@@ -1498,7 +1545,6 @@
 
     .reveal {
       opacity: 0;
-
       transform: translateY(25px);
 
       transition:
@@ -1508,24 +1554,30 @@
 
     .reveal.visible {
       opacity: 1;
-
       transform: translateY(0);
     }
 
     /* =========================================================
-       RESPONSIVE
+       RESPONSIVO
     ========================================================= */
 
     @media (max-width: 1050px) {
+
+      .nav-links {
+        gap: 18px;
+      }
 
       .hero-grid {
         grid-template-columns: 1fr;
 
         text-align: center;
+
+        gap: 30px;
       }
 
       .hero-copy {
-        padding-top: 0;
+        max-width: 720px;
+        margin: 0 auto;
       }
 
       .hero-description {
@@ -1538,64 +1590,48 @@
       }
 
       .hero-visual {
-        min-height: 520px;
+        min-height: 500px;
       }
 
-      .intro-inner {
-        flex-direction: column;
-        align-items: flex-start;
+      .hero-image {
+        width: min(500px, 90%);
       }
 
-      .experience-grid,
-      .testimonial-layout,
-      .contact-grid {
+      .about-grid {
         grid-template-columns: 1fr;
 
-        gap: 60px;
+        gap: 50px;
       }
 
-      .experience-image {
+      .about-copy {
+        max-width: 700px;
+      }
+
+      .about-visual {
         min-height: 450px;
       }
 
-      .testimonial-intro,
-      .services-intro {
-        position: static;
+      .section-top {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
 
-      .services-layout {
+      .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .services-intro {
-        max-width: 650px;
+      .contact-copy {
+        max-width: 700px;
       }
-
-      .contact-copy > p {
-        max-width: 600px;
-      }
-
     }
 
-    @media (max-width: 800px) {
-
-      .container {
-        width: min(var(--max), calc(100% - 38px));
-      }
+    @media (max-width: 850px) {
 
       .nav {
         height: 76px;
       }
 
-      .brand {
-        width: 125px;
-      }
-
-      .mobile-toggle {
-        display: block;
-      }
-
-      .menu {
+      .nav-links {
         position: absolute;
 
         top: 76px;
@@ -1603,220 +1639,192 @@
 
         width: 100%;
 
+        padding: 25px;
+
         display: none;
 
         flex-direction: column;
-
         align-items: stretch;
 
-        gap: 0;
+        gap: 5px;
 
-        padding: 12px 20px 22px;
+        background: rgba(251,248,244,.98);
 
-        background: rgba(251,250,247,.98);
-
-        border-bottom: 1px solid var(--line);
-
-        box-shadow: 0 20px 30px rgba(40,20,60,.05);
+        border-bottom: 1px solid var(--border);
       }
 
-      .menu.active {
+      .nav-links.active {
         display: flex;
       }
 
-      .menu li {
-        width: 100%;
-      }
-
-      .menu a {
+      .nav-links a {
         display: block;
-
-        padding: 15px 5px;
+        padding: 13px;
       }
 
-      .menu .contact-link {
+      .nav-cta {
         text-align: center;
-
-        margin-top: 7px;
+        margin-top: 8px;
       }
 
-      .hero {
-        min-height: auto;
-
-        padding-top: 125px;
-
-        padding-bottom: 70px;
+      .mobile-menu {
+        display: grid;
+        place-items: center;
       }
 
-      .hero h1 {
-        letter-spacing: -2.5px;
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
 
-      .hero-visual {
-        min-height: 400px;
-      }
-
-      .hero-visual::before {
-        width: 350px;
-        height: 350px;
-      }
-
-      .hero-note {
-        right: 0;
-        bottom: 15px;
-      }
-
-      section {
-        padding: 90px 0;
-      }
-
-      .features {
+      .gallery-grid {
         grid-template-columns: 1fr;
       }
 
-      .moments-header {
-        flex-direction: column;
-
-        align-items: flex-start;
+      .gallery-main {
+        min-height: 480px;
       }
 
-      .gallery {
+      .gallery-side {
         grid-template-columns: 1fr 1fr;
-
-        grid-template-rows: 280px 280px;
+        grid-template-rows: 1fr;
       }
 
-      .testimonial-list {
+      .gallery-small {
+        min-height: 280px;
+      }
+
+      .testimonials-grid {
         grid-template-columns: 1fr;
       }
 
-      .testimonial.featured {
-        grid-column: auto;
+      .testimonial {
+        min-height: auto;
       }
 
-      .final-cta-inner {
-        grid-template-columns: 1fr;
-
-        gap: 30px;
+      .cta-box {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
       .footer-top {
         flex-direction: column;
       }
-
     }
 
-    @media (max-width: 560px) {
+    @media (max-width: 650px) {
 
-      .hero h1 {
+      .container {
+        width: min(100% - 32px, var(--container));
+      }
+
+      h1 {
         font-size: 47px;
+        letter-spacing: -2.7px;
+      }
 
-        line-height: 1;
+      h2 {
+        letter-spacing: -1.8px;
+      }
 
-        letter-spacing: -2px;
+      .brand-logo {
+        width: 145px;
+      }
+
+      .hero {
+        padding-top: 120px;
+        padding-bottom: 55px;
+      }
+
+      .hero-visual {
+        min-height: 390px;
+      }
+
+      .hero-visual::before {
+        width: 320px;
+        height: 320px;
+      }
+
+      .hero-note {
+        right: 0;
+        bottom: 20px;
+        width: 160px;
       }
 
       .hero-description {
         font-size: 15px;
       }
 
-      .hero-actions {
-        flex-direction: column;
-
-        align-items: stretch;
+      .intro {
+        padding-bottom: 75px;
       }
 
-      .btn-primary {
-        width: 100%;
+      .intro-text {
+        font-size: 25px;
       }
 
-      .hero-visual {
-        min-height: 330px;
+      .about,
+      .services,
+      .gallery,
+      .testimonials,
+      .contact {
+        padding: 80px 0;
       }
 
-      .hero-visual::before {
-        width: 280px;
-        height: 280px;
+      .about-visual {
+        min-height: 360px;
       }
 
-      .hero-note {
-        max-width: 180px;
-
-        padding: 13px 15px;
-
-        right: -3px;
+      .about-visual::before {
+        width: 300px;
+        height: 300px;
       }
 
-      .hero-note strong {
-        font-size: 12px;
-      }
-
-      .hero-note span {
-        font-size: 10px;
-      }
-
-      .intro-inner p {
-        font-size: 17px;
-      }
-
-      .intro-meta {
-        width: 100%;
-
-        display: grid;
-
-        grid-template-columns: 1fr 1fr;
-
-        gap: 15px;
-      }
-
-      .intro-meta div {
-        padding-left: 14px;
-      }
-
-      .section-title {
-        letter-spacing: -1.8px;
-      }
-
-      .experience-image {
-        min-height: 350px;
-      }
-
-      .experience-image::before {
-        width: 280px;
-        height: 280px;
-      }
-
-      .experience-image img {
-        max-height: 390px;
-      }
-
-      .service-row {
-        grid-template-columns: 35px 1fr 30px;
-
+      .service {
+        grid-template-columns: 45px 1fr 25px;
         gap: 12px;
       }
 
-      .service-row h3 {
-        font-size: 18px;
+      .service p {
+        grid-column: 2 / -1;
+        margin-top: -5px;
       }
 
-      .service-row p {
-        font-size: 12px;
+      .service-arrow {
+        grid-column: 3;
+        grid-row: 1;
       }
 
-      .gallery {
-        display: grid;
+      .activities {
+        padding: 75px 0;
+      }
 
+      .activities-head,
+      .gallery-head,
+      .testimonials-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .gallery-main {
+        min-height: 370px;
+      }
+
+      .gallery-side {
         grid-template-columns: 1fr;
-
-        grid-template-rows:
-          350px
-          250px
-          250px;
       }
 
-      .gallery-item:first-child {
-        grid-row: auto;
+      .gallery-small {
+        min-height: 300px;
+      }
+
+      .cta {
+        padding: 65px 0;
+      }
+
+      .cta-box {
+        padding: 38px 28px;
+        border-radius: 28px;
       }
 
       .form {
@@ -1840,23 +1848,18 @@
       }
 
       .whatsapp {
-        width: 53px;
-        height: 53px;
+        right: 16px;
+        bottom: 16px;
 
-        right: 17px;
-        bottom: 17px;
+        width: 54px;
+        height: 54px;
       }
 
       .back-top {
-        right: 23px;
+        right: 18px;
         bottom: 82px;
       }
-
     }
-
-    /* =========================================================
-       REDUCE MOTION
-    ========================================================= */
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -1867,7 +1870,6 @@
         animation: none !important;
         transition: none !important;
       }
-
     }
 
   </style>
@@ -1879,11 +1881,15 @@
        HEADER
   ========================================================= -->
 
-  <header id="header">
+  <header class="header">
 
     <div class="container nav">
 
-      <a href="#inicio" class="brand">
+      <a
+        href="#inicio"
+        class="brand-logo"
+        aria-label="Start Recreação"
+      >
         <img
           src="https://i.imgur.com/DUKDmgn.png"
           alt="Start Recreação"
@@ -1891,45 +1897,43 @@
       </a>
 
       <nav>
-
-        <ul class="menu" id="menu">
+        <ul class="nav-links" id="navLinks">
 
           <li>
             <a href="#inicio">Início</a>
           </li>
 
           <li>
-            <a href="#experiencia">A Start</a>
+            <a href="#sobre">A Start</a>
           </li>
 
           <li>
-            <a href="#servicos">Serviços</a>
+            <a href="#servicos">Experiências</a>
           </li>
 
           <li>
-            <a href="#momentos">Momentos</a>
+            <a href="#galeria">Momentos</a>
           </li>
 
           <li>
-            <a href="#familias">Famílias</a>
+            <a href="#depoimentos">Famílias</a>
           </li>
 
           <li>
             <a
               href="#contato"
-              class="contact-link"
+              class="nav-cta"
             >
               Solicitar orçamento
             </a>
           </li>
 
         </ul>
-
       </nav>
 
       <button
-        class="mobile-toggle"
-        id="mobileToggle"
+        class="mobile-menu"
+        id="mobileMenu"
         aria-label="Abrir menu"
       >
         <i class="fa-solid fa-bars"></i>
@@ -1940,48 +1944,51 @@
   </header>
 
 
-  <!-- =========================================================
-       HERO
-  ========================================================= -->
-
   <main>
 
-    <section class="hero" id="inicio">
+    <!-- =======================================================
+         HERO
+    ======================================================== -->
+
+    <section
+      class="hero"
+      id="inicio"
+    >
 
       <div class="container hero-grid">
 
         <div class="hero-copy reveal">
 
           <div class="eyebrow">
-            Recreação infantil
+            Start Recreação
           </div>
 
           <h1>
-            A infância
-            merece ser
-            <em>vivida.</em>
+            Onde a infância
+            <strong>vira memória.</strong>
           </h1>
 
           <p class="hero-description">
-            A Start cria experiências de recreação para transformar
-            festas e eventos em momentos leves, divertidos e
-            verdadeiramente inesquecíveis.
+            Recreação infantil pensada para transformar festas
+            em experiências leves, divertidas e cheias de
+            momentos que as crianças vão lembrar.
           </p>
 
           <div class="hero-actions">
 
             <a
               href="#contato"
-              class="btn btn-primary"
+              class="button button-primary"
             >
-              Quero a Start na minha festa
+              Quero minha festa com a Start
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
 
             <a
-              href="#experiencia"
-              class="btn btn-text"
+              href="#sobre"
+              class="button button-light"
             >
-              Conheça nosso trabalho
+              Conheça a Start
             </a>
 
           </div>
@@ -1994,19 +2001,18 @@
           <img
             class="hero-image"
             src="https://i.imgur.com/xMty4hk.png"
-            alt="Crianças e recreação da Start"
+            alt="Personagem da Start Recreação"
           >
 
           <div class="hero-note">
 
-            <strong>
-              Para festas que ficam na memória.
-            </strong>
-
             <span>
-              Recreação planejada para cada idade,
-              espaço e momento.
+              Para sua festa
             </span>
+
+            <strong>
+              Diversão pensada nos mínimos detalhes.
+            </strong>
 
           </div>
 
@@ -2021,101 +2027,96 @@
          INTRO
     ======================================================== -->
 
-    <div class="intro-strip">
+    <section class="intro">
 
-      <div class="container intro-inner">
+      <div class="container">
 
-        <p>
-          Não é só sobre entreter as crianças.
-          É sobre criar uma experiência que toda a família aproveita.
-        </p>
+        <div class="intro-line"></div>
 
-        <div class="intro-meta">
+        <div class="intro-grid reveal">
 
-          <div>
-            <strong>Londrina</strong>
-            <span>e região</span>
+          <div class="intro-label">
+            Nossa proposta
           </div>
 
-          <div>
-            <strong>Festas & eventos</strong>
-            <span>experiências personalizadas</span>
+          <div class="intro-text">
+
+            Não é apenas ocupar as crianças.
+
+            <span>
+              É criar uma experiência gostosa para elas,
+              tranquila para os pais e especial para todos.
+            </span>
+
           </div>
 
         </div>
 
       </div>
 
-    </div>
+    </section>
 
 
     <!-- =======================================================
-         EXPERIÊNCIA
+         SOBRE
     ======================================================== -->
 
     <section
-      class="experience"
-      id="experiencia"
+      class="about"
+      id="sobre"
     >
 
-      <div class="container experience-grid">
+      <div class="container about-grid">
 
-        <div class="experience-image reveal">
+        <div class="about-visual reveal">
 
           <img
+            class="about-image"
             src="https://i.imgur.com/g0zW0LO.png"
-            alt="Recreação Start"
+            alt="Personagem Start Recreação"
           >
 
         </div>
 
 
-        <div class="experience-copy reveal">
+        <div class="about-copy reveal">
 
-          <div class="section-kicker">
+          <div class="eyebrow">
             A Start
           </div>
 
-          <h2 class="section-title">
-            Brincar também é uma forma de criar memórias.
+          <h2>
+            A festa é sua.
+            <span>A diversão é nossa.</span>
           </h2>
 
           <p>
-            A gente acredita que uma boa recreação não precisa
-            ser barulhenta ou exagerada para ser divertida.
-            Ela precisa fazer sentido para as crianças,
-            respeitar o ritmo de cada grupo e acontecer de
-            maneira natural dentro da festa.
+            A Start Recreação nasceu para deixar as festas
+            infantis mais leves, organizadas e divertidas.
+            Criamos atividades de acordo com o perfil do
+            evento, a idade das crianças e o espaço disponível.
           </p>
 
-          <div class="features">
+          <div class="about-points">
 
-            <div class="feature">
-              <strong>Planejamento</strong>
-              <span>
-                Cada evento é pensado antes de começar.
-              </span>
+            <div class="about-point">
+              <i class="fa-solid fa-check"></i>
+              Recreação planejada para cada evento
             </div>
 
-            <div class="feature">
-              <strong>Personalidade</strong>
-              <span>
-                A recreação acompanha o estilo da sua festa.
-              </span>
+            <div class="about-point">
+              <i class="fa-solid fa-check"></i>
+              Atividades adaptadas para diferentes idades
             </div>
 
-            <div class="feature">
-              <strong>Experiência</strong>
-              <span>
-                Atividades conduzidas por profissionais.
-              </span>
+            <div class="about-point">
+              <i class="fa-solid fa-check"></i>
+              Equipe preparada para conduzir a diversão
             </div>
 
-            <div class="feature">
-              <strong>Acolhimento</strong>
-              <span>
-                Crianças livres para brincar e participar.
-              </span>
+            <div class="about-point">
+              <i class="fa-solid fa-check"></i>
+              Experiência acolhedora para crianças e famílias
             </div>
 
           </div>
@@ -2136,128 +2137,143 @@
       id="servicos"
     >
 
-      <div class="container services-layout">
+      <div class="container">
 
-        <div class="services-intro reveal">
+        <div class="section-top reveal">
 
-          <div class="section-kicker">
-            O que fazemos
+          <div>
+
+            <div class="section-label">
+              Experiências
+            </div>
+
+            <h2>
+              Tudo começa
+              com uma boa brincadeira.
+            </h2>
+
           </div>
 
-          <h2 class="section-title">
-            A recreação certa para cada ocasião.
-          </h2>
-
           <p class="section-description">
-            A programação é construída de acordo com a idade
-            das crianças, o espaço disponível e o perfil do evento.
+            A programação é construída de forma personalizada
+            para combinar com a festa, o ambiente e a idade
+            das crianças. Sem roteiro engessado e sem
+            brincadeiras aleatórias.
           </p>
-
-          <a
-            href="#contato"
-            class="btn btn-primary"
-          >
-            Montar minha proposta
-          </a>
 
         </div>
 
 
-        <div class="services-list reveal">
+        <div class="services-list">
 
-          <div class="service-row">
+          <article class="service reveal">
 
-            <span class="service-number">01</span>
-
-            <div>
-              <h3>Festas infantis</h3>
-              <p>
-                Recreação completa para aniversários e
-                comemorações especiais.
-              </p>
+            <div class="service-number">
+              01
             </div>
 
-            <span class="service-arrow">
+            <h3>
+              Recreação infantil
+            </h3>
+
+            <p>
+              Condução de brincadeiras e atividades para
+              manter as crianças envolvidas durante a festa.
+            </p>
+
+            <div class="service-arrow">
               <i class="fa-solid fa-arrow-right"></i>
-            </span>
-
-          </div>
-
-
-          <div class="service-row">
-
-            <span class="service-number">02</span>
-
-            <div>
-              <h3>Gincanas & jogos</h3>
-              <p>
-                Dinâmicas que envolvem as crianças sem
-                deixar a festa perder seu ritmo.
-              </p>
             </div>
 
-            <span class="service-arrow">
-              <i class="fa-solid fa-arrow-right"></i>
-            </span>
-
-          </div>
+          </article>
 
 
-          <div class="service-row">
+          <article class="service reveal">
 
-            <span class="service-number">03</span>
-
-            <div>
-              <h3>Oficinas criativas</h3>
-              <p>
-                Atividades para criar, experimentar e
-                levar uma lembrança especial para casa.
-              </p>
+            <div class="service-number">
+              02
             </div>
 
-            <span class="service-arrow">
+            <h3>
+              Gincanas
+            </h3>
+
+            <p>
+              Desafios e dinâmicas em grupo que estimulam
+              interação, movimento e participação.
+            </p>
+
+            <div class="service-arrow">
               <i class="fa-solid fa-arrow-right"></i>
-            </span>
-
-          </div>
-
-
-          <div class="service-row">
-
-            <span class="service-number">04</span>
-
-            <div>
-              <h3>Eventos</h3>
-              <p>
-                Soluções recreativas para escolas,
-                empresas, condomínios e eventos familiares.
-              </p>
             </div>
 
-            <span class="service-arrow">
-              <i class="fa-solid fa-arrow-right"></i>
-            </span>
-
-          </div>
+          </article>
 
 
-          <div class="service-row">
+          <article class="service reveal">
 
-            <span class="service-number">05</span>
-
-            <div>
-              <h3>Experiências personalizadas</h3>
-              <p>
-                Uma programação criada especialmente para
-                o seu evento.
-              </p>
+            <div class="service-number">
+              03
             </div>
 
-            <span class="service-arrow">
-              <i class="fa-solid fa-arrow-right"></i>
-            </span>
+            <h3>
+              Oficinas criativas
+            </h3>
 
-          </div>
+            <p>
+              Momentos para criar, experimentar e colocar
+              a imaginação das crianças para funcionar.
+            </p>
+
+            <div class="service-arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+          </article>
+
+
+          <article class="service reveal">
+
+            <div class="service-number">
+              04
+            </div>
+
+            <h3>
+              Jogos e brincadeiras
+            </h3>
+
+            <p>
+              Propostas recreativas escolhidas de acordo
+              com a faixa etária e o perfil da turma.
+            </p>
+
+            <div class="service-arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+          </article>
+
+
+          <article class="service reveal">
+
+            <div class="service-number">
+              05
+            </div>
+
+            <h3>
+              Eventos especiais
+            </h3>
+
+            <p>
+              Recreação para aniversários, escolas,
+              confraternizações e eventos familiares.
+            </p>
+
+            <div class="service-arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+          </article>
 
         </div>
 
@@ -2267,79 +2283,149 @@
 
 
     <!-- =======================================================
-         MOMENTOS / GALERIA
+         ATIVIDADES — COMPACTA
     ======================================================== -->
 
-    <section
-      class="moments"
-      id="momentos"
-    >
+    <section class="activities">
 
       <div class="container">
 
-        <div class="moments-header">
+        <div class="activities-head reveal">
 
-          <div class="section-header reveal">
+          <div>
 
-            <div class="section-kicker">
-              Momentos Start
+            <div class="section-label">
+              Possibilidades
             </div>
 
-            <h2 class="section-title">
-              Onde a diversão acontece.
+            <h2>
+              Cada idade encontra
+              seu jeito de brincar.
             </h2>
 
           </div>
 
-          <p class="moments-caption reveal">
-            Cada festa tem sua própria energia.
-            Nosso trabalho é entrar nela e transformar
-            cada momento em uma boa lembrança.
+          <p>
+            A programação pode combinar diferentes propostas
+            para que cada criança encontre uma atividade
+            que faça sentido para ela.
           </p>
 
         </div>
 
 
-        <div class="gallery reveal">
+        <div class="activity-list reveal">
 
-          <div class="gallery-item">
+          <span class="activity-pill">
+            Gincanas
+          </span>
+
+          <span class="activity-pill">
+            Jogos recreativos
+          </span>
+
+          <span class="activity-pill">
+            Oficinas
+          </span>
+
+          <span class="activity-pill">
+            Brincadeiras em grupo
+          </span>
+
+          <span class="activity-pill">
+            Dinâmicas
+          </span>
+
+          <span class="activity-pill">
+            Musicalização
+          </span>
+
+          <span class="activity-pill">
+            Desafios
+          </span>
+
+          <span class="activity-pill">
+            Atividades criativas
+          </span>
+
+          <span class="activity-pill">
+            Recreação livre
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         GALERIA
+    ======================================================== -->
+
+    <section
+      class="gallery"
+      id="galeria"
+    >
+
+      <div class="container">
+
+        <div class="gallery-head reveal">
+
+          <div>
+
+            <div class="section-label">
+              Momentos
+            </div>
+
+            <h2>
+              Uma festa bonita
+              também mora nos detalhes.
+            </h2>
+
+          </div>
+
+          <p>
+            Uma identidade divertida, delicada e marcante
+            para combinar com momentos que merecem ser
+            lembrados.
+          </p>
+
+        </div>
+
+
+        <div class="gallery-grid reveal">
+
+          <div class="gallery-main">
 
             <img
               src="https://i.imgur.com/nNPyRy7.png"
-              alt="Momento de recreação Start"
+              alt="Start Recreação"
             >
-
-            <span class="gallery-label">
-              Brincar em movimento
-            </span>
 
           </div>
 
 
-          <div class="gallery-item">
+          <div class="gallery-side">
 
-            <img
-              src="https://i.imgur.com/xMty4hk.png"
-              alt="Experiência infantil Start"
-            >
+            <div class="gallery-small">
 
-            <span class="gallery-label">
-              Experiências
-            </span>
+              <img
+                src="https://i.imgur.com/xMty4hk.png"
+                alt="Start Recreação"
+              >
 
-          </div>
+            </div>
 
 
-          <div class="gallery-item">
+            <div class="gallery-small">
 
-            <img
-              src="https://i.imgur.com/g0zW0LO.png"
-              alt="Recreação infantil Start"
-            >
+              <img
+                src="https://i.imgur.com/g0zW0LO.png"
+                alt="Start Recreação"
+              >
 
-            <span class="gallery-label">
-              Momentos especiais
-            </span>
+            </div>
 
           </div>
 
@@ -2356,59 +2442,61 @@
 
     <section
       class="testimonials"
-      id="familias"
+      id="depoimentos"
     >
 
-      <div class="container testimonial-layout">
+      <div class="container">
 
-        <div class="testimonial-intro reveal">
+        <div class="testimonials-header reveal">
 
-          <div class="section-kicker">
-            Quem viveu
+          <div>
+
+            <div class="eyebrow">
+              Quem viveu
+            </div>
+
+            <h2>
+              O que as famílias
+              dizem da Start.
+            </h2>
+
           </div>
 
-          <h2 class="section-title">
-            A melhor parte é ouvir quem estava lá.
-          </h2>
-
           <p>
-            Famílias que escolheram a Start para cuidar
-            de uma parte tão importante da festa:
-            fazer as crianças aproveitarem de verdade.
+            Porque no fim da festa, o que realmente fica
+            são as histórias que as crianças levam para casa.
           </p>
 
         </div>
 
 
-        <div class="testimonial-list reveal">
+        <div class="testimonials-grid">
 
-          <article class="testimonial featured">
+          <article class="testimonial reveal">
 
-            <div class="quote-mark">
+            <div class="testimonial-mark">
               “
             </div>
 
             <p>
-              Foi uma das melhores decisões que tivemos para
-              a festa. As crianças ficaram envolvidas do começo
-              ao fim e nós conseguimos aproveitar muito mais
-              o aniversário. A equipe foi maravilhosa,
-              cuidadosa e super organizada.
+              A recreação fez toda a diferença. As crianças
+              ficaram envolvidas do começo ao fim e nós
+              conseguimos aproveitar a festa muito mais.
             </p>
 
-            <div class="person">
+            <div class="testimonial-author">
 
-              <div class="person-avatar">
-                AM
+              <div class="author-avatar">
+                A
               </div>
 
               <div>
                 <strong>
-                  Ana Martins
+                  Amanda
                 </strong>
 
                 <span>
-                  Mãe da Helena
+                  Mãe de aniversariante
                 </span>
               </div>
 
@@ -2417,31 +2505,31 @@
           </article>
 
 
-          <article class="testimonial">
+          <article class="testimonial reveal">
 
-            <div class="quote-mark">
+            <div class="testimonial-mark">
               “
             </div>
 
             <p>
-              Meu filho fala da recreação até hoje.
-              Foi tudo muito bem pensado e as crianças
-              realmente participaram.
+              Foi tudo muito organizado e, ao mesmo tempo,
+              super leve. A equipe conseguiu conquistar
+              as crianças logo nos primeiros minutos.
             </p>
 
-            <div class="person">
+            <div class="testimonial-author">
 
-              <div class="person-avatar">
-                RC
+              <div class="author-avatar">
+                C
               </div>
 
               <div>
                 <strong>
-                  Renata Costa
+                  Camila
                 </strong>
 
                 <span>
-                  Mãe do Miguel
+                  Mãe de aniversariante
                 </span>
               </div>
 
@@ -2450,64 +2538,31 @@
           </article>
 
 
-          <article class="testimonial">
+          <article class="testimonial reveal">
 
-            <div class="quote-mark">
+            <div class="testimonial-mark">
               “
             </div>
 
             <p>
-              A equipe chegou preparada, entendeu o espaço
-              e conduziu tudo de uma maneira muito leve.
-              Recomendo de olhos fechados.
+              O mais legal foi perceber que cada criança
+              conseguiu participar do seu jeito. Foi uma
+              experiência muito especial para nossa família.
             </p>
 
-            <div class="person">
+            <div class="testimonial-author">
 
-              <div class="person-avatar">
-                JL
+              <div class="author-avatar">
+                R
               </div>
 
               <div>
                 <strong>
-                  Juliana Lopes
+                  Renata
                 </strong>
 
                 <span>
-                  Mãe da Laura
-                </span>
-              </div>
-
-            </div>
-
-          </article>
-
-
-          <article class="testimonial">
-
-            <div class="quote-mark">
-              “
-            </div>
-
-            <p>
-              Foi exatamente o que queríamos:
-              crianças felizes, pais tranquilos e uma
-              festa acontecendo sem preocupação.
-            </p>
-
-            <div class="person">
-
-              <div class="person-avatar">
-                MP
-              </div>
-
-              <div>
-                <strong>
-                  Mariana Prado
-                </strong>
-
-                <span>
-                  Família Prado
+                  Família Start
                 </span>
               </div>
 
@@ -2526,33 +2581,41 @@
          CTA
     ======================================================== -->
 
-    <section class="final-cta">
+    <section class="cta">
 
-      <div class="container final-cta-inner">
+      <div class="container">
 
-        <div>
+        <div class="cta-box reveal">
 
-          <small>
-            Sua festa começa antes da festa
-          </small>
+          <div class="cta-content">
 
-          <h2>
-            Vamos criar uma experiência especial?
-          </h2>
+            <div class="cta-label">
+              Vamos criar esse momento?
+            </div>
 
-          <p>
-            Conte um pouco sobre o seu evento e a equipe
-            Start prepara uma proposta pensando no seu momento.
-          </p>
+            <h2>
+              Sua festa pode ser
+              ainda mais especial.
+            </h2>
+
+            <p>
+              Conte para a gente sobre o seu evento e
+              montamos uma proposta de recreação de acordo
+              com o que você imaginou.
+            </p>
+
+          </div>
+
+
+          <a
+            href="#contato"
+            class="button"
+          >
+            Solicitar orçamento
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
 
         </div>
-
-        <a
-          href="#contato"
-          class="cta-button"
-        >
-          Solicitar orçamento
-        </a>
 
       </div>
 
@@ -2572,19 +2635,21 @@
 
         <div class="contact-copy reveal">
 
-          <div class="section-kicker">
+          <div class="section-label">
             Vamos conversar
           </div>
 
-          <h2 class="section-title">
-            Conte para a gente sobre a sua festa.
+          <h2>
+            Conte como
+            será sua festa.
           </h2>
 
           <p>
-            Data, local, quantidade de crianças, idade
-            e o que você imaginou. Quanto mais detalhes,
-            melhor conseguimos pensar na experiência.
+            Preencha os dados ao lado. A Start entra em contato
+            para entender os detalhes e apresentar as melhores
+            possibilidades para o seu evento.
           </p>
+
 
           <div class="contact-details">
 
@@ -2594,9 +2659,18 @@
                 <i class="fa-brands fa-whatsapp"></i>
               </div>
 
-              (43) 9200-36581
+              <div>
+                <strong>
+                  WhatsApp
+                </strong>
+
+                <span>
+                  (43) 9200-36581
+                </span>
+              </div>
 
             </div>
+
 
             <div class="contact-detail">
 
@@ -2604,17 +2678,34 @@
                 <i class="fa-solid fa-location-dot"></i>
               </div>
 
-              Londrina e região
+              <div>
+                <strong>
+                  Atendimento
+                </strong>
+
+                <span>
+                  Londrina e região
+                </span>
+              </div>
 
             </div>
+
 
             <div class="contact-detail">
 
               <div class="contact-detail-icon">
-                <i class="fa-regular fa-calendar"></i>
+                <i class="fa-solid fa-calendar-days"></i>
               </div>
 
-              Festas, eventos e comemorações
+              <div>
+                <strong>
+                  Eventos
+                </strong>
+
+                <span>
+                  Aniversários e eventos especiais
+                </span>
+              </div>
 
             </div>
 
@@ -2625,9 +2716,9 @@
 
         <div class="form reveal">
 
-          <h3 class="form-title">
+          <div class="form-title">
             Solicite seu orçamento
-          </h3>
+          </div>
 
           <form id="budgetForm">
 
@@ -2636,13 +2727,13 @@
               <div class="field">
 
                 <label for="nome">
-                  Seu nome
+                  Nome
                 </label>
 
                 <input
-                  id="nome"
                   type="text"
-                  placeholder="Como podemos chamar você?"
+                  id="nome"
+                  placeholder="Seu nome"
                   required
                 >
 
@@ -2656,8 +2747,8 @@
                 </label>
 
                 <input
-                  id="telefone"
                   type="tel"
+                  id="telefone"
                   placeholder="(43) 99999-9999"
                   required
                 >
@@ -2708,14 +2799,14 @@
               <div class="field">
 
                 <label for="criancas">
-                  Número de crianças
+                  Quantidade de crianças
                 </label>
 
                 <input
-                  id="criancas"
                   type="number"
+                  id="criancas"
                   min="1"
-                  placeholder="Ex.: 25"
+                  placeholder="Ex.: 20"
                   required
                 >
 
@@ -2725,12 +2816,12 @@
               <div class="field full">
 
                 <label for="mensagem">
-                  Sobre a festa
+                  Sobre sua festa
                 </label>
 
                 <textarea
                   id="mensagem"
-                  placeholder="Data, local, idade das crianças e o que você imaginou para a recreação..."
+                  placeholder="Data, local, idade das crianças e outros detalhes..."
                 ></textarea>
 
               </div>
@@ -2740,15 +2831,12 @@
 
             <button
               type="submit"
-              class="btn btn-primary form-submit"
+              class="button button-primary form-submit"
             >
 
               Enviar pelo WhatsApp
 
-              <i
-                class="fa-solid fa-arrow-right"
-                style="margin-left:9px"
-              ></i>
+              <i class="fa-brands fa-whatsapp"></i>
 
             </button>
 
@@ -2775,16 +2863,20 @@
 
         <div class="footer-brand">
 
-          <img
-            class="footer-logo"
-            src="https://i.imgur.com/DUKDmgn.png"
-            alt="Start Recreação"
-          >
+          <a href="#inicio">
+
+            <img
+              class="footer-logo"
+              src="https://i.imgur.com/DUKDmgn.png"
+              alt="Start Recreação"
+            >
+
+          </a>
 
           <p>
-            Recreação infantil pensada para transformar
-            festas em experiências leves, divertidas
-            e cheias de boas lembranças.
+            Recreação infantil para transformar festas
+            em experiências especiais, leves e cheias
+            de boas lembranças.
           </p>
 
         </div>
@@ -2794,25 +2886,27 @@
 
           <div class="footer-column">
 
-            <h4>Navegação</h4>
+            <h4>
+              Navegação
+            </h4>
 
             <a href="#inicio">
               Início
             </a>
 
-            <a href="#experiencia">
+            <a href="#sobre">
               A Start
             </a>
 
             <a href="#servicos">
-              Serviços
+              Experiências
             </a>
 
-            <a href="#momentos">
+            <a href="#galeria">
               Momentos
             </a>
 
-            <a href="#familias">
+            <a href="#depoimentos">
               Famílias
             </a>
 
@@ -2821,7 +2915,9 @@
 
           <div class="footer-column">
 
-            <h4>Contato</h4>
+            <h4>
+              Contato
+            </h4>
 
             <a href="#contato">
               Orçamento
@@ -2849,7 +2945,7 @@
         </span>
 
         <span>
-          Londrina — Paraná
+          Londrina e região
         </span>
 
       </div>
@@ -2895,40 +2991,23 @@
   <script>
 
     /* =========================================================
-       HEADER
-    ========================================================= */
+       MENU MOBILE
+    ========================================================== */
 
-    const header = document.getElementById("header");
+    const mobileMenu =
+      document.getElementById("mobileMenu");
 
-    window.addEventListener("scroll", () => {
+    const navLinks =
+      document.getElementById("navLinks");
 
-      if (window.scrollY > 30) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
+    mobileMenu.addEventListener("click", () => {
 
-    });
-
-
-    /* =========================================================
-       MOBILE MENU
-    ========================================================= */
-
-    const mobileToggle =
-      document.getElementById("mobileToggle");
-
-    const menu =
-      document.getElementById("menu");
-
-    mobileToggle.addEventListener("click", () => {
-
-      menu.classList.toggle("active");
+      navLinks.classList.toggle("active");
 
       const icon =
-        mobileToggle.querySelector("i");
+        mobileMenu.querySelector("i");
 
-      if (menu.classList.contains("active")) {
+      if (navLinks.classList.contains("active")) {
 
         icon.classList.remove("fa-bars");
         icon.classList.add("fa-xmark");
@@ -2944,15 +3023,15 @@
 
 
     document
-      .querySelectorAll(".menu a")
+      .querySelectorAll(".nav-links a")
       .forEach(link => {
 
         link.addEventListener("click", () => {
 
-          menu.classList.remove("active");
+          navLinks.classList.remove("active");
 
           const icon =
-            mobileToggle.querySelector("i");
+            mobileMenu.querySelector("i");
 
           icon.classList.remove("fa-xmark");
           icon.classList.add("fa-bars");
@@ -2963,7 +3042,7 @@
 
 
     /* =========================================================
-       BACK TOP
+       BACK TO TOP
     ========================================================== */
 
     const backTop =
@@ -2971,10 +3050,14 @@
 
     window.addEventListener("scroll", () => {
 
-      if (window.scrollY > 700) {
+      if (window.scrollY > 600) {
+
         backTop.classList.add("show");
+
       } else {
+
         backTop.classList.remove("show");
+
       }
 
     });
@@ -2987,7 +3070,7 @@
     const revealElements =
       document.querySelectorAll(".reveal");
 
-    const revealObserver =
+    const observer =
       new IntersectionObserver(
         entries => {
 
@@ -2997,9 +3080,7 @@
 
               entry.target.classList.add("visible");
 
-              revealObserver.unobserve(
-                entry.target
-              );
+              observer.unobserve(entry.target);
 
             }
 
@@ -3014,29 +3095,26 @@
 
     revealElements.forEach(element => {
 
-      revealObserver.observe(element);
+      observer.observe(element);
 
     });
 
 
     /* =========================================================
-       WHATSAPP FORM
+       FORMULÁRIO WHATSAPP
     ========================================================== */
 
-    const budgetForm =
-      document.getElementById("budgetForm");
-
-    budgetForm.addEventListener(
-      "submit",
-      function(event) {
+    document
+      .getElementById("budgetForm")
+      .addEventListener("submit", function(event) {
 
         event.preventDefault();
 
         const nome =
-          document.getElementById("nome").value;
+          document.getElementById("nome").value.trim();
 
         const telefone =
-          document.getElementById("telefone").value;
+          document.getElementById("telefone").value.trim();
 
         const tipo =
           document.getElementById("tipo").value;
@@ -3045,24 +3123,22 @@
           document.getElementById("criancas").value;
 
         const mensagem =
-          document.getElementById("mensagem").value;
+          document.getElementById("mensagem").value.trim();
 
 
-        const texto =
-`Olá, Start Recreação!
-
-Gostaria de solicitar um orçamento.
-
-Nome: ${nome}
-
-WhatsApp: ${telefone}
-
-Tipo de evento: ${tipo}
-
-Quantidade de crianças: ${criancas}
-
-Detalhes da festa:
-${mensagem}`;
+        const texto = [
+          "Olá, Start Recreação!",
+          "",
+          "Gostaria de solicitar um orçamento.",
+          "",
+          "Nome: " + nome,
+          "WhatsApp: " + telefone,
+          "Tipo de evento: " + tipo,
+          "Quantidade de crianças: " + criancas,
+          "Detalhes: " + (
+            mensagem || "Não informado"
+          )
+        ].join("\n");
 
 
         const url =
@@ -3076,8 +3152,7 @@ ${mensagem}`;
           "noopener"
         );
 
-      }
-    );
+      });
 
   </script>
 
