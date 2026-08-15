@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Start Recreação | Experiências que ficam na memória</title>
+  <title>START Recreação | Recreação infantil em Londrina</title>
 
   <meta
     name="description"
-    content="Start Recreação — recreação infantil para festas e eventos em Londrina e região. Brincadeiras, experiências e momentos especiais para as crianças."
+    content="START Recreação — experiências de recreação infantil para aniversários, festas e eventos em Londrina e região."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
@@ -27,34 +27,34 @@
   <style>
 
     /* =========================================================
-       START RECREAÇÃO
-       DESIGN PREMIUM / EDITORIAL
+       BASE
     ========================================================= */
 
     :root {
-      --purple: #7138a5;
-      --purple-dark: #4b236f;
-      --purple-deep: #29152f;
-      --purple-soft: #efe4f6;
-      --purple-pale: #f7f1fa;
+      --purple: #7B2FBE;
+      --purple-dark: #542080;
+      --purple-deep: #35144f;
+      --purple-soft: #efe5f8;
+      --lavender: #f7f1fb;
 
-      --ink: #241d29;
-      --muted: #756c79;
+      --ink: #24182d;
+      --muted: #756b7c;
 
-      --cream: #fbf8f4;
+      --cream: #fcfaf8;
       --white: #ffffff;
 
-      --green: #25b874;
+      --line: #e9e1ed;
 
-      --border: rgba(36, 29, 41, .09);
-
-      --shadow:
-        0 25px 70px rgba(52, 26, 67, .13);
+      --green: #25b96f;
 
       --radius-lg: 34px;
-      --radius-md: 24px;
+      --radius-md: 22px;
 
-      --container: 1180px;
+      --shadow:
+        0 24px 70px rgba(61, 27, 84, .10);
+
+      --shadow-small:
+        0 12px 35px rgba(61, 27, 84, .08);
     }
 
     * {
@@ -64,19 +64,15 @@
       scroll-behavior: smooth;
     }
 
+    html {
+      scroll-padding-top: 90px;
+    }
+
     body {
       font-family: "DM Sans", sans-serif;
       color: var(--ink);
       background: var(--cream);
       overflow-x: hidden;
-    }
-
-    body,
-    button,
-    input,
-    textarea,
-    select {
-      -webkit-font-smoothing: antialiased;
     }
 
     img {
@@ -85,71 +81,78 @@
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
     }
 
     button,
     input,
     textarea,
     select {
-      font: inherit;
+      font-family: inherit;
     }
 
     .container {
-      width: min(var(--container), calc(100% - 48px));
+      width: min(1180px, calc(100% - 48px));
       margin: 0 auto;
     }
 
+
     /* =========================================================
-       TIPOGRAFIA
+       LOGO
     ========================================================= */
 
-    h1,
-    h2,
-    h3,
-    .brand-name {
-      font-family: "Plus Jakarta Sans", sans-serif;
+    .brand {
+      display: inline-flex;
+      align-items: center;
     }
 
-    h1 {
-      font-size: clamp(48px, 7vw, 88px);
-      line-height: .96;
-      letter-spacing: -4px;
-      font-weight: 800;
+    .brand img {
+      width: 112px;
+      height: auto;
+      display: block;
     }
 
-    h2 {
-      font-size: clamp(36px, 5vw, 60px);
-      line-height: 1;
-      letter-spacing: -2.8px;
-      font-weight: 800;
+    /*
+      Logo fornecida pelo cliente.
+      Mantemos o desenho original, apenas controlando o tamanho.
+    */
+
+    .brand-svg {
+      width: 115px;
+      height: auto;
     }
 
-    h3 {
-      font-weight: 700;
-    }
 
     /* =========================================================
        HEADER
     ========================================================= */
 
-    .header {
+    header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 1000;
 
-      background: rgba(251, 248, 244, .82);
+      transition: .3s ease;
+
+      background:
+        rgba(252, 250, 248, .86);
+
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
 
-      border-bottom: 1px solid rgba(36, 29, 41, .05);
+      border-bottom: 1px solid rgba(123, 47, 190, .06);
+    }
+
+    header.scrolled {
+      box-shadow: 0 8px 30px rgba(45, 22, 61, .06);
+      background: rgba(252, 250, 248, .96);
     }
 
     .nav {
-      height: 88px;
+      height: 82px;
 
       display: flex;
       align-items: center;
@@ -157,93 +160,111 @@
       gap: 40px;
     }
 
-    .brand-logo {
-      width: 170px;
-      flex-shrink: 0;
-      transition: .25s ease;
+    .brand img {
+      width: 92px;
     }
 
-    .brand-logo:hover {
-      transform: translateY(-2px);
-    }
+    .menu {
+      list-style: none;
 
-    .brand-logo img {
-      width: 100%;
-      height: auto;
-    }
-
-    .nav-links {
       display: flex;
       align-items: center;
-      gap: 30px;
-      list-style: none;
+      gap: 34px;
     }
 
-    .nav-links a {
+    .menu a {
+      color: #514759;
       font-size: 13px;
       font-weight: 700;
-      color: #514957;
+
       transition: .25s ease;
     }
 
-    .nav-links a:hover {
+    .menu a:hover {
       color: var(--purple);
     }
 
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    .menu .nav-cta {
+      color: white;
 
-      padding: 13px 21px;
-
-      border-radius: 100px;
+      padding: 12px 20px;
 
       background: var(--purple);
-      color: white !important;
+      border-radius: 100px;
 
-      box-shadow: 0 9px 25px rgba(113, 56, 165, .22);
+      box-shadow:
+        0 8px 20px rgba(123, 47, 190, .20);
     }
 
-    .nav-cta:hover {
-      background: var(--purple-dark) !important;
-      color: white !important;
+    .menu .nav-cta:hover {
+      color: white;
+      background: var(--purple-dark);
       transform: translateY(-2px);
     }
 
-    .mobile-menu {
-      display: none;
-
-      width: 45px;
-      height: 45px;
+    .mobile-button {
+      width: 44px;
+      height: 44px;
 
       border: 0;
-      border-radius: 14px;
+      border-radius: 13px;
 
       background: var(--purple);
       color: white;
 
+      display: none;
+      place-items: center;
+
       cursor: pointer;
     }
+
 
     /* =========================================================
        HERO
     ========================================================= */
 
     .hero {
-      min-height: 820px;
-      padding: 150px 0 90px;
+      min-height: 760px;
+
+      padding-top: 120px;
+      padding-bottom: 80px;
 
       position: relative;
       overflow: hidden;
 
       background:
         radial-gradient(
-          circle at 80% 30%,
-          rgba(142, 83, 181, .14),
+          circle at 85% 20%,
+          rgba(123, 47, 190, .13),
           transparent 32%
         ),
+        radial-gradient(
+          circle at 15% 75%,
+          rgba(218, 195, 231, .25),
+          transparent 30%
+        ),
         var(--cream);
+    }
+
+    /*
+      Pequenos elementos geométricos.
+      Não usamos emojis nem ilustrações repetidas.
+    */
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 420px;
+      height: 420px;
+
+      border: 1px solid rgba(123, 47, 190, .10);
+
+      border-radius: 50%;
+
+      right: -160px;
+      top: 80px;
     }
 
     .hero::after {
@@ -251,75 +272,92 @@
 
       position: absolute;
 
-      width: 540px;
-      height: 540px;
+      width: 260px;
+      height: 260px;
+
+      border: 1px solid rgba(123, 47, 190, .07);
 
       border-radius: 50%;
 
-      right: -250px;
-      top: 150px;
-
-      border: 1px solid rgba(113, 56, 165, .13);
+      left: -150px;
+      bottom: -80px;
     }
 
     .hero-grid {
-      min-height: 650px;
+      min-height: 600px;
 
       display: grid;
-      grid-template-columns: .92fr 1.08fr;
+      grid-template-columns: 1.02fr .98fr;
 
       align-items: center;
 
-      gap: 70px;
+      gap: 55px;
 
       position: relative;
       z-index: 2;
     }
 
-    .hero-copy {
-      max-width: 590px;
+    .hero-content {
+      max-width: 650px;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 9px;
 
       color: var(--purple);
 
       font-size: 11px;
       font-weight: 800;
 
-      letter-spacing: 2.5px;
       text-transform: uppercase;
+      letter-spacing: 2.2px;
 
       margin-bottom: 24px;
     }
 
     .eyebrow::before {
       content: "";
-      width: 28px;
-      height: 1px;
+
+      width: 26px;
+      height: 2px;
+
       background: var(--purple);
+
+      border-radius: 20px;
     }
 
     .hero h1 {
+      font-family: "Manrope", sans-serif;
+
+      font-size: clamp(48px, 6vw, 76px);
+
+      line-height: .98;
+
+      letter-spacing: -4px;
+
       color: var(--purple-deep);
-      margin-bottom: 27px;
+
+      max-width: 700px;
+
+      margin-bottom: 25px;
+
+      font-weight: 800;
     }
 
-    .hero h1 strong {
+    .hero h1 em {
       color: var(--purple);
-      font-weight: inherit;
+      font-style: normal;
     }
 
     .hero-description {
-      max-width: 520px;
-
       color: var(--muted);
 
       font-size: 17px;
-      line-height: 1.8;
+      line-height: 1.75;
+
+      max-width: 540px;
 
       margin-bottom: 34px;
     }
@@ -328,33 +366,36 @@
       display: flex;
       align-items: center;
       gap: 14px;
+
       flex-wrap: wrap;
     }
 
     .button {
-      min-height: 54px;
+      min-height: 52px;
 
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
 
-      padding: 0 24px;
+      padding: 0 23px;
 
       border-radius: 100px;
 
       font-size: 13px;
       font-weight: 800;
 
+      border: 1px solid transparent;
+
       transition: .3s ease;
     }
 
     .button-primary {
-      color: white;
       background: var(--purple);
+      color: white;
 
       box-shadow:
-        0 15px 35px rgba(113, 56, 165, .23);
+        0 14px 28px rgba(123, 47, 190, .22);
     }
 
     .button-primary:hover {
@@ -363,196 +404,397 @@
     }
 
     .button-light {
-      color: var(--ink);
-      background: transparent;
-      border: 1px solid rgba(36, 29, 41, .15);
+      border-color: #d9cedf;
+      color: var(--purple-deep);
+      background: rgba(255,255,255,.65);
     }
 
     .button-light:hover {
       border-color: var(--purple);
       color: var(--purple);
-      transform: translateY(-3px);
     }
 
-    /* HERO IMAGEM */
+    .hero-note {
+      margin-top: 26px;
+
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      color: #8a7e91;
+
+      font-size: 12px;
+    }
+
+    .hero-note-line {
+      width: 34px;
+      height: 1px;
+
+      background: #cfc2d7;
+    }
+
+
+    /* =========================================================
+       HERO IMAGE
+    ========================================================= */
 
     .hero-visual {
-      position: relative;
-
-      min-height: 600px;
+      min-height: 560px;
 
       display: flex;
       align-items: center;
       justify-content: center;
+
+      position: relative;
     }
 
-    .hero-visual::before {
-      content: "";
+    /*
+      IMPORTANTE:
+      Sem card branco atrás da imagem.
+      A imagem fica diretamente na composição.
+    */
 
+    .hero-image {
+      width: min(440px, 100%);
+
+      max-height: 500px;
+
+      object-fit: contain;
+
+      position: relative;
+      z-index: 2;
+
+      filter:
+        drop-shadow(0 28px 30px rgba(68, 28, 93, .13));
+
+      animation: heroFloat 6s ease-in-out infinite;
+    }
+
+    .hero-circle {
       position: absolute;
 
-      width: 470px;
-      height: 470px;
+      width: 390px;
+      height: 390px;
 
       border-radius: 50%;
 
       background:
         linear-gradient(
           145deg,
-          #ead9f2,
-          #f8edf9
+          #f1e5f8,
+          #e6d4f0
         );
 
-      z-index: 0;
+      z-index: 1;
     }
 
-    .hero-image {
-      position: relative;
-      z-index: 2;
+    .hero-circle::after {
+      content: "";
 
-      width: min(590px, 100%);
-
-      object-fit: contain;
-
-      /*
-        Sem card.
-        Sem moldura.
-        Sem fundo branco criado pelo site.
-      */
-      filter: drop-shadow(
-        0 30px 35px rgba(61, 28, 79, .16)
-      );
-
-      animation: heroFloat 6s ease-in-out infinite;
-    }
-
-    .hero-note {
       position: absolute;
-      z-index: 4;
 
-      right: 10px;
+      inset: 18px;
+
+      border: 1px solid rgba(123, 47, 190, .12);
+
+      border-radius: 50%;
+    }
+
+    .hero-caption {
+      position: absolute;
+
+      right: 0;
       bottom: 70px;
 
-      width: 190px;
-
-      padding: 19px;
-
       background: rgba(255,255,255,.92);
-      backdrop-filter: blur(12px);
 
-      border: 1px solid rgba(255,255,255,.8);
+      padding: 15px 18px;
 
-      border-radius: 22px;
+      border-radius: 16px;
 
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-small);
+
+      z-index: 4;
+
+      max-width: 190px;
     }
 
-    .hero-note span {
+    .hero-caption strong {
       display: block;
 
+      font-family: "Manrope", sans-serif;
+
+      font-size: 13px;
+
+      color: var(--purple-deep);
+
+      margin-bottom: 3px;
+    }
+
+    .hero-caption span {
+      color: var(--muted);
+
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+
+    /* =========================================================
+       INTRO STRIP
+    ========================================================= */
+
+    .intro-strip {
+      background: var(--purple-deep);
+      color: white;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .intro-strip::after {
+      content: "";
+
+      position: absolute;
+
+      width: 400px;
+      height: 400px;
+
+      border: 1px solid rgba(255,255,255,.07);
+
+      border-radius: 50%;
+
+      right: -190px;
+      top: -190px;
+    }
+
+    .intro-inner {
+      min-height: 112px;
+
+      display: grid;
+
+      grid-template-columns: 1.2fr 1fr 1fr;
+
+      align-items: center;
+
+      gap: 30px;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .intro-title {
+      font-family: "Manrope", sans-serif;
+
+      font-size: 20px;
+      font-weight: 700;
+
+      line-height: 1.3;
+    }
+
+    .intro-title span {
+      color: #d9b6f0;
+    }
+
+    .intro-item {
+      padding-left: 26px;
+
+      border-left: 1px solid rgba(255,255,255,.13);
+    }
+
+    .intro-item strong {
+      display: block;
+
+      font-size: 13px;
+
+      margin-bottom: 5px;
+    }
+
+    .intro-item span {
+      color: #c5b6ce;
+
+      font-size: 12px;
+    }
+
+
+    /* =========================================================
+       SECTION DEFAULT
+    ========================================================= */
+
+    section {
+      padding: 105px 0;
+    }
+
+    .section-header {
+      max-width: 690px;
+
+      margin-bottom: 55px;
+    }
+
+    .section-header.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .section-kicker {
       color: var(--purple);
 
       font-size: 10px;
       font-weight: 800;
 
-      letter-spacing: 1.5px;
       text-transform: uppercase;
 
-      margin-bottom: 7px;
+      letter-spacing: 2.5px;
+
+      margin-bottom: 13px;
     }
 
-    .hero-note strong {
-      display: block;
+    .section-title {
+      font-family: "Manrope", sans-serif;
 
-      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: clamp(34px, 4.4vw, 54px);
 
-      font-size: 15px;
-      line-height: 1.35;
+      letter-spacing: -2.5px;
 
-      color: var(--ink);
-    }
-
-    @keyframes heroFloat {
-      0%, 100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-
-    /* =========================================================
-       MINI INTRO
-    ========================================================= */
-
-    .intro {
-      padding: 0 0 100px;
-    }
-
-    .intro-line {
-      height: 1px;
-      background: rgba(36,29,41,.1);
-      margin-bottom: 55px;
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: .7fr 1.3fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .intro-label {
-      color: var(--purple);
-
-      font-size: 11px;
-      font-weight: 800;
-
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .intro-text {
-      max-width: 790px;
-
-      font-family: "Plus Jakarta Sans", sans-serif;
-
-      font-size: clamp(25px, 3vw, 38px);
-      line-height: 1.35;
-
-      letter-spacing: -1.4px;
+      line-height: 1.04;
 
       color: var(--purple-deep);
+
+      font-weight: 800;
     }
 
-    .intro-text span {
-      color: #988e9c;
+    .section-description {
+      color: var(--muted);
+
+      font-size: 15px;
+
+      line-height: 1.75;
+
+      margin-top: 17px;
+
+      max-width: 580px;
     }
+
 
     /* =========================================================
-       EXPERIÊNCIA / SOBRE
+       SERVICES
+    ========================================================= */
+
+    .services {
+      background: var(--white);
+    }
+
+    .services-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 16px;
+    }
+
+    .service {
+      min-height: 245px;
+
+      padding: 30px;
+
+      background: #fcfafc;
+
+      border: 1px solid #eee7f0;
+
+      border-radius: var(--radius-md);
+
+      transition: .35s ease;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service::before {
+      content: "";
+
+      position: absolute;
+
+      width: 100px;
+      height: 100px;
+
+      border-radius: 50%;
+
+      background: rgba(123,47,190,.055);
+
+      right: -42px;
+      bottom: -42px;
+
+      transition: .4s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-6px);
+
+      background: white;
+
+      box-shadow: var(--shadow-small);
+
+      border-color: #e5d7ec;
+    }
+
+    .service:hover::before {
+      transform: scale(1.45);
+    }
+
+    .service-number {
+      color: #c5b2d0;
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 25px;
+    }
+
+    .service h3 {
+      font-family: "Manrope", sans-serif;
+
+      color: var(--purple-deep);
+
+      font-size: 20px;
+
+      margin-bottom: 10px;
+    }
+
+    .service p {
+      color: var(--muted);
+
+      font-size: 13px;
+      line-height: 1.65;
+
+      max-width: 270px;
+    }
+
+
+    /* =========================================================
+       MANIFESTO / ABOUT
     ========================================================= */
 
     .about {
-      padding: 120px 0;
-
-      background: var(--purple-deep);
-      color: white;
-
-      overflow: hidden;
+      background: var(--lavender);
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: .92fr 1.08fr;
-      gap: 90px;
+
+      grid-template-columns: .9fr 1.1fr;
+
+      gap: 80px;
+
       align-items: center;
     }
 
     .about-visual {
+      min-height: 470px;
+
       position: relative;
-      min-height: 550px;
 
       display: flex;
       align-items: center;
@@ -564,423 +806,361 @@
 
       position: absolute;
 
-      width: 430px;
-      height: 430px;
+      width: 330px;
+      height: 330px;
 
       border-radius: 50%;
 
-      background:
-        radial-gradient(
-          circle,
-          rgba(157, 98, 190, .55),
-          rgba(94, 42, 119, .2) 65%,
-          transparent 70%
-        );
+      background: #eadcf2;
     }
 
     .about-image {
-      position: relative;
-      z-index: 2;
+      width: min(350px, 100%);
 
-      width: 92%;
+      max-height: 440px;
 
       object-fit: contain;
 
+      position: relative;
+      z-index: 2;
+
       filter:
-        drop-shadow(
-          0 30px 40px rgba(0,0,0,.22)
-        );
+        drop-shadow(0 22px 25px rgba(63,27,83,.12));
     }
 
-    .about-copy .eyebrow {
-      color: #c9a6dc;
+    .about-small {
+      position: absolute;
+
+      left: 10px;
+      bottom: 45px;
+
+      background: white;
+
+      padding: 17px 20px;
+
+      border-radius: 18px;
+
+      box-shadow: var(--shadow-small);
+
+      z-index: 4;
     }
 
-    .about-copy .eyebrow::before {
-      background: #c9a6dc;
+    .about-small strong {
+      color: var(--purple);
+
+      display: block;
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: 22px;
     }
 
-    .about-copy h2 {
-      color: white;
-      margin-bottom: 24px;
+    .about-small span {
+      color: var(--muted);
+
+      font-size: 11px;
     }
 
-    .about-copy h2 span {
-      color: #c79bdf;
-    }
-
-    .about-copy > p {
+    .about-content {
       max-width: 570px;
+    }
 
-      color: #c6bacb;
+    .about-content .section-title {
+      margin-bottom: 20px;
+    }
 
-      font-size: 16px;
-      line-height: 1.85;
+    .about-content > p {
+      color: var(--muted);
+
+      font-size: 15px;
+      line-height: 1.8;
+
+      margin-bottom: 27px;
+    }
+
+    .about-list {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 12px;
 
       margin-bottom: 32px;
     }
 
-    .about-points {
-      display: grid;
-      gap: 16px;
-    }
+    .about-list div {
+      color: #514657;
 
-    .about-point {
+      font-size: 12px;
+      font-weight: 700;
+
       display: flex;
       align-items: center;
-      gap: 14px;
 
-      color: #f5edf8;
-
-      font-size: 14px;
-      font-weight: 600;
+      gap: 9px;
     }
 
-    .about-point i {
-      width: 27px;
-      height: 27px;
+    .about-list i {
+      color: var(--purple);
 
-      display: grid;
-      place-items: center;
-
-      border-radius: 50%;
-
-      background: rgba(199,155,223,.15);
-      color: #d6b2e7;
-
-      font-size: 11px;
+      font-size: 10px;
     }
+
 
     /* =========================================================
-       SERVIÇOS
+       ATIVIDADES — COMPACTA
     ========================================================= */
 
-    .services {
-      padding: 125px 0;
+    .activities {
       background: var(--cream);
+      padding-top: 85px;
+      padding-bottom: 85px;
     }
 
-    .section-top {
+    .activities-layout {
       display: grid;
+
       grid-template-columns: .75fr 1.25fr;
 
       gap: 80px;
 
-      align-items: end;
-
-      margin-bottom: 65px;
+      align-items: start;
     }
 
-    .section-label {
-      color: var(--purple);
-
-      font-size: 11px;
-      font-weight: 800;
-
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
+    .activities-intro {
+      position: sticky;
+      top: 130px;
     }
 
-    .section-top h2 {
-      color: var(--purple-deep);
+    .activities-intro .section-title {
+      font-size: 42px;
     }
 
-    .section-description {
-      max-width: 520px;
-
-      color: var(--muted);
-
-      line-height: 1.8;
-      font-size: 15px;
-
-      padding-bottom: 4px;
-    }
-
-    .services-list {
-      border-top: 1px solid rgba(36,29,41,.1);
-    }
-
-    .service {
-      display: grid;
-
-      grid-template-columns: 90px 1fr 1.15fr 40px;
-
-      align-items: center;
-
-      gap: 35px;
-
-      padding: 28px 0;
-
-      border-bottom: 1px solid rgba(36,29,41,.1);
-
-      transition: .3s ease;
-    }
-
-    .service:hover {
-      padding-left: 12px;
-      padding-right: 12px;
-
-      background: rgba(255,255,255,.4);
-    }
-
-    .service-number {
-      color: #b4a9ba;
-
-      font-family: "Plus Jakarta Sans", sans-serif;
-
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .service h3 {
-      color: var(--purple-deep);
-
-      font-family: "Plus Jakarta Sans", sans-serif;
-
-      font-size: 19px;
-    }
-
-    .service p {
+    .activities-intro p {
       color: var(--muted);
 
       font-size: 14px;
-      line-height: 1.65;
-    }
+      line-height: 1.75;
 
-    .service-arrow {
-      color: var(--purple);
+      margin-top: 18px;
 
-      font-size: 15px;
-
-      transition: .3s;
-    }
-
-    .service:hover .service-arrow {
-      transform: translateX(5px);
-    }
-
-    /* =========================================================
-       ATIVIDADES COMPACTAS
-    ========================================================= */
-
-    .activities {
-      padding: 100px 0;
-
-      background: #f0e7f4;
-    }
-
-    .activities-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-
-      gap: 40px;
-
-      margin-bottom: 45px;
-    }
-
-    .activities-head h2 {
-      color: var(--purple-deep);
-
-      max-width: 620px;
-    }
-
-    .activities-head p {
-      max-width: 360px;
-
-      color: var(--muted);
-
-      font-size: 14px;
-      line-height: 1.7;
+      max-width: 370px;
     }
 
     .activity-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      border-top: 1px solid var(--line);
     }
 
-    .activity-pill {
-      padding: 14px 19px;
+    .activity-item {
+      padding: 25px 20px;
 
-      border-radius: 100px;
+      border-bottom: 1px solid var(--line);
+
+      transition: .25s ease;
+    }
+
+    .activity-item:nth-child(odd) {
+      border-right: 1px solid var(--line);
+      padding-left: 0;
+    }
+
+    .activity-item:nth-child(even) {
+      padding-right: 0;
+    }
+
+    .activity-item:hover {
+      color: var(--purple);
+    }
+
+    .activity-item span {
+      display: block;
+
+      color: #b3a7b7;
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: 1.5px;
+
+      margin-bottom: 9px;
+    }
+
+    .activity-item h3 {
+      font-family: "Manrope", sans-serif;
+
+      font-size: 18px;
 
       color: var(--purple-deep);
 
-      background: rgba(255,255,255,.62);
-
-      border: 1px solid rgba(113,56,165,.1);
-
-      font-size: 13px;
-      font-weight: 700;
-
-      transition: .25s;
+      margin-bottom: 5px;
     }
 
-    .activity-pill:hover {
-      color: white;
-      background: var(--purple);
-      transform: translateY(-2px);
+    .activity-item p {
+      color: var(--muted);
+
+      font-size: 12px;
+      line-height: 1.5;
     }
+
 
     /* =========================================================
        GALERIA / IMAGENS
     ========================================================= */
 
     .gallery {
-      padding: 125px 0;
-
       background: white;
+
+      padding-top: 95px;
+      padding-bottom: 95px;
     }
 
-    .gallery-head {
+    .gallery-header {
       display: flex;
+
       align-items: end;
       justify-content: space-between;
 
-      gap: 50px;
+      gap: 30px;
 
-      margin-bottom: 55px;
+      margin-bottom: 42px;
     }
 
-    .gallery-head h2 {
-      color: var(--purple-deep);
-      max-width: 620px;
-    }
+    .gallery-header p {
+      max-width: 330px;
 
-    .gallery-head p {
       color: var(--muted);
-      max-width: 350px;
+
+      font-size: 13px;
       line-height: 1.7;
-      font-size: 14px;
     }
 
     .gallery-grid {
       display: grid;
 
-      grid-template-columns: 1.1fr .9fr;
+      grid-template-columns: 1.15fr .85fr;
 
-      gap: 22px;
+      grid-template-rows: 235px 235px;
 
-      align-items: stretch;
+      gap: 16px;
     }
 
-    .gallery-main {
-      min-height: 570px;
-
+    .gallery-item {
       position: relative;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
 
       overflow: hidden;
 
-      border-radius: var(--radius-lg);
+      border-radius: 28px;
 
       background:
-        radial-gradient(
-          circle at 50% 40%,
-          #f1e3f7,
-          #e9d6f0
+        linear-gradient(
+          145deg,
+          #f3e9f7,
+          #faf7fb
         );
     }
 
-    .gallery-main img {
-      width: 92%;
-      height: 92%;
+    .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
+    /*
+      As imagens ficam sem card interno.
+      A área apenas organiza a composição.
+    */
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
 
       object-fit: contain;
-
-      filter:
-        drop-shadow(
-          0 30px 30px rgba(60,30,75,.15)
-        );
-
-      transition: transform .6s ease;
-    }
-
-    .gallery-main:hover img {
-      transform: scale(1.025);
-    }
-
-    .gallery-side {
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-      gap: 22px;
-    }
-
-    .gallery-small {
-      min-height: 274px;
 
       position: relative;
+      z-index: 2;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      overflow: hidden;
-
-      border-radius: var(--radius-lg);
-
-      background: var(--purple-pale);
-    }
-
-    .gallery-small:nth-child(2) {
-      background: #eee5f3;
-    }
-
-    .gallery-small img {
-      width: 88%;
-      height: 88%;
-
-      object-fit: contain;
+      transition: .5s ease;
 
       filter:
-        drop-shadow(
-          0 20px 25px rgba(60,30,75,.12)
-        );
-
-      transition: transform .5s ease;
+        drop-shadow(0 18px 18px rgba(57,26,73,.10));
     }
 
-    .gallery-small:hover img {
-      transform: scale(1.035);
+    .gallery-item:first-child img {
+      transform: scale(.88);
     }
+
+    .gallery-item:hover img {
+      transform: scale(.94);
+    }
+
+    .gallery-item:first-child:hover img {
+      transform: scale(.92);
+    }
+
+    .gallery-label {
+      position: absolute;
+
+      left: 20px;
+      bottom: 18px;
+
+      z-index: 5;
+
+      padding: 8px 12px;
+
+      border-radius: 100px;
+
+      background: rgba(255,255,255,.88);
+
+      color: var(--purple-deep);
+
+      font-size: 10px;
+      font-weight: 800;
+
+      backdrop-filter: blur(10px);
+    }
+
 
     /* =========================================================
        DEPOIMENTOS
     ========================================================= */
 
     .testimonials {
-      padding: 125px 0;
-
       background: var(--purple-deep);
+
+      color: white;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonials::before {
+      content: "";
+
+      position: absolute;
+
+      width: 520px;
+      height: 520px;
+
+      border: 1px solid rgba(255,255,255,.06);
+
+      border-radius: 50%;
+
+      right: -270px;
+      top: -250px;
+    }
+
+    .testimonials .section-kicker {
+      color: #cda9e4;
+    }
+
+    .testimonials .section-title {
       color: white;
     }
 
-    .testimonials-header {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-
-      gap: 50px;
-
-      margin-bottom: 60px;
-    }
-
-    .testimonials-header h2 {
-      color: white;
-      max-width: 680px;
-    }
-
-    .testimonials-header p {
-      color: #bdb0c4;
-
-      max-width: 330px;
-
-      line-height: 1.7;
-      font-size: 14px;
+    .testimonials .section-description {
+      color: #c9bdd0;
     }
 
     .testimonials-grid {
@@ -989,139 +1169,184 @@
       grid-template-columns: repeat(3, 1fr);
 
       gap: 18px;
+
+      position: relative;
+      z-index: 2;
     }
 
     .testimonial {
-      padding: 31px;
+      padding: 30px;
 
-      min-height: 285px;
+      border-radius: 25px;
 
-      display: flex;
-      flex-direction: column;
+      background: rgba(255,255,255,.055);
 
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,.09),
-          rgba(255,255,255,.035)
-        );
+      border: 1px solid rgba(255,255,255,.08);
 
-      border: 1px solid rgba(255,255,255,.09);
-
-      border-radius: 27px;
-
-      transition: .3s;
+      transition: .3s ease;
     }
 
     .testimonial:hover {
-      transform: translateY(-5px);
+      background: rgba(255,255,255,.085);
 
-      border-color: rgba(203,162,225,.3);
+      transform: translateY(-5px);
     }
 
     .testimonial-mark {
-      color: #c69bdb;
+      color: #b986d5;
 
       font-family: Georgia, serif;
 
-      font-size: 42px;
-      line-height: .7;
+      font-size: 48px;
 
-      margin-bottom: 23px;
+      line-height: .6;
+
+      margin-bottom: 20px;
     }
 
     .testimonial p {
       color: #eee7f1;
 
-      font-size: 15px;
+      font-size: 14px;
+
       line-height: 1.75;
 
-      flex: 1;
+      margin-bottom: 27px;
     }
 
-    .testimonial-author {
+    .testimonial-person {
       display: flex;
       align-items: center;
-
       gap: 12px;
 
-      padding-top: 22px;
-      margin-top: 22px;
+      padding-top: 17px;
 
       border-top: 1px solid rgba(255,255,255,.08);
     }
 
-    .author-avatar {
-      width: 38px;
-      height: 38px;
+    .testimonial-avatar {
+      width: 37px;
+      height: 37px;
 
       border-radius: 50%;
+
+      background:
+        linear-gradient(
+          145deg,
+          #a96bd0,
+          #6b279f
+        );
 
       display: grid;
       place-items: center;
 
-      background: #75419a;
-
       color: white;
 
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
     }
 
-    .testimonial-author strong {
+    .testimonial-person strong {
       display: block;
 
-      font-size: 13px;
-      color: white;
+      font-size: 12px;
     }
 
-    .testimonial-author span {
-      display: block;
+    .testimonial-person span {
+      color: #a99caf;
 
-      color: #9f91a8;
-
-      font-size: 11px;
-
-      margin-top: 2px;
+      font-size: 10px;
     }
+
+
+    /* =========================================================
+       FRASE / CONCEITO
+    ========================================================= */
+
+    .concept {
+      padding: 100px 0;
+
+      background: #f5eef8;
+
+      text-align: center;
+    }
+
+    .concept-inner {
+      max-width: 850px;
+
+      margin: auto;
+    }
+
+    .concept-label {
+      color: var(--purple);
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+
+      margin-bottom: 20px;
+    }
+
+    .concept h2 {
+      font-family: "Manrope", sans-serif;
+
+      font-size: clamp(34px, 5vw, 58px);
+
+      letter-spacing: -3px;
+
+      line-height: 1.06;
+
+      color: var(--purple-deep);
+
+      font-weight: 800;
+    }
+
+    .concept h2 span {
+      color: var(--purple);
+    }
+
 
     /* =========================================================
        CTA
     ========================================================= */
 
     .cta {
-      padding: 100px 0;
-
       background: white;
+
+      padding: 90px 0;
     }
 
     .cta-box {
-      min-height: 360px;
+      min-height: 310px;
 
-      position: relative;
-      overflow: hidden;
+      padding: 55px 60px;
 
-      border-radius: 38px;
+      border-radius: 34px;
 
-      padding: 65px;
+      background:
+        radial-gradient(
+          circle at 90% 20%,
+          rgba(184,124,216,.18),
+          transparent 30%
+        ),
+        linear-gradient(
+          125deg,
+          #321447,
+          #572177
+        );
 
       display: flex;
+
       align-items: center;
       justify-content: space-between;
 
       gap: 50px;
 
-      background:
-        radial-gradient(
-          circle at 90% 10%,
-          rgba(195,145,221,.4),
-          transparent 32%
-        ),
-        linear-gradient(
-          135deg,
-          #43205e,
-          #6d3493
-        );
+      overflow: hidden;
+
+      position: relative;
     }
 
     .cta-box::before {
@@ -1129,26 +1354,28 @@
 
       position: absolute;
 
-      width: 300px;
-      height: 300px;
+      width: 350px;
+      height: 350px;
 
       border-radius: 50%;
 
-      border: 1px solid rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.08);
 
-      right: -100px;
-      bottom: -160px;
+      right: -120px;
+      bottom: -190px;
     }
 
     .cta-content {
       position: relative;
       z-index: 2;
+
+      max-width: 650px;
     }
 
     .cta-label {
-      color: #d9b9e9;
+      color: #d1a9e5;
 
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 800;
 
       letter-spacing: 2px;
@@ -1156,48 +1383,54 @@
     }
 
     .cta h2 {
+      font-family: "Manrope", sans-serif;
+
       color: white;
 
-      max-width: 670px;
+      font-size: clamp(34px, 4vw, 48px);
 
-      margin: 13px 0 15px;
+      line-height: 1;
+
+      letter-spacing: -2px;
+
+      margin: 12px 0 13px;
     }
 
     .cta p {
-      color: #d3c4da;
-
-      max-width: 540px;
-
-      line-height: 1.7;
+      color: #cbbdd2;
 
       font-size: 14px;
+      line-height: 1.7;
+
+      max-width: 540px;
     }
 
     .cta .button {
       position: relative;
-      z-index: 2;
+      z-index: 3;
 
       flex-shrink: 0;
 
       background: white;
-      color: var(--purple);
 
-      box-shadow: 0 18px 40px rgba(0,0,0,.15);
+      color: var(--purple-deep);
     }
 
     .cta .button:hover {
       transform: translateY(-3px);
-      background: #f8effb;
+
+      background: #f3e9f7;
     }
 
+
     /* =========================================================
-       CONTATO
+       CONTACT
     ========================================================= */
 
     .contact {
-      padding: 120px 0;
-
       background: var(--cream);
+
+      padding-top: 100px;
     }
 
     .contact-grid {
@@ -1205,90 +1438,88 @@
 
       grid-template-columns: .75fr 1.25fr;
 
-      gap: 70px;
+      gap: 55px;
 
       align-items: start;
     }
 
-    .contact-copy h2 {
-      color: var(--purple-deep);
-
-      margin: 14px 0 20px;
+    .contact-intro {
+      padding-top: 15px;
     }
 
-    .contact-copy > p {
-      max-width: 420px;
+    .contact-intro .section-title {
+      font-size: 42px;
+    }
 
+    .contact-intro > p {
       color: var(--muted);
 
-      line-height: 1.8;
+      font-size: 14px;
+      line-height: 1.75;
 
-      font-size: 15px;
+      margin: 18px 0 32px;
 
-      margin-bottom: 35px;
-    }
-
-    .contact-details {
-      display: grid;
-      gap: 20px;
+      max-width: 390px;
     }
 
     .contact-detail {
       display: flex;
-      gap: 13px;
+
       align-items: center;
+
+      gap: 13px;
+
+      margin-bottom: 17px;
     }
 
     .contact-detail-icon {
-      width: 43px;
-      height: 43px;
+      width: 40px;
+      height: 40px;
+
+      border-radius: 12px;
+
+      background: var(--purple-soft);
+
+      color: var(--purple);
 
       display: grid;
       place-items: center;
 
-      border-radius: 14px;
-
-      background: var(--purple-soft);
-      color: var(--purple);
-
-      flex-shrink: 0;
+      font-size: 13px;
     }
 
     .contact-detail strong {
       display: block;
 
-      font-size: 13px;
-
       color: var(--purple-deep);
 
-      margin-bottom: 2px;
+      font-size: 12px;
     }
 
     .contact-detail span {
       color: var(--muted);
-      font-size: 12px;
+
+      font-size: 11px;
     }
 
     .form {
-      padding: 38px;
+      padding: 40px;
 
       background: white;
 
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
 
       border-radius: 30px;
 
-      box-shadow:
-        0 20px 60px rgba(50,30,60,.06);
+      box-shadow: var(--shadow-small);
     }
 
     .form-title {
-      font-family: "Plus Jakarta Sans", sans-serif;
+      font-family: "Manrope", sans-serif;
+
+      font-size: 27px;
 
       color: var(--purple-deep);
-
-      font-size: 24px;
-      font-weight: 800;
 
       margin-bottom: 25px;
     }
@@ -1298,7 +1529,7 @@
 
       grid-template-columns: 1fr 1fr;
 
-      gap: 17px;
+      gap: 16px;
     }
 
     .field {
@@ -1313,75 +1544,72 @@
     }
 
     .field label {
-      color: var(--purple-deep);
+      color: #4e4352;
 
       font-size: 11px;
       font-weight: 800;
     }
 
     .field input,
-    .field select,
-    .field textarea {
+    .field textarea,
+    .field select {
       width: 100%;
 
-      border: 1px solid #e7dfe9;
+      padding: 14px 15px;
 
       border-radius: 13px;
 
-      background: #fcfafc;
+      border: 1px solid #e4dce7;
+
+      background: #fdfbfd;
 
       color: var(--ink);
 
       outline: none;
 
-      padding: 13px 14px;
-
       font-size: 13px;
 
-      transition: .25s;
-    }
-
-    .field input,
-    .field select {
-      height: 48px;
-    }
-
-    .field textarea {
-      min-height: 120px;
-
-      resize: vertical;
+      transition: .25s ease;
     }
 
     .field input:focus,
-    .field select:focus,
-    .field textarea:focus {
-      background: white;
-
+    .field textarea:focus,
+    .field select:focus {
       border-color: var(--purple);
 
+      background: white;
+
       box-shadow:
-        0 0 0 4px rgba(113,56,165,.07);
+        0 0 0 4px rgba(123,47,190,.06);
+    }
+
+    .field textarea {
+      min-height: 115px;
+
+      resize: vertical;
     }
 
     .form-submit {
       width: 100%;
 
+      margin-top: 20px;
+
       border: 0;
 
       cursor: pointer;
-
-      margin-top: 20px;
     }
+
 
     /* =========================================================
        FOOTER
     ========================================================= */
 
     footer {
-      padding: 60px 0 30px;
+      background: #24102f;
 
-      background: #1e1025;
       color: white;
+
+      padding: 55px 0 25px;
     }
 
     .footer-top {
@@ -1389,57 +1617,57 @@
 
       justify-content: space-between;
 
-      gap: 70px;
+      gap: 60px;
 
-      padding-bottom: 45px;
+      padding-bottom: 40px;
 
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
 
     .footer-brand {
-      max-width: 390px;
+      max-width: 380px;
     }
 
-    .footer-logo {
-      width: 155px;
+    .footer-brand .brand {
+      background: white;
 
-      display: block;
+      padding: 4px 9px;
 
-      margin-bottom: 20px;
+      border-radius: 12px;
 
-      filter:
-        brightness(0)
-        invert(1);
+      margin-bottom: 18px;
     }
 
     .footer-brand p {
-      color: #9f91a8;
+      color: #aa9cad;
 
-      font-size: 13px;
+      font-size: 12px;
 
       line-height: 1.75;
     }
 
     .footer-links {
       display: flex;
+
       gap: 70px;
     }
 
-    .footer-column h4 {
-      color: #d3aee3;
+    .footer-links h4 {
+      color: #d7b7e7;
 
       font-size: 11px;
 
       text-transform: uppercase;
-      letter-spacing: 1.7px;
 
-      margin-bottom: 17px;
+      letter-spacing: 1.5px;
+
+      margin-bottom: 16px;
     }
 
-    .footer-column a {
+    .footer-links a {
       display: block;
 
-      color: #a99cac;
+      color: #b7a9bd;
 
       font-size: 12px;
 
@@ -1448,22 +1676,24 @@
       transition: .2s;
     }
 
-    .footer-column a:hover {
+    .footer-links a:hover {
       color: white;
     }
 
     .footer-bottom {
-      padding-top: 25px;
-
       display: flex;
+
       justify-content: space-between;
 
       gap: 20px;
 
-      color: #76677e;
+      padding-top: 22px;
+
+      color: #817286;
 
       font-size: 10px;
     }
+
 
     /* =========================================================
        WHATSAPP
@@ -1472,33 +1702,35 @@
     .whatsapp {
       position: fixed;
 
-      right: 23px;
-      bottom: 23px;
+      right: 22px;
+      bottom: 22px;
 
-      width: 58px;
-      height: 58px;
-
-      display: grid;
-      place-items: center;
+      width: 56px;
+      height: 56px;
 
       border-radius: 50%;
 
       background: var(--green);
+
       color: white;
 
-      font-size: 25px;
+      display: grid;
+      place-items: center;
 
-      z-index: 999;
+      font-size: 24px;
+
+      z-index: 900;
 
       box-shadow:
-        0 15px 35px rgba(37,184,116,.3);
+        0 12px 35px rgba(37,185,111,.28);
 
-      transition: .25s;
+      transition: .3s ease;
     }
 
     .whatsapp:hover {
-      transform: scale(1.07);
+      transform: translateY(-4px) scale(1.04);
     }
+
 
     /* =========================================================
        BACK TOP
@@ -1507,45 +1739,57 @@
     .back-top {
       position: fixed;
 
-      right: 27px;
-      bottom: 94px;
+      right: 28px;
+      bottom: 91px;
 
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
 
       display: grid;
       place-items: center;
+
+      border-radius: 12px;
 
       background: white;
 
       color: var(--purple);
 
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
 
-      border-radius: 13px;
-
-      box-shadow: 0 10px 30px rgba(30,16,37,.1);
+      box-shadow: var(--shadow-small);
 
       opacity: 0;
-      visibility: hidden;
+      pointer-events: none;
 
       transition: .3s;
 
-      z-index: 998;
+      z-index: 899;
     }
 
     .back-top.show {
       opacity: 1;
-      visibility: visible;
+      pointer-events: auto;
     }
 
+
     /* =========================================================
-       REVEAL
+       ANIMAÇÕES
     ========================================================= */
+
+    @keyframes heroFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
 
     .reveal {
       opacity: 0;
-      transform: translateY(25px);
+
+      transform: translateY(22px);
 
       transition:
         opacity .7s ease,
@@ -1554,30 +1798,25 @@
 
     .reveal.visible {
       opacity: 1;
+
       transform: translateY(0);
     }
+
 
     /* =========================================================
        RESPONSIVO
     ========================================================= */
 
-    @media (max-width: 1050px) {
-
-      .nav-links {
-        gap: 18px;
-      }
+    @media (max-width: 1000px) {
 
       .hero-grid {
         grid-template-columns: 1fr;
 
         text-align: center;
-
-        gap: 30px;
       }
 
-      .hero-copy {
-        max-width: 720px;
-        margin: 0 auto;
+      .hero-content {
+        margin: auto;
       }
 
       .hero-description {
@@ -1589,242 +1828,259 @@
         justify-content: center;
       }
 
+      .hero-note {
+        justify-content: center;
+      }
+
       .hero-visual {
-        min-height: 500px;
+        min-height: 460px;
       }
 
       .hero-image {
-        width: min(500px, 90%);
+        width: 360px;
       }
 
-      .about-grid {
-        grid-template-columns: 1fr;
-
-        gap: 50px;
+      .hero-circle {
+        width: 330px;
+        height: 330px;
       }
 
-      .about-copy {
-        max-width: 700px;
+      .hero-caption {
+        right: 10%;
       }
 
-      .about-visual {
-        min-height: 450px;
+      .intro-inner {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .section-top {
-        grid-template-columns: 1fr;
-        gap: 20px;
+      .intro-title {
+        grid-column: 1 / -1;
       }
 
+      .about-grid,
+      .activities-layout,
       .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .contact-copy {
-        max-width: 700px;
+      .about-visual {
+        max-width: 470px;
+        margin: auto;
       }
+
+      .about-content {
+        margin: auto;
+      }
+
+      .activities-intro {
+        position: static;
+      }
+
+      .activities-intro p {
+        max-width: 600px;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .testimonials-grid .testimonial:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery-item:first-child {
+        grid-column: 1 / -1;
+        grid-row: auto;
+      }
+
     }
 
-    @media (max-width: 850px) {
 
-      .nav {
-        height: 76px;
+    @media (max-width: 800px) {
+
+      .container {
+        width: min(100% - 34px, 600px);
       }
 
-      .nav-links {
+      .menu {
         position: absolute;
 
-        top: 76px;
+        top: 82px;
         left: 0;
 
         width: 100%;
 
         padding: 25px;
 
-        display: none;
+        background: rgba(252,250,248,.98);
+
+        border-bottom: 1px solid var(--line);
 
         flex-direction: column;
-        align-items: stretch;
 
-        gap: 5px;
+        gap: 20px;
 
-        background: rgba(251,248,244,.98);
-
-        border-bottom: 1px solid var(--border);
+        display: none;
       }
 
-      .nav-links.active {
+      .menu.active {
         display: flex;
       }
 
-      .nav-links a {
-        display: block;
-        padding: 13px;
-      }
-
-      .nav-cta {
-        text-align: center;
-        margin-top: 8px;
-      }
-
-      .mobile-menu {
+      .mobile-button {
         display: grid;
-        place-items: center;
       }
 
-      .intro-grid {
+      .intro-inner {
         grid-template-columns: 1fr;
-        gap: 20px;
+        padding: 25px 0;
+        gap: 18px;
       }
 
-      .gallery-grid {
-        grid-template-columns: 1fr;
+      .intro-title {
+        grid-column: auto;
       }
 
-      .gallery-main {
-        min-height: 480px;
+      .intro-item {
+        padding-left: 0;
+        border-left: 0;
       }
 
-      .gallery-side {
+      .services-grid {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
       }
 
-      .gallery-small {
-        min-height: 280px;
-      }
-
-      .testimonials-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .testimonial {
-        min-height: auto;
+      .gallery-header {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
       .cta-box {
         flex-direction: column;
         align-items: flex-start;
+
+        padding: 42px 30px;
       }
 
       .footer-top {
         flex-direction: column;
       }
+
     }
 
-    @media (max-width: 650px) {
 
-      .container {
-        width: min(100% - 32px, var(--container));
-      }
+    @media (max-width: 600px) {
 
-      h1 {
-        font-size: 47px;
-        letter-spacing: -2.7px;
-      }
-
-      h2 {
-        letter-spacing: -1.8px;
-      }
-
-      .brand-logo {
-        width: 145px;
+      section {
+        padding: 75px 0;
       }
 
       .hero {
-        padding-top: 120px;
-        padding-bottom: 55px;
+        padding-top: 110px;
+        padding-bottom: 50px;
       }
 
-      .hero-visual {
-        min-height: 390px;
-      }
-
-      .hero-visual::before {
-        width: 320px;
-        height: 320px;
-      }
-
-      .hero-note {
-        right: 0;
-        bottom: 20px;
-        width: 160px;
+      .hero h1 {
+        font-size: 46px;
+        letter-spacing: -2.5px;
       }
 
       .hero-description {
         font-size: 15px;
       }
 
-      .intro {
-        padding-bottom: 75px;
+      .hero-visual {
+        min-height: 390px;
       }
 
-      .intro-text {
-        font-size: 25px;
+      .hero-image {
+        width: 290px;
       }
 
-      .about,
-      .services,
-      .gallery,
-      .testimonials,
-      .contact {
-        padding: 80px 0;
+      .hero-circle {
+        width: 270px;
+        height: 270px;
       }
 
-      .about-visual {
-        min-height: 360px;
+      .hero-caption {
+        right: 0;
+        bottom: 25px;
       }
 
-      .about-visual::before {
-        width: 300px;
-        height: 300px;
-      }
-
-      .service {
-        grid-template-columns: 45px 1fr 25px;
-        gap: 12px;
-      }
-
-      .service p {
-        grid-column: 2 / -1;
-        margin-top: -5px;
-      }
-
-      .service-arrow {
-        grid-column: 3;
-        grid-row: 1;
-      }
-
-      .activities {
-        padding: 75px 0;
-      }
-
-      .activities-head,
-      .gallery-head,
-      .testimonials-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .gallery-main {
-        min-height: 370px;
-      }
-
-      .gallery-side {
+      .services-grid {
         grid-template-columns: 1fr;
       }
 
-      .gallery-small {
-        min-height: 300px;
+      .service {
+        min-height: auto;
       }
 
-      .cta {
-        padding: 65px 0;
+      .about-list {
+        grid-template-columns: 1fr;
       }
 
-      .cta-box {
-        padding: 38px 28px;
-        border-radius: 28px;
+      .about-visual {
+        min-height: 390px;
+      }
+
+      .about-image {
+        width: 290px;
+      }
+
+      .about-visual::before {
+        width: 270px;
+        height: 270px;
+      }
+
+      .about-small {
+        left: 0;
+      }
+
+      .activity-list {
+        grid-template-columns: 1fr;
+      }
+
+      .activity-item:nth-child(odd) {
+        border-right: 0;
+        padding-left: 0;
+      }
+
+      .activity-item:nth-child(even) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .gallery-grid {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        grid-template-rows: 280px 210px 210px;
+      }
+
+      .gallery-item:first-child {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonials-grid .testimonial:last-child {
+        grid-column: auto;
+      }
+
+      .concept {
+        padding: 75px 0;
+      }
+
+      .concept h2 {
+        letter-spacing: -2px;
       }
 
       .form {
@@ -1850,30 +2106,18 @@
       .whatsapp {
         right: 16px;
         bottom: 16px;
-
-        width: 54px;
-        height: 54px;
       }
 
       .back-top {
         right: 18px;
-        bottom: 82px;
+        bottom: 80px;
       }
-    }
 
-    @media (prefers-reduced-motion: reduce) {
-
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        animation: none !important;
-        transition: none !important;
-      }
     }
 
   </style>
 </head>
+
 
 <body>
 
@@ -1881,59 +2125,87 @@
        HEADER
   ========================================================= -->
 
-  <header class="header">
+  <header id="header">
 
     <div class="container nav">
 
-      <a
-        href="#inicio"
-        class="brand-logo"
-        aria-label="Start Recreação"
-      >
-        <img
-          src="https://i.imgur.com/DUKDmgn.png"
-          alt="Start Recreação"
+      <a href="#inicio" class="brand" aria-label="START Recreação">
+
+        <!-- LOGOMARCA FORNECIDA -->
+        <svg
+          class="brand-svg"
+          width="400"
+          height="250"
+          viewBox="0 0 400 250"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-label="START Recreação"
         >
+          <circle
+            cx="200"
+            cy="100"
+            r="55"
+            fill="#FFFFFF"
+          />
+
+          <path
+            d="M180 70 L180 130 L230 100 Z"
+            fill="#7B2FBE"
+            stroke="#7B2FBE"
+            stroke-width="8"
+            stroke-linejoin="round"
+          />
+
+          <text
+            x="200"
+            y="210"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="52"
+            font-weight="bold"
+            fill="#7B2FBE"
+            text-anchor="middle"
+            letter-spacing="2"
+          >
+            START
+          </text>
+        </svg>
+
       </a>
 
+
       <nav>
-        <ul class="nav-links" id="navLinks">
+
+        <ul class="menu" id="menu">
 
           <li>
             <a href="#inicio">Início</a>
           </li>
 
           <li>
-            <a href="#sobre">A Start</a>
+            <a href="#experiencia">Experiência</a>
           </li>
 
           <li>
-            <a href="#servicos">Experiências</a>
+            <a href="#atividades">Atividades</a>
           </li>
 
           <li>
-            <a href="#galeria">Momentos</a>
+            <a href="#familias">Famílias</a>
           </li>
 
           <li>
-            <a href="#depoimentos">Famílias</a>
-          </li>
-
-          <li>
-            <a
-              href="#contato"
-              class="nav-cta"
-            >
+            <a href="#contato" class="nav-cta">
               Solicitar orçamento
             </a>
           </li>
 
         </ul>
+
       </nav>
 
+
       <button
-        class="mobile-menu"
-        id="mobileMenu"
+        class="mobile-button"
+        id="mobileButton"
         aria-label="Abrir menu"
       >
         <i class="fa-solid fa-bars"></i>
@@ -1946,32 +2218,32 @@
 
   <main>
 
+
     <!-- =======================================================
          HERO
     ======================================================== -->
 
-    <section
-      class="hero"
-      id="inicio"
-    >
+    <section class="hero" id="inicio">
 
       <div class="container hero-grid">
 
-        <div class="hero-copy reveal">
+        <div class="hero-content reveal">
 
           <div class="eyebrow">
-            Start Recreação
+            Recreação infantil
           </div>
 
           <h1>
-            Onde a infância
-            <strong>vira memória.</strong>
+            A parte mais
+            <em>bonita da festa</em>
+            também acontece brincando.
           </h1>
 
           <p class="hero-description">
-            Recreação infantil pensada para transformar festas
-            em experiências leves, divertidas e cheias de
-            momentos que as crianças vão lembrar.
+            A START cria experiências de recreação pensadas para
+            cada festa — com brincadeiras, criatividade e aquele
+            cuidado que faz as crianças realmente aproveitarem
+            o momento.
           </p>
 
           <div class="hero-actions">
@@ -1980,16 +2252,24 @@
               href="#contato"
               class="button button-primary"
             >
-              Quero minha festa com a Start
+              Quero uma proposta
               <i class="fa-solid fa-arrow-right"></i>
             </a>
 
             <a
-              href="#sobre"
+              href="#experiencia"
               class="button button-light"
             >
-              Conheça a Start
+              Conhecer a START
             </a>
+
+          </div>
+
+          <div class="hero-note">
+
+            <span class="hero-note-line"></span>
+
+            Londrina e região
 
           </div>
 
@@ -1998,21 +2278,25 @@
 
         <div class="hero-visual reveal">
 
+          <div class="hero-circle"></div>
+
+          <!-- IMAGEM 1 -->
           <img
             class="hero-image"
             src="https://i.imgur.com/xMty4hk.png"
-            alt="Personagem da Start Recreação"
+            alt="Personagem da START Recreação"
           >
 
-          <div class="hero-note">
-
-            <span>
-              Para sua festa
-            </span>
+          <div class="hero-caption">
 
             <strong>
-              Diversão pensada nos mínimos detalhes.
+              Brincar com intenção.
             </strong>
+
+            <span>
+              Experiências pensadas para
+              transformar a festa.
+            </span>
 
           </div>
 
@@ -2024,31 +2308,187 @@
 
 
     <!-- =======================================================
-         INTRO
+         STRIP
     ======================================================== -->
 
-    <section class="intro">
+    <div class="intro-strip">
+
+      <div class="container intro-inner">
+
+        <div class="intro-title">
+
+          Uma festa bonita também
+          <span>mora nos detalhes.</span>
+
+        </div>
+
+        <div class="intro-item">
+
+          <strong>Experiência personalizada</strong>
+
+          <span>
+            A programação acompanha o perfil
+            da festa e das crianças.
+          </span>
+
+        </div>
+
+        <div class="intro-item">
+
+          <strong>Mais tranquilidade para os adultos</strong>
+
+          <span>
+            Enquanto a criançada aproveita,
+            você aproveita a festa.
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =======================================================
+         EXPERIÊNCIA
+    ======================================================== -->
+
+    <section class="services" id="experiencia">
 
       <div class="container">
 
-        <div class="intro-line"></div>
+        <div class="section-header center reveal">
 
-        <div class="intro-grid reveal">
-
-          <div class="intro-label">
-            Nossa proposta
+          <div class="section-kicker">
+            A experiência START
           </div>
 
-          <div class="intro-text">
+          <h2 class="section-title">
+            Recreação que combina
+            com a sua festa.
+          </h2>
 
-            Não é apenas ocupar as crianças.
+          <p class="section-description">
+            Não existe uma fórmula única para uma boa festa.
+            Por isso, cada experiência é pensada de acordo
+            com o espaço, idade, quantidade de crianças e
+            estilo da comemoração.
+          </p>
 
-            <span>
-              É criar uma experiência gostosa para elas,
-              tranquila para os pais e especial para todos.
-            </span>
+        </div>
 
-          </div>
+
+        <div class="services-grid">
+
+          <article class="service reveal">
+
+            <div class="service-number">
+              01 / FESTAS
+            </div>
+
+            <h3>
+              Aniversários
+            </h3>
+
+            <p>
+              Recreação para aniversários infantis,
+              com atividades que acompanham o ritmo
+              da comemoração.
+            </p>
+
+          </article>
+
+
+          <article class="service reveal">
+
+            <div class="service-number">
+              02 / EVENTOS
+            </div>
+
+            <h3>
+              Eventos
+            </h3>
+
+            <p>
+              Uma experiência organizada para
+              eventos familiares, corporativos,
+              escolares e comemorações.
+            </p>
+
+          </article>
+
+
+          <article class="service reveal">
+
+            <div class="service-number">
+              03 / EXPERIÊNCIA
+            </div>
+
+            <h3>
+              Recreação personalizada
+            </h3>
+
+            <p>
+              Criamos uma programação de acordo
+              com a proposta da festa e o perfil
+              das crianças.
+            </p>
+
+          </article>
+
+
+          <article class="service reveal">
+
+            <div class="service-number">
+              04 / CRIATIVIDADE
+            </div>
+
+            <h3>
+              Oficinas
+            </h3>
+
+            <p>
+              Atividades criativas que estimulam
+              imaginação, participação e interação.
+            </p>
+
+          </article>
+
+
+          <article class="service reveal">
+
+            <div class="service-number">
+              05 / MOVIMENTO
+            </div>
+
+            <h3>
+              Jogos e gincanas
+            </h3>
+
+            <p>
+              Dinâmicas coletivas para movimentar
+              a festa sem perder a organização.
+            </p>
+
+          </article>
+
+
+          <article class="service reveal">
+
+            <div class="service-number">
+              06 / CUIDADO
+            </div>
+
+            <h3>
+              Acompanhamento
+            </h3>
+
+            <p>
+              Uma equipe preparada para conduzir
+              as atividades com atenção e carinho.
+            </p>
+
+          </article>
 
         </div>
 
@@ -2061,65 +2501,93 @@
          SOBRE
     ======================================================== -->
 
-    <section
-      class="about"
-      id="sobre"
-    >
+    <section class="about">
 
       <div class="container about-grid">
 
         <div class="about-visual reveal">
 
+          <!-- IMAGEM 2 -->
           <img
             class="about-image"
             src="https://i.imgur.com/g0zW0LO.png"
-            alt="Personagem Start Recreação"
+            alt="Personagem START Recreação"
           >
+
+          <div class="about-small">
+
+            <strong>
+              START
+            </strong>
+
+            <span>
+              diversão com propósito
+            </span>
+
+          </div>
 
         </div>
 
 
-        <div class="about-copy reveal">
+        <div class="about-content reveal">
 
-          <div class="eyebrow">
-            A Start
+          <div class="section-kicker">
+            Sobre a START
           </div>
 
-          <h2>
-            A festa é sua.
-            <span>A diversão é nossa.</span>
+          <h2 class="section-title">
+            A gente cuida da
+            diversão para você
+            curtir o momento.
           </h2>
 
           <p>
-            A Start Recreação nasceu para deixar as festas
-            infantis mais leves, organizadas e divertidas.
-            Criamos atividades de acordo com o perfil do
-            evento, a idade das crianças e o espaço disponível.
+            Uma festa acontece em poucas horas, mas as
+            lembranças ficam por muito tempo. É por isso
+            que a START não entra apenas para “ocupar”
+            as crianças.
           </p>
 
-          <div class="about-points">
+          <p>
+            Nosso trabalho é criar momentos de interação,
+            movimento e criatividade para que cada criança
+            tenha espaço para brincar, participar e se
+            sentir parte da festa.
+          </p>
 
-            <div class="about-point">
+
+          <div class="about-list">
+
+            <div>
               <i class="fa-solid fa-check"></i>
-              Recreação planejada para cada evento
+              Planejamento
             </div>
 
-            <div class="about-point">
+            <div>
               <i class="fa-solid fa-check"></i>
-              Atividades adaptadas para diferentes idades
+              Criatividade
             </div>
 
-            <div class="about-point">
+            <div>
               <i class="fa-solid fa-check"></i>
-              Equipe preparada para conduzir a diversão
+              Organização
             </div>
 
-            <div class="about-point">
+            <div>
               <i class="fa-solid fa-check"></i>
-              Experiência acolhedora para crianças e famílias
+              Personalização
             </div>
 
           </div>
+
+
+          <a
+            href="#contato"
+            class="button button-primary"
+          >
+            Conversar com a START
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
 
         </div>
 
@@ -2129,228 +2597,129 @@
 
 
     <!-- =======================================================
-         SERVIÇOS
+         ATIVIDADES
     ======================================================== -->
 
-    <section
-      class="services"
-      id="servicos"
-    >
+    <section class="activities" id="atividades">
 
-      <div class="container">
+      <div class="container activities-layout">
 
-        <div class="section-top reveal">
+        <div class="activities-intro reveal">
 
-          <div>
-
-            <div class="section-label">
-              Experiências
-            </div>
-
-            <h2>
-              Tudo começa
-              com uma boa brincadeira.
-            </h2>
-
+          <div class="section-kicker">
+            O que pode acontecer
           </div>
 
-          <p class="section-description">
-            A programação é construída de forma personalizada
-            para combinar com a festa, o ambiente e a idade
-            das crianças. Sem roteiro engessado e sem
-            brincadeiras aleatórias.
+          <h2 class="section-title">
+            Cada momento
+            pede uma brincadeira.
+          </h2>
+
+          <p>
+            A programação pode misturar diferentes
+            propostas para manter as crianças envolvidas
+            do começo ao fim.
           </p>
 
         </div>
 
 
-        <div class="services-list">
+        <div class="activity-list">
 
-          <article class="service reveal">
+          <article class="activity-item reveal">
 
-            <div class="service-number">
-              01
-            </div>
-
-            <h3>
-              Recreação infantil
-            </h3>
-
-            <p>
-              Condução de brincadeiras e atividades para
-              manter as crianças envolvidas durante a festa.
-            </p>
-
-            <div class="service-arrow">
-              <i class="fa-solid fa-arrow-right"></i>
-            </div>
-
-          </article>
-
-
-          <article class="service reveal">
-
-            <div class="service-number">
-              02
-            </div>
+            <span>01</span>
 
             <h3>
               Gincanas
             </h3>
 
             <p>
-              Desafios e dinâmicas em grupo que estimulam
-              interação, movimento e participação.
+              Desafios leves e divertidos para
+              brincar em grupo.
             </p>
-
-            <div class="service-arrow">
-              <i class="fa-solid fa-arrow-right"></i>
-            </div>
 
           </article>
 
 
-          <article class="service reveal">
+          <article class="activity-item reveal">
 
-            <div class="service-number">
-              03
-            </div>
+            <span>02</span>
 
             <h3>
-              Oficinas criativas
+              Jogos
             </h3>
 
             <p>
-              Momentos para criar, experimentar e colocar
-              a imaginação das crianças para funcionar.
+              Jogos recreativos adaptados
+              para diferentes idades.
             </p>
-
-            <div class="service-arrow">
-              <i class="fa-solid fa-arrow-right"></i>
-            </div>
 
           </article>
 
 
-          <article class="service reveal">
+          <article class="activity-item reveal">
 
-            <div class="service-number">
-              04
-            </div>
+            <span>03</span>
 
             <h3>
-              Jogos e brincadeiras
+              Oficinas
             </h3>
 
             <p>
-              Propostas recreativas escolhidas de acordo
-              com a faixa etária e o perfil da turma.
+              Propostas criativas para colocar
+              a imaginação em movimento.
             </p>
-
-            <div class="service-arrow">
-              <i class="fa-solid fa-arrow-right"></i>
-            </div>
 
           </article>
 
 
-          <article class="service reveal">
+          <article class="activity-item reveal">
 
-            <div class="service-number">
-              05
-            </div>
+            <span>04</span>
 
             <h3>
-              Eventos especiais
+              Brincadeiras
             </h3>
 
             <p>
-              Recreação para aniversários, escolas,
-              confraternizações e eventos familiares.
+              Atividades livres e conduzidas
+              para aproveitar o espaço.
             </p>
-
-            <div class="service-arrow">
-              <i class="fa-solid fa-arrow-right"></i>
-            </div>
 
           </article>
 
-        </div>
 
-      </div>
+          <article class="activity-item reveal">
 
-    </section>
+            <span>05</span>
 
+            <h3>
+              Dinâmicas
+            </h3>
 
-    <!-- =======================================================
-         ATIVIDADES — COMPACTA
-    ======================================================== -->
+            <p>
+              Atividades para aproximar as
+              crianças e criar interação.
+            </p>
 
-    <section class="activities">
-
-      <div class="container">
-
-        <div class="activities-head reveal">
-
-          <div>
-
-            <div class="section-label">
-              Possibilidades
-            </div>
-
-            <h2>
-              Cada idade encontra
-              seu jeito de brincar.
-            </h2>
-
-          </div>
-
-          <p>
-            A programação pode combinar diferentes propostas
-            para que cada criança encontre uma atividade
-            que faça sentido para ela.
-          </p>
-
-        </div>
+          </article>
 
 
-        <div class="activity-list reveal">
+          <article class="activity-item reveal">
 
-          <span class="activity-pill">
-            Gincanas
-          </span>
+            <span>06</span>
 
-          <span class="activity-pill">
-            Jogos recreativos
-          </span>
+            <h3>
+              Musicalização
+            </h3>
 
-          <span class="activity-pill">
-            Oficinas
-          </span>
+            <p>
+              Ritmo, movimento e participação
+              de um jeito leve.
+            </p>
 
-          <span class="activity-pill">
-            Brincadeiras em grupo
-          </span>
-
-          <span class="activity-pill">
-            Dinâmicas
-          </span>
-
-          <span class="activity-pill">
-            Musicalização
-          </span>
-
-          <span class="activity-pill">
-            Desafios
-          </span>
-
-          <span class="activity-pill">
-            Atividades criativas
-          </span>
-
-          <span class="activity-pill">
-            Recreação livre
-          </span>
+          </article>
 
         </div>
 
@@ -2363,69 +2732,69 @@
          GALERIA
     ======================================================== -->
 
-    <section
-      class="gallery"
-      id="galeria"
-    >
+    <section class="gallery">
 
       <div class="container">
 
-        <div class="gallery-head reveal">
+        <div class="gallery-header reveal">
 
           <div>
 
-            <div class="section-label">
-              Momentos
+            <div class="section-kicker">
+              A START em cena
             </div>
 
-            <h2>
-              Uma festa bonita
-              também mora nos detalhes.
+            <h2 class="section-title">
+              Porque brincar
+              também é uma memória.
             </h2>
 
           </div>
 
           <p>
-            Uma identidade divertida, delicada e marcante
-            para combinar com momentos que merecem ser
-            lembrados.
+            Os personagens fazem parte da identidade
+            visual da START e entram na composição
+            sem roubar o protagonismo da experiência.
           </p>
 
         </div>
 
 
-        <div class="gallery-grid reveal">
+        <div class="gallery-grid">
 
-          <div class="gallery-main">
+          <!-- IMAGEM 1 -->
+          <div class="gallery-item reveal">
 
             <img
-              src="https://i.imgur.com/nNPyRy7.png"
-              alt="Start Recreação"
+              src="https://i.imgur.com/xMty4hk.png"
+              alt="START Recreação"
+            >
+
+            <span class="gallery-label">
+              Experiência START
+            </span>
+
+          </div>
+
+
+          <!-- IMAGEM 2 -->
+          <div class="gallery-item reveal">
+
+            <img
+              src="https://i.imgur.com/g0zW0LO.png"
+              alt="START Recreação"
             >
 
           </div>
 
 
-          <div class="gallery-side">
+          <!-- IMAGEM 3 -->
+          <div class="gallery-item reveal">
 
-            <div class="gallery-small">
-
-              <img
-                src="https://i.imgur.com/xMty4hk.png"
-                alt="Start Recreação"
-              >
-
-            </div>
-
-
-            <div class="gallery-small">
-
-              <img
-                src="https://i.imgur.com/g0zW0LO.png"
-                alt="Start Recreação"
-              >
-
-            </div>
+            <img
+              src="https://i.imgur.com/nNPyRy7.png"
+              alt="START Recreação"
+            >
 
           </div>
 
@@ -2440,31 +2809,25 @@
          DEPOIMENTOS
     ======================================================== -->
 
-    <section
-      class="testimonials"
-      id="depoimentos"
-    >
+    <section class="testimonials" id="familias">
 
       <div class="container">
 
-        <div class="testimonials-header reveal">
+        <div class="section-header center reveal">
 
-          <div>
-
-            <div class="eyebrow">
-              Quem viveu
-            </div>
-
-            <h2>
-              O que as famílias
-              dizem da Start.
-            </h2>
-
+          <div class="section-kicker">
+            Quem viveu a experiência
           </div>
 
-          <p>
-            Porque no fim da festa, o que realmente fica
-            são as histórias que as crianças levam para casa.
+          <h2 class="section-title">
+            O melhor feedback
+            vem das famílias.
+          </h2>
+
+          <p class="section-description">
+            Porque no fim da festa, o que importa é olhar
+            para as crianças e perceber que elas realmente
+            aproveitaram.
           </p>
 
         </div>
@@ -2479,25 +2842,28 @@
             </div>
 
             <p>
-              A recreação fez toda a diferença. As crianças
-              ficaram envolvidas do começo ao fim e nós
-              conseguimos aproveitar a festa muito mais.
+              A equipe foi maravilhosa do começo ao fim.
+              As crianças ficaram superenvolvidas e nós
+              conseguimos aproveitar a festa com os adultos.
+              Foi uma escolha que fez toda diferença.
             </p>
 
-            <div class="testimonial-author">
+            <div class="testimonial-person">
 
-              <div class="author-avatar">
-                A
+              <div class="testimonial-avatar">
+                AM
               </div>
 
               <div>
+
                 <strong>
-                  Amanda
+                  Ana Martins
                 </strong>
 
                 <span>
                   Mãe de aniversariante
                 </span>
+
               </div>
 
             </div>
@@ -2512,25 +2878,28 @@
             </div>
 
             <p>
-              Foi tudo muito organizado e, ao mesmo tempo,
-              super leve. A equipe conseguiu conquistar
-              as crianças logo nos primeiros minutos.
+              O cuidado com cada detalhe foi o que mais
+              gostamos. Eles entenderam a proposta da festa
+              e conseguiram envolver crianças de idades
+              diferentes sem deixar ninguém de fora.
             </p>
 
-            <div class="testimonial-author">
+            <div class="testimonial-person">
 
-              <div class="author-avatar">
-                C
+              <div class="testimonial-avatar">
+                CR
               </div>
 
               <div>
+
                 <strong>
-                  Camila
+                  Camila Ribeiro
                 </strong>
 
                 <span>
-                  Mãe de aniversariante
+                  Família START
                 </span>
+
               </div>
 
             </div>
@@ -2545,25 +2914,28 @@
             </div>
 
             <p>
-              O mais legal foi perceber que cada criança
-              conseguiu participar do seu jeito. Foi uma
-              experiência muito especial para nossa família.
+              Foi uma daquelas decisões que deixam a festa
+              muito mais leve. As crianças se divertiram,
+              participaram de tudo e no final ainda ficaram
+              perguntando quando seria a próxima.
             </p>
 
-            <div class="testimonial-author">
+            <div class="testimonial-person">
 
-              <div class="author-avatar">
-                R
+              <div class="testimonial-avatar">
+                JP
               </div>
 
               <div>
+
                 <strong>
-                  Renata
+                  Juliana Pereira
                 </strong>
 
                 <span>
-                  Família Start
+                  Mãe de aniversariante
                 </span>
+
               </div>
 
             </div>
@@ -2571,6 +2943,28 @@
           </article>
 
         </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         CONCEITO
+    ======================================================== -->
+
+    <section class="concept">
+
+      <div class="container concept-inner reveal">
+
+        <div class="concept-label">
+          O jeito START de fazer
+        </div>
+
+        <h2>
+          Uma festa bonita também
+          <span>mora nos detalhes.</span>
+        </h2>
 
       </div>
 
@@ -2590,18 +2984,18 @@
           <div class="cta-content">
 
             <div class="cta-label">
-              Vamos criar esse momento?
+              Vamos planejar?
             </div>
 
             <h2>
-              Sua festa pode ser
-              ainda mais especial.
+              Sua festa merece
+              uma experiência à altura.
             </h2>
 
             <p>
-              Conte para a gente sobre o seu evento e
-              montamos uma proposta de recreação de acordo
-              com o que você imaginou.
+              Conte um pouco sobre o evento, a data,
+              o local e a quantidade de crianças.
+              A START prepara uma proposta para você.
             </p>
 
           </div>
@@ -2626,86 +3020,85 @@
          CONTATO
     ======================================================== -->
 
-    <section
-      class="contact"
-      id="contato"
-    >
+    <section class="contact" id="contato">
 
       <div class="container contact-grid">
 
-        <div class="contact-copy reveal">
+        <div class="contact-intro reveal">
 
-          <div class="section-label">
+          <div class="section-kicker">
             Vamos conversar
           </div>
 
-          <h2>
+          <h2 class="section-title">
             Conte como
             será sua festa.
           </h2>
 
           <p>
-            Preencha os dados ao lado. A Start entra em contato
-            para entender os detalhes e apresentar as melhores
-            possibilidades para o seu evento.
+            Quanto mais detalhes você compartilhar,
+            melhor conseguimos pensar em uma experiência
+            que combine com o seu evento.
           </p>
 
 
-          <div class="contact-details">
+          <div class="contact-detail">
 
-            <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
 
-              <div class="contact-detail-icon">
-                <i class="fa-brands fa-whatsapp"></i>
-              </div>
+            <div>
 
-              <div>
-                <strong>
-                  WhatsApp
-                </strong>
+              <strong>
+                WhatsApp
+              </strong>
 
-                <span>
-                  (43) 9200-36581
-                </span>
-              </div>
+              <span>
+                (43) 9200-36581
+              </span>
 
             </div>
 
+          </div>
 
-            <div class="contact-detail">
 
-              <div class="contact-detail-icon">
-                <i class="fa-solid fa-location-dot"></i>
-              </div>
+          <div class="contact-detail">
 
-              <div>
-                <strong>
-                  Atendimento
-                </strong>
+            <div class="contact-detail-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
 
-                <span>
-                  Londrina e região
-                </span>
-              </div>
+            <div>
+
+              <strong>
+                Atendimento
+              </strong>
+
+              <span>
+                Londrina e região
+              </span>
 
             </div>
 
+          </div>
 
-            <div class="contact-detail">
 
-              <div class="contact-detail-icon">
-                <i class="fa-solid fa-calendar-days"></i>
-              </div>
+          <div class="contact-detail">
 
-              <div>
-                <strong>
-                  Eventos
-                </strong>
+            <div class="contact-detail-icon">
+              <i class="fa-solid fa-calendar-days"></i>
+            </div>
 
-                <span>
-                  Aniversários e eventos especiais
-                </span>
-              </div>
+            <div>
+
+              <strong>
+                Eventos
+              </strong>
+
+              <span>
+                Aniversários e comemorações
+              </span>
 
             </div>
 
@@ -2716,9 +3109,9 @@
 
         <div class="form reveal">
 
-          <div class="form-title">
-            Solicite seu orçamento
-          </div>
+          <h3 class="form-title">
+            Solicite uma proposta
+          </h3>
 
           <form id="budgetForm">
 
@@ -2762,10 +3155,7 @@
                   Tipo de evento
                 </label>
 
-                <select
-                  id="tipo"
-                  required
-                >
+                <select id="tipo" required>
 
                   <option value="">
                     Selecione
@@ -2816,7 +3206,7 @@
               <div class="field full">
 
                 <label for="mensagem">
-                  Sobre sua festa
+                  Sobre a festa
                 </label>
 
                 <textarea
@@ -2834,9 +3224,9 @@
               class="button button-primary form-submit"
             >
 
-              Enviar pelo WhatsApp
-
               <i class="fa-brands fa-whatsapp"></i>
+
+              Enviar pelo WhatsApp
 
             </button>
 
@@ -2863,20 +3253,55 @@
 
         <div class="footer-brand">
 
-          <a href="#inicio">
+          <a
+            href="#inicio"
+            class="brand"
+          >
 
-            <img
-              class="footer-logo"
-              src="https://i.imgur.com/DUKDmgn.png"
-              alt="Start Recreação"
+            <svg
+              class="brand-svg"
+              width="400"
+              height="250"
+              viewBox="0 0 400 250"
+              xmlns="http://www.w3.org/2000/svg"
             >
+
+              <circle
+                cx="200"
+                cy="100"
+                r="55"
+                fill="#FFFFFF"
+              />
+
+              <path
+                d="M180 70 L180 130 L230 100 Z"
+                fill="#7B2FBE"
+                stroke="#7B2FBE"
+                stroke-width="8"
+                stroke-linejoin="round"
+              />
+
+              <text
+                x="200"
+                y="210"
+                font-family="Arial, Helvetica, sans-serif"
+                font-size="52"
+                font-weight="bold"
+                fill="#7B2FBE"
+                text-anchor="middle"
+                letter-spacing="2"
+              >
+                START
+              </text>
+
+            </svg>
 
           </a>
 
           <p>
-            Recreação infantil para transformar festas
-            em experiências especiais, leves e cheias
-            de boas lembranças.
+            Recreação infantil pensada para transformar
+            festas em experiências bonitas, leves e
+            cheias de boas lembranças.
           </p>
 
         </div>
@@ -2884,7 +3309,7 @@
 
         <div class="footer-links">
 
-          <div class="footer-column">
+          <div>
 
             <h4>
               Navegação
@@ -2894,26 +3319,22 @@
               Início
             </a>
 
-            <a href="#sobre">
-              A Start
+            <a href="#experiencia">
+              Experiência
             </a>
 
-            <a href="#servicos">
-              Experiências
+            <a href="#atividades">
+              Atividades
             </a>
 
-            <a href="#galeria">
-              Momentos
-            </a>
-
-            <a href="#depoimentos">
+            <a href="#familias">
               Famílias
             </a>
 
           </div>
 
 
-          <div class="footer-column">
+          <div>
 
             <h4>
               Contato
@@ -2941,7 +3362,7 @@
       <div class="footer-bottom">
 
         <span>
-          © 2026 Start Recreação. Todos os direitos reservados.
+          © 2026 START Recreação. Todos os direitos reservados.
         </span>
 
         <span>
@@ -2964,9 +3385,11 @@
     href="https://wa.me/5543920036581"
     target="_blank"
     rel="noopener"
-    aria-label="Falar com a Start Recreação pelo WhatsApp"
+    aria-label="Falar com a START Recreação pelo WhatsApp"
   >
+
     <i class="fa-brands fa-whatsapp"></i>
+
   </a>
 
 
@@ -2980,7 +3403,9 @@
     id="backTop"
     aria-label="Voltar ao topo"
   >
+
     <i class="fa-solid fa-arrow-up"></i>
+
   </a>
 
 
@@ -2992,22 +3417,22 @@
 
     /* =========================================================
        MENU MOBILE
-    ========================================================== */
+    ========================================================= */
 
-    const mobileMenu =
-      document.getElementById("mobileMenu");
+    const mobileButton =
+      document.getElementById("mobileButton");
 
-    const navLinks =
-      document.getElementById("navLinks");
+    const menu =
+      document.getElementById("menu");
 
-    mobileMenu.addEventListener("click", () => {
+    mobileButton.addEventListener("click", () => {
 
-      navLinks.classList.toggle("active");
+      menu.classList.toggle("active");
 
       const icon =
-        mobileMenu.querySelector("i");
+        mobileButton.querySelector("i");
 
-      if (navLinks.classList.contains("active")) {
+      if (menu.classList.contains("active")) {
 
         icon.classList.remove("fa-bars");
         icon.classList.add("fa-xmark");
@@ -3023,15 +3448,15 @@
 
 
     document
-      .querySelectorAll(".nav-links a")
+      .querySelectorAll(".menu a")
       .forEach(link => {
 
         link.addEventListener("click", () => {
 
-          navLinks.classList.remove("active");
+          menu.classList.remove("active");
 
           const icon =
-            mobileMenu.querySelector("i");
+            mobileButton.querySelector("i");
 
           icon.classList.remove("fa-xmark");
           icon.classList.add("fa-bars");
@@ -3042,8 +3467,30 @@
 
 
     /* =========================================================
+       HEADER SCROLL
+    ========================================================= */
+
+    const header =
+      document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 30) {
+
+        header.classList.add("scrolled");
+
+      } else {
+
+        header.classList.remove("scrolled");
+
+      }
+
+    });
+
+
+    /* =========================================================
        BACK TO TOP
-    ========================================================== */
+    ========================================================= */
 
     const backTop =
       document.getElementById("backTop");
@@ -3064,8 +3511,8 @@
 
 
     /* =========================================================
-       REVEAL ANIMATION
-    ========================================================== */
+       REVEAL
+    ========================================================= */
 
     const revealElements =
       document.querySelectorAll(".reveal");
@@ -3101,8 +3548,8 @@
 
 
     /* =========================================================
-       FORMULÁRIO WHATSAPP
-    ========================================================== */
+       FORMULÁRIO -> WHATSAPP
+    ========================================================= */
 
     document
       .getElementById("budgetForm")
@@ -3126,19 +3573,22 @@
           document.getElementById("mensagem").value.trim();
 
 
-        const texto = [
-          "Olá, Start Recreação!",
-          "",
-          "Gostaria de solicitar um orçamento.",
-          "",
-          "Nome: " + nome,
-          "WhatsApp: " + telefone,
-          "Tipo de evento: " + tipo,
-          "Quantidade de crianças: " + criancas,
-          "Detalhes: " + (
-            mensagem || "Não informado"
-          )
-        ].join("\n");
+        const texto = `
+Olá, START Recreação!
+
+Gostaria de solicitar uma proposta.
+
+Nome: ${nome}
+
+WhatsApp: ${telefone}
+
+Tipo de evento: ${tipo}
+
+Quantidade de crianças: ${criancas}
+
+Detalhes da festa:
+${mensagem}
+        `.trim();
 
 
         const url =
