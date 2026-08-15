@@ -4,65 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Star Recreação — Experiências que ficam na memória</title>
+  <title>Star Recreação | Experiências que ficam na memória</title>
 
   <meta
     name="description"
-    content="Star Recreação: experiências de recreação infantil para aniversários, festas e eventos em Londrina e região."
+    content="Star Recreação — experiências, brincadeiras e momentos especiais para festas infantis e eventos em Londrina e região."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
   <style>
 
     /* =========================================================
-       BASE
+       RESET
     ========================================================= */
-
-    :root {
-      --blue: #1264d8;
-      --blue-dark: #071d3c;
-      --blue-soft: #edf5ff;
-      --yellow: #ffd43b;
-
-      --white: #ffffff;
-      --off-white: #f7f9fc;
-      --text: #101b2d;
-      --muted: #6e7888;
-      --line: #e8edf3;
-
-      --max: 1240px;
-      --radius: 28px;
-    }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
     }
 
     html {
-      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: "DM Sans", sans-serif;
-      color: var(--text);
-      background: var(--white);
+      background: #f5f0e8;
+      color: #14213d;
       overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
     }
 
     img {
-      display: block;
       max-width: 100%;
+      display: block;
     }
 
     a {
@@ -77,9 +59,49 @@
       font: inherit;
     }
 
+    :root {
+      --navy: #071a35;
+      --navy-2: #0b2548;
+      --blue: #1769d1;
+      --blue-light: #3e8cf1;
+
+      --cream: #f5f0e8;
+      --cream-2: #fffaf2;
+
+      --yellow: #f6cb4a;
+      --yellow-soft: #f9df78;
+
+      --coral: #ef755c;
+      --pink: #e98aa4;
+
+      --green: #58a878;
+
+      --white: #ffffff;
+
+      --text: #18263c;
+      --muted: #687385;
+
+      --line: rgba(7, 26, 53, .12);
+
+      --container: 1240px;
+    }
+
     .container {
-      width: min(var(--max), calc(100% - 64px));
+      width: min(var(--container), calc(100% - 48px));
       margin: 0 auto;
+    }
+
+
+    /* =========================================================
+       TIPOGRAFIA
+    ========================================================= */
+
+    h1,
+    h2,
+    h3,
+    .brand,
+    .number {
+      font-family: "Outfit", sans-serif;
     }
 
 
@@ -87,25 +109,16 @@
        HEADER
     ========================================================= */
 
-    .header {
-      position: fixed;
+    header {
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 1000;
-      padding: 18px 0;
-      transition: .35s ease;
+      z-index: 100;
     }
 
-    .header.scrolled {
-      background: rgba(255,255,255,.92);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(16,27,45,.06);
-      padding: 11px 0;
-    }
-
-    .nav {
-      height: 58px;
+    .header-inner {
+      height: 92px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -114,71 +127,85 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 11px;
-      font-family: "Plus Jakarta Sans", sans-serif;
+      gap: 12px;
+
+      color: white;
+      font-size: 24px;
       font-weight: 800;
-      font-size: 21px;
-      letter-spacing: -1px;
+      letter-spacing: -.8px;
     }
 
     .brand-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      background: var(--blue-dark);
-      color: var(--yellow);
+      width: 42px;
+      height: 42px;
 
       display: grid;
       place-items: center;
 
-      font-size: 18px;
+      background: var(--yellow);
+      color: var(--navy);
+
+      border-radius: 13px;
+
+      font-family: "Outfit";
+      font-size: 20px;
       font-weight: 800;
     }
 
     .brand span {
-      color: var(--blue);
+      color: var(--yellow);
     }
 
-    .nav-links {
+    .navigation {
       display: flex;
       align-items: center;
       gap: 34px;
-      list-style: none;
-    }
 
-    .nav-links a {
+      color: rgba(255,255,255,.82);
+
       font-size: 14px;
       font-weight: 600;
-      color: #253247;
+    }
+
+    .navigation a {
       transition: .25s ease;
     }
 
-    .nav-links a:hover {
-      color: var(--blue);
+    .navigation a:hover {
+      color: var(--yellow);
     }
 
-    .nav-cta {
-      background: var(--blue-dark) !important;
-      color: white !important;
-      padding: 13px 21px;
-      border-radius: 100px;
+    .header-button {
+      padding: 12px 21px;
+
+      color: var(--navy) !important;
+      background: white;
+
+      border-radius: 999px;
+
+      font-weight: 700;
+
+      transition: .25s ease;
     }
 
-    .nav-cta:hover {
-      background: var(--blue-dark) !important;
+    .header-button:hover {
+      background: var(--yellow);
       transform: translateY(-2px);
     }
 
-    .menu-button {
+    .mobile-toggle {
       display: none;
-      border: 0;
-      background: var(--blue-dark);
-      color: white;
+
       width: 44px;
       height: 44px;
+
+      border: 0;
       border-radius: 12px;
+
+      background: white;
+      color: var(--navy);
+
       cursor: pointer;
-      font-size: 19px;
     }
 
 
@@ -187,108 +214,149 @@
     ========================================================= */
 
     .hero {
-      min-height: 840px;
       position: relative;
+      min-height: 790px;
+
       overflow: hidden;
-      padding: 150px 0 80px;
+
       background:
         radial-gradient(
-          circle at 83% 38%,
-          rgba(18,100,216,.08),
-          transparent 30%
+          circle at 75% 40%,
+          rgba(43, 116, 215, .38),
+          transparent 34%
         ),
-        #fff;
+        var(--navy);
+
+      color: white;
     }
+
+    /*
+      Elementos gráficos sutis.
+      Não são emojis nem "figurinhas".
+    */
 
     .hero::before {
       content: "";
+
       position: absolute;
-      width: 560px;
-      height: 560px;
+
+      width: 620px;
+      height: 620px;
+
+      right: -220px;
+      top: 110px;
+
+      border: 1px solid rgba(255,255,255,.09);
+
       border-radius: 50%;
-      background: var(--blue-soft);
-      right: -280px;
-      top: 100px;
-      z-index: 0;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: 360px;
+      height: 360px;
+
+      right: 80px;
+      top: 240px;
+
+      border: 1px solid rgba(246,203,74,.16);
+
+      border-radius: 50%;
     }
 
     .hero-grid {
-      position: relative;
-      z-index: 2;
+      min-height: 790px;
 
       display: grid;
-      grid-template-columns: .92fr 1.08fr;
+      grid-template-columns: .95fr 1.05fr;
+
       align-items: center;
-      gap: 45px;
+
+      gap: 30px;
+
+      position: relative;
+      z-index: 2;
     }
 
     .hero-copy {
-      padding-bottom: 20px;
+      padding-top: 70px;
+      position: relative;
+      z-index: 5;
     }
 
     .eyebrow {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 10px;
 
-      color: var(--blue);
+      margin-bottom: 24px;
+
+      color: var(--yellow);
+
       font-size: 11px;
       font-weight: 800;
-      letter-spacing: 2.2px;
-      text-transform: uppercase;
 
-      margin-bottom: 25px;
+      letter-spacing: 2.8px;
+      text-transform: uppercase;
     }
 
     .eyebrow::before {
       content: "";
-      width: 28px;
+
+      width: 34px;
       height: 2px;
+
       background: var(--yellow);
     }
 
     .hero h1 {
-      max-width: 670px;
+      max-width: 650px;
 
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-size: clamp(50px, 6.4vw, 84px);
-      line-height: .98;
-      letter-spacing: -5px;
+      font-size: clamp(56px, 7vw, 94px);
+      line-height: .91;
+
+      letter-spacing: -4.5px;
+
       font-weight: 800;
-      color: var(--blue-dark);
-
-      margin-bottom: 28px;
     }
 
-    .hero h1 em {
-      color: var(--blue);
-      font-style: normal;
+    .hero h1 strong {
+      color: var(--yellow);
+      font-weight: 800;
     }
 
     .hero-description {
-      max-width: 520px;
-      color: var(--muted);
+      max-width: 500px;
+
+      margin-top: 28px;
+
+      color: rgba(255,255,255,.67);
+
       font-size: 17px;
       line-height: 1.75;
-      margin-bottom: 34px;
     }
 
     .hero-actions {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 18px;
+
+      margin-top: 34px;
     }
 
-    .primary-button {
+    .button {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      justify-content: center;
 
-      background: var(--blue-dark);
-      color: white;
+      min-height: 52px;
 
-      padding: 17px 25px;
-      border-radius: 100px;
+      padding: 0 25px;
+
+      border-radius: 999px;
 
       font-size: 14px;
       font-weight: 700;
@@ -296,136 +364,1271 @@
       transition: .3s ease;
     }
 
-    .primary-button:hover {
-      background: var(--blue);
+    .button-primary {
+      background: var(--yellow);
+      color: var(--navy);
+
+      box-shadow: 0 14px 35px rgba(246,203,74,.18);
+    }
+
+    .button-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 14px 30px rgba(18,100,216,.2);
+      box-shadow: 0 18px 45px rgba(246,203,74,.28);
     }
 
-    .text-link {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--blue-dark);
-      border-bottom: 1px solid #c9d2df;
-      padding-bottom: 4px;
-      transition: .25s ease;
+    .button-ghost {
+      border: 1px solid rgba(255,255,255,.22);
+      color: white;
     }
 
-    .text-link:hover {
-      color: var(--blue);
-      border-color: var(--blue);
+    .button-ghost:hover {
+      border-color: white;
+      background: rgba(255,255,255,.06);
+    }
+
+    .hero-note {
+      margin-top: 30px;
+
+      color: rgba(255,255,255,.4);
+
+      font-size: 12px;
     }
 
 
     /* =========================================================
-       HERO VISUAL
+       HERO IMAGE
+       Sem card. Sem moldura.
     ========================================================= */
 
     .hero-visual {
+      height: 700px;
+
       position: relative;
-      height: 610px;
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
     }
 
-    .hero-image-main {
-      position: absolute;
-
-      width: 520px;
-      max-width: 75%;
-
-      right: 40px;
-      top: 5px;
-
+    .hero-image {
+      position: relative;
       z-index: 3;
 
-      /* IMPORTANTE:
-         imagem fica livre, sem card */
-      object-fit: contain;
+      width: min(650px, 110%);
 
-      filter: drop-shadow(
-        0 30px 35px rgba(7,29,60,.12)
-      );
-
-      animation: heroFloat 6s ease-in-out infinite;
-    }
-
-    .hero-image-secondary {
-      position: absolute;
-
-      width: 300px;
-      max-width: 45%;
-
-      left: 0;
-      bottom: 10px;
-
-      z-index: 4;
+      max-height: 700px;
 
       object-fit: contain;
+      object-position: center bottom;
 
-      filter: drop-shadow(
-        0 24px 30px rgba(7,29,60,.13)
-      );
+      /*
+        A imagem fica livre na composição.
+        Não existe card atrás dela.
+      */
 
-      animation: heroFloat 6s ease-in-out infinite reverse;
+      filter:
+        drop-shadow(0 35px 45px rgba(0,0,0,.23));
+
+      animation: heroFloat 7s ease-in-out infinite;
     }
 
-    .hero-circle {
+    .hero-sticker {
       position: absolute;
-      width: 480px;
-      height: 480px;
 
       right: 25px;
+      top: 145px;
+
+      width: 130px;
+      height: 130px;
+
+      border-radius: 50%;
+
+      background: var(--yellow);
+      color: var(--navy);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      font-family: "Outfit";
+      font-weight: 800;
+      font-size: 15px;
+
+      line-height: 1.15;
+
+      transform: rotate(9deg);
+
+      z-index: 6;
+
+      box-shadow: 0 15px 40px rgba(0,0,0,.15);
+    }
+
+    .hero-sticker::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 7px;
+
+      border: 1px dashed rgba(7,26,53,.3);
+
+      border-radius: 50%;
+    }
+
+
+    /* =========================================================
+       MINI BAR
+    ========================================================= */
+
+    .trust-bar {
+      position: relative;
+      z-index: 10;
+
+      margin-top: -1px;
+
+      background: var(--yellow);
+      color: var(--navy);
+    }
+
+    .trust-inner {
+      min-height: 112px;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+
+      padding: 22px 32px;
+
+      border-right: 1px solid rgba(7,26,53,.12);
+    }
+
+    .trust-item:last-child {
+      border: 0;
+    }
+
+    .trust-number {
+      font-family: "Outfit";
+      font-size: 32px;
+      font-weight: 800;
+    }
+
+    .trust-item strong {
+      display: block;
+
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+
+    .trust-item span {
+      color: rgba(7,26,53,.62);
+
+      font-size: 12px;
+    }
+
+
+    /* =========================================================
+       INTRO
+    ========================================================= */
+
+    .intro {
+      padding: 145px 0 130px;
+
+      background: var(--cream);
+    }
+
+    .intro-grid {
+      display: grid;
+
+      grid-template-columns: .75fr 1.25fr;
+
+      gap: 90px;
+
+      align-items: end;
+    }
+
+    .intro-small {
+      color: var(--coral);
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .intro h2 {
+      margin-top: 18px;
+
+      max-width: 430px;
+
+      font-size: clamp(42px, 5vw, 67px);
+
+      line-height: .98;
+
+      letter-spacing: -3px;
+
+      color: var(--navy);
+    }
+
+    .intro h2 span {
+      color: var(--blue);
+    }
+
+    .intro-text {
+      max-width: 650px;
+
+      color: #667080;
+
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .intro-line {
+      width: 100%;
+      height: 1px;
+
+      margin-top: 45px;
+
+      background: var(--line);
+    }
+
+
+    /* =========================================================
+       SOBRE / IMAGEM
+    ========================================================= */
+
+    .about {
+      position: relative;
+
+      padding: 0 0 145px;
+
+      background: var(--cream);
+    }
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      min-height: 610px;
+
+      align-items: center;
+
+      gap: 80px;
+    }
+
+    .about-visual {
+      height: 620px;
+
+      position: relative;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+
+      overflow: hidden;
+
+      border-radius: 0 0 180px 180px;
+
+      background:
+        linear-gradient(
+          160deg,
+          #f1d05d 0%,
+          #eabf49 100%
+        );
+    }
+
+    .about-visual::before {
+      content: "";
+
+      position: absolute;
+
+      width: 390px;
+      height: 390px;
+
       top: 55px;
 
       border-radius: 50%;
-      background: #eef6ff;
 
-      z-index: 1;
+      background: rgba(255,255,255,.18);
     }
 
-    .hero-circle::after {
+    .about-image {
+      position: relative;
+
+      z-index: 2;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+      object-position: center bottom;
+
+      filter: drop-shadow(0 30px 30px rgba(0,0,0,.12));
+    }
+
+    .about-copy {
+      padding-right: 30px;
+    }
+
+    .about-copy .eyebrow {
+      color: var(--coral);
+    }
+
+    .about-copy .eyebrow::before {
+      background: var(--coral);
+    }
+
+    .about-copy h2 {
+      max-width: 570px;
+
+      margin-bottom: 22px;
+
+      color: var(--navy);
+
+      font-size: clamp(42px, 5vw, 63px);
+      line-height: .98;
+
+      letter-spacing: -3px;
+    }
+
+    .about-copy h2 span {
+      color: var(--blue);
+    }
+
+    .about-copy > p {
+      max-width: 560px;
+
+      color: var(--muted);
+
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .about-list {
+      display: grid;
+
+      gap: 14px;
+
+      margin-top: 30px;
+    }
+
+    .about-list-item {
+      display: flex;
+      align-items: center;
+
+      gap: 13px;
+
+      color: var(--navy);
+
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .about-list-item::before {
       content: "";
-      position: absolute;
-      width: 70px;
-      height: 70px;
-      background: var(--yellow);
+
+      width: 8px;
+      height: 8px;
+
+      flex: 0 0 8px;
+
       border-radius: 50%;
 
-      right: 12px;
-      top: 35px;
+      background: var(--coral);
     }
 
-    .hero-number {
-      position: absolute;
-      right: 0;
-      bottom: 45px;
-      z-index: 6;
 
-      background: var(--blue-dark);
+    /* =========================================================
+       SERVIÇOS
+    ========================================================= */
+
+    .services {
+      position: relative;
+
+      padding: 130px 0;
+
+      background: var(--navy);
+
       color: white;
 
-      width: 145px;
-      padding: 18px 20px;
-
-      border-radius: 20px;
-
-      box-shadow: 0 20px 40px rgba(7,29,60,.15);
+      overflow: hidden;
     }
 
-    .hero-number strong {
-      display: block;
-      font-family: "Plus Jakarta Sans", sans-serif;
+    .services::before {
+      content: "STAR";
+
+      position: absolute;
+
+      right: -70px;
+      top: 40px;
+
+      color: rgba(255,255,255,.025);
+
+      font-family: "Outfit";
+      font-size: 210px;
+      font-weight: 800;
+
+      line-height: 1;
+    }
+
+    .services-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+
+      gap: 60px;
+
+      margin-bottom: 70px;
+    }
+
+    .services-heading .eyebrow {
+      color: var(--yellow);
+    }
+
+    .services-heading h2 {
+      max-width: 650px;
+
+      margin-top: 17px;
+
+      font-size: clamp(42px, 5vw, 64px);
+      line-height: .98;
+
+      letter-spacing: -3px;
+    }
+
+    .services-heading p {
+      max-width: 340px;
+
+      color: rgba(255,255,255,.55);
+
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .service-list {
+      border-top: 1px solid rgba(255,255,255,.13);
+    }
+
+    .service-row {
+      display: grid;
+
+      grid-template-columns: 90px 1fr 1.2fr 40px;
+
+      align-items: center;
+
+      min-height: 125px;
+
+      gap: 25px;
+
+      border-bottom: 1px solid rgba(255,255,255,.13);
+
+      transition: .3s ease;
+    }
+
+    .service-row:hover {
+      padding-left: 15px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .service-number {
+      color: var(--yellow);
+
+      font-family: "Outfit";
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .service-row h3 {
       font-size: 27px;
-      letter-spacing: -1px;
+      font-weight: 600;
+
+      letter-spacing: -.8px;
     }
 
-    .hero-number span {
-      color: #b8c7da;
+    .service-row p {
+      color: rgba(255,255,255,.5);
+
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .service-arrow {
+      width: 35px;
+      height: 35px;
+
+      border: 1px solid rgba(255,255,255,.18);
+
+      border-radius: 50%;
+
+      display: grid;
+      place-items: center;
+
+      color: var(--yellow);
+
+      transition: .3s;
+    }
+
+    .service-row:hover .service-arrow {
+      background: var(--yellow);
+      color: var(--navy);
+      border-color: var(--yellow);
+      transform: rotate(-45deg);
+    }
+
+
+    /* =========================================================
+       ATIVIDADES — COMPACTA
+    ========================================================= */
+
+    .activities {
+      padding: 110px 0;
+
+      background: var(--cream-2);
+    }
+
+    .activities-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+
+      gap: 40px;
+
+      margin-bottom: 48px;
+    }
+
+    .activities-head h2 {
+      max-width: 600px;
+
+      margin-top: 15px;
+
+      font-size: clamp(40px, 4.5vw, 58px);
+
+      line-height: 1;
+
+      letter-spacing: -2.7px;
+
+      color: var(--navy);
+    }
+
+    .activities-head p {
+      max-width: 370px;
+
+      color: var(--muted);
+
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .activity-cloud {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 10px;
+    }
+
+    .activity-pill {
+      padding: 13px 19px;
+
+      border: 1px solid rgba(7,26,53,.13);
+
+      border-radius: 999px;
+
+      color: var(--navy);
+
+      font-size: 14px;
+      font-weight: 700;
+
+      background: white;
+
+      transition: .25s;
+    }
+
+    .activity-pill:hover {
+      background: var(--navy);
+      color: white;
+      border-color: var(--navy);
+
+      transform: translateY(-2px);
+    }
+
+
+    /* =========================================================
+       DEPOIMENTOS
+    ========================================================= */
+
+    .testimonials {
+      padding: 135px 0;
+
+      background: #e8edf4;
+
+      overflow: hidden;
+    }
+
+    .testimonials-top {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: end;
+
+      gap: 50px;
+
+      margin-bottom: 65px;
+    }
+
+    .testimonials-top h2 {
+      max-width: 620px;
+
+      margin-top: 16px;
+
+      color: var(--navy);
+
+      font-size: clamp(42px, 5vw, 65px);
+
+      line-height: .96;
+
+      letter-spacing: -3px;
+    }
+
+    .testimonials-top p {
+      max-width: 330px;
+
+      color: var(--muted);
+
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .testimonial-grid {
+      display: grid;
+
+      grid-template-columns: 1.2fr .8fr .8fr;
+
+      gap: 18px;
+    }
+
+    .testimonial {
+      min-height: 330px;
+
+      padding: 35px;
+
+      background: white;
+
+      border-radius: 28px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      box-shadow: 0 20px 50px rgba(7,26,53,.05);
+    }
+
+    .testimonial.featured {
+      background: var(--navy);
+      color: white;
+
+      transform: translateY(-22px);
+    }
+
+    .quote {
+      font-family: "Outfit";
+      font-size: 70px;
+      line-height: .7;
+
+      color: var(--yellow);
+    }
+
+    .testimonial-text {
+      margin-top: 15px;
+
+      font-family: "Outfit";
+
+      font-size: 21px;
+      line-height: 1.35;
+
+      letter-spacing: -.5px;
+    }
+
+    .testimonial:not(.featured) .testimonial-text {
+      color: var(--navy);
+    }
+
+    .testimonial.featured .testimonial-text {
+      color: white;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+
+      gap: 13px;
+
+      margin-top: 30px;
+    }
+
+    .author-avatar {
+      width: 44px;
+      height: 44px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: var(--yellow);
+
+      color: var(--navy);
+
+      font-family: "Outfit";
+      font-weight: 800;
+    }
+
+    .testimonial-author strong {
+      display: block;
+
+      font-size: 13px;
+    }
+
+    .testimonial-author span {
+      color: var(--muted);
+
       font-size: 11px;
-      line-height: 1.4;
+    }
+
+    .featured .testimonial-author span {
+      color: rgba(255,255,255,.48);
+    }
+
+
+    /* =========================================================
+       NUMEROS / PROVA
+    ========================================================= */
+
+    .numbers {
+      padding: 100px 0;
+
+      background: var(--yellow);
+    }
+
+    .numbers-grid {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      text-align: center;
+    }
+
+    .number-box {
+      padding: 15px 25px;
+
+      border-right: 1px solid rgba(7,26,53,.15);
+    }
+
+    .number-box:last-child {
+      border: 0;
+    }
+
+    .number {
+      font-size: 58px;
+      font-weight: 800;
+
+      letter-spacing: -3px;
+
+      color: var(--navy);
+    }
+
+    .number-box p {
+      margin-top: 4px;
+
+      color: rgba(7,26,53,.63);
+
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+
+    /* =========================================================
+       CTA FINAL COM IMAGEM
+    ========================================================= */
+
+    .final-cta {
+      position: relative;
+
+      min-height: 670px;
+
+      display: flex;
+      align-items: center;
+
+      overflow: hidden;
+
+      background: var(--navy);
+
+      color: white;
+    }
+
+    .final-grid {
+      display: grid;
+
+      grid-template-columns: .9fr 1.1fr;
+
+      align-items: center;
+
+      position: relative;
+      z-index: 3;
+    }
+
+    .final-copy {
+      padding: 80px 0;
+    }
+
+    .final-copy .eyebrow {
+      color: var(--yellow);
+    }
+
+    .final-copy h2 {
+      max-width: 580px;
+
+      margin-top: 16px;
+
+      font-size: clamp(48px, 6vw, 76px);
+
+      line-height: .94;
+
+      letter-spacing: -3.5px;
+    }
+
+    .final-copy h2 span {
+      color: var(--yellow);
+    }
+
+    .final-copy p {
+      max-width: 470px;
+
+      margin-top: 25px;
+
+      color: rgba(255,255,255,.58);
+
+      line-height: 1.75;
+    }
+
+    .final-actions {
+      margin-top: 34px;
+    }
+
+    .final-visual {
+      height: 670px;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+
+      position: relative;
+    }
+
+    .final-visual::before {
+      content: "";
+
+      position: absolute;
+
+      width: 550px;
+      height: 550px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(23,105,209,.55),
+          rgba(23,105,209,0)
+        );
+    }
+
+    .final-image {
+      position: relative;
+      z-index: 2;
+
+      width: min(620px, 110%);
+
+      height: 100%;
+
+      object-fit: contain;
+      object-position: center bottom;
+
+      filter: drop-shadow(0 30px 40px rgba(0,0,0,.25));
+    }
+
+
+    /* =========================================================
+       CONTATO
+    ========================================================= */
+
+    .contact {
+      padding: 120px 0;
+
+      background: var(--cream);
+    }
+
+    .contact-grid {
+      display: grid;
+
+      grid-template-columns: .75fr 1.25fr;
+
+      gap: 80px;
+    }
+
+    .contact-copy h2 {
+      max-width: 450px;
+
+      margin-top: 17px;
+
+      color: var(--navy);
+
+      font-size: clamp(42px, 5vw, 62px);
+
+      line-height: .98;
+
+      letter-spacing: -3px;
+    }
+
+    .contact-copy > p {
+      max-width: 440px;
+
+      margin-top: 22px;
+
+      color: var(--muted);
+
+      line-height: 1.75;
+    }
+
+    .contact-details {
+      display: grid;
+
+      gap: 18px;
+
+      margin-top: 35px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .contact-detail-mark {
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      background: var(--navy);
+      color: var(--yellow);
+
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .contact-detail strong {
+      display: block;
+
+      color: var(--navy);
+
+      font-size: 13px;
+    }
+
+    .contact-detail span {
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    .form {
+      padding: 42px;
+
+      background: white;
+
+      border-radius: 28px;
+
+      box-shadow: 0 25px 70px rgba(7,26,53,.08);
+    }
+
+    .form h3 {
+      color: var(--navy);
+
+      font-size: 29px;
+
+      margin-bottom: 28px;
+    }
+
+    .fields {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      color: var(--navy);
+
+      font-size: 11px;
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: .8px;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+
+      padding: 15px 16px;
+
+      border: 1px solid #dfe4ea;
+
+      border-radius: 12px;
+
+      outline: none;
+
+      color: var(--navy);
+
+      background: #fbfcfd;
+
+      transition: .25s;
+    }
+
+    .field textarea {
+      min-height: 125px;
+
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: var(--blue);
+
+      box-shadow: 0 0 0 4px rgba(23,105,209,.07);
+
+      background: white;
+    }
+
+    .form-submit {
+      margin-top: 20px;
+
+      width: 100%;
+
+      border: 0;
+
+      cursor: pointer;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      padding: 70px 0 30px;
+
+      background: #041225;
+
+      color: white;
+    }
+
+    .footer-top {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 70px;
+
+      padding-bottom: 60px;
+
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .footer-brand {
+      max-width: 430px;
+    }
+
+    .footer-brand .brand {
+      margin-bottom: 18px;
+    }
+
+    .footer-brand p {
+      color: rgba(255,255,255,.45);
+
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .footer-navigation {
+      display: flex;
+      gap: 75px;
+    }
+
+    .footer-column h4 {
+      color: var(--yellow);
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.5px;
+
+      margin-bottom: 18px;
+    }
+
+    .footer-column a {
+      display: block;
+
+      margin-bottom: 10px;
+
+      color: rgba(255,255,255,.55);
+
+      font-size: 13px;
+
+      transition: .2s;
+    }
+
+    .footer-column a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding-top: 25px;
+
+      color: rgba(255,255,255,.3);
+
+      font-size: 11px;
+    }
+
+
+    /* =========================================================
+       WHATSAPP
+    ========================================================= */
+
+    .whatsapp {
+      position: fixed;
+
+      right: 25px;
+      bottom: 25px;
+
+      width: 58px;
+      height: 58px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: #25d366;
+      color: white;
+
+      z-index: 200;
+
+      box-shadow: 0 12px 35px rgba(37,211,102,.28);
+
+      transition: .25s;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.08);
+    }
+
+    .whatsapp svg {
+      width: 25px;
+      height: 25px;
+    }
+
+
+    /* =========================================================
+       BACK TOP
+    ========================================================= */
+
+    .back-top {
+      position: fixed;
+
+      right: 25px;
+      bottom: 95px;
+
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+      place-items: center;
+
+      background: white;
+      color: var(--navy);
+
+      border-radius: 12px;
+
+      box-shadow: 0 10px 25px rgba(0,0,0,.12);
+
+      opacity: 0;
+      visibility: hidden;
+
+      transition: .3s;
+
+      z-index: 199;
+    }
+
+    .back-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+
+    /* =========================================================
+       ANIMAÇÕES
+    ========================================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+
+      transition:
+        opacity .8s ease,
+        transform .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     @keyframes heroFloat {
-      0%,100% {
+      0%,
+      100% {
         transform: translateY(0);
       }
 
@@ -436,821 +1639,31 @@
 
 
     /* =========================================================
-       TRUST BAR
+       RESPONSIVO
     ========================================================= */
 
-    .trust {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: white;
-    }
-
-    .trust-inner {
-      min-height: 105px;
-
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      align-items: center;
-    }
-
-    .trust-item {
-      padding: 0 40px;
-      border-right: 1px solid var(--line);
-    }
-
-    .trust-item:first-child {
-      padding-left: 0;
-    }
-
-    .trust-item:last-child {
-      border: 0;
-    }
-
-    .trust-item strong {
-      display: block;
-
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-size: 16px;
-
-      margin-bottom: 5px;
-      color: var(--blue-dark);
-    }
-
-    .trust-item span {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-
-    /* =========================================================
-       INTRO
-    ========================================================= */
-
-    .intro {
-      padding: 145px 0 120px;
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 100px;
-      align-items: end;
-    }
-
-    .intro-label {
-      color: var(--blue);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 11px;
-      font-weight: 800;
-      margin-bottom: 20px;
-    }
-
-    .intro h2 {
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-size: clamp(38px, 5vw, 62px);
-      line-height: 1.03;
-      letter-spacing: -3.5px;
-      color: var(--blue-dark);
-      max-width: 480px;
-    }
-
-    .intro-right {
-      max-width: 600px;
-    }
-
-    .intro-right p {
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.8;
-      margin-bottom: 26px;
-    }
-
-    .simple-link {
-      color: var(--blue);
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-
-    /* =========================================================
-       IMAGENS / SOBRE
-    ========================================================= */
-
-    .story {
-      padding: 30px 0 140px;
-    }
-
-    .story-grid {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .story-visual {
-      position: relative;
-      min-height: 610px;
-    }
-
-    .story-image-one {
-      position: absolute;
-      width: 410px;
-      left: 0;
-      top: 0;
-      z-index: 2;
-      filter: drop-shadow(0 25px 30px rgba(7,29,60,.12));
-    }
-
-    .story-image-two {
-      position: absolute;
-      width: 350px;
-      right: 0;
-      bottom: 0;
-      z-index: 3;
-      filter: drop-shadow(0 25px 30px rgba(7,29,60,.14));
-    }
-
-    .story-bg {
-      position: absolute;
-      width: 420px;
-      height: 420px;
-      border-radius: 50%;
-      background: #fff7c9;
-      left: 105px;
-      top: 80px;
-      z-index: 1;
-    }
-
-    .story-content .eyebrow {
-      margin-bottom: 20px;
-    }
-
-    .story-content h2 {
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-size: clamp(38px, 4.5vw, 58px);
-      line-height: 1.04;
-      letter-spacing: -3px;
-      color: var(--blue-dark);
-      margin-bottom: 25px;
-    }
-
-    .story-content h2 span {
-      color: var(--blue);
-    }
-
-    .story-content > p {
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 16px;
-      margin-bottom: 30px;
-      max-width: 530px;
-    }
-
-    .story-list {
-      display: grid;
-      gap: 17px;
-      margin-bottom: 34px;
-    }
-
-    .story-list div {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-
-      color: var(--blue-dark);
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .story-list div::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      background: var(--yellow);
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-
-    /* =========================================================
-       ATIVIDADES — COMPACTA
-    ========================================================= */
-
-    .activities {
-      background: var(--blue-dark);
-      color: white;
-      padding: 90px 0;
-    }
-
-    .activities-header {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 50px;
-      margin-bottom: 55px;
-    }
-
-    .activities-header .eyebrow {
-      color: #7db0ff;
-      margin-bottom: 17px;
-    }
-
-    .activities-header h2 {
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-size: clamp(35px, 4.5vw, 53px);
-      line-height: 1;
-      letter-spacing: -2.5px;
-      max-width: 600px;
-    }
-
-    .activities-header p {
-      max-width: 360px;
-      color: #aabbd0;
-      line-height: 1.7;
-      font-size: 14px;
-    }
-
-    .activity-list {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      border-top: 1px solid rgba(255,255,255,.12);
-      border-bottom: 1px solid rgba(255,255,255,.12);
-    }
-
-    .activity-item {
-      padding: 25px 22px;
-      border-right: 1px solid rgba(255,255,255,.12);
-    }
-
-    .activity-item:last-child {
-      border: 0;
-    }
-
-    .activity-number {
-      color: #7188a5;
-      font-size: 11px;
-      margin-bottom: 35px;
-    }
-
-    .activity-item h3 {
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .activity-item p {
-      color: #9eafc5;
-      font-size: 12px;
-      line-height: 1.55;
-    }
-
-
-    /* =========================================================
-       DEPOIMENTOS
-    ========================================================= */
-
-    .testimonials {
-      padding: 145px 0;
-      background: var(--off-white);
-    }
-
-    .testimonials-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 50px;
-      margin-bottom: 55px;
-    }
-
-    .testimonials-head h2 {
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-size: clamp(38px,5vw,58px);
-      line-height: 1;
-      letter-spacing: -3px;
-      color: var(--blue-dark);
-      max-width: 650px;
-    }
-
-    .testimonials-head p {
-      max-width: 310px;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 14px;
-    }
-
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 20px;
-    }
-
-    .testimonial {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 32px;
-
-      min-height: 270px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      transition: .3s ease;
-    }
-
-    .testimonial:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 25px 55px rgba(7,29,60,.08);
-    }
-
-    .testimonial-mark {
-      color: var(--blue);
-      font-family: Georgia, serif;
-      font-size: 50px;
-      line-height: .6;
-    }
-
-    .testimonial p {
-      color: #39475a;
-      font-size: 15px;
-      line-height: 1.75;
-      margin: 20px 0 28px;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .author-dot {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: var(--blue-dark);
-      color: var(--yellow);
-
-      display: grid;
-      place-items: center;
-
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .testimonial-author strong {
-      display: block;
-      font-size: 13px;
-      color: var(--blue-dark);
-    }
-
-    .testimonial-author span {
-      display: block;
-      color: #8792a2;
-      font-size: 11px;
-      margin-top: 2px;
-    }
-
-
-    /* =========================================================
-       MOMENTO / CTA VISUAL
-    ========================================================= */
-
-    .experience {
-      padding: 135px 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .experience-copy h2 {
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-size: clamp(40px,5vw,64px);
-      line-height: 1;
-      letter-spacing: -3.5px;
-      color: var(--blue-dark);
-      margin-bottom: 25px;
-    }
-
-    .experience-copy p {
-      max-width: 450px;
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 16px;
-      margin-bottom: 30px;
-    }
-
-    .experience-visual {
-      position: relative;
-      min-height: 470px;
-    }
-
-    .experience-visual img {
-      position: absolute;
-      width: 520px;
-      max-width: 100%;
-      right: 0;
-      top: 0;
-
-      filter: drop-shadow(
-        0 28px 30px rgba(7,29,60,.13)
-      );
-    }
-
-    .experience-yellow {
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background: var(--yellow);
-      right: 15%;
-      bottom: 20px;
-      z-index: -1;
-    }
-
-
-    /* =========================================================
-       CTA
-    ========================================================= */
-
-    .final-cta {
-      padding: 0 0 120px;
-    }
-
-    .final-box {
-      position: relative;
-      overflow: hidden;
-
-      background: var(--blue);
-      color: white;
-
-      border-radius: 34px;
-
-      padding: 75px 80px;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 50px;
-    }
-
-    .final-box::after {
-      content: "";
-      position: absolute;
-      width: 420px;
-      height: 420px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,.14);
-      right: -130px;
-      top: -150px;
-    }
-
-    .final-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .final-content small {
-      display: block;
-      color: #b9d4ff;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 10px;
-      font-weight: 800;
-      margin-bottom: 15px;
-    }
-
-    .final-content h2 {
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-size: clamp(36px,4vw,52px);
-      line-height: 1;
-      letter-spacing: -2.5px;
-      max-width: 650px;
-    }
-
-    .final-button {
-      position: relative;
-      z-index: 3;
-
-      flex-shrink: 0;
-
-      background: white;
-      color: var(--blue-dark);
-
-      padding: 18px 25px;
-      border-radius: 100px;
-
-      font-weight: 800;
-      font-size: 14px;
-
-      transition: .3s;
-    }
-
-    .final-button:hover {
-      background: var(--yellow);
-      transform: translateY(-3px);
-    }
-
-
-    /* =========================================================
-       CONTATO
-    ========================================================= */
-
-    .contact {
-      padding: 120px 0;
-      background: #f7f9fc;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: .7fr 1.3fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .contact-copy .eyebrow {
-      margin-bottom: 20px;
-    }
-
-    .contact-copy h2 {
-      font-family: "Plus Jakarta Sans", sans-serif;
-      color: var(--blue-dark);
-      font-size: clamp(38px,4.5vw,57px);
-      line-height: 1;
-      letter-spacing: -3px;
-      margin-bottom: 22px;
-    }
-
-    .contact-copy p {
-      color: var(--muted);
-      line-height: 1.75;
-      max-width: 380px;
-      font-size: 15px;
-    }
-
-    .contact-details {
-      margin-top: 35px;
-      display: grid;
-      gap: 14px;
-    }
-
-    .contact-details a {
-      color: var(--blue-dark);
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    .contact-details span {
-      display: block;
-      color: var(--muted);
-      font-size: 11px;
-      margin-top: 3px;
-    }
-
-    .form {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 42px;
-    }
-
-    .form h3 {
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-size: 27px;
-      color: var(--blue-dark);
-      margin-bottom: 28px;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      gap: 17px;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-
-    .field.full {
-      grid-column: 1 / -1;
-    }
-
-    .field label {
-      font-size: 11px;
-      font-weight: 800;
-      color: var(--blue-dark);
-    }
-
-    .field input,
-    .field textarea,
-    .field select {
-      border: 1px solid #e0e6ee;
-      background: #fbfcfe;
-
-      color: var(--text);
-
-      border-radius: 13px;
-      padding: 14px 15px;
-
-      outline: none;
-
-      transition: .25s;
-    }
-
-    .field input:focus,
-    .field textarea:focus,
-    .field select:focus {
-      background: white;
-      border-color: var(--blue);
-      box-shadow: 0 0 0 4px rgba(18,100,216,.07);
-    }
-
-    .field textarea {
-      min-height: 125px;
-      resize: vertical;
-    }
-
-    .form-submit {
-      margin-top: 20px;
-      border: 0;
-      cursor: pointer;
-    }
-
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
-    footer {
-      background: var(--blue-dark);
-      color: white;
-      padding: 55px 0 28px;
-    }
-
-    .footer-main {
-      display: flex;
-      justify-content: space-between;
-      gap: 50px;
-      padding-bottom: 45px;
-      border-bottom: 1px solid rgba(255,255,255,.09);
-    }
-
-    .footer-brand {
-      max-width: 430px;
-    }
-
-    .footer-brand .brand {
-      margin-bottom: 17px;
-    }
-
-    .footer-brand p {
-      color: #879bb5;
-      font-size: 13px;
-      line-height: 1.7;
-    }
-
-    .footer-nav {
-      display: flex;
-      gap: 55px;
-    }
-
-    .footer-column strong {
-      display: block;
-      color: white;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 17px;
-    }
-
-    .footer-column a {
-      display: block;
-      color: #91a3ba;
-      font-size: 12px;
-      margin-bottom: 9px;
-      transition: .25s;
-    }
-
-    .footer-column a:hover {
-      color: white;
-    }
-
-    .footer-bottom {
-      padding-top: 25px;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-
-      color: #627892;
-      font-size: 10px;
-    }
-
-
-    /* =========================================================
-       WHATSAPP
-    ========================================================= */
-
-    .whatsapp {
-      position: fixed;
-      right: 24px;
-      bottom: 24px;
-
-      width: 56px;
-      height: 56px;
-
-      background: #20b66f;
-      color: white;
-
-      border-radius: 50%;
-
-      display: grid;
-      place-items: center;
-
-      z-index: 999;
-
-      box-shadow: 0 12px 30px rgba(32,182,111,.25);
-
-      transition: .3s;
-    }
-
-    .whatsapp:hover {
-      transform: translateY(-4px) scale(1.04);
-    }
-
-    .whatsapp svg {
-      width: 25px;
-      height: 25px;
-      fill: currentColor;
-    }
-
-
-    /* =========================================================
-       TOP BUTTON
-    ========================================================= */
-
-    .top-button {
-      position: fixed;
-      right: 28px;
-      bottom: 93px;
-
-      width: 40px;
-      height: 40px;
-
-      border-radius: 12px;
-
-      background: white;
-      border: 1px solid var(--line);
-
-      color: var(--blue-dark);
-
-      display: grid;
-      place-items: center;
-
-      z-index: 998;
-
-      opacity: 0;
-      pointer-events: none;
-
-      transition: .3s;
-
-      box-shadow: 0 10px 25px rgba(7,29,60,.08);
-    }
-
-    .top-button.show {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-
-    /* =========================================================
-       MOBILE
-    ========================================================= */
-
-    @media(max-width: 1050px) {
+    @media (max-width: 1050px) {
+
+      .navigation {
+        gap: 20px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        padding-top: 110px;
+      }
 
       .hero {
         min-height: auto;
       }
 
       .hero-grid {
-        grid-template-columns: 1fr;
+        min-height: auto;
       }
 
       .hero-copy {
         text-align: center;
-      }
-
-      .hero .eyebrow {
-        justify-content: center;
+        padding-top: 100px;
       }
 
       .hero-description {
@@ -1262,175 +1675,174 @@
         justify-content: center;
       }
 
+      .hero-note {
+        margin-bottom: 20px;
+      }
+
       .hero-visual {
-        height: 540px;
-        max-width: 650px;
-        width: 100%;
-        margin: 0 auto;
+        height: 550px;
       }
 
-      .story-grid,
-      .experience-grid {
-        grid-template-columns: 1fr;
+      .hero-image {
+        width: min(560px, 100%);
       }
 
-      .story-content,
-      .experience-copy {
-        text-align: center;
-      }
-
-      .story-content > p,
-      .experience-copy p {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .story-list {
-        max-width: 330px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
-      }
-
-      .story-visual {
-        max-width: 600px;
-        width: 100%;
-        margin: 0 auto;
-      }
-
-      .experience-visual {
-        max-width: 600px;
-        width: 100%;
-        margin: 0 auto;
-      }
-
+      .intro-grid,
+      .about-grid,
       .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .contact-copy {
-        text-align: center;
+      .about-copy {
+        padding-right: 0;
       }
 
-      .contact-copy p {
+      .about-visual {
+        max-width: 580px;
         margin: auto;
       }
 
-      .contact-details {
-        justify-items: center;
+      .services-heading,
+      .activities-head,
+      .testimonials-top {
+        align-items: flex-start;
+        flex-direction: column;
       }
 
-      .final-box {
-        padding: 55px 45px;
+      .testimonial-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .testimonial.featured {
+        transform: none;
+      }
+
+      .final-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .final-copy {
+        text-align: center;
+        padding-bottom: 0;
+      }
+
+      .final-copy p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .final-visual {
+        height: 480px;
+      }
+
+      .numbers-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px 0;
+      }
+
+      .number-box:nth-child(2) {
+        border-right: 0;
+      }
+
+      .number-box:nth-child(-n+2) {
+        border-bottom: 1px solid rgba(7,26,53,.15);
+        padding-bottom: 25px;
       }
     }
 
 
-    @media(max-width: 850px) {
+    @media (max-width: 800px) {
 
-      .container {
-        width: min(100% - 40px, var(--max));
-      }
-
-      .nav-links {
+      .navigation {
         position: absolute;
-        top: 78px;
-        left: 20px;
-        right: 20px;
+
+        top: 82px;
+        left: 24px;
+        right: 24px;
 
         display: none;
-
         flex-direction: column;
-        align-items: stretch;
+
+        padding: 25px;
 
         background: white;
-        border: 1px solid var(--line);
-        border-radius: 20px;
 
-        padding: 22px;
+        border-radius: 18px;
 
-        box-shadow: 0 20px 50px rgba(7,29,60,.1);
+        box-shadow: 0 20px 50px rgba(0,0,0,.18);
+
+        color: var(--navy);
       }
 
-      .nav-links.active {
+      .navigation.open {
         display: flex;
       }
 
-      .nav-links a {
-        display: block;
-        padding: 10px 5px;
+      .header-button {
+        background: var(--navy);
+        color: white !important;
       }
 
-      .menu-button {
-        display: block;
+      .mobile-toggle {
+        display: grid;
+        place-items: center;
       }
 
       .trust-inner {
         grid-template-columns: 1fr;
-        padding: 15px 0;
       }
 
       .trust-item {
-        padding: 17px 0;
         border-right: 0;
-        border-bottom: 1px solid var(--line);
+        border-bottom: 1px solid rgba(7,26,53,.12);
       }
 
       .trust-item:last-child {
-        border: 0;
+        border-bottom: 0;
       }
 
-      .intro-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
+      .service-row {
+        grid-template-columns: 55px 1fr 35px;
       }
 
-      .activities-header,
-      .testimonials-head {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .activity-list {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      .activity-item:nth-child(2) {
-        border-right: 0;
-      }
-
-      .activity-item:nth-child(-n+2) {
-        border-bottom: 1px solid rgba(255,255,255,.12);
+      .service-row p {
+        display: none;
       }
 
       .testimonial-grid {
         grid-template-columns: 1fr;
       }
 
-      .final-box {
-        flex-direction: column;
-        align-items: flex-start;
+      .testimonial {
+        min-height: 280px;
       }
 
-      .footer-main {
+      .footer-top {
         flex-direction: column;
+      }
+
+      .footer-navigation {
+        gap: 45px;
       }
     }
 
 
-    @media(max-width: 600px) {
+    @media (max-width: 600px) {
 
-      .header {
-        padding: 12px 0;
+      .container {
+        width: min(100% - 32px, var(--container));
       }
 
-      .hero {
-        padding-top: 120px;
-        padding-bottom: 55px;
+      .header-inner {
+        height: 75px;
+      }
+
+      .hero-copy {
+        padding-top: 85px;
       }
 
       .hero h1 {
-        font-size: 47px;
+        font-size: 53px;
         letter-spacing: -3px;
       }
 
@@ -1442,123 +1854,129 @@
         flex-direction: column;
       }
 
+      .hero-actions .button {
+        width: 100%;
+      }
+
       .hero-visual {
-        height: 400px;
+        height: 430px;
       }
 
-      .hero-circle {
-        width: 310px;
-        height: 310px;
-        right: 50%;
-        transform: translateX(50%);
-        top: 45px;
-      }
+      .hero-sticker {
+        width: 95px;
+        height: 95px;
 
-      .hero-circle::after {
-        width: 45px;
-        height: 45px;
-        right: 5px;
-      }
+        right: 0;
+        top: 60px;
 
-      .hero-image-main {
-        width: 330px;
-        max-width: 78%;
-        right: 8%;
-      }
-
-      .hero-image-secondary {
-        width: 190px;
-        max-width: 48%;
-        left: 0;
-        bottom: 0;
-      }
-
-      .hero-number {
-        width: 115px;
-        padding: 13px;
-        bottom: 8px;
-      }
-
-      .hero-number strong {
-        font-size: 20px;
+        font-size: 11px;
       }
 
       .intro,
+      .activities,
       .testimonials,
-      .experience {
-        padding: 90px 0;
+      .contact {
+        padding: 85px 0;
       }
 
-      .story {
+      .about {
         padding-bottom: 90px;
       }
 
+      .intro-grid {
+        gap: 35px;
+      }
+
       .intro h2,
-      .story-content h2,
-      .experience-copy h2 {
+      .about-copy h2,
+      .activities-head h2,
+      .testimonials-top h2,
+      .contact-copy h2 {
         letter-spacing: -2px;
       }
 
-      .story-visual {
-        min-height: 430px;
+      .about-visual {
+        height: 470px;
+
+        border-radius: 0 0 110px 110px;
       }
 
-      .story-bg {
-        width: 290px;
-        height: 290px;
-        left: 50%;
-        transform: translateX(-50%);
+      .services {
+        padding: 90px 0;
       }
 
-      .story-image-one {
-        width: 260px;
-        left: 0;
+      .services-heading {
+        margin-bottom: 45px;
       }
 
-      .story-image-two {
-        width: 240px;
-        right: 0;
+      .services-heading h2 {
+        letter-spacing: -2px;
       }
 
-      .activities {
-        padding: 70px 0;
+      .service-row {
+        min-height: 100px;
+
+        grid-template-columns: 40px 1fr 30px;
+
+        gap: 12px;
       }
 
-      .activity-list {
-        grid-template-columns: 1fr;
+      .service-row h3 {
+        font-size: 20px;
       }
 
-      .activity-item {
-        border-right: 0 !important;
-        border-bottom: 1px solid rgba(255,255,255,.12) !important;
+      .activity-cloud {
+        gap: 8px;
       }
 
-      .activity-item:last-child {
-        border-bottom: 0 !important;
+      .activity-pill {
+        padding: 11px 14px;
+        font-size: 12px;
       }
 
-      .experience-visual {
-        min-height: 340px;
+      .testimonial {
+        padding: 27px;
       }
 
-      .experience-visual img {
-        width: 390px;
+      .testimonial-text {
+        font-size: 18px;
+      }
+
+      .numbers {
+        padding: 65px 0;
+      }
+
+      .number {
+        font-size: 43px;
+      }
+
+      .number-box {
+        padding-left: 10px;
+        padding-right: 10px;
       }
 
       .final-cta {
-        padding-bottom: 80px;
+        min-height: auto;
       }
 
-      .final-box {
-        border-radius: 25px;
-        padding: 42px 27px;
+      .final-copy {
+        padding-top: 85px;
+      }
+
+      .final-copy h2 {
+        font-size: 53px;
+        letter-spacing: -2.5px;
+      }
+
+      .final-visual {
+        height: 420px;
       }
 
       .form {
         padding: 25px 20px;
       }
 
-      .form-grid {
+      .fields {
         grid-template-columns: 1fr;
       }
 
@@ -1566,9 +1984,9 @@
         grid-column: auto;
       }
 
-      .footer-nav {
+      .footer-navigation {
         flex-direction: column;
-        gap: 25px;
+        gap: 30px;
       }
 
       .footer-bottom {
@@ -1576,15 +1994,16 @@
       }
 
       .whatsapp {
-        width: 53px;
-        height: 53px;
         right: 16px;
         bottom: 16px;
+
+        width: 54px;
+        height: 54px;
       }
 
-      .top-button {
-        right: 18px;
-        bottom: 78px;
+      .back-top {
+        right: 16px;
+        bottom: 82px;
       }
     }
 
@@ -1599,54 +2018,45 @@
      HEADER
 ========================================================= -->
 
-<header class="header" id="header">
+<header>
 
-  <div class="container nav">
+  <div class="container header-inner">
 
     <a href="#inicio" class="brand">
       <div class="brand-mark">S</div>
       Star <span>Recreação</span>
     </a>
 
-    <nav>
-      <ul class="nav-links" id="navLinks">
+    <nav class="navigation" id="navigation">
 
-        <li>
-          <a href="#inicio">Início</a>
-        </li>
+      <a href="#inicio">Início</a>
 
-        <li>
-          <a href="#sobre">A Star</a>
-        </li>
+      <a href="#sobre">A Star</a>
 
-        <li>
-          <a href="#atividades">Experiências</a>
-        </li>
+      <a href="#servicos">Serviços</a>
 
-        <li>
-          <a href="#depoimentos">Famílias</a>
-        </li>
+      <a href="#experiencias">Experiências</a>
 
-        <li>
-          <a href="#contato" class="nav-cta">
-            Solicitar orçamento
-          </a>
-        </li>
+      <a href="#familias">Famílias</a>
 
-      </ul>
+      <a href="#contato" class="header-button">
+        Solicitar orçamento
+      </a>
+
     </nav>
 
     <button
-      class="menu-button"
-      id="menuButton"
+      class="mobile-toggle"
+      id="mobileToggle"
       aria-label="Abrir menu"
     >
-      ☰
+      <span>☰</span>
     </button>
 
   </div>
 
 </header>
+
 
 
 <!-- =========================================================
@@ -1659,34 +2069,43 @@
 
   <div class="container hero-grid">
 
-    <div class="hero-copy">
+    <div class="hero-copy reveal">
 
       <div class="eyebrow">
-        Recreação infantil em Londrina
+        Recreação infantil
       </div>
 
       <h1>
-        A infância merece
-        <em>momentos inesquecíveis.</em>
+        A festa que eles
+        <strong>não querem que acabe.</strong>
       </h1>
 
       <p class="hero-description">
-        A Star cria experiências de recreação que envolvem,
-        divertem e fazem parte das lembranças mais bonitas
-        de uma festa.
+        A Star transforma aniversários e eventos em experiências
+        cheias de movimento, criatividade e momentos que ficam
+        na memória da família.
       </p>
 
       <div class="hero-actions">
 
-        <a href="#contato" class="primary-button">
+        <a
+          href="#contato"
+          class="button button-primary"
+        >
           Quero a Star na minha festa
-          <span>→</span>
         </a>
 
-        <a href="#sobre" class="text-link">
-          Conheça nosso trabalho
+        <a
+          href="#servicos"
+          class="button button-ghost"
+        >
+          Conhecer a experiência
         </a>
 
+      </div>
+
+      <div class="hero-note">
+        Londrina e região · Festas · Eventos · Experiências infantis
       </div>
 
     </div>
@@ -1694,27 +2113,16 @@
 
     <div class="hero-visual">
 
-      <div class="hero-circle"></div>
-
-      <!-- NOVA IMAGEM 1 -->
       <img
-        class="hero-image-main"
+        class="hero-image"
         src="https://i.imgur.com/xMty4hk.png"
         alt="Personagem da Star Recreação"
       >
 
-      <!-- NOVA IMAGEM 2 -->
-      <img
-        class="hero-image-secondary"
-        src="https://i.imgur.com/g0zW0LO.png"
-        alt="Personagem da Star Recreação"
-      >
-
-      <div class="hero-number">
-        <strong>Star</strong>
-        <span>
-          Recreação pensada para cada momento.
-        </span>
+      <div class="hero-sticker">
+        diversão<br>
+        que vira<br>
+        memória
       </div>
 
     </div>
@@ -1724,49 +2132,54 @@
 </section>
 
 
+
 <!-- =========================================================
-     TRUST
+     TRUST BAR
 ========================================================= -->
 
-<section class="trust">
+<section class="trust-bar">
 
   <div class="container trust-inner">
 
     <div class="trust-item">
 
-      <strong>Festas infantis</strong>
+      <div class="trust-number">01</div>
 
-      <span>
-        Aniversários e comemorações especiais
-      </span>
-
-    </div>
-
-
-    <div class="trust-item">
-
-      <strong>Experiências personalizadas</strong>
-
-      <span>
-        Atividades de acordo com cada evento
-      </span>
+      <div>
+        <strong>Recreação planejada</strong>
+        <span>Cada festa recebe uma proposta própria.</span>
+      </div>
 
     </div>
 
 
     <div class="trust-item">
 
-      <strong>Londrina e região</strong>
+      <div class="trust-number">02</div>
 
-      <span>
-        Levamos a Star até sua festa
-      </span>
+      <div>
+        <strong>Experiência para as crianças</strong>
+        <span>Brincar, criar, participar e se movimentar.</span>
+      </div>
+
+    </div>
+
+
+    <div class="trust-item">
+
+      <div class="trust-number">03</div>
+
+      <div>
+        <strong>Londrina e região</strong>
+        <span>Levamos a experiência até o seu evento.</span>
+      </div>
 
     </div>
 
   </div>
 
 </section>
+
 
 
 <!-- =========================================================
@@ -1777,37 +2190,31 @@
 
   <div class="container intro-grid">
 
-    <div>
+    <div class="reveal">
 
-      <div class="intro-label">
-        O jeito Star de fazer
+      <div class="intro-small">
+        Não é só recreação
       </div>
 
       <h2>
-        Não é só recreação.
-        É parte da festa.
+        É sobre criar
+        <span>uma história.</span>
       </h2>
 
     </div>
 
 
-    <div class="intro-right">
+    <div class="reveal">
 
-      <p>
-        Enquanto as crianças brincam, descobrem, criam e
-        interagem, os adultos conseguem aproveitar a festa
-        com mais tranquilidade.
+      <p class="intro-text">
+        Enquanto os adultos conversam, celebram e aproveitam a festa,
+        as crianças vivem o próprio momento: brincam, descobrem,
+        competem, inventam e fazem novas amizades.
+        <br><br>
+        É essa experiência que a Star leva para cada evento.
       </p>
 
-      <p>
-        A Star entra para transformar aquele período da
-        comemoração em uma experiência organizada,
-        divertida e cheia de boas lembranças.
-      </p>
-
-      <a href="#contato" class="simple-link">
-        Quero conhecer a Star →
-      </a>
+      <div class="intro-line"></div>
 
     </div>
 
@@ -1816,77 +2223,63 @@
 </section>
 
 
+
 <!-- =========================================================
-     SOBRE / IMAGENS
+     SOBRE
 ========================================================= -->
 
-<section class="story" id="sobre">
+<section class="about" id="sobre">
 
-  <div class="container story-grid">
+  <div class="container about-grid">
 
+    <div class="about-visual reveal">
 
-    <div class="story-visual">
-
-      <div class="story-bg"></div>
-
-      <!-- NOVA IMAGEM 2 -->
       <img
-        class="story-image-one"
+        class="about-image"
         src="https://i.imgur.com/g0zW0LO.png"
-        alt="Star Recreação"
-      >
-
-      <!-- NOVA IMAGEM 3 -->
-      <img
-        class="story-image-two"
-        src="https://i.imgur.com/nNPyRy7.png"
-        alt="Star Recreação"
+        alt="Personagem da Star Recreação"
       >
 
     </div>
 
 
-    <div class="story-content">
+    <div class="about-copy reveal">
 
       <div class="eyebrow">
-        Sobre a Star
+        A Star Recreação
       </div>
 
       <h2>
-        Criança brincando.
-        <span>Família aproveitando.</span>
+        Criança precisa de espaço
+        para <span>ser criança.</span>
       </h2>
 
       <p>
-        Criamos a Star porque acreditamos que uma boa recreação
-        não deve apenas ocupar as crianças. Ela deve fazer parte
-        da experiência da família inteira.
+        A gente acredita que uma boa festa não precisa ser apenas
+        bonita. Ela precisa acontecer de verdade.
+        Por isso, criamos momentos em que as crianças participam,
+        se movimentam e se sentem parte da comemoração.
       </p>
 
-      <div class="story-list">
+      <div class="about-list">
 
-        <div>
-          Recreação planejada para cada faixa etária
+        <div class="about-list-item">
+          Recreação pensada para cada faixa etária
         </div>
 
-        <div>
-          Profissionais preparados para conduzir as atividades
+        <div class="about-list-item">
+          Dinâmicas que estimulam interação
         </div>
 
-        <div>
-          Propostas adaptadas ao espaço e ao perfil da festa
+        <div class="about-list-item">
+          Organização durante toda a experiência
         </div>
 
-        <div>
-          Experiências que estimulam interação e criatividade
+        <div class="about-list-item">
+          Propostas adaptadas ao perfil da festa
         </div>
 
       </div>
-
-      <a href="#contato" class="primary-button">
-        Planejar minha festa
-        <span>→</span>
-      </a>
 
     </div>
 
@@ -1895,92 +2288,116 @@
 </section>
 
 
+
 <!-- =========================================================
-     ATIVIDADES
+     SERVIÇOS
 ========================================================= -->
 
-<section class="activities" id="atividades">
+<section class="services" id="servicos">
 
   <div class="container">
 
-    <div class="activities-header">
+    <div class="services-heading reveal">
 
       <div>
 
         <div class="eyebrow">
-          Experiências
+          O que fazemos
         </div>
 
         <h2>
-          Diversão que acompanha
-          cada idade.
+          A brincadeira certa
+          para cada momento.
         </h2>
 
       </div>
 
       <p>
-        A programação muda de acordo com a festa.
-        O objetivo é encontrar o equilíbrio entre
-        movimento, criatividade e interação.
+        A programação muda de acordo com a idade das crianças,
+        espaço disponível e estilo do evento.
       </p>
 
     </div>
 
 
-    <div class="activity-list">
+    <div class="service-list">
 
-      <div class="activity-item">
+      <div class="service-row reveal">
 
-        <div class="activity-number">01</div>
+        <div class="service-number">01</div>
+
+        <h3>Recreação infantil</h3>
+
+        <p>
+          Uma programação conduzida para envolver as crianças
+          durante a comemoração.
+        </p>
+
+        <div class="service-arrow">↗</div>
+
+      </div>
+
+
+      <div class="service-row reveal">
+
+        <div class="service-number">02</div>
 
         <h3>Gincanas</h3>
 
         <p>
-          Desafios e brincadeiras em grupo
-          para envolver todo mundo.
+          Desafios e jogos em grupo para colocar todo mundo
+          para participar.
         </p>
+
+        <div class="service-arrow">↗</div>
 
       </div>
 
 
-      <div class="activity-item">
+      <div class="service-row reveal">
 
-        <div class="activity-number">02</div>
+        <div class="service-number">03</div>
 
-        <h3>Jogos</h3>
+        <h3>Oficinas criativas</h3>
 
         <p>
-          Atividades recreativas pensadas
-          para diferentes idades.
+          Atividades de criação para momentos mais tranquilos
+          e cheios de imaginação.
         </p>
+
+        <div class="service-arrow">↗</div>
 
       </div>
 
 
-      <div class="activity-item">
+      <div class="service-row reveal">
 
-        <div class="activity-number">03</div>
+        <div class="service-number">04</div>
 
-        <h3>Oficinas</h3>
+        <h3>Jogos e brincadeiras</h3>
 
         <p>
-          Momentos de criação para estimular
-          imaginação e autonomia.
+          Dinâmicas pensadas para diferentes idades e perfis
+          de turma.
         </p>
+
+        <div class="service-arrow">↗</div>
 
       </div>
 
 
-      <div class="activity-item">
+      <div class="service-row reveal">
 
-        <div class="activity-number">04</div>
+        <div class="service-number">05</div>
 
-        <h3>Dinâmicas</h3>
+        <h3>Eventos especiais</h3>
 
         <p>
-          Interação, movimento e brincadeiras
-          conduzidas pela equipe Star.
+          Soluções recreativas para escolas, empresas,
+          confraternizações e eventos familiares.
         </p>
+
+        <div class="service-arrow">↗</div>
 
       </div>
 
@@ -1989,35 +2406,95 @@
   </div>
 
 </section>
+
+
+
+<!-- =========================================================
+     EXPERIÊNCIAS
+========================================================= -->
+
+<section class="activities" id="experiencias">
+
+  <div class="container">
+
+    <div class="activities-head reveal">
+
+      <div>
+
+        <div class="intro-small">
+          Experiências
+        </div>
+
+        <h2>
+          Tem brincadeira
+          para cada energia.
+        </h2>
+
+      </div>
+
+      <p>
+        A programação pode combinar diferentes atividades
+        para deixar a festa dinâmica sem perder o ritmo.
+      </p>
+
+    </div>
+
+
+    <div class="activity-cloud reveal">
+
+      <span class="activity-pill">Gincanas</span>
+
+      <span class="activity-pill">Caça ao tesouro</span>
+
+      <span class="activity-pill">Jogos cooperativos</span>
+
+      <span class="activity-pill">Oficinas</span>
+
+      <span class="activity-pill">Brincadeiras tradicionais</span>
+
+      <span class="activity-pill">Desafios</span>
+
+      <span class="activity-pill">Dinâmicas em grupo</span>
+
+      <span class="activity-pill">Musicalização</span>
+
+      <span class="activity-pill">Atividades personalizadas</span>
+
+    </div>
+
+  </div>
+
+</section>
+
 
 
 <!-- =========================================================
      DEPOIMENTOS
 ========================================================= -->
 
-<section class="testimonials" id="depoimentos">
+<section class="testimonials" id="familias">
 
   <div class="container">
 
-    <div class="testimonials-head">
+    <div class="testimonials-top reveal">
 
       <div>
 
-        <div class="intro-label">
-          Quem viveu recomenda
+        <div class="intro-small">
+          Quem viveu, recomenda
         </div>
 
         <h2>
-          O que as famílias
-          dizem da Star.
+          A melhor parte
+          é ouvir as famílias.
         </h2>
 
       </div>
 
       <p>
-        Porque no final da festa, o que fica
-        não é somente a decoração.
-        São as lembranças.
+        Porque uma festa boa não termina quando os convidados
+        vão embora. Ela continua nas histórias que as crianças
+        contam depois.
       </p>
 
     </div>
@@ -2025,32 +2502,27 @@
 
     <div class="testimonial-grid">
 
-
-      <article class="testimonial">
+      <article class="testimonial featured reveal">
 
         <div>
 
-          <div class="testimonial-mark">
-            “
-          </div>
+          <div class="quote">“</div>
 
-          <p>
-            Foi uma das melhores escolhas para o aniversário.
-            As crianças ficaram envolvidas do começo ao fim
-            e nós conseguimos aproveitar a festa muito mais.
+          <p class="testimonial-text">
+            As crianças ficaram envolvidas do começo ao fim.
+            Foi muito bom poder aproveitar a festa sabendo que
+            elas estavam se divertindo de verdade.
           </p>
 
         </div>
 
         <div class="testimonial-author">
 
-          <div class="author-dot">
-            M
-          </div>
+          <div class="author-avatar">M</div>
 
           <div>
             <strong>Mariana</strong>
-            <span>Mãe da Helena</span>
+            <span>Mãe da Helena · aniversário infantil</span>
           </div>
 
         </div>
@@ -2058,69 +2530,60 @@
       </article>
 
 
-      <article class="testimonial">
+      <article class="testimonial reveal">
 
         <div>
 
-          <div class="testimonial-mark">
-            “
-          </div>
+          <div class="quote">“</div>
 
-          <p>
-            O cuidado com as crianças fez toda diferença.
-            Foi tudo muito organizado, divertido e ao mesmo
-            tempo leve. As crianças simplesmente amaram.
+          <p class="testimonial-text">
+            Foi muito mais organizado do que imaginávamos.
+            As crianças adoraram e os adultos conseguiram
+            curtir a festa também.
           </p>
 
         </div>
 
         <div class="testimonial-author">
 
-          <div class="author-dot">
-            C
-          </div>
-
-          <div>
-            <strong>Camila</strong>
-            <span>Mãe do Miguel</span>
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <article class="testimonial">
-
-        <div>
-
-          <div class="testimonial-mark">
-            “
-          </div>
-
-          <p>
-            Contrataria novamente sem pensar duas vezes.
-            A recreação deixou a festa muito mais dinâmica
-            e foi muito gostoso ver as crianças participando.
-          </p>
-
-        </div>
-
-        <div class="testimonial-author">
-
-          <div class="author-dot">
-            R
-          </div>
+          <div class="author-avatar">R</div>
 
           <div>
             <strong>Renata</strong>
-            <span>Mãe da Laura</span>
+            <span>Mãe do Pedro · aniversário</span>
           </div>
 
         </div>
 
       </article>
 
+
+      <article class="testimonial reveal">
+
+        <div>
+
+          <div class="quote">“</div>
+
+          <p class="testimonial-text">
+            O cuidado com cada detalhe fez diferença.
+            Foi uma experiência muito gostosa para a nossa
+            família e para os convidados.
+          </p>
+
+        </div>
+
+        <div class="testimonial-author">
+
+          <div class="author-avatar">A</div>
+
+          <div>
+            <strong>Amanda</strong>
+            <span>Mãe da Laura · comemoração</span>
+          </div>
+
+        </div>
+
+      </article>
 
     </div>
 
@@ -2129,45 +2592,84 @@
 </section>
 
 
+
 <!-- =========================================================
-     EXPERIÊNCIA / IMAGEM
+     NUMEROS
 ========================================================= -->
 
-<section class="experience">
+<section class="numbers">
 
-  <div class="container experience-grid">
+  <div class="container numbers-grid">
+
+    <div class="number-box reveal">
+      <div class="number">+100</div>
+      <p>momentos especiais</p>
+    </div>
+
+    <div class="number-box reveal">
+      <div class="number">100%</div>
+      <p>dedicação em cada evento</p>
+    </div>
+
+    <div class="number-box reveal">
+      <div class="number">360°</div>
+      <p>experiência personalizada</p>
+    </div>
+
+    <div class="number-box reveal">
+      <div class="number">1</div>
+      <p>objetivo: fazer a festa acontecer</p>
+    </div>
+
+  </div>
+
+</section>
 
 
-    <div class="experience-copy">
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="final-cta">
+
+  <div class="container final-grid">
+
+    <div class="final-copy reveal">
 
       <div class="eyebrow">
-        Cada festa é diferente
+        Sua festa pode ser diferente
       </div>
 
       <h2>
-        A gente entende
-        o seu momento.
+        Vamos criar um
+        momento <span>inesquecível?</span>
       </h2>
 
       <p>
-        Aniversário em casa, salão de festas, evento escolar
-        ou uma comemoração maior: a Star adapta a experiência
-        para que ela faça sentido para o seu evento.
+        Conte para a gente sobre sua festa.
+        A Star monta uma proposta de recreação pensando
+        nas crianças, no espaço e no estilo da sua comemoração.
       </p>
 
-      <a href="#contato" class="primary-button">
-        Conversar com a Star
-        <span>→</span>
-      </a>
+      <div class="final-actions">
+
+        <a
+          href="#contato"
+          class="button button-primary"
+        >
+          Solicitar orçamento
+        </a>
+
+      </div>
 
     </div>
 
 
-    <div class="experience-visual">
-
-      <div class="experience-yellow"></div>
+    <div class="final-visual reveal">
 
       <img
+        class="final-image"
         src="https://i.imgur.com/nNPyRy7.png"
         alt="Personagem Star Recreação"
       >
@@ -2179,39 +2681,6 @@
 </section>
 
 
-<!-- =========================================================
-     CTA
-========================================================= -->
-
-<section class="final-cta">
-
-  <div class="container">
-
-    <div class="final-box">
-
-      <div class="final-content">
-
-        <small>
-          Sua festa começa no planejamento
-        </small>
-
-        <h2>
-          Vamos criar uma experiência
-          que as crianças vão lembrar?
-        </h2>
-
-      </div>
-
-      <a href="#contato" class="final-button">
-        Solicitar orçamento →
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
 
 <!-- =========================================================
      CONTATO
@@ -2221,83 +2690,85 @@
 
   <div class="container contact-grid">
 
+    <div class="contact-copy reveal">
 
-    <div class="contact-copy">
-
-      <div class="eyebrow">
+      <div class="intro-small">
         Vamos conversar
       </div>
 
       <h2>
-        Conte como
-        será sua festa.
+        Sua próxima festa começa aqui.
       </h2>
 
       <p>
-        Envie algumas informações e nossa equipe entra em
-        contato para entender o que você precisa e montar
-        uma proposta.
+        Envie algumas informações sobre o evento.
+        A Star entra em contato para entender a sua ideia
+        e montar uma proposta.
       </p>
 
 
       <div class="contact-details">
 
-        <a
-          href="https://wa.me/5543920036581"
-          target="_blank"
-        >
-          WhatsApp
+        <div class="contact-detail">
 
-          <span>
-            (43) 9200-36581
-          </span>
-        </a>
+          <div class="contact-detail-mark">WA</div>
 
+          <div>
+            <strong>WhatsApp</strong>
+            <span>(43) 9200-36581</span>
+          </div>
 
-        <a href="#">
-          Atendimento
-
-          <span>
-            Londrina e região
-          </span>
-        </a>
+        </div>
 
 
-        <a href="#">
-          Eventos
+        <div class="contact-detail">
 
-          <span>
-            Aniversários, festas e comemorações
-          </span>
-        </a>
+          <div class="contact-detail-mark">LD</div>
+
+          <div>
+            <strong>Atendimento</strong>
+            <span>Londrina e região</span>
+          </div>
+
+        </div>
+
+
+        <div class="contact-detail">
+
+          <div class="contact-detail-mark">EV</div>
+
+          <div>
+            <strong>Eventos</strong>
+            <span>Festas, escolas, empresas e comemorações</span>
+          </div>
+
+        </div>
 
       </div>
 
     </div>
 
 
-    <div class="form">
+    <div class="form reveal">
 
       <h3>
-        Solicite seu orçamento
+        Conte sobre sua festa
       </h3>
-
 
       <form id="budgetForm">
 
-        <div class="form-grid">
-
+        <div class="fields">
 
           <div class="field">
 
             <label for="nome">
-              Nome
+              Seu nome
             </label>
 
             <input
-              id="nome"
               type="text"
-              placeholder="Seu nome"
+              id="nome"
+              placeholder="Como podemos te chamar?"
               required
             >
 
@@ -2311,8 +2782,8 @@
             </label>
 
             <input
-              id="telefone"
               type="tel"
+              id="telefone"
               placeholder="(43) 99999-9999"
               required
             >
@@ -2364,10 +2835,10 @@
             </label>
 
             <input
-              id="criancas"
               type="number"
+              id="criancas"
               min="1"
-              placeholder="Ex.: 20"
+              placeholder="Ex.: 25"
               required
             >
 
@@ -2387,15 +2858,14 @@
 
           </div>
 
-
         </div>
 
 
         <button
           type="submit"
-          class="primary-button form-submit"
+          class="button button-primary form-submit"
         >
-          Enviar pelo WhatsApp →
+          Enviar pelo WhatsApp
         </button>
 
       </form>
@@ -2409,6 +2879,7 @@
 </main>
 
 
+
 <!-- =========================================================
      FOOTER
 ========================================================= -->
@@ -2417,8 +2888,7 @@
 
   <div class="container">
 
-    <div class="footer-main">
-
+    <div class="footer-top">
 
       <div class="footer-brand">
 
@@ -2433,57 +2903,45 @@
         </a>
 
         <p>
-          Recreação infantil para transformar festas
-          em experiências leves, divertidas e cheias
-          de boas lembranças.
+          Recreação infantil pensada para transformar festas
+          em experiências que as crianças realmente lembram.
         </p>
 
       </div>
 
 
-      <div class="footer-nav">
-
+      <div class="footer-navigation">
 
         <div class="footer-column">
 
-          <strong>Navegação</strong>
+          <h4>Navegação</h4>
 
-          <a href="#inicio">
-            Início
-          </a>
-
-          <a href="#sobre">
-            A Star
-          </a>
-
-          <a href="#atividades">
-            Experiências
-          </a>
-
-          <a href="#depoimentos">
-            Famílias
-          </a>
+          <a href="#inicio">Início</a>
+          <a href="#sobre">A Star</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#experiencias">Experiências</a>
+          <a href="#familias">Famílias</a>
 
         </div>
 
 
         <div class="footer-column">
 
-          <strong>Contato</strong>
+          <h4>Contato</h4>
 
           <a href="#contato">
-            Orçamento
+            Solicitar orçamento
           </a>
 
           <a
             href="https://wa.me/5543920036581"
             target="_blank"
+            rel="noopener"
           >
             WhatsApp
           </a>
 
         </div>
-
 
       </div>
 
@@ -2507,134 +2965,189 @@
 </footer>
 
 
+
 <!-- =========================================================
      WHATSAPP
 ========================================================= -->
 
 <a
-  class="whatsapp"
   href="https://wa.me/5543920036581"
   target="_blank"
+  rel="noopener"
+  class="whatsapp"
   aria-label="Falar com a Star Recreação pelo WhatsApp"
 >
+
   <svg
     viewBox="0 0 24 24"
-    aria-hidden="true"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
   >
-    <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.5 4.1 1.6 5.9L.2 24l6.5-1.7a11.8 11.8 0 0 0 5.4 1.3h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.1-1.2-6.1-3.5-8.3ZM12.1 21.5c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.8 1 1-3.7-.2-.4a9.6 9.6 0 1 1 8.1 4.6Zm5.3-7.2c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.8-1.8-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.1 3.1c.1.2 2 3.1 4.8 4.3.7.3 1.3.5 1.8.7.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.3Z"/>
+
+    <path
+      d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.3 8.3 0 0 1-3.9-1L3 20l1.2-4.8A8.5 8.5 0 1 1 21 11.5Z"
+    />
+
+    <path
+      d="M8.5 8.5c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.7c.1.2 0 .4-.1.6l-.5.6c.6 1.1 1.5 2 2.6 2.6l.6-.5c.2-.2.4-.2.6-.1l1.7.7c.3.1.4.3.4.5v.5c0 .3 0 .5-.4.7-.4.2-1.4.5-2.2.2-1.2-.4-2.5-1.2-3.6-2.3-1.1-1.1-1.9-2.4-2.3-3.6-.3-.8 0-1.8.2-2.2Z"
+    />
+
   </svg>
+
 </a>
 
 
+
 <!-- =========================================================
-     TOP
+     BACK TO TOP
 ========================================================= -->
 
 <a
   href="#inicio"
-  class="top-button"
-  id="topButton"
+  class="back-top"
+  id="backTop"
   aria-label="Voltar ao topo"
 >
   ↑
 </a>
 
 
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
 <script>
-
-  /* =========================================================
-     HEADER
-  ========================================================= */
-
-  const header = document.getElementById("header");
-
-  window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 40) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
-    }
-
-  });
-
 
   /* =========================================================
      MENU MOBILE
   ========================================================= */
 
-  const menuButton = document.getElementById("menuButton");
-  const navLinks = document.getElementById("navLinks");
+  const mobileToggle =
+    document.getElementById("mobileToggle");
 
-  menuButton.addEventListener("click", () => {
+  const navigation =
+    document.getElementById("navigation");
 
-    navLinks.classList.toggle("active");
 
-    menuButton.textContent =
-      navLinks.classList.contains("active")
-        ? "×"
-        : "☰";
+  mobileToggle.addEventListener("click", () => {
+
+    navigation.classList.toggle("open");
 
   });
 
 
-  document.querySelectorAll(".nav-links a").forEach(link => {
+  document
+    .querySelectorAll(".navigation a")
+    .forEach(link => {
 
-    link.addEventListener("click", () => {
+      link.addEventListener("click", () => {
 
-      navLinks.classList.remove("active");
-      menuButton.textContent = "☰";
+        navigation.classList.remove("open");
+
+      });
 
     });
 
+
+
+  /* =========================================================
+     REVEAL ON SCROLL
+  ========================================================= */
+
+  const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+  const revealObserver =
+    new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+            revealObserver.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+      {
+        threshold: .12
+      }
+    );
+
+
+  revealElements.forEach(element => {
+
+    revealObserver.observe(element);
+
   });
+
 
 
   /* =========================================================
      BACK TO TOP
   ========================================================= */
 
-  const topButton = document.getElementById("topButton");
+  const backTop =
+    document.getElementById("backTop");
+
 
   window.addEventListener("scroll", () => {
 
     if (window.scrollY > 600) {
-      topButton.classList.add("show");
+
+      backTop.classList.add("visible");
+
     } else {
-      topButton.classList.remove("show");
+
+      backTop.classList.remove("visible");
+
     }
 
   });
 
 
+
   /* =========================================================
-     FORMULÁRIO
+     FORMULÁRIO → WHATSAPP
   ========================================================= */
 
-  document
-    .getElementById("budgetForm")
-    .addEventListener("submit", function(event) {
-
-      event.preventDefault();
-
-      const nome =
-        document.getElementById("nome").value;
-
-      const telefone =
-        document.getElementById("telefone").value;
-
-      const tipo =
-        document.getElementById("tipo").value;
-
-      const criancas =
-        document.getElementById("criancas").value;
-
-      const mensagem =
-        document.getElementById("mensagem").value;
+  const form =
+    document.getElementById("budgetForm");
 
 
-      const texto =
-`Olá, Star Recreação!
+  form.addEventListener("submit", event => {
+
+    event.preventDefault();
+
+
+    const nome =
+      document.getElementById("nome").value.trim();
+
+    const telefone =
+      document.getElementById("telefone").value.trim();
+
+    const tipo =
+      document.getElementById("tipo").value;
+
+    const criancas =
+      document.getElementById("criancas").value;
+
+    const mensagem =
+      document.getElementById("mensagem").value.trim();
+
+
+    const texto =
+      `Olá, Star Recreação!
 
 Gostaria de solicitar um orçamento.
 
@@ -2647,14 +3160,34 @@ Sobre a festa:
 ${mensagem}`;
 
 
-      const url =
-        "https://wa.me/5543920036581?text=" +
-        encodeURIComponent(texto);
+    const url =
+      "https://wa.me/5543920036581?text=" +
+      encodeURIComponent(texto);
 
 
-      window.open(url, "_blank");
+    window.open(
+      url,
+      "_blank",
+      "noopener"
+    );
 
-    });
+  });
+
+
+
+  /* =========================================================
+     FECHA MENU SE REDIMENSIONAR
+  ========================================================= */
+
+  window.addEventListener("resize", () => {
+
+    if (window.innerWidth > 800) {
+
+      navigation.classList.remove("open");
+
+    }
+
+  });
 
 </script>
 
