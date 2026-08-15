@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Star Recreação | Recreação infantil em Londrina</title>
+  <title>Star Recreação | Festas infantis em Londrina</title>
 
   <meta
     name="description"
@@ -15,56 +15,51 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
     rel="stylesheet"
-  >
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   >
 
   <style>
 
     /* =========================================================
        STAR RECREAÇÃO
-       NOVO LAYOUT
-    ========================================================= */
+       NOVA DIREÇÃO VISUAL
+       ========================================================= */
 
     :root {
-      --blue: #1769d1;
-      --blue-dark: #092c62;
-      --blue-deep: #061d43;
+      --navy: #102d5a;
+      --navy-deep: #081d3c;
+      --blue: #246bc5;
+      --blue-light: #dcecff;
 
-      --yellow: #ffd348;
-      --yellow-soft: #fff4c9;
+      --cream: #faf7f0;
+      --cream-2: #f2ecdf;
+      --warm: #fffaf2;
 
-      --orange: #f58c38;
-      --pink: #ed668f;
+      --yellow: #f5c94c;
+      --yellow-soft: #f9e8a8;
 
-      --cream: #fffdf8;
-      --soft: #f5f8fc;
-      --soft-blue: #edf5ff;
+      --coral: #ef8068;
+      --coral-soft: #f9ddd6;
 
-      --text: #18263a;
-      --muted: #69778a;
-      --line: #e5ebf2;
+      --green: #69a98a;
+
+      --ink: #17283f;
+      --muted: #6c7787;
+      --line: #e7e3da;
 
       --white: #ffffff;
 
-      --radius-lg: 32px;
-      --radius-md: 22px;
+      --container: 1240px;
 
-      --shadow:
-        0 24px 70px rgba(10, 40, 82, .10);
-
-      --container: 1180px;
+      --display: "Plus Jakarta Sans", sans-serif;
+      --body: "DM Sans", sans-serif;
+      --accent: "Manrope", sans-serif;
     }
-
 
     /* =========================================================
        RESET
-    ========================================================= */
+       ========================================================= */
 
     * {
       margin: 0;
@@ -77,15 +72,16 @@
     }
 
     body {
-      font-family: "DM Sans", sans-serif;
-      color: var(--text);
-      background: var(--cream);
+      font-family: var(--body);
+      color: var(--ink);
+      background: var(--warm);
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
     img {
-      display: block;
       max-width: 100%;
+      display: block;
     }
 
     a {
@@ -100,286 +96,259 @@
       font: inherit;
     }
 
+    button {
+      cursor: pointer;
+    }
+
     .container {
       width: min(var(--container), calc(100% - 48px));
-      margin: 0 auto;
+      margin-inline: auto;
     }
-
-
-    /* =========================================================
-       TIPOGRAFIA
-    ========================================================= */
-
-    h1,
-    h2,
-    h3,
-    .logo {
-      font-family: "Plus Jakarta Sans", sans-serif;
-    }
-
 
     /* =========================================================
        HEADER
-    ========================================================= */
+       ========================================================= */
 
-    .header {
+    .site-header {
       position: fixed;
-      inset: 0 0 auto;
+      top: 0;
+      left: 0;
+      width: 100%;
       z-index: 1000;
 
-      background: rgba(255, 253, 248, .88);
+      background: rgba(255, 250, 242, .88);
       backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
 
-      border-bottom: 1px solid rgba(9, 44, 98, .06);
+      border-bottom: 1px solid rgba(16, 45, 90, .06);
     }
 
     .nav {
-      height: 82px;
+      height: 84px;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 11px;
+    /* LOGO */
 
-      font-size: 21px;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      font-family: var(--display);
+      font-size: 18px;
       font-weight: 800;
-      letter-spacing: -.7px;
-      color: var(--blue-dark);
+      letter-spacing: -.5px;
     }
 
-    .logo-mark {
-      width: 39px;
-      height: 39px;
+    .brand-mark {
+      width: 42px;
+      height: 42px;
 
       display: grid;
       place-items: center;
 
-      background: var(--blue-dark);
+      background: var(--navy);
       color: var(--yellow);
 
-      border-radius: 12px;
+      border-radius: 13px;
 
-      font-size: 16px;
+      font-family: Georgia, serif;
+      font-size: 25px;
+
+      transform: rotate(-5deg);
     }
 
-    .logo span {
+    .brand-name span {
       color: var(--blue);
     }
 
-    .nav-links {
+    /* MENU */
+
+    .main-menu {
       display: flex;
       align-items: center;
-      gap: 31px;
+      gap: 32px;
 
       list-style: none;
     }
 
-    .nav-links a {
-      color: #43536a;
+    .main-menu a {
       font-size: 13px;
       font-weight: 700;
+      color: #41516a;
 
       transition: .25s ease;
     }
 
-    .nav-links a:hover {
-      color: var(--blue);
+    .main-menu a:hover {
+      color: var(--navy);
     }
 
-    .nav-cta {
-      padding: 12px 20px;
+    .header-cta {
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
 
-      background: var(--blue-dark);
-      color: white !important;
+      padding: 13px 20px;
 
-      border-radius: 100px;
+      background: var(--navy);
+      color: #fff !important;
+
+      border-radius: 999px;
     }
 
-    .nav-cta:hover {
-      background: var(--blue);
+    .header-cta:hover {
+      background: var(--blue) !important;
       transform: translateY(-1px);
     }
 
-    .menu-button {
+    .mobile-toggle {
       display: none;
 
-      width: 43px;
-      height: 43px;
+      width: 44px;
+      height: 44px;
 
       border: 0;
       border-radius: 12px;
 
-      background: var(--blue-dark);
+      background: var(--navy);
       color: white;
 
-      cursor: pointer;
+      font-size: 20px;
     }
-
-
-    /* =========================================================
-       BOTÕES
-    ========================================================= */
-
-    .btn {
-      min-height: 52px;
-
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-
-      padding: 0 23px;
-
-      border-radius: 100px;
-
-      font-size: 14px;
-      font-weight: 800;
-
-      border: 0;
-      cursor: pointer;
-
-      transition:
-        transform .25s ease,
-        background .25s ease,
-        box-shadow .25s ease;
-    }
-
-    .btn-primary {
-      background: var(--blue-dark);
-      color: white;
-
-      box-shadow: 0 12px 25px rgba(9, 44, 98, .17);
-    }
-
-    .btn-primary:hover {
-      background: var(--blue);
-      transform: translateY(-3px);
-      box-shadow: 0 16px 30px rgba(23, 105, 209, .22);
-    }
-
-    .btn-light {
-      background: white;
-      color: var(--blue-dark);
-      border: 1px solid var(--line);
-    }
-
-    .btn-light:hover {
-      border-color: var(--blue);
-      color: var(--blue);
-      transform: translateY(-2px);
-    }
-
-    .btn-yellow {
-      background: var(--yellow);
-      color: var(--blue-dark);
-    }
-
-    .btn-yellow:hover {
-      background: white;
-      transform: translateY(-3px);
-    }
-
 
     /* =========================================================
        HERO
-    ========================================================= */
+       ========================================================= */
 
     .hero {
-      min-height: 760px;
-      padding: 150px 0 85px;
-
       position: relative;
+      min-height: 850px;
+
+      padding-top: 84px;
+
       overflow: hidden;
 
       background:
         radial-gradient(
-          circle at 84% 15%,
-          rgba(23, 105, 209, .12),
-          transparent 29%
+          circle at 78% 22%,
+          rgba(220, 236, 255, .9) 0,
+          rgba(220, 236, 255, 0) 30%
         ),
-        linear-gradient(
-          135deg,
-          #fffdf8 0%,
-          #fff 55%,
-          #f4f9ff 100%
-        );
+        var(--warm);
     }
 
-    .hero::after {
-      content: "";
+    /* formas decorativas */
 
+    .hero-shape {
       position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
 
+    .hero-shape.one {
       width: 520px;
       height: 520px;
 
-      right: -300px;
-      bottom: -300px;
+      right: -220px;
+      top: 80px;
 
-      border: 90px solid rgba(255, 211, 72, .08);
+      border: 1px solid rgba(36, 107, 197, .12);
       border-radius: 50%;
     }
 
+    .hero-shape.two {
+      width: 340px;
+      height: 340px;
+
+      right: -80px;
+      top: 175px;
+
+      border: 1px solid rgba(245, 201, 76, .22);
+      border-radius: 50%;
+    }
+
+    .hero-shape.three {
+      width: 110px;
+      height: 110px;
+
+      left: 7%;
+      bottom: 80px;
+
+      border-radius: 34px;
+
+      background: var(--yellow-soft);
+
+      transform: rotate(14deg);
+      opacity: .5;
+    }
+
     .hero-grid {
-      min-height: 570px;
+      min-height: 766px;
 
       display: grid;
-      grid-template-columns: .92fr 1.08fr;
-
+      grid-template-columns: .9fr 1.1fr;
       align-items: center;
-
-      gap: 55px;
 
       position: relative;
       z-index: 2;
     }
 
+    /* HERO COPY */
+
     .hero-copy {
-      max-width: 590px;
+      position: relative;
+      z-index: 10;
+
+      padding-bottom: 55px;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
+      gap: 10px;
 
-      margin-bottom: 22px;
+      margin-bottom: 24px;
 
       color: var(--blue);
+
+      font-family: var(--accent);
       font-size: 11px;
       font-weight: 800;
 
+      letter-spacing: 2.4px;
       text-transform: uppercase;
-      letter-spacing: 2.3px;
     }
 
     .eyebrow::before {
       content: "";
-
-      width: 27px;
+      width: 28px;
       height: 2px;
 
       background: var(--yellow);
     }
 
     .hero h1 {
-      color: var(--blue-dark);
+      max-width: 690px;
 
-      font-size: clamp(45px, 5.7vw, 76px);
-      line-height: .99;
+      font-family: var(--display);
+      font-size: clamp(48px, 6vw, 82px);
+      line-height: .98;
+
       letter-spacing: -4px;
 
-      margin-bottom: 25px;
+      color: var(--navy);
+
+      margin-bottom: 28px;
     }
 
-    .hero h1 strong {
+    .hero h1 em {
       color: var(--blue);
-      font-weight: 800;
+      font-style: normal;
     }
 
     .hero-description {
@@ -390,147 +359,214 @@
       font-size: 17px;
       line-height: 1.75;
 
-      margin-bottom: 31px;
+      margin-bottom: 34px;
     }
 
-    .hero-buttons {
+    .hero-actions {
       display: flex;
+      align-items: center;
+      gap: 18px;
       flex-wrap: wrap;
-      gap: 12px;
+    }
+
+    /* BUTTONS */
+
+    .btn {
+      min-height: 54px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0 24px;
+
+      border-radius: 999px;
+
+      font-size: 13px;
+      font-weight: 800;
+
+      transition:
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .btn-dark {
+      background: var(--navy);
+      color: white;
+
+      box-shadow: 0 14px 35px rgba(16, 45, 90, .18);
+    }
+
+    .btn-dark:hover {
+      background: var(--blue);
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(36, 107, 197, .22);
+    }
+
+    .btn-light {
+      color: var(--navy);
+      border: 1px solid var(--line);
+      background: transparent;
+    }
+
+    .btn-light:hover {
+      background: white;
+      border-color: #d7d1c6;
+      transform: translateY(-2px);
     }
 
     .hero-note {
+      margin-top: 24px;
+
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
 
-      margin-top: 28px;
+      color: #7d8793;
 
-      color: #7c8999;
       font-size: 12px;
-      font-weight: 600;
     }
 
-    .hero-note span {
-      width: 30px;
-      height: 30px;
+    .hero-note::before {
+      content: "";
 
-      display: grid;
-      place-items: center;
+      width: 7px;
+      height: 7px;
 
       border-radius: 50%;
 
-      background: var(--yellow-soft);
-      color: var(--orange);
+      background: var(--green);
     }
 
-
-    /* =========================================================
-       HERO IMAGE
-       A imagem é tratada como composição editorial.
-    ========================================================= */
+    /* HERO VISUAL */
 
     .hero-visual {
       position: relative;
-
-      display: flex;
-      justify-content: flex-end;
+      height: 690px;
     }
 
-    .hero-image-wrap {
-      width: min(620px, 100%);
+    /*
+      IMPORTANTANTE:
+      Não existe card atrás da imagem.
+      O personagem fica diretamente sobre a composição.
+    */
 
-      position: relative;
-
-      border-radius: 38px;
-
-      overflow: hidden;
-
-      box-shadow:
-        0 30px 80px rgba(9, 44, 98, .17);
-
-      background: #eaf3ff;
-    }
-
-    .hero-image-wrap::after {
-      content: "";
-
-      position: absolute;
-      inset: 0;
-
-      border: 1px solid rgba(255,255,255,.5);
-
-      border-radius: inherit;
-
-      pointer-events: none;
-    }
-
-    .hero-image {
-      width: 100%;
-      aspect-ratio: 1.08 / 1;
-
-      object-fit: cover;
-    }
-
-    .hero-floating-card {
+    .hero-character {
       position: absolute;
 
-      left: -25px;
-      bottom: 30px;
+      width: min(650px, 53vw);
+
+      right: -40px;
+      bottom: 0;
+
+      z-index: 5;
+
+      object-fit: contain;
+
+      filter:
+        drop-shadow(
+          0 28px 35px rgba(16, 45, 90, .12)
+        );
+
+      animation: characterFloat 6s ease-in-out infinite;
+    }
+
+    .hero-yellow-circle {
+      position: absolute;
+
+      width: 360px;
+      height: 360px;
+
+      right: 60px;
+      top: 100px;
+
+      border-radius: 50%;
+
+      background: var(--yellow);
+
+      opacity: .92;
+    }
+
+    .hero-blue-circle {
+      position: absolute;
 
       width: 190px;
+      height: 190px;
 
-      padding: 17px;
+      right: 0;
+      bottom: 70px;
 
-      background: white;
+      border-radius: 50%;
 
-      border: 1px solid rgba(9, 44, 98, .07);
-
-      border-radius: 18px;
-
-      box-shadow: 0 18px 45px rgba(9, 44, 98, .14);
+      background: var(--blue-light);
     }
 
-    .hero-floating-card strong {
+    .hero-mini-label {
+      position: absolute;
+
+      left: 30px;
+      bottom: 120px;
+
+      z-index: 8;
+
+      max-width: 185px;
+
+      padding: 18px 20px;
+
+      background: rgba(255,255,255,.92);
+
+      border: 1px solid rgba(16,45,90,.08);
+
+      border-radius: 22px;
+
+      box-shadow: 0 18px 45px rgba(16,45,90,.10);
+    }
+
+    .hero-mini-label strong {
       display: block;
 
-      color: var(--blue-dark);
+      font-family: var(--display);
+      font-size: 15px;
+      line-height: 1.2;
 
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-size: 20px;
+      color: var(--navy);
 
-      margin-bottom: 3px;
+      margin-bottom: 6px;
     }
 
-    .hero-floating-card span {
+    .hero-mini-label span {
       color: var(--muted);
       font-size: 11px;
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
-
     /* =========================================================
-       MINI BAR
-    ========================================================= */
+       TRUST BAR
+       ========================================================= */
 
     .trust-bar {
-      background: var(--blue-dark);
+      position: relative;
+      z-index: 20;
+
+      background: var(--navy);
       color: white;
     }
 
     .trust-grid {
+      min-height: 112px;
+
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
 
     .trust-item {
-      min-height: 105px;
-
       display: flex;
       align-items: center;
       gap: 15px;
 
-      padding: 22px 25px;
+      padding: 25px 28px;
 
       border-right: 1px solid rgba(255,255,255,.08);
     }
@@ -539,589 +575,760 @@
       border-right: 0;
     }
 
-    .trust-icon {
-      width: 43px;
-      height: 43px;
+    .trust-number {
+      font-family: var(--display);
+      font-size: 25px;
+      font-weight: 800;
 
-      flex-shrink: 0;
-
-      display: grid;
-      place-items: center;
-
-      border-radius: 13px;
-
-      background: rgba(255,255,255,.08);
       color: var(--yellow);
-
-      font-size: 16px;
     }
 
-    .trust-item strong {
+    .trust-text strong {
       display: block;
 
-      font-family: "Plus Jakarta Sans", sans-serif;
       font-size: 13px;
+      font-weight: 800;
 
       margin-bottom: 3px;
     }
 
-    .trust-item span {
+    .trust-text span {
       color: #aebed2;
+
       font-size: 11px;
     }
 
-
     /* =========================================================
-       SEÇÕES
-    ========================================================= */
+       INTRO / MANIFESTO
+       ========================================================= */
 
-    section {
-      padding: 105px 0;
+    .manifesto {
+      padding: 145px 0 125px;
+
+      background: var(--warm);
     }
 
-    .section-header {
-      max-width: 670px;
-      margin-bottom: 48px;
+    .manifesto-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 90px;
+
+      align-items: start;
     }
 
-    .section-header.center {
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-
-    .section-kicker {
-      display: block;
-
-      margin-bottom: 13px;
-
+    .manifesto-label {
       color: var(--blue);
 
+      font-family: var(--accent);
       font-size: 11px;
       font-weight: 800;
 
+      letter-spacing: 2px;
       text-transform: uppercase;
-      letter-spacing: 2.5px;
     }
 
-    .section-header h2 {
-      color: var(--blue-dark);
+    .manifesto-content h2 {
+      max-width: 830px;
 
-      font-size: clamp(32px, 4vw, 50px);
-      line-height: 1.06;
-      letter-spacing: -2.2px;
+      font-family: var(--display);
+      font-size: clamp(38px, 5vw, 66px);
+      line-height: 1.02;
 
-      margin-bottom: 16px;
+      letter-spacing: -3px;
+
+      color: var(--navy);
+
+      margin-bottom: 30px;
     }
 
-    .section-header p {
+    .manifesto-content h2 span {
+      color: var(--blue);
+    }
+
+    .manifesto-content p {
+      max-width: 720px;
+
       color: var(--muted);
 
-      font-size: 15px;
-      line-height: 1.75;
+      font-size: 17px;
+      line-height: 1.8;
     }
 
+    .manifesto-rule {
+      width: 100%;
+      height: 1px;
+
+      margin-top: 55px;
+
+      background: var(--line);
+    }
 
     /* =========================================================
-       SERVIÇOS
-    ========================================================= */
+       SERVICES
+       ========================================================= */
 
     .services {
-      background: white;
+      padding: 110px 0;
+
+      background: #eef4fa;
     }
 
-    .services-grid {
+    .section-top {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+
+      gap: 40px;
+
+      margin-bottom: 55px;
+    }
+
+    .section-title {
+      max-width: 700px;
+    }
+
+    .section-label {
+      color: var(--blue);
+
+      font-family: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      margin-bottom: 15px;
+    }
+
+    .section-title h2 {
+      font-family: var(--display);
+      font-size: clamp(36px, 5vw, 57px);
+      line-height: 1;
+
+      letter-spacing: -2.5px;
+
+      color: var(--navy);
+    }
+
+    .section-description {
+      max-width: 360px;
+
+      color: var(--muted);
+
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .services-list {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+
+      border-top: 1px solid rgba(16,45,90,.12);
+      border-left: 1px solid rgba(16,45,90,.12);
     }
 
     .service {
-      padding: 30px;
+      min-height: 260px;
 
-      background: #fff;
+      padding: 36px;
 
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
+      border-right: 1px solid rgba(16,45,90,.12);
+      border-bottom: 1px solid rgba(16,45,90,.12);
+
+      background: rgba(255,255,255,.26);
 
       transition: .3s ease;
     }
 
     .service:hover {
-      transform: translateY(-5px);
-
-      border-color: #d3e3f6;
-
-      box-shadow: 0 18px 45px rgba(9, 44, 98, .08);
+      background: rgba(255,255,255,.78);
+      transform: translateY(-4px);
     }
 
     .service-number {
-      color: #9aabba;
+      color: var(--blue);
 
-      font-family: "Plus Jakarta Sans", sans-serif;
-
+      font-family: var(--accent);
       font-size: 11px;
       font-weight: 800;
 
       letter-spacing: 1px;
 
-      margin-bottom: 25px;
+      margin-bottom: 70px;
     }
 
     .service h3 {
-      color: var(--blue-dark);
+      font-family: var(--display);
+      font-size: 22px;
+      letter-spacing: -.7px;
 
-      font-size: 19px;
-      letter-spacing: -.5px;
+      color: var(--navy);
 
       margin-bottom: 10px;
     }
 
     .service p {
+      max-width: 320px;
+
       color: var(--muted);
 
       font-size: 13px;
       line-height: 1.7;
     }
 
-    .service-line {
-      width: 34px;
-      height: 3px;
-
-      margin-top: 25px;
-
-      border-radius: 10px;
-
-      background: var(--yellow);
-    }
-
-
     /* =========================================================
-       SOBRE
-    ========================================================= */
+       ABOUT / IMAGE COMPOSITION
+       ========================================================= */
 
     .about {
-      background: var(--soft);
+      padding: 140px 0;
+
+      background: var(--warm);
+
+      overflow: hidden;
     }
 
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
 
-      gap: 80px;
-
       align-items: center;
+
+      gap: 90px;
     }
 
-    .about-image {
+    .about-visual {
       position: relative;
 
-      border-radius: 35px;
-
-      overflow: hidden;
-
-      background: #dcecff;
-
-      box-shadow: var(--shadow);
+      min-height: 570px;
     }
 
-    .about-image img {
-      width: 100%;
-
-      aspect-ratio: .93 / 1;
-
-      object-fit: cover;
-    }
-
-    .about-image-label {
+    .about-blob {
       position: absolute;
 
-      left: 20px;
-      bottom: 20px;
+      width: 470px;
+      height: 470px;
 
-      max-width: 220px;
+      left: 30px;
+      top: 50px;
 
-      padding: 15px 17px;
+      background: var(--coral-soft);
 
-      border-radius: 17px;
+      border-radius: 48% 52% 61% 39% / 46% 42% 58% 54%;
 
-      background: rgba(6, 29, 67, .90);
+      transform: rotate(-8deg);
+    }
 
+    .about-character {
+      position: absolute;
+
+      width: min(510px, 42vw);
+
+      left: 0;
+      bottom: 0;
+
+      z-index: 3;
+
+      filter:
+        drop-shadow(
+          0 25px 30px rgba(16,45,90,.11)
+        );
+    }
+
+    .about-sticker {
+      position: absolute;
+
+      z-index: 5;
+
+      right: 20px;
+      top: 95px;
+
+      width: 155px;
+
+      padding: 19px;
+
+      background: var(--navy);
       color: white;
 
-      backdrop-filter: blur(10px);
+      border-radius: 24px;
+
+      transform: rotate(5deg);
+
+      box-shadow: 0 20px 45px rgba(16,45,90,.16);
     }
 
-    .about-image-label strong {
+    .about-sticker strong {
       display: block;
 
-      font-family: "Plus Jakarta Sans", sans-serif;
+      font-family: var(--display);
+      font-size: 21px;
+      line-height: 1;
 
-      font-size: 13px;
+      margin-bottom: 8px;
 
-      margin-bottom: 3px;
+      color: var(--yellow);
     }
 
-    .about-image-label span {
-      color: #c1d0e3;
+    .about-sticker span {
       font-size: 10px;
+      line-height: 1.5;
+
+      color: #bdc9d8;
     }
 
-    .about-copy h2 {
-      color: var(--blue-dark);
-
-      font-size: clamp(32px, 4vw, 48px);
-      line-height: 1.08;
-
-      letter-spacing: -2px;
-
-      margin-bottom: 20px;
+    .about-content .section-label {
+      margin-bottom: 16px;
     }
 
-    .about-copy h2 span {
+    .about-content h2 {
+      max-width: 600px;
+
+      font-family: var(--display);
+      font-size: clamp(40px, 5vw, 62px);
+      line-height: 1;
+
+      letter-spacing: -3px;
+
+      color: var(--navy);
+
+      margin-bottom: 25px;
+    }
+
+    .about-content h2 span {
       color: var(--blue);
     }
 
-    .about-copy > p {
+    .about-content > p {
+      max-width: 580px;
+
       color: var(--muted);
 
-      font-size: 15px;
+      font-size: 16px;
       line-height: 1.8;
 
-      margin-bottom: 27px;
+      margin-bottom: 35px;
     }
 
-    .about-list {
+    .about-points {
       display: grid;
-      gap: 13px;
+      grid-template-columns: 1fr 1fr;
 
-      margin-bottom: 30px;
+      gap: 16px 28px;
+
+      margin-bottom: 38px;
     }
 
-    .about-list div {
+    .about-point {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 11px;
 
-      color: var(--blue-dark);
+      color: var(--ink);
 
       font-size: 13px;
       font-weight: 700;
     }
 
-    .about-list i {
-      width: 24px;
-      height: 24px;
+    .about-point::before {
+      content: "";
 
-      display: grid;
-      place-items: center;
+      width: 8px;
+      height: 8px;
+
+      margin-top: 5px;
+
+      flex: 0 0 8px;
 
       border-radius: 50%;
 
-      background: #e1f5ea;
-      color: #1c9b60;
-
-      font-size: 10px;
+      background: var(--yellow);
     }
-
 
     /* =========================================================
-       ATIVIDADES — COMPACTA
-    ========================================================= */
+       EXPERIENCES - COMPACT
+       ========================================================= */
 
-    .activities {
-      background: var(--blue-dark);
+    .experiences {
+      padding: 100px 0;
+
+      background: var(--navy);
       color: white;
-      padding: 78px 0;
     }
 
-    .activities-layout {
+    .experiences-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+
+      gap: 40px;
+
+      margin-bottom: 45px;
+    }
+
+    .experiences .section-label {
+      color: var(--yellow);
+    }
+
+    .experiences h2 {
+      max-width: 680px;
+
+      font-family: var(--display);
+      font-size: clamp(35px, 4vw, 53px);
+      line-height: 1;
+
+      letter-spacing: -2px;
+    }
+
+    .experiences-header p {
+      max-width: 350px;
+
+      color: #afbed0;
+
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .experience-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      border-top: 1px solid rgba(255,255,255,.12);
+    }
+
+    .experience {
+      padding: 30px 25px 15px;
+
+      border-right: 1px solid rgba(255,255,255,.12);
+    }
+
+    .experience:last-child {
+      border-right: 0;
+    }
+
+    .experience span {
+      display: block;
+
+      color: var(--yellow);
+
+      font-family: var(--accent);
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: 1.5px;
+
+      margin-bottom: 34px;
+    }
+
+    .experience h3 {
+      font-family: var(--display);
+      font-size: 20px;
+
+      margin-bottom: 8px;
+    }
+
+    .experience p {
+      color: #aebed2;
+
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    /* =========================================================
+       TESTIMONIALS
+       ========================================================= */
+
+    .testimonials {
+      padding: 140px 0;
+
+      background: var(--cream-2);
+    }
+
+    .testimonials-heading {
       display: grid;
       grid-template-columns: .75fr 1.25fr;
 
-      gap: 65px;
-
-      align-items: center;
-    }
-
-    .activities .section-kicker {
-      color: var(--yellow);
-    }
-
-    .activities h2 {
-      color: white;
-      font-size: clamp(30px, 4vw, 45px);
-    }
-
-    .activities .section-header {
-      margin-bottom: 0;
-    }
-
-    .activities .section-header p {
-      color: #b9c8da;
-    }
-
-    .activity-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-
-      gap: 0;
-
-      border-top: 1px solid rgba(255,255,255,.1);
-    }
-
-    .activity-item {
-      padding: 20px 18px;
-
-      border-bottom: 1px solid rgba(255,255,255,.1);
-
-      display: flex;
-      align-items: center;
-      gap: 13px;
-    }
-
-    .activity-item:nth-child(odd) {
-      border-right: 1px solid rgba(255,255,255,.1);
-    }
-
-    .activity-item i {
-      color: var(--yellow);
-      font-size: 14px;
-    }
-
-    .activity-item span {
-      color: #d7e0eb;
-
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-
-    /* =========================================================
-       IMAGEM 3 / DIFERENCIAL
-    ========================================================= */
-
-    .experience {
-      background: white;
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-
       gap: 70px;
 
-      align-items: center;
+      margin-bottom: 60px;
     }
 
-    .experience-copy h2 {
-      color: var(--blue-dark);
+    .testimonials-heading h2 {
+      max-width: 780px;
 
-      font-size: clamp(32px, 4vw, 49px);
-      line-height: 1.08;
+      font-family: var(--display);
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1;
 
-      letter-spacing: -2px;
+      letter-spacing: -3px;
 
-      margin-bottom: 20px;
+      color: var(--navy);
     }
 
-    .experience-copy h2 span {
+    .testimonials-heading h2 span {
       color: var(--blue);
     }
 
-    .experience-copy > p {
+    .testimonials-heading p {
+      max-width: 500px;
+
       color: var(--muted);
 
       font-size: 15px;
-      line-height: 1.8;
+      line-height: 1.75;
 
-      margin-bottom: 30px;
+      margin-top: 20px;
     }
 
-    .numbers {
+    .testimonial-layout {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1.25fr .75fr;
 
-      gap: 13px;
-    }
+      min-height: 440px;
 
-    .number-box {
-      padding: 20px;
-
-      border: 1px solid var(--line);
-      border-radius: 18px;
-    }
-
-    .number-box strong {
-      display: block;
-
-      color: var(--blue-dark);
-
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-size: 15px;
-
-      margin-bottom: 5px;
-    }
-
-    .number-box span {
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.5;
-    }
-
-    .experience-image {
-      position: relative;
-
-      border-radius: 35px;
+      border-radius: 38px;
 
       overflow: hidden;
 
-      background: #f1f6fc;
-
-      box-shadow: var(--shadow);
+      box-shadow: 0 25px 70px rgba(30, 38, 52, .08);
     }
 
-    .experience-image img {
-      width: 100%;
-
-      aspect-ratio: .88 / 1;
-
-      object-fit: cover;
-    }
-
-
-    /* =========================================================
-       DEPOIMENTOS
-    ========================================================= */
-
-    .testimonials {
-      background: #f7f9fc;
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 18px;
-    }
-
-    .testimonial {
-      padding: 29px;
-
-      background: white;
-
-      border: 1px solid var(--line);
-      border-radius: 24px;
-
+    .testimonial-main {
       position: relative;
+
+      padding: 65px;
+
+      background: var(--navy);
+      color: white;
     }
 
-    .testimonial::before {
-      content: "“";
-
-      position: absolute;
-
-      right: 25px;
-      top: 13px;
-
-      color: #e7eef8;
+    .quote {
+      color: var(--yellow);
 
       font-family: Georgia, serif;
-      font-size: 70px;
-      line-height: 1;
+      font-size: 90px;
+
+      line-height: .5;
     }
 
-    .testimonial-stars {
-      color: var(--yellow);
-      font-size: 11px;
+    .testimonial-main blockquote {
+      max-width: 720px;
 
-      margin-bottom: 18px;
-    }
+      margin: 35px 0;
 
-    .testimonial p {
-      color: #536277;
+      font-family: var(--display);
+      font-size: clamp(27px, 3.5vw, 43px);
+      line-height: 1.1;
 
-      font-size: 13px;
-      line-height: 1.75;
-
-      margin-bottom: 22px;
+      letter-spacing: -1.5px;
     }
 
     .testimonial-author {
       display: flex;
-      align-items: center;
-      gap: 11px;
-    }
-
-    .author-avatar {
-      width: 36px;
-      height: 36px;
-
-      display: grid;
-      place-items: center;
-
-      border-radius: 50%;
-
-      background: var(--soft-blue);
-
-      color: var(--blue);
-
-      font-size: 11px;
-      font-weight: 800;
+      flex-direction: column;
+      gap: 5px;
     }
 
     .testimonial-author strong {
-      display: block;
-
-      color: var(--blue-dark);
-
-      font-size: 12px;
-
-      margin-bottom: 2px;
+      font-size: 13px;
     }
 
     .testimonial-author span {
-      color: #8a96a6;
-      font-size: 10px;
+      color: #9fb0c6;
+      font-size: 11px;
     }
 
+    .testimonial-side {
+      display: flex;
+      flex-direction: column;
 
-    /* =========================================================
-       CTA
-    ========================================================= */
-
-    .cta-section {
-      padding: 90px 0;
-      background: white;
+      background: var(--warm);
     }
 
-    .cta-box {
-      min-height: 300px;
+    .testimonial-mini {
+      flex: 1;
+
+      padding: 38px;
 
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .testimonial-mini:last-child {
+      border-bottom: 0;
+    }
+
+    .testimonial-mini p {
+      color: var(--ink);
+
+      font-size: 15px;
+      line-height: 1.65;
+
+      margin-bottom: 17px;
+    }
+
+    .testimonial-mini strong {
+      font-size: 12px;
+      color: var(--navy);
+    }
+
+    .testimonial-mini span {
+      color: #8a929c;
+      font-size: 10px;
+      margin-top: 3px;
+    }
+
+    /*
+      Como não foram fornecidos depoimentos reais,
+      os textos abaixo estão marcados no HTML como exemplos.
+      Substitua pelos depoimentos reais das famílias.
+    */
+
+    /* =========================================================
+       GALLERY / BRAND MOMENT
+       ========================================================= */
+
+    .gallery {
+      padding: 120px 0;
+
+      background: var(--warm);
+    }
+
+    .gallery-head {
+      display: flex;
       justify-content: space-between;
+      align-items: end;
 
       gap: 40px;
 
-      padding: 60px;
+      margin-bottom: 50px;
+    }
 
-      border-radius: 35px;
+    .gallery-head h2 {
+      font-family: var(--display);
+      font-size: clamp(38px, 5vw, 58px);
+      line-height: 1;
 
-      background:
-        radial-gradient(
-          circle at 80% 20%,
-          rgba(255,211,72,.15),
-          transparent 28%
-        ),
-        linear-gradient(
-          125deg,
-          var(--blue-dark),
-          #0b428c
-        );
+      letter-spacing: -2.5px;
+
+      color: var(--navy);
+    }
+
+    .gallery-head p {
+      max-width: 390px;
+
+      color: var(--muted);
+
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .gallery-composition {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      grid-template-rows: 280px 280px;
+
+      gap: 14px;
+    }
+
+    .gallery-block {
+      position: relative;
 
       overflow: hidden;
+
+      border-radius: 30px;
+
+      background: var(--blue-light);
+    }
+
+    .gallery-block.large {
+      grid-row: 1 / 3;
+    }
+
+    .gallery-block::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          transparent 40%,
+          rgba(8,29,60,.35)
+        );
+    }
+
+    .gallery-block-content {
+      position: absolute;
+
+      left: 30px;
+      bottom: 28px;
+
+      z-index: 3;
+
+      color: white;
+    }
+
+    .gallery-block-content span {
+      display: block;
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+
+      margin-bottom: 8px;
+    }
+
+    .gallery-block-content strong {
+      font-family: var(--display);
+      font-size: 23px;
+    }
+
+    /* =========================================================
+       CTA
+       ========================================================= */
+
+    .cta-section {
+      padding: 100px 0;
+
+      background: #edf3f8;
+    }
+
+    .cta-box {
       position: relative;
+
+      min-height: 440px;
+
+      padding: 70px;
+
+      overflow: hidden;
+
+      border-radius: 42px;
+
+      background: var(--blue);
+
+      color: white;
+    }
+
+    .cta-box::before {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      right: -180px;
+      top: -170px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(255,255,255,.17);
     }
 
     .cta-box::after {
@@ -1129,164 +1336,181 @@
 
       position: absolute;
 
-      width: 280px;
-      height: 280px;
+      width: 300px;
+      height: 300px;
 
-      right: -110px;
-      bottom: -150px;
-
-      border: 60px solid rgba(255,255,255,.04);
+      right: -60px;
+      bottom: -190px;
 
       border-radius: 50%;
+
+      background: rgba(255,255,255,.07);
     }
 
-    .cta-content {
+    .cta-copy {
       position: relative;
-      z-index: 2;
+      z-index: 5;
+
+      max-width: 650px;
     }
 
-    .cta-content small {
+    .cta-copy .section-label {
       color: var(--yellow);
-
-      font-size: 10px;
-      font-weight: 800;
-
-      text-transform: uppercase;
-      letter-spacing: 2px;
     }
 
-    .cta-content h2 {
-      color: white;
+    .cta-copy h2 {
+      font-family: var(--display);
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 1;
 
-      font-size: clamp(31px, 4vw, 47px);
-      line-height: 1.05;
+      letter-spacing: -3px;
 
-      letter-spacing: -2px;
-
-      margin: 10px 0 12px;
+      margin-bottom: 20px;
     }
 
-    .cta-content p {
-      max-width: 550px;
+    .cta-copy p {
+      max-width: 530px;
 
-      color: #bfd0e4;
+      color: #d8e6f5;
 
-      font-size: 14px;
+      font-size: 15px;
       line-height: 1.7;
+
+      margin-bottom: 30px;
     }
 
-    .cta-box .btn {
-      position: relative;
-      z-index: 3;
+    .cta-character {
+      position: absolute;
 
-      flex-shrink: 0;
+      width: 360px;
+
+      right: 30px;
+      bottom: -10px;
+
+      z-index: 4;
+
+      filter:
+        drop-shadow(
+          0 25px 30px rgba(8,29,60,.18)
+        );
     }
 
+    .cta-btn {
+      background: var(--yellow);
+      color: var(--navy);
+
+      box-shadow: 0 15px 30px rgba(0,0,0,.12);
+    }
+
+    .cta-btn:hover {
+      background: white;
+      transform: translateY(-3px);
+    }
 
     /* =========================================================
-       CONTATO
-    ========================================================= */
+       CONTACT
+       ========================================================= */
 
     .contact {
-      background: var(--soft);
+      padding: 130px 0;
+
+      background: var(--warm);
     }
 
     .contact-grid {
       display: grid;
       grid-template-columns: .8fr 1.2fr;
 
-      gap: 20px;
+      gap: 80px;
+
+      align-items: start;
     }
 
-    .contact-info {
-      padding: 42px;
+    .contact-copy h2 {
+      max-width: 500px;
 
-      border-radius: 30px;
+      font-family: var(--display);
+      font-size: clamp(40px, 5vw, 60px);
+      line-height: 1;
 
-      background: var(--blue-dark);
-      color: white;
+      letter-spacing: -3px;
+
+      color: var(--navy);
+
+      margin-bottom: 25px;
     }
 
-    .contact-info h2 {
-      font-size: 32px;
-      letter-spacing: -1.4px;
+    .contact-copy p {
+      max-width: 470px;
 
-      margin-bottom: 13px;
-    }
+      color: var(--muted);
 
-    .contact-info > p {
-      color: #b6c7db;
-
-      font-size: 13px;
-      line-height: 1.7;
+      font-size: 15px;
+      line-height: 1.8;
 
       margin-bottom: 35px;
     }
 
     .contact-details {
       display: grid;
-      gap: 22px;
+      gap: 18px;
     }
 
     .contact-detail {
-      display: flex;
-      gap: 13px;
-    }
+      padding-top: 17px;
 
-    .contact-detail-icon {
-      width: 39px;
-      height: 39px;
-
-      flex-shrink: 0;
-
-      display: grid;
-      place-items: center;
-
-      border-radius: 11px;
-
-      background: rgba(255,255,255,.08);
-
-      color: var(--yellow);
-
-      font-size: 13px;
-    }
-
-    .contact-detail strong {
-      display: block;
-
-      font-size: 12px;
-
-      margin-bottom: 3px;
+      border-top: 1px solid var(--line);
     }
 
     .contact-detail span {
-      color: #9eb1c8;
-      font-size: 11px;
+      display: block;
+
+      color: var(--blue);
+
+      font-family: var(--accent);
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+
+      margin-bottom: 5px;
     }
 
-    .contact-form {
+    .contact-detail strong {
+      color: var(--navy);
+
+      font-size: 14px;
+    }
+
+    /* FORM */
+
+    .form {
       padding: 42px;
 
       background: white;
 
       border: 1px solid var(--line);
-      border-radius: 30px;
+
+      border-radius: 34px;
+
+      box-shadow: 0 25px 60px rgba(16,45,90,.06);
     }
 
-    .contact-form h3 {
-      color: var(--blue-dark);
+    .form h3 {
+      font-family: var(--display);
+      font-size: 25px;
 
-      font-size: 26px;
-      letter-spacing: -1px;
+      color: var(--navy);
 
-      margin-bottom: 25px;
+      margin-bottom: 28px;
     }
 
     .form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
 
-      gap: 15px;
+      gap: 18px;
     }
 
     .field {
@@ -1300,217 +1524,226 @@
     }
 
     .field label {
-      color: #40516a;
+      color: var(--navy);
 
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 800;
-
-      text-transform: uppercase;
-      letter-spacing: .6px;
     }
 
     .field input,
-    .field select,
-    .field textarea {
+    .field textarea,
+    .field select {
       width: 100%;
 
-      padding: 13px 14px;
+      border: 1px solid #e2e5e8;
 
-      color: var(--text);
+      background: #fbfcfd;
 
-      background: #f9fbfd;
+      color: var(--ink);
 
-      border: 1px solid var(--line);
-      border-radius: 12px;
+      border-radius: 14px;
+
+      padding: 14px 15px;
 
       outline: none;
 
-      transition: .2s;
+      transition: .2s ease;
     }
 
     .field input:focus,
-    .field select:focus,
-    .field textarea:focus {
+    .field textarea:focus,
+    .field select:focus {
       background: white;
 
       border-color: var(--blue);
 
-      box-shadow: 0 0 0 4px rgba(23,105,209,.06);
+      box-shadow:
+        0 0 0 4px rgba(36,107,197,.07);
     }
 
     .field textarea {
-      min-height: 110px;
+      min-height: 125px;
       resize: vertical;
     }
 
     .form-submit {
       width: 100%;
-      margin-top: 18px;
-    }
 
+      margin-top: 22px;
+
+      border: 0;
+    }
 
     /* =========================================================
        FOOTER
-    ========================================================= */
+       ========================================================= */
 
     footer {
-      padding: 55px 0 25px;
+      padding: 65px 0 28px;
 
-      background: #041631;
+      background: var(--navy-deep);
+
       color: white;
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
 
-      gap: 50px;
+      gap: 70px;
 
-      padding-bottom: 42px;
+      padding-bottom: 55px;
 
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
 
-    .footer-brand p {
-      max-width: 390px;
-
-      color: #91a5bf;
-
-      font-size: 12px;
-      line-height: 1.7;
-
-      margin-top: 15px;
+    .footer-brand {
+      max-width: 420px;
     }
 
-    .footer-title {
+    .footer-brand .brand {
+      margin-bottom: 18px;
+    }
+
+    .footer-brand p {
+      color: #8ea1b9;
+
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 75px;
+    }
+
+    .footer-column h4 {
       color: var(--yellow);
 
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 800;
 
-      text-transform: uppercase;
       letter-spacing: 1.5px;
+      text-transform: uppercase;
 
-      margin-bottom: 15px;
+      margin-bottom: 18px;
     }
 
-    .footer-links {
-      display: grid;
-      gap: 10px;
-    }
+    .footer-column a {
+      display: block;
 
-    .footer-links a {
-      color: #9cafc6;
+      color: #a7b7ca;
 
       font-size: 12px;
+
+      margin-bottom: 11px;
 
       transition: .2s;
     }
 
-    .footer-links a:hover {
+    .footer-column a:hover {
       color: white;
     }
 
     .footer-bottom {
+      padding-top: 25px;
+
       display: flex;
       justify-content: space-between;
+
       gap: 20px;
 
-      padding-top: 23px;
-
-      color: #667b96;
+      color: #667c96;
 
       font-size: 10px;
     }
 
-
     /* =========================================================
        WHATSAPP
-    ========================================================= */
+       ========================================================= */
 
     .whatsapp {
       position: fixed;
 
-      right: 22px;
-      bottom: 22px;
+      right: 24px;
+      bottom: 24px;
 
-      width: 57px;
-      height: 57px;
+      width: 58px;
+      height: 58px;
 
       display: grid;
       place-items: center;
 
       z-index: 900;
 
+      border-radius: 50%;
+
       background: #20b66f;
       color: white;
 
-      border-radius: 50%;
-
-      font-size: 24px;
-
-      box-shadow: 0 12px 35px rgba(32,182,111,.30);
+      box-shadow:
+        0 15px 35px rgba(32,182,111,.28);
 
       transition: .25s;
+    }
+
+    .whatsapp svg {
+      width: 25px;
+      height: 25px;
     }
 
     .whatsapp:hover {
       transform: translateY(-4px) scale(1.04);
     }
 
-
     /* =========================================================
        BACK TO TOP
-    ========================================================= */
+       ========================================================= */
 
-    .top {
+    .back-top {
       position: fixed;
 
       right: 28px;
-      bottom: 91px;
+      bottom: 94px;
 
-      width: 39px;
-      height: 39px;
+      width: 42px;
+      height: 42px;
 
       display: grid;
       place-items: center;
 
+      border-radius: 13px;
+
       background: white;
 
-      color: var(--blue-dark);
-
       border: 1px solid var(--line);
-      border-radius: 11px;
 
-      box-shadow: 0 10px 25px rgba(9,44,98,.09);
+      color: var(--navy);
+
+      z-index: 800;
 
       opacity: 0;
-      pointer-events: none;
+      visibility: hidden;
 
       transition: .25s;
-
-      z-index: 899;
-
-      font-size: 12px;
     }
 
-    .top.show {
+    .back-top.visible {
       opacity: 1;
-      pointer-events: auto;
+      visibility: visible;
     }
-
 
     /* =========================================================
        REVEAL
-    ========================================================= */
+       ========================================================= */
 
     .reveal {
       opacity: 0;
-      transform: translateY(22px);
+      transform: translateY(25px);
 
       transition:
-        opacity .65s ease,
-        transform .65s ease;
+        opacity .7s ease,
+        transform .7s ease;
     }
 
     .reveal.visible {
@@ -1518,145 +1751,281 @@
       transform: translateY(0);
     }
 
+    /* =========================================================
+       ANIMATION
+       ========================================================= */
+
+    @keyframes characterFloat {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
 
     /* =========================================================
-       RESPONSIVO
-    ========================================================= */
+       RESPONSIVE
+       ========================================================= */
 
-    @media (max-width: 1050px) {
+    @media (max-width: 1100px) {
 
       .hero-grid {
+        grid-template-columns: .9fr 1.1fr;
+      }
+
+      .hero h1 {
+        font-size: clamp(46px, 6vw, 68px);
+      }
+
+      .hero-character {
+        right: -90px;
+        width: 600px;
+      }
+
+      .about-grid {
+        gap: 50px;
+      }
+
+      .about-blob {
+        width: 400px;
+        height: 400px;
+      }
+
+      .cta-character {
+        width: 300px;
+      }
+    }
+
+    @media (max-width: 900px) {
+
+      .main-menu {
+        position: absolute;
+
+        top: 84px;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+
+        padding: 25px;
+
+        background: rgba(255,250,242,.98);
+
+        border-bottom: 1px solid var(--line);
+
+        gap: 0;
+      }
+
+      .main-menu.active {
+        display: flex;
+      }
+
+      .main-menu li a {
+        display: block;
+        padding: 13px 0;
+      }
+
+      .header-cta {
+        text-align: center;
+        margin-top: 8px;
+      }
+
+      .mobile-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid {
+        min-height: auto;
+
         grid-template-columns: 1fr;
+
+        padding-top: 80px;
+        padding-bottom: 70px;
       }
 
       .hero-copy {
-        max-width: 700px;
         text-align: center;
-        margin: auto;
+        padding-bottom: 0;
       }
 
+      .eyebrow {
+        justify-content: center;
+      }
+
+      .hero h1,
       .hero-description {
         margin-left: auto;
         margin-right: auto;
       }
 
-      .hero-buttons,
+      .hero-actions {
+        justify-content: center;
+      }
+
       .hero-note {
         justify-content: center;
       }
 
       .hero-visual {
-        justify-content: center;
+        height: 580px;
+        margin-top: 20px;
       }
 
-      .hero-image-wrap {
-        max-width: 650px;
+      .hero-character {
+        width: min(620px, 80vw);
+        right: 50%;
+        transform: translateX(50%);
       }
 
+      .hero-yellow-circle {
+        right: 50%;
+        transform: translateX(50%);
+      }
+
+      .hero-mini-label {
+        left: 7%;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .trust-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .trust-item:nth-child(-n+2) {
+        border-bottom: 1px solid rgba(255,255,255,.08);
+      }
+
+      .manifesto-grid,
       .about-grid,
-      .experience-grid {
-        grid-template-columns: 1fr;
-
-        gap: 45px;
-      }
-
-      .about-image,
-      .experience-image {
-        max-width: 600px;
-        margin: auto;
-      }
-
-      .activities-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .activities .section-header {
-        max-width: 650px;
-      }
-
       .contact-grid {
         grid-template-columns: 1fr;
       }
-    }
 
-
-    @media (max-width: 850px) {
-
-      .nav-links {
-        position: absolute;
-
-        top: 82px;
-        left: 0;
-        right: 0;
-
-        display: none;
-        flex-direction: column;
-
-        padding: 28px;
-
-        background: rgba(255,255,255,.98);
-
-        border-bottom: 1px solid var(--line);
+      .about-visual {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
       }
 
-      .nav-links.active {
-        display: flex;
+      .about-character {
+        width: 450px;
+        left: 50%;
+        transform: translateX(-50%);
       }
 
-      .menu-button {
-        display: grid;
-        place-items: center;
+      .about-content {
+        text-align: center;
       }
 
-      .services-grid {
+      .about-content > p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .about-points {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+      }
+
+      .services-list {
         grid-template-columns: 1fr 1fr;
       }
 
-      .testimonials-grid {
+      .experience-row {
         grid-template-columns: 1fr 1fr;
       }
 
-      .footer-grid {
+      .experience:nth-child(2) {
+        border-right: 0;
+      }
+
+      .experience:nth-child(-n+2) {
+        border-bottom: 1px solid rgba(255,255,255,.12);
+      }
+
+      .testimonials-heading {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .testimonial-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial-main {
+        min-height: 420px;
+      }
+
+      .gallery-composition {
         grid-template-columns: 1fr 1fr;
       }
 
-      .footer-brand {
+      .gallery-block.large {
         grid-column: 1 / -1;
+        grid-row: auto;
+        min-height: 360px;
+      }
+
+      .cta-character {
+        opacity: .45;
+        right: -40px;
+      }
+
+      .footer-top {
+        flex-direction: column;
       }
     }
-
 
     @media (max-width: 620px) {
 
       .container {
-        width: min(100% - 32px, var(--container));
+        width: min(100% - 34px, var(--container));
       }
 
       .nav {
         height: 72px;
       }
 
-      .nav-links {
+      .main-menu {
         top: 72px;
       }
 
-      .logo {
-        font-size: 18px;
+      .brand {
+        font-size: 16px;
       }
 
-      .logo-mark {
-        width: 35px;
-        height: 35px;
+      .brand-mark {
+        width: 38px;
+        height: 38px;
       }
 
       .hero {
-        padding-top: 112px;
-        padding-bottom: 60px;
+        padding-top: 72px;
+      }
+
+      .hero-grid {
+        padding-top: 65px;
       }
 
       .hero h1 {
-        font-size: 43px;
+        font-size: 45px;
         letter-spacing: -2.5px;
       }
 
@@ -1664,19 +2033,31 @@
         font-size: 15px;
       }
 
-      .hero-buttons {
-        flex-direction: column;
+      .hero-visual {
+        height: 430px;
       }
 
-      .hero-buttons .btn {
-        width: 100%;
+      .hero-character {
+        width: 410px;
+        max-width: 105vw;
       }
 
-      .hero-floating-card {
-        left: 12px;
-        bottom: 12px;
+      .hero-yellow-circle {
+        width: 250px;
+        height: 250px;
+        top: 70px;
+      }
 
-        width: 160px;
+      .hero-blue-circle {
+        width: 120px;
+        height: 120px;
+      }
+
+      .hero-mini-label {
+        left: 0;
+        bottom: 45px;
+        max-width: 150px;
+        padding: 14px;
       }
 
       .trust-grid {
@@ -1684,9 +2065,7 @@
       }
 
       .trust-item {
-        min-height: 78px;
-
-        border-right: 0;
+        border-right: 0 !important;
         border-bottom: 1px solid rgba(255,255,255,.08);
       }
 
@@ -1694,72 +2073,128 @@
         border-bottom: 0;
       }
 
-      section {
-        padding: 75px 0;
+      .manifesto,
+      .about,
+      .testimonials,
+      .gallery,
+      .contact {
+        padding: 85px 0;
       }
 
-      .section-header {
-        margin-bottom: 35px;
+      .services,
+      .experiences {
+        padding: 80px 0;
       }
 
-      .section-header h2 {
-        letter-spacing: -1.5px;
+      .section-top,
+      .experiences-header,
+      .gallery-head {
+        display: block;
       }
 
-      .services-grid {
+      .section-description,
+      .experiences-header p,
+      .gallery-head p {
+        margin-top: 20px;
+      }
+
+      .services-list {
         grid-template-columns: 1fr;
       }
 
       .service {
-        padding: 25px;
+        min-height: auto;
+        padding: 28px;
       }
 
-      .about-grid,
-      .experience-grid {
-        gap: 35px;
+      .service-number {
+        margin-bottom: 45px;
       }
 
-      .about-image img,
-      .experience-image img {
-        aspect-ratio: .9 / 1;
+      .about-visual {
+        min-height: 430px;
       }
 
-      .activity-list {
+      .about-blob {
+        width: 320px;
+        height: 320px;
+
+        left: 50%;
+        transform: translateX(-50%) rotate(-8deg);
+      }
+
+      .about-character {
+        width: 370px;
+        max-width: 100%;
+      }
+
+      .about-sticker {
+        right: 0;
+        top: 55px;
+        width: 130px;
+      }
+
+      .about-points {
         grid-template-columns: 1fr;
       }
 
-      .activity-item:nth-child(odd) {
+      .experience-row {
+        grid-template-columns: 1fr;
+      }
+
+      .experience,
+      .experience:nth-child(2) {
         border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,.12);
       }
 
-      .numbers {
-        grid-template-columns: 1fr;
+      .experience:last-child {
+        border-bottom: 0;
       }
 
-      .testimonials-grid {
-        grid-template-columns: 1fr;
+      .testimonial-main {
+        padding: 40px 28px;
+        min-height: 380px;
+      }
+
+      .testimonial-main blockquote {
+        font-size: 28px;
+      }
+
+      .testimonial-mini {
+        padding: 30px;
+      }
+
+      .gallery-composition {
+        display: block;
+      }
+
+      .gallery-block {
+        min-height: 260px;
+        margin-bottom: 14px;
+      }
+
+      .gallery-block.large {
+        min-height: 330px;
       }
 
       .cta-section {
-        padding: 65px 0;
+        padding: 70px 0;
       }
 
       .cta-box {
-        padding: 38px 25px;
-
-        align-items: flex-start;
-        flex-direction: column;
-
-        border-radius: 27px;
+        padding: 45px 28px;
+        min-height: 470px;
       }
 
-      .cta-box .btn {
-        width: 100%;
+      .cta-character {
+        width: 280px;
+        opacity: .5;
+        right: -60px;
       }
 
-      .contact-info,
-      .contact-form {
-        padding: 28px 22px;
+      .form {
+        padding: 25px;
       }
 
       .form-grid {
@@ -1770,13 +2205,9 @@
         grid-column: auto;
       }
 
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .footer-brand {
-        grid-column: auto;
+      .footer-nav {
+        flex-wrap: wrap;
+        gap: 40px;
       }
 
       .footer-bottom {
@@ -1784,69 +2215,80 @@
       }
 
       .whatsapp {
-        right: 16px;
-        bottom: 16px;
-
         width: 53px;
         height: 53px;
+        right: 16px;
+        bottom: 16px;
       }
 
-      .top {
-        right: 18px;
-        bottom: 78px;
+      .back-top {
+        right: 20px;
+        bottom: 82px;
       }
+    }
+
+    /* =========================================================
+       REDUCE MOTION
+       ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+
     }
 
   </style>
 </head>
 
-
 <body>
-
 
   <!-- =======================================================
        HEADER
-  ======================================================== -->
+       ======================================================= -->
 
-  <header class="header">
+  <header class="site-header">
 
     <div class="container nav">
 
-      <a href="#inicio" class="logo">
-        <span class="logo-mark">
-          <i class="fa-solid fa-star"></i>
-        </span>
+      <a href="#inicio" class="brand">
 
-        Star <span>Recreação</span>
+        <div class="brand-mark">★</div>
+
+        <div class="brand-name">
+          Star <span>Recreação</span>
+        </div>
+
       </a>
-
 
       <nav>
 
-        <ul class="nav-links" id="navLinks">
+        <ul class="main-menu" id="mainMenu">
 
           <li>
             <a href="#inicio">Início</a>
           </li>
 
           <li>
-            <a href="#servicos">Serviços</a>
+            <a href="#experiencias">Experiências</a>
           </li>
 
           <li>
-            <a href="#sobre">Sobre</a>
+            <a href="#sobre">A Star</a>
           </li>
 
           <li>
-            <a href="#atividades">Atividades</a>
+            <a href="#familias">Famílias</a>
           </li>
 
           <li>
-            <a href="#depoimentos">Famílias</a>
-          </li>
-
-          <li>
-            <a href="#contato" class="nav-cta">
+            <a href="#contato" class="header-cta">
               Solicitar orçamento
             </a>
           </li>
@@ -1855,13 +2297,12 @@
 
       </nav>
 
-
       <button
-        class="menu-button"
-        id="menuButton"
+        class="mobile-toggle"
+        id="mobileToggle"
         aria-label="Abrir menu"
       >
-        <i class="fa-solid fa-bars"></i>
+        ☰
       </button>
 
     </div>
@@ -1869,18 +2310,19 @@
   </header>
 
 
-
   <main>
-
 
     <!-- =====================================================
          HERO
-    ====================================================== -->
+         ===================================================== -->
 
     <section class="hero" id="inicio">
 
-      <div class="container hero-grid">
+      <div class="hero-shape one"></div>
+      <div class="hero-shape two"></div>
+      <div class="hero-shape three"></div>
 
+      <div class="container hero-grid">
 
         <div class="hero-copy reveal">
 
@@ -1888,69 +2330,64 @@
             Recreação infantil em Londrina
           </div>
 
-
           <h1>
-            A infância merece
-            <strong>momentos incríveis.</strong>
+            A melhor parte da festa
+            <em>é viver a experiência.</em>
           </h1>
 
-
           <p class="hero-description">
-            A Star Recreação transforma aniversários, festas e eventos
-            em experiências leves, criativas e cheias de participação.
-            Enquanto as crianças aproveitam, os adultos também conseguem
-            curtir a comemoração.
+            A Star cria experiências de recreação que envolvem,
+            acolhem e fazem as crianças realmente entrarem
+            na brincadeira — enquanto os adultos aproveitam
+            a festa.
           </p>
 
+          <div class="hero-actions">
 
-          <div class="hero-buttons">
-
-            <a href="#contato" class="btn btn-primary">
-              Quero um orçamento
-              <i class="fa-solid fa-arrow-right"></i>
+            <a href="#contato" class="btn btn-dark">
+              Planejar minha festa
             </a>
 
-            <a href="#servicos" class="btn btn-light">
+            <a href="#sobre" class="btn btn-light">
               Conhecer a Star
             </a>
 
           </div>
 
-
           <div class="hero-note">
-
-            <span>
-              <i class="fa-solid fa-check"></i>
-            </span>
-
             Atendimento em Londrina e região
-
           </div>
 
         </div>
 
 
-
         <div class="hero-visual reveal">
 
-          <div class="hero-image-wrap">
+          <!--
+            IMAGEM 1
+            Sem card e sem fundo criado pelo layout.
+          -->
 
-            <img
-              class="hero-image"
-              src="https://i.imgur.com/xMty4hk.png"
-              alt="Star Recreação"
-            >
+          <div class="hero-yellow-circle"></div>
 
-          </div>
+          <div class="hero-blue-circle"></div>
 
+          <img
+            src="https://i.imgur.com/xMty4hk.png"
+            class="hero-character"
+            alt="Personagem da Star Recreação"
+          >
 
-          <div class="hero-floating-card">
+          <div class="hero-mini-label">
 
-            <strong>Uma festa mais leve</strong>
+            <strong>
+              Uma festa mais leve.
+            </strong>
 
             <span>
-              Recreação pensada para envolver as crianças
-              e valorizar cada momento.
+              Crianças envolvidas,
+              adultos tranquilos e
+              memórias que ficam.
             </span>
 
           </div>
@@ -1962,188 +2399,55 @@
     </section>
 
 
-
     <!-- =====================================================
          TRUST BAR
-    ====================================================== -->
+         ===================================================== -->
 
-    <div class="trust-bar">
+    <section class="trust-bar">
 
       <div class="container trust-grid">
 
         <div class="trust-item">
 
-          <div class="trust-icon">
-            <i class="fa-solid fa-children"></i>
-          </div>
+          <div class="trust-number">01</div>
 
-          <div>
-            <strong>Experiência infantil</strong>
-            <span>Atividades pensadas para diferentes idades</span>
+          <div class="trust-text">
+            <strong>Planejamento</strong>
+            <span>Atividades pensadas para a festa</span>
           </div>
 
         </div>
-
 
         <div class="trust-item">
 
-          <div class="trust-icon">
-            <i class="fa-solid fa-calendar-check"></i>
-          </div>
+          <div class="trust-number">02</div>
 
-          <div>
-            <strong>Festas e eventos</strong>
-            <span>Aniversários, escolas, empresas e comemorações</span>
+          <div class="trust-text">
+            <strong>Personalização</strong>
+            <span>Propostas de acordo com cada evento</span>
           </div>
 
         </div>
-
 
         <div class="trust-item">
 
-          <div class="trust-icon">
-            <i class="fa-solid fa-location-dot"></i>
-          </div>
+          <div class="trust-number">03</div>
 
-          <div>
-            <strong>Londrina e região</strong>
-            <span>Levamos a recreação até o seu evento</span>
+          <div class="trust-text">
+            <strong>Criatividade</strong>
+            <span>Brincadeiras que despertam participação</span>
           </div>
 
         </div>
 
-      </div>
+        <div class="trust-item">
 
-    </div>
+          <div class="trust-number">04</div>
 
-
-
-    <!-- =====================================================
-         SERVIÇOS
-    ====================================================== -->
-
-    <section class="services" id="servicos">
-
-      <div class="container">
-
-
-        <div class="section-header reveal">
-
-          <span class="section-kicker">
-            O que fazemos
-          </span>
-
-          <h2>
-            Recreação que combina com a sua festa.
-          </h2>
-
-          <p>
-            Nada de programação engessada. Organizamos as atividades
-            de acordo com a idade das crianças, o espaço e o perfil
-            da comemoração.
-          </p>
-
-        </div>
-
-
-        <div class="services-grid">
-
-
-          <article class="service reveal">
-
-            <div class="service-number">01</div>
-
-            <h3>Recreação infantil</h3>
-
-            <p>
-              Brincadeiras conduzidas por recreadores para manter
-              as crianças envolvidas, ativas e participativas.
-            </p>
-
-            <div class="service-line"></div>
-
-          </article>
-
-
-          <article class="service reveal">
-
-            <div class="service-number">02</div>
-
-            <h3>Gincanas e jogos</h3>
-
-            <p>
-              Desafios, jogos coletivos e dinâmicas que estimulam
-              interação e diversão entre a turma.
-            </p>
-
-            <div class="service-line"></div>
-
-          </article>
-
-
-          <article class="service reveal">
-
-            <div class="service-number">03</div>
-
-            <h3>Oficinas criativas</h3>
-
-            <p>
-              Propostas manuais e criativas para momentos mais
-              tranquilos, além das brincadeiras de movimento.
-            </p>
-
-            <div class="service-line"></div>
-
-          </article>
-
-
-          <article class="service reveal">
-
-            <div class="service-number">04</div>
-
-            <h3>Aniversários</h3>
-
-            <p>
-              Recreação planejada para aniversários infantis,
-              respeitando o ritmo e a faixa etária dos convidados.
-            </p>
-
-            <div class="service-line"></div>
-
-          </article>
-
-
-          <article class="service reveal">
-
-            <div class="service-number">05</div>
-
-            <h3>Eventos escolares</h3>
-
-            <p>
-              Atividades recreativas para integração, movimento
-              e participação em eventos escolares.
-            </p>
-
-            <div class="service-line"></div>
-
-          </article>
-
-
-          <article class="service reveal">
-
-            <div class="service-number">06</div>
-
-            <h3>Eventos personalizados</h3>
-
-            <p>
-              Uma programação adaptada ao espaço, quantidade de
-              crianças e proposta do seu evento.
-            </p>
-
-            <div class="service-line"></div>
-
-          </article>
-
+          <div class="trust-text">
+            <strong>Cuidado</strong>
+            <span>Uma experiência acolhedora</span>
+          </div>
 
         </div>
 
@@ -2152,32 +2456,225 @@
     </section>
 
 
+    <!-- =====================================================
+         MANIFESTO
+         ===================================================== -->
+
+    <section class="manifesto">
+
+      <div class="container manifesto-grid">
+
+        <div class="manifesto-label reveal">
+          O jeito Star de fazer
+        </div>
+
+        <div class="manifesto-content reveal">
+
+          <h2>
+            Não é só ocupar as crianças.
+            <span>É fazer parte da história da festa.</span>
+          </h2>
+
+          <p>
+            Uma boa recreação não precisa ser barulhenta,
+            exagerada ou cheia de atrações. Ela precisa
+            entender o ambiente, as idades, o perfil das
+            crianças e criar o espaço certo para que a
+            diversão aconteça naturalmente.
+          </p>
+
+          <div class="manifesto-rule"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SERVIÇOS
+         ===================================================== -->
+
+    <section class="services" id="servicos">
+
+      <div class="container">
+
+        <div class="section-top reveal">
+
+          <div class="section-title">
+
+            <div class="section-label">
+              O que fazemos
+            </div>
+
+            <h2>
+              Experiências pensadas para cada celebração.
+            </h2>
+
+          </div>
+
+          <p class="section-description">
+            Da brincadeira espontânea à atividade
+            planejada, montamos a recreação de acordo
+            com o perfil da festa.
+          </p>
+
+        </div>
+
+
+        <div class="services-list">
+
+          <article class="service reveal">
+
+            <div class="service-number">
+              01 / RECREAÇÃO
+            </div>
+
+            <h3>
+              Recreação infantil
+            </h3>
+
+            <p>
+              Condução de brincadeiras e dinâmicas para
+              manter as crianças envolvidas de maneira
+              leve e organizada.
+            </p>
+
+          </article>
+
+
+          <article class="service reveal">
+
+            <div class="service-number">
+              02 / CRIATIVIDADE
+            </div>
+
+            <h3>
+              Oficinas criativas
+            </h3>
+
+            <p>
+              Propostas de criação, arte e atividades
+              lúdicas que estimulam imaginação e
+              participação.
+            </p>
+
+          </article>
+
+
+          <article class="service reveal">
+
+            <div class="service-number">
+              03 / GRUPO
+            </div>
+
+            <h3>
+              Gincanas
+            </h3>
+
+            <p>
+              Desafios e atividades coletivas para
+              aproximar as crianças e criar momentos
+              marcantes.
+            </p>
+
+          </article>
+
+
+          <article class="service reveal">
+
+            <div class="service-number">
+              04 / FESTAS
+            </div>
+
+            <h3>
+              Aniversários
+            </h3>
+
+            <p>
+              Recreação planejada para aniversários
+              infantis, respeitando espaço, duração
+              e faixa etária.
+            </p>
+
+          </article>
+
+
+          <article class="service reveal">
+
+            <div class="service-number">
+              05 / EVENTOS
+            </div>
+
+            <h3>
+              Eventos especiais
+            </h3>
+
+            <p>
+              Soluções recreativas para eventos
+              familiares, escolares, corporativos e
+              confraternizações.
+            </p>
+
+          </article>
+
+
+          <article class="service reveal">
+
+            <div class="service-number">
+              06 / SOB MEDIDA
+            </div>
+
+            <h3>
+              Experiência personalizada
+            </h3>
+
+            <p>
+              Cada festa tem uma dinâmica diferente.
+              Por isso, adaptamos a proposta ao seu
+              evento.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
 
     <!-- =====================================================
          SOBRE
-    ====================================================== -->
+         ===================================================== -->
 
     <section class="about" id="sobre">
 
       <div class="container about-grid">
 
+        <div class="about-visual reveal">
 
-        <div class="about-image reveal">
+          <div class="about-blob"></div>
+
+          <!-- IMAGEM 2 -->
 
           <img
             src="https://i.imgur.com/g0zW0LO.png"
-            alt="Atividades da Star Recreação"
+            class="about-character"
+            alt="Personagem da Star Recreação"
           >
 
-
-          <div class="about-image-label">
+          <div class="about-sticker">
 
             <strong>
-              Brincar também é criar.
+              STAR
             </strong>
 
             <span>
-              Experiências pensadas para cada fase da infância.
+              Recreação com
+              personalidade,
+              cuidado e criatividade.
             </span>
 
           </div>
@@ -2185,56 +2682,46 @@
         </div>
 
 
+        <div class="about-content reveal">
 
-        <div class="about-copy reveal">
-
-          <span class="section-kicker">
+          <div class="section-label">
             Sobre a Star
-          </span>
-
+          </div>
 
           <h2>
-            A gente cuida da diversão
-            <span>para você aproveitar a festa.</span>
+            Criança brincando.
+            <span>Pais aproveitando.</span>
           </h2>
-
 
           <p>
             A Star Recreação nasceu com uma ideia simples:
-            fazer com que as crianças tenham uma experiência realmente
-            divertida enquanto os adultos conseguem aproveitar a
-            comemoração com tranquilidade.
+            fazer com que a recreação seja uma parte especial
+            da festa — e não apenas uma atividade para
+            preencher o tempo.
           </p>
 
+          <div class="about-points">
 
-          <div class="about-list">
-
-            <div>
-              <i class="fa-solid fa-check"></i>
-              Recreação organizada e planejada
+            <div class="about-point">
+              Atividades adequadas para diferentes idades
             </div>
 
-            <div>
-              <i class="fa-solid fa-check"></i>
-              Atividades adaptadas por faixa etária
+            <div class="about-point">
+              Planejamento de acordo com o evento
             </div>
 
-            <div>
-              <i class="fa-solid fa-check"></i>
-              Propostas para diferentes tipos de eventos
+            <div class="about-point">
+              Propostas criativas e participativas
             </div>
 
-            <div>
-              <i class="fa-solid fa-check"></i>
-              Atendimento próximo e personalizado
+            <div class="about-point">
+              Atendimento em Londrina e região
             </div>
 
           </div>
 
-
-          <a href="#contato" class="btn btn-primary">
-            Conversar com a Star
-            <i class="fa-solid fa-arrow-right"></i>
+          <a href="#contato" class="btn btn-dark">
+            Conversar sobre minha festa
           </a>
 
         </div>
@@ -2244,298 +2731,100 @@
     </section>
 
 
-
     <!-- =====================================================
-         ATIVIDADES — MENOR
-    ====================================================== -->
+         EXPERIÊNCIAS
+         ===================================================== -->
 
-    <section class="activities" id="atividades">
-
-      <div class="container activities-layout">
-
-
-        <div class="section-header reveal">
-
-          <span class="section-kicker">
-            Atividades
-          </span>
-
-          <h2>
-            Um repertório que acompanha a festa.
-          </h2>
-
-          <p>
-            Alternamos movimento, criatividade e interação para
-            deixar a programação dinâmica sem exageros.
-          </p>
-
-        </div>
-
-
-
-        <div class="activity-list reveal">
-
-          <div class="activity-item">
-            <i class="fa-solid fa-flag-checkered"></i>
-            <span>Gincanas</span>
-          </div>
-
-          <div class="activity-item">
-            <i class="fa-solid fa-puzzle-piece"></i>
-            <span>Jogos recreativos</span>
-          </div>
-
-          <div class="activity-item">
-            <i class="fa-solid fa-paintbrush"></i>
-            <span>Oficinas criativas</span>
-          </div>
-
-          <div class="activity-item">
-            <i class="fa-solid fa-person-running"></i>
-            <span>Brincadeiras de movimento</span>
-          </div>
-
-          <div class="activity-item">
-            <i class="fa-solid fa-masks-theater"></i>
-            <span>Dinâmicas em grupo</span>
-          </div>
-
-          <div class="activity-item">
-            <i class="fa-solid fa-music"></i>
-            <span>Musicalização</span>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         EXPERIÊNCIA / TERCEIRA IMAGEM
-    ====================================================== -->
-
-    <section class="experience">
-
-      <div class="container experience-grid">
-
-
-        <div class="experience-copy reveal">
-
-          <span class="section-kicker">
-            Nosso jeito de trabalhar
-          </span>
-
-
-          <h2>
-            Mais organização.
-            <span>Mais liberdade para brincar.</span>
-          </h2>
-
-
-          <p>
-            Antes de começar a festa, entendemos quem estará presente,
-            qual é o espaço disponível e qual experiência você quer
-            proporcionar. Assim conseguimos escolher as atividades
-            certas para aquele momento.
-          </p>
-
-
-          <div class="numbers">
-
-            <div class="number-box">
-
-              <strong>Planejamento</strong>
-
-              <span>
-                A programação é pensada antes do evento.
-              </span>
-
-            </div>
-
-
-            <div class="number-box">
-
-              <strong>Personalização</strong>
-
-              <span>
-                Cada festa tem suas características.
-              </span>
-
-            </div>
-
-
-            <div class="number-box">
-
-              <strong>Interação</strong>
-
-              <span>
-                Atividades que incentivam as crianças a participarem.
-              </span>
-
-            </div>
-
-
-            <div class="number-box">
-
-              <strong>Cuidado</strong>
-
-              <span>
-                Organização para que tudo aconteça com leveza.
-              </span>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-
-        <div class="experience-image reveal">
-
-          <img
-            src="https://i.imgur.com/nNPyRy7.png"
-            alt="Experiência Star Recreação"
-          >
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         DEPOIMENTOS
-    ====================================================== -->
-
-    <section class="testimonials" id="depoimentos">
+    <section class="experiences" id="experiencias">
 
       <div class="container">
 
+        <div class="experiences-header reveal">
 
-        <div class="section-header center reveal">
+          <div>
 
-          <span class="section-kicker">
-            Famílias
-          </span>
+            <div class="section-label">
+              Experiências
+            </div>
 
-          <h2>
-            Quem viveu a experiência conta.
-          </h2>
+            <h2>
+              Brincadeiras que fazem sentido para a festa.
+            </h2>
+
+          </div>
 
           <p>
-            O melhor sinal de que o trabalho deu certo é quando
-            a diversão continua na memória depois da festa.
+            Uma programação equilibrada entre movimento,
+            criatividade, interação e momentos mais tranquilos.
           </p>
 
         </div>
 
 
-        <div class="testimonials-grid">
+        <div class="experience-row">
 
+          <article class="experience reveal">
 
-          <article class="testimonial reveal">
+            <span>01</span>
 
-            <div class="testimonial-stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
+            <h3>
+              Movimento
+            </h3>
 
             <p>
-              “Foi uma das melhores escolhas para o aniversário.
-              As crianças ficaram superenvolvidas e nós conseguimos
-              aproveitar a festa também.”
+              Brincadeiras para gastar energia e colocar
+              todo mundo para participar.
             </p>
-
-            <div class="testimonial-author">
-
-              <div class="author-avatar">
-                M
-              </div>
-
-              <div>
-                <strong>Mariana</strong>
-                <span>Mãe de aniversariante</span>
-              </div>
-
-            </div>
 
           </article>
 
 
+          <article class="experience reveal">
 
-          <article class="testimonial reveal">
+            <span>02</span>
 
-            <div class="testimonial-stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
+            <h3>
+              Criatividade
+            </h3>
 
             <p>
-              “A equipe foi muito atenciosa. As atividades foram
-              muito bem conduzidas e conseguiram envolver crianças
-              de idades diferentes.”
+              Atividades que dão espaço para imaginar,
+              criar e experimentar.
             </p>
-
-            <div class="testimonial-author">
-
-              <div class="author-avatar">
-                R
-              </div>
-
-              <div>
-                <strong>Renata</strong>
-                <span>Mãe de aniversariante</span>
-              </div>
-
-            </div>
 
           </article>
 
 
+          <article class="experience reveal">
 
-          <article class="testimonial reveal">
+            <span>03</span>
 
-            <div class="testimonial-stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
+            <h3>
+              Integração
+            </h3>
 
             <p>
-              “Desde o primeiro contato fomos muito bem atendidos.
-              A recreação deixou a festa muito mais organizada e
-              divertida para as crianças.”
+              Dinâmicas para aproximar as crianças e
+              transformar desconhecidos em parceiros de brincadeira.
             </p>
-
-            <div class="testimonial-author">
-
-              <div class="author-avatar">
-                C
-              </div>
-
-              <div>
-                <strong>Carolina</strong>
-                <span>Mãe de aniversariante</span>
-              </div>
-
-            </div>
 
           </article>
 
+
+          <article class="experience reveal">
+
+            <span>04</span>
+
+            <h3>
+              Memória
+            </h3>
+
+            <p>
+              Pequenos momentos pensados para que a festa
+              seja lembrada depois que termina.
+            </p>
+
+          </article>
 
         </div>
 
@@ -2543,11 +2832,243 @@
 
     </section>
 
+
+    <!-- =====================================================
+         FAMÍLIAS / DEPOIMENTOS
+         ===================================================== -->
+
+    <section class="testimonials" id="familias">
+
+      <div class="container">
+
+        <div class="testimonials-heading reveal">
+
+          <div class="section-label">
+            Famílias
+          </div>
+
+          <div>
+
+            <h2>
+              Quem contrata a Star
+              <span>também aproveita a festa.</span>
+            </h2>
+
+            <p>
+              Esta área foi pensada para receber os depoimentos
+              reais das famílias que já viveram uma experiência
+              com a Star.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="testimonial-layout reveal">
+
+          <div class="testimonial-main">
+
+            <div class="quote">
+              “
+            </div>
+
+            <!--
+              SUBSTITUA PELO DEPOIMENTO REAL PRINCIPAL
+            -->
+
+            <blockquote>
+              “Coloque aqui o depoimento real de uma família
+              sobre a experiência com a Star Recreação.”
+            </blockquote>
+
+            <div class="testimonial-author">
+
+              <strong>
+                Nome da família
+              </strong>
+
+              <span>
+                Evento realizado em Londrina
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="testimonial-side">
+
+            <article class="testimonial-mini">
+
+              <p>
+                “Insira aqui um segundo depoimento real
+                destacando o atendimento, organização
+                ou experiência das crianças.”
+              </p>
+
+              <strong>
+                Nome da mãe ou pai
+              </strong>
+
+              <span>
+                Aniversário infantil
+              </span>
+
+            </article>
+
+
+            <article class="testimonial-mini">
+
+              <p>
+                “Insira aqui outro comentário real de uma
+                família. O ideal é utilizar frases curtas
+                e espontâneas.”
+              </p>
+
+              <strong>
+                Nome da família
+              </strong>
+
+              <span>
+                Evento em Londrina
+              </span>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         GALERIA / COMPOSIÇÃO
+         ===================================================== -->
+
+    <section class="gallery">
+
+      <div class="container">
+
+        <div class="gallery-head reveal">
+
+          <div>
+
+            <div class="section-label">
+              A experiência
+            </div>
+
+            <h2>
+              Feita para ser vivida.
+            </h2>
+
+          </div>
+
+          <p>
+            Aqui você pode colocar fotos reais das festas,
+            das atividades e das crianças participando.
+            Fotografias reais vão aumentar muito a percepção
+            de valor da marca.
+          </p>
+
+        </div>
+
+
+        <div class="gallery-composition">
+
+          <div
+            class="gallery-block large"
+            style="
+              background:
+              linear-gradient(
+                135deg,
+                #275fa8,
+                #7db5ee
+              );
+            "
+          >
+
+            <div class="gallery-block-content">
+
+              <span>
+                Momentos
+              </span>
+
+              <strong>
+                A festa acontecendo de verdade.
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="gallery-block"
+            style="
+              background:
+              linear-gradient(
+                135deg,
+                #f1cf60,
+                #f8e6a6
+              );
+            "
+          >
+
+            <div class="gallery-block-content">
+
+              <span>
+                Criatividade
+              </span>
+
+              <strong>
+                Criar também é brincar.
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="gallery-block"
+            style="
+              background:
+              linear-gradient(
+                135deg,
+                #e88670,
+                #f4b4a4
+              );
+            "
+          >
+
+            <div class="gallery-block-content">
+
+              <span>
+                Interação
+              </span>
+
+              <strong>
+                Juntos é mais divertido.
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
 
 
     <!-- =====================================================
          CTA
-    ====================================================== -->
+         ===================================================== -->
 
     <section class="cta-section">
 
@@ -2555,31 +3076,37 @@
 
         <div class="cta-box reveal">
 
+          <div class="cta-copy">
 
-          <div class="cta-content">
-
-            <small>
-              Vamos planejar juntos?
-            </small>
+            <div class="section-label">
+              Sua festa começa no planejamento
+            </div>
 
             <h2>
-              Sua festa pode ser ainda mais especial.
+              Vamos criar uma experiência que tenha a cara da sua festa?
             </h2>
 
             <p>
-              Conte um pouco sobre o evento, a quantidade de crianças
-              e a data. A Star monta uma proposta de recreação
-              adequada para sua comemoração.
+              Conte para a Star a data, o local, a quantidade
+              de crianças e o estilo da comemoração.
+              A partir disso, pensamos juntos na melhor
+              proposta de recreação.
             </p>
+
+            <a href="#contato" class="btn cta-btn">
+              Solicitar orçamento
+            </a>
 
           </div>
 
 
-          <a href="#contato" class="btn btn-yellow">
-            Solicitar orçamento
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
+          <!-- IMAGEM 3 -->
 
+          <img
+            src="https://i.imgur.com/nNPyRy7.png"
+            class="cta-character"
+            alt="Personagem da Star Recreação"
+          >
 
         </div>
 
@@ -2588,117 +3115,95 @@
     </section>
 
 
-
     <!-- =====================================================
          CONTATO
-    ====================================================== -->
+         ===================================================== -->
 
     <section class="contact" id="contato">
 
       <div class="container contact-grid">
 
+        <div class="contact-copy reveal">
 
-        <div class="contact-info reveal">
+          <div class="section-label">
+            Vamos conversar
+          </div>
 
           <h2>
-            Vamos conversar?
+            Conte como será a sua festa.
           </h2>
 
           <p>
-            Envie as informações da sua festa e vamos entender
-            qual formato de recreação combina melhor com o seu evento.
+            Preencha os dados ao lado e envie pelo WhatsApp.
+            Assim conseguimos entender melhor o seu evento
+            e preparar uma proposta.
           </p>
-
 
           <div class="contact-details">
 
-
             <div class="contact-detail">
 
-              <div class="contact-detail-icon">
-                <i class="fa-brands fa-whatsapp"></i>
-              </div>
+              <span>
+                WhatsApp
+              </span>
 
-              <div>
-
-                <strong>WhatsApp</strong>
-
-                <span>
-                  (43) 9200-36581
-                </span>
-
-              </div>
+              <strong>
+                (43) 92000-36581
+              </strong>
 
             </div>
 
 
             <div class="contact-detail">
 
-              <div class="contact-detail-icon">
-                <i class="fa-solid fa-location-dot"></i>
-              </div>
+              <span>
+                Atendimento
+              </span>
 
-              <div>
-
-                <strong>Atendimento</strong>
-
-                <span>
-                  Londrina e região
-                </span>
-
-              </div>
+              <strong>
+                Londrina e região
+              </strong>
 
             </div>
 
 
             <div class="contact-detail">
 
-              <div class="contact-detail-icon">
-                <i class="fa-solid fa-calendar-days"></i>
-              </div>
+              <span>
+                Eventos
+              </span>
 
-              <div>
-
-                <strong>Eventos</strong>
-
-                <span>
-                  Aniversários, festas e eventos
-                </span>
-
-              </div>
+              <strong>
+                Aniversários, festas e eventos especiais
+              </strong>
 
             </div>
-
 
           </div>
 
         </div>
 
 
-
-        <div class="contact-form reveal">
+        <div class="form reveal">
 
           <h3>
-            Solicite seu orçamento
+            Solicitar orçamento
           </h3>
-
 
           <form id="budgetForm">
 
-
             <div class="form-grid">
-
 
               <div class="field">
 
                 <label for="nome">
-                  Nome
+                  Seu nome
                 </label>
 
                 <input
                   type="text"
                   id="nome"
-                  placeholder="Seu nome"
+                  placeholder="Como podemos chamar você?"
                   required
                 >
 
@@ -2750,7 +3255,7 @@
                   </option>
 
                   <option>
-                    Outro evento
+                    Outro
                   </option>
 
                 </select>
@@ -2760,15 +3265,15 @@
 
               <div class="field">
 
-                <label for="convidados">
-                  Crianças
+                <label for="criancas">
+                  Quantidade de crianças
                 </label>
 
                 <input
                   type="number"
-                  id="convidados"
+                  id="criancas"
                   min="1"
-                  placeholder="Ex.: 20"
+                  placeholder="Ex.: 25"
                   required
                 >
 
@@ -2788,26 +3293,19 @@
 
               </div>
 
-
             </div>
 
 
             <button
               type="submit"
-              class="btn btn-primary form-submit"
+              class="btn btn-dark form-submit"
             >
-
-              <i class="fa-brands fa-whatsapp"></i>
-
               Enviar pelo WhatsApp
-
             </button>
-
 
           </form>
 
         </div>
-
 
       </div>
 
@@ -2816,69 +3314,71 @@
   </main>
 
 
-
   <!-- =======================================================
        FOOTER
-  ======================================================== -->
+       ======================================================= -->
 
   <footer>
 
     <div class="container">
 
-
-      <div class="footer-grid">
-
+      <div class="footer-top">
 
         <div class="footer-brand">
 
-          <a href="#inicio" class="logo">
+          <a href="#inicio" class="brand">
 
-            <span class="logo-mark">
-              <i class="fa-solid fa-star"></i>
-            </span>
+            <div class="brand-mark">
+              ★
+            </div>
 
-            Star <span>Recreação</span>
+            <div class="brand-name">
+              Star <span>Recreação</span>
+            </div>
 
           </a>
 
-
           <p>
-            Recreação infantil para festas e eventos em Londrina
-            e região. Criatividade, organização e diversão para
-            transformar cada comemoração em uma boa lembrança.
+            Recreação infantil pensada para transformar
+            festas e eventos em experiências leves,
+            criativas e memoráveis.
           </p>
 
         </div>
 
 
+        <div class="footer-nav">
 
-        <div>
+          <div class="footer-column">
 
-          <div class="footer-title">
-            Navegação
+            <h4>
+              Navegação
+            </h4>
+
+            <a href="#inicio">
+              Início
+            </a>
+
+            <a href="#experiencias">
+              Experiências
+            </a>
+
+            <a href="#sobre">
+              A Star
+            </a>
+
+            <a href="#familias">
+              Famílias
+            </a>
+
           </div>
 
-          <div class="footer-links">
 
-            <a href="#inicio">Início</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#sobre">Sobre</a>
-            <a href="#atividades">Atividades</a>
-            <a href="#depoimentos">Famílias</a>
+          <div class="footer-column">
 
-          </div>
-
-        </div>
-
-
-
-        <div>
-
-          <div class="footer-title">
-            Atendimento
-          </div>
-
-          <div class="footer-links">
+            <h4>
+              Contato
+            </h4>
 
             <a href="#contato">
               Solicitar orçamento
@@ -2896,9 +3396,7 @@
 
         </div>
 
-
       </div>
-
 
 
       <div class="footer-bottom">
@@ -2913,204 +3411,250 @@
 
       </div>
 
-
     </div>
 
   </footer>
 
 
-
   <!-- =======================================================
        WHATSAPP
-  ======================================================== -->
+       ======================================================= -->
 
   <a
-    class="whatsapp"
     href="https://wa.me/5543920036581"
     target="_blank"
     rel="noopener"
+    class="whatsapp"
     aria-label="Falar com a Star Recreação pelo WhatsApp"
   >
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
 
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+
+      <path
+        d="M20.52 3.48A11.8 11.8 0 0 0 12.1 0C5.55 0 .22 5.33.22 11.89c0 2.1.55 4.15 1.6 5.96L.11 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.88-5.33 11.88-11.89 0-3.18-1.24-6.16-3.46-8.43Z"
+        fill="currentColor"
+      />
+
+      <path
+        d="M17.53 13.96c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.79-1.68-2.09-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.21 5.09 4.5.71.31 1.27.5 1.7.64.71.23 1.35.2 1.86.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"
+        fill="#20b66f"
+      />
+
+    </svg>
+
+  </a>
 
 
   <!-- =======================================================
-       TOP
-  ======================================================== -->
+       BACK TO TOP
+       ======================================================= -->
 
   <a
     href="#inicio"
-    class="top"
-    id="topBtn"
+    class="back-top"
+    id="backTop"
     aria-label="Voltar ao topo"
   >
-    <i class="fa-solid fa-arrow-up"></i>
+    ↑
   </a>
-
 
 
   <!-- =======================================================
        JAVASCRIPT
-  ======================================================== -->
+       ======================================================= -->
 
   <script>
 
-    /* -------------------------------------------------------
+    /* ========================================================
        MENU MOBILE
-    ------------------------------------------------------- */
+       ======================================================== */
 
-    const menuButton = document.getElementById("menuButton");
-    const navLinks = document.getElementById("navLinks");
+    const mobileToggle =
+      document.getElementById("mobileToggle");
 
-    menuButton.addEventListener("click", () => {
+    const mainMenu =
+      document.getElementById("mainMenu");
 
-      navLinks.classList.toggle("active");
 
-      const icon = menuButton.querySelector("i");
+    mobileToggle.addEventListener("click", () => {
 
-      if (navLinks.classList.contains("active")) {
+      mainMenu.classList.toggle("active");
 
-        icon.classList.remove("fa-bars");
-        icon.classList.add("fa-xmark");
-
-      } else {
-
-        icon.classList.remove("fa-xmark");
-        icon.classList.add("fa-bars");
-
-      }
+      mobileToggle.textContent =
+        mainMenu.classList.contains("active")
+          ? "×"
+          : "☰";
 
     });
 
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
+    document
+      .querySelectorAll(".main-menu a")
+      .forEach(link => {
 
-      link.addEventListener("click", () => {
+        link.addEventListener("click", () => {
 
-        navLinks.classList.remove("active");
+          mainMenu.classList.remove("active");
 
-        const icon = menuButton.querySelector("i");
+          mobileToggle.textContent = "☰";
 
-        icon.classList.remove("fa-xmark");
-        icon.classList.add("fa-bars");
+        });
 
       });
 
-    });
 
-
-    /* -------------------------------------------------------
+    /* ========================================================
        BACK TO TOP
-    ------------------------------------------------------- */
+       ======================================================== */
 
-    const topBtn = document.getElementById("topBtn");
+    const backTop =
+      document.getElementById("backTop");
+
 
     window.addEventListener("scroll", () => {
 
-      if (window.scrollY > 550) {
+      if (window.scrollY > 600) {
 
-        topBtn.classList.add("show");
+        backTop.classList.add("visible");
 
       } else {
 
-        topBtn.classList.remove("show");
+        backTop.classList.remove("visible");
 
       }
 
     });
 
 
-    /* -------------------------------------------------------
-       REVEAL
-    ------------------------------------------------------- */
+    /* ========================================================
+       SCROLL REVEAL
+       ======================================================== */
 
     const revealElements =
       document.querySelectorAll(".reveal");
 
-    const observer = new IntersectionObserver(
-      entries => {
 
-        entries.forEach(entry => {
+    const revealObserver =
+      new IntersectionObserver(
+        entries => {
 
-          if (entry.isIntersecting) {
+          entries.forEach(entry => {
 
-            entry.target.classList.add("visible");
+            if (entry.isIntersecting) {
 
-            observer.unobserve(entry.target);
+              entry.target.classList.add("visible");
 
-          }
+              revealObserver.unobserve(
+                entry.target
+              );
 
-        });
+            }
 
-      },
-      {
-        threshold: .12
-      }
-    );
+          });
+
+        },
+        {
+          threshold: .12
+        }
+      );
 
 
     revealElements.forEach(element => {
 
-      observer.observe(element);
+      revealObserver.observe(element);
 
     });
 
 
-    /* -------------------------------------------------------
-       FORMULÁRIO -> WHATSAPP
-    ------------------------------------------------------- */
+    /* ========================================================
+       FORMULÁRIO WHATSAPP
+       ======================================================== */
 
-    document
-      .getElementById("budgetForm")
-      .addEventListener("submit", function(event) {
-
-        event.preventDefault();
+    const budgetForm =
+      document.getElementById("budgetForm");
 
 
-        const nome =
-          document.getElementById("nome").value.trim();
+    budgetForm.addEventListener("submit", function(event) {
 
-        const telefone =
-          document.getElementById("telefone").value.trim();
-
-        const tipo =
-          document.getElementById("tipo").value;
-
-        const convidados =
-          document.getElementById("convidados").value;
-
-        const mensagem =
-          document.getElementById("mensagem").value.trim();
+      event.preventDefault();
 
 
-        const texto = `
+      const nome =
+        document.getElementById("nome").value.trim();
+
+      const telefone =
+        document.getElementById("telefone").value.trim();
+
+      const tipo =
+        document.getElementById("tipo").value;
+
+      const criancas =
+        document.getElementById("criancas").value;
+
+      const mensagem =
+        document.getElementById("mensagem").value.trim();
+
+
+      const texto = `
 Olá, Star Recreação!
 
 Gostaria de solicitar um orçamento.
 
 Nome: ${nome}
+
 WhatsApp: ${telefone}
+
 Tipo de evento: ${tipo}
-Quantidade de crianças: ${convidados}
+
+Quantidade de crianças: ${criancas}
 
 Detalhes da festa:
-${mensagem}
-        `.trim();
+${mensagem || "Não informado."}
+      `.trim();
 
 
-        const url =
-          "https://wa.me/5543920036581?text=" +
-          encodeURIComponent(texto);
+      const whatsappUrl =
+        "https://wa.me/5543920036581?text=" +
+        encodeURIComponent(texto);
 
 
-        window.open(url, "_blank");
+      window.open(
+        whatsappUrl,
+        "_blank",
+        "noopener"
+      );
 
-      });
+    });
+
+
+    /* ========================================================
+       HEADER AO ROLAR
+       ======================================================== */
+
+    const header =
+      document.querySelector(".site-header");
+
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 30) {
+
+        header.style.boxShadow =
+          "0 8px 30px rgba(16,45,90,.05)";
+
+      } else {
+
+        header.style.boxShadow = "none";
+
+      }
+
+    });
 
   </script>
-
 
 </body>
 </html>
